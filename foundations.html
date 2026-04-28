@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundations · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html" class="is-active">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Foundations</div>
+        <ul class="sidebar__list">
+          <li><a href="#overview" class="is-active">Overview</a></li>
+          <li><a href="#color">Color</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#spacing">Spacing</a></li>
+          <li><a href="#layout">Grid & Breakpoints</a></li>
+          <li><a href="#radius">Border radius</a></li>
+          <li><a href="#elevation">Elevation</a></li>
+          <li><a href="#motion">Motion</a></li>
+          <li><a href="#iconography">Iconography</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Mais</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Componentes <span class="badge">em breve</span></a></li>
+          <li><a href="patterns.html">Padrões <span class="badge">em breve</span></a></li>
+          <li><a href="content.html">Conteúdo <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Foundations</div>
+        <h1 class="h-display hero__title">Foundations</h1>
+        <p class="lead">Os blocos atómicos do design da PCDIGA: cores, tipografia, espaçamento, grid e tudo o que define a linguagem visual antes de chegar a componentes.</p>
+        <div class="callout">
+          <strong>Como usar tokens</strong>
+          Sempre que possível, usa o nome do token (ex: <code style="background:var(--surface-overlay); padding:2px 6px; border-radius:4px; font-family:var(--font-mono); font-size:12px;">var(--brand-primary)</code>) em vez do valor hex. Tokens são a fonte da verdade — se mudar, muda em todo o lado.
+        </div>
+      </section>
+
+      <!-- ============== COLOR ============== -->
+      <section id="color" class="section">
+        <div class="section__eyebrow">Color</div>
+        <h2 class="h-1">Color</h2>
+        <p class="lead">A paleta PCDIGA é construída em volta do laranja brand sobre um fundo dark. Cores semânticas comunicam estado e cores neutras estruturam interface.</p>
+
+        <h3 class="h-2">Brand</h3>
+        <p>Usa estas cores apenas para elementos que representam a marca PCDIGA — CTAs principais, badges promocionais, elementos de destaque. <strong style="color: var(--text-primary)">Não usar como cor decorativa</strong>.</p>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #F37021;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Primary</div>
+              <span class="swatch__token">--brand-primary</span>
+              <span class="swatch__hex">#F37021</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #FF8038;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Primary Hover</div>
+              <span class="swatch__token">--brand-primary-hover</span>
+              <span class="swatch__hex">#FF8038</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #D85F18;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Primary Pressed</div>
+              <span class="swatch__token">--brand-primary-pressed</span>
+              <span class="swatch__hex">#D85F18</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #1A6BFF;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Secondary</div>
+              <span class="swatch__token">--brand-secondary</span>
+              <span class="swatch__hex">#1A6BFF</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h-2">Surfaces</h3>
+        <p>Hierarquia de fundos. Quanto mais "raised" o nível, mais à frente está o elemento.</p>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #0E0E10;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Base</div>
+              <span class="swatch__token">--surface-base</span>
+              <span class="swatch__hex">#0E0E10</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #16161A;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Raised</div>
+              <span class="swatch__token">--surface-raised</span>
+              <span class="swatch__hex">#16161A</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #1F1F24;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Overlay</div>
+              <span class="swatch__token">--surface-overlay</span>
+              <span class="swatch__hex">#1F1F24</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #26262C;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Hover</div>
+              <span class="swatch__token">--surface-hover</span>
+              <span class="swatch__hex">#26262C</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h-2">Text</h3>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #FAFAFB;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Primary</div>
+              <span class="swatch__token">--text-primary</span>
+              <span class="swatch__hex">#FAFAFB</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #B5B5BD;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Secondary</div>
+              <span class="swatch__token">--text-secondary</span>
+              <span class="swatch__hex">#B5B5BD</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #7A7A82;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Muted</div>
+              <span class="swatch__token">--text-muted</span>
+              <span class="swatch__hex">#7A7A82</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h-2">Semantic</h3>
+        <p>Usar para comunicar estado, não para decoração. Cada uma tem uma versão "background" para fundos suaves.</p>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch__color" style="background: #1FB36F;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Success</div>
+              <span class="swatch__token">--success</span>
+              <span class="swatch__hex">#1FB36F</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #F5A623;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Warning</div>
+              <span class="swatch__token">--warning</span>
+              <span class="swatch__hex">#F5A623</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #E53935;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Danger</div>
+              <span class="swatch__token">--danger</span>
+              <span class="swatch__hex">#E53935</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background: #1A6BFF;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Info</div>
+              <span class="swatch__token">--info</span>
+              <span class="swatch__hex">#1A6BFF</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h-2">Usage</h3>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Usar <code>--brand-primary</code> para o CTA principal de cada página. Um só CTA primário por vista.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Múltiplos botões laranja em competição visual. Se não há prioridade clara, o utilizador hesita.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Usar <code>--success</code> apenas para estados positivos: "em stock", confirmação de compra, validação de form.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Verde para preços ou descontos. Cor de desconto é <code>--danger</code> ou <code>--brand-primary</code>.</p>
+          </div>
+        </div>
+
+        <h3 class="h-2">Acessibilidade</h3>
+        <div class="callout callout--warning">
+          <strong>Contraste</strong>
+          Texto regular precisa de contraste mínimo 4.5:1 (WCAG AA). <code>--text-primary</code> sobre <code>--surface-base</code> = 17.5:1 ✓. <code>--text-secondary</code> sobre <code>--surface-base</code> = 9.2:1 ✓. <code>--text-muted</code> não usar para texto crítico — apenas metadata e labels grandes.
+        </div>
+      </section>
+
+      <!-- ============== TYPOGRAPHY ============== -->
+      <section id="typography" class="section">
+        <div class="section__eyebrow">Typography</div>
+        <h2 class="h-1">Typography</h2>
+        <p class="lead">A PCDIGA usa <strong style="color: var(--text-primary)">Inter</strong> — uma sans-serif moderna, neutra e otimizada para ecrãs. Toda a UI usa esta família, em vários pesos.</p>
+
+        <h3 class="h-2">Type scale</h3>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>Display</strong>
+            56px / 1.05<br/>weight 800
+          </div>
+          <div class="specimen__sample" style="font-size: 56px; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;">Configurar PC</div>
+        </div>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>H1</strong>
+            36px / 1.15<br/>weight 700
+          </div>
+          <div class="specimen__sample" style="font-size: 36px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;">Smartphones em destaque</div>
+        </div>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>H2</strong>
+            28px / 1.2<br/>weight 700
+          </div>
+          <div class="specimen__sample" style="font-size: 28px; font-weight: 700; line-height: 1.2;">Recomendados PCDIGA</div>
+        </div>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>H3</strong>
+            20px / 1.3<br/>weight 600
+          </div>
+          <div class="specimen__sample" style="font-size: 20px; font-weight: 600; line-height: 1.3;">Especificações técnicas</div>
+        </div>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>Body L</strong>
+            18px / 1.6<br/>weight 400
+          </div>
+          <div class="specimen__sample" style="font-size: 18px; font-weight: 400; line-height: 1.6;">Texto introdutório de páginas — descrições principais que precisam de respiro.</div>
+        </div>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>Body</strong>
+            16px / 1.6<br/>weight 400
+          </div>
+          <div class="specimen__sample" style="font-size: 16px; font-weight: 400; line-height: 1.6;">Texto de leitura padrão. Toda a documentação e descrições longas usam este tamanho. É o ponto de partida de qualquer página.</div>
+        </div>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>Body S</strong>
+            14px / 1.5<br/>weight 400
+          </div>
+          <div class="specimen__sample" style="font-size: 14px; font-weight: 400; line-height: 1.5;">Texto secundário — descrições de cards, microcopy, labels longas.</div>
+        </div>
+
+        <div class="specimen">
+          <div class="specimen__meta">
+            <strong>Caption</strong>
+            12px / 1.4<br/>weight 500
+          </div>
+          <div class="specimen__sample" style="font-size: 12px; font-weight: 500; line-height: 1.4; color: var(--text-muted);">Metadata, timestamps, notas de rodapé, badges.</div>
+        </div>
+
+        <h3 class="h-2">Pesos</h3>
+        <p>Usar pesos com intenção. <strong style="color: var(--text-primary)">Não misturar mais de 3 pesos na mesma página</strong>.</p>
+        <div class="swatch-grid">
+          <div class="swatch" style="cursor: default;">
+            <div class="swatch__info" style="padding: 24px;">
+              <div style="font-weight: 400; font-size: 18px; margin-bottom: 8px;">Regular</div>
+              <span class="swatch__token">400 · body, descrições</span>
+            </div>
+          </div>
+          <div class="swatch" style="cursor: default;">
+            <div class="swatch__info" style="padding: 24px;">
+              <div style="font-weight: 500; font-size: 18px; margin-bottom: 8px;">Medium</div>
+              <span class="swatch__token">500 · captions, labels</span>
+            </div>
+          </div>
+          <div class="swatch" style="cursor: default;">
+            <div class="swatch__info" style="padding: 24px;">
+              <div style="font-weight: 600; font-size: 18px; margin-bottom: 8px;">Semibold</div>
+              <span class="swatch__token">600 · CTAs, h3, ênfase</span>
+            </div>
+          </div>
+          <div class="swatch" style="cursor: default;">
+            <div class="swatch__info" style="padding: 24px;">
+              <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Bold</div>
+              <span class="swatch__token">700 · h1, h2</span>
+            </div>
+          </div>
+          <div class="swatch" style="cursor: default;">
+            <div class="swatch__info" style="padding: 24px;">
+              <div style="font-weight: 800; font-size: 18px; margin-bottom: 8px;">Extrabold</div>
+              <span class="swatch__token">800 · display only</span>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="h-2">Regras práticas</h3>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Line-height generoso (1.5-1.6) em texto corrido para legibilidade.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Letter-spacing negativo em texto pequeno. Só em títulos grandes (h1, display).</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Limitar largura de parágrafos a ~60-70 caracteres. Olho cansa em linhas muito longas.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">All-caps em parágrafos. Reservar para badges, labels muito curtos ou eyebrows.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== SPACING ============== -->
+      <section id="spacing" class="section">
+        <div class="section__eyebrow">Spacing</div>
+        <h2 class="h-1">Spacing</h2>
+        <p class="lead">Escala de espaçamento baseada em <strong style="color: var(--text-primary)">4px</strong>. Todos os paddings, margins e gaps usam estes valores — nunca valores arbitrários.</p>
+
+        <div class="scale">
+          <div class="scale__item">
+            <span class="scale__token">--space-1</span>
+            <span class="scale__value">4px</span>
+            <div class="scale__visual" style="width: 4px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-2</span>
+            <span class="scale__value">8px</span>
+            <div class="scale__visual" style="width: 8px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-3</span>
+            <span class="scale__value">12px</span>
+            <div class="scale__visual" style="width: 12px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-4</span>
+            <span class="scale__value">16px</span>
+            <div class="scale__visual" style="width: 16px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-5</span>
+            <span class="scale__value">20px</span>
+            <div class="scale__visual" style="width: 20px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-6</span>
+            <span class="scale__value">24px</span>
+            <div class="scale__visual" style="width: 24px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-8</span>
+            <span class="scale__value">32px</span>
+            <div class="scale__visual" style="width: 32px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-10</span>
+            <span class="scale__value">40px</span>
+            <div class="scale__visual" style="width: 40px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-12</span>
+            <span class="scale__value">48px</span>
+            <div class="scale__visual" style="width: 48px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-16</span>
+            <span class="scale__value">64px</span>
+            <div class="scale__visual" style="width: 64px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-20</span>
+            <span class="scale__value">80px</span>
+            <div class="scale__visual" style="width: 80px;"></div>
+          </div>
+          <div class="scale__item">
+            <span class="scale__token">--space-24</span>
+            <span class="scale__value">96px</span>
+            <div class="scale__visual" style="width: 96px;"></div>
+          </div>
+        </div>
+
+        <h3 class="h-2">Aplicação típica</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Contexto</th>
+                <th>Token</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Padding interno em badges</td><td><code>--space-1</code></td><td>4px</td></tr>
+              <tr><td>Gap entre ícone e texto</td><td><code>--space-2</code></td><td>8px</td></tr>
+              <tr><td>Gap entre items de lista</td><td><code>--space-3</code></td><td>12px</td></tr>
+              <tr><td>Padding interno de cards</td><td><code>--space-5</code> a <code>--space-6</code></td><td>20-24px</td></tr>
+              <tr><td>Gap entre cards numa grid</td><td><code>--space-4</code> a <code>--space-6</code></td><td>16-24px</td></tr>
+              <tr><td>Margin entre secções de uma página</td><td><code>--space-12</code> a <code>--space-16</code></td><td>48-64px</td></tr>
+              <tr><td>Padding vertical de hero sections</td><td><code>--space-16</code> a <code>--space-24</code></td><td>64-96px</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============== LAYOUT / GRID ============== -->
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Grid & Breakpoints</h2>
+        <p class="lead">Sistema de layout responsivo com 4 breakpoints principais. Mobile-first.</p>
+
+        <h3 class="h-2">Breakpoints</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Range</th>
+                <th>Tipo de device</th>
+                <th>Container max</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>sm</code></td><td>0 – 639px</td><td>Mobile</td><td>100% – 24px</td></tr>
+              <tr><td><code>md</code></td><td>640 – 1023px</td><td>Tablet</td><td>720px</td></tr>
+              <tr><td><code>lg</code></td><td>1024 – 1279px</td><td>Laptop</td><td>1024px</td></tr>
+              <tr><td><code>xl</code></td><td>1280px+</td><td>Desktop</td><td>1280px</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Grid</h3>
+        <p>12 colunas em desktop, 8 em tablet, 4 em mobile. Gutter sempre <code>--space-6</code> (24px).</p>
+        <div class="callout">
+          <strong>Regra prática</strong>
+          Em desktop, conteúdo principal não passa de 1280px. Em mobile, padding lateral mínimo de 16px. <strong>Cards de produto:</strong> 4 por linha em desktop, 3 em laptop, 2 em mobile.
+        </div>
+      </section>
+
+      <!-- ============== RADIUS ============== -->
+      <section id="radius" class="section">
+        <div class="section__eyebrow">Border radius</div>
+        <h2 class="h-1">Border radius</h2>
+        <p class="lead">Raios suaves para uma estética moderna sem ser arredondada demais. Mantém-se entre 4-16px na UI principal.</p>
+
+        <div class="card-grid">
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-primary); border-radius: 4px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-sm</div>
+            <p class="card__desc">4px · Inputs, badges, tags</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-primary); border-radius: 8px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-md</div>
+            <p class="card__desc">8px · Botões, cards pequenos</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-primary); border-radius: 12px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-lg</div>
+            <p class="card__desc">12px · Cards de produto, modals</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-primary); border-radius: 16px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-xl</div>
+            <p class="card__desc">16px · Hero cards, banners</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-primary); border-radius: 999px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-pill</div>
+            <p class="card__desc">Full · Pills, status badges</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== ELEVATION ============== -->
+      <section id="elevation" class="section">
+        <div class="section__eyebrow">Elevation</div>
+        <h2 class="h-1">Elevation</h2>
+        <p class="lead">No tema dark, sombras são subtis. Hierarquia faz-se mais por <strong style="color: var(--text-primary)">surface tokens</strong> do que por sombra.</p>
+
+        <div class="card-grid">
+          <div style="background: var(--surface-raised); border-radius: 12px; padding: 32px; box-shadow: 0 1px 2px rgba(0,0,0,0.4);">
+            <div style="font-weight: 600; margin-bottom: 8px;">--shadow-sm</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">0 1px 2px rgba(0,0,0,.4)</div>
+            <div style="font-size: 13px; color: var(--text-secondary); margin-top: 12px;">Cards inativos, dividers visuais</div>
+          </div>
+          <div style="background: var(--surface-raised); border-radius: 12px; padding: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+            <div style="font-weight: 600; margin-bottom: 8px;">--shadow-md</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">0 4px 12px rgba(0,0,0,.5)</div>
+            <div style="font-size: 13px; color: var(--text-secondary); margin-top: 12px;">Dropdowns, popovers</div>
+          </div>
+          <div style="background: var(--surface-raised); border-radius: 12px; padding: 32px; box-shadow: 0 12px 32px rgba(0,0,0,0.6);">
+            <div style="font-weight: 600; margin-bottom: 8px;">--shadow-lg</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted);">0 12px 32px rgba(0,0,0,.6)</div>
+            <div style="font-size: 13px; color: var(--text-secondary); margin-top: 12px;">Modals, dialogs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== MOTION ============== -->
+      <section id="motion" class="section">
+        <div class="section__eyebrow">Motion</div>
+        <h2 class="h-1">Motion</h2>
+        <p class="lead">Movimento serve a UX — comunica feedback, hierarquia e continuidade. <strong style="color: var(--text-primary)">Nunca decoração</strong>.</p>
+
+        <h3 class="h-2">Durações</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Valor</th>
+                <th>Quando usar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--duration-fast</code></td><td>120ms</td><td>Hover, focus, micro-interações</td></tr>
+              <tr><td><code>--duration-base</code></td><td>200ms</td><td>Toggle, dropdowns, accordions</td></tr>
+              <tr><td><code>--duration-slow</code></td><td>320ms</td><td>Modals, page transitions</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Easing</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Token</th><th>Curva</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--ease-out</code></td><td>cubic-bezier(0.16, 1, 0.3, 1)</td><td>Default. Elementos a entrar.</td></tr>
+              <tr><td><code>--ease-in-out</code></td><td>cubic-bezier(0.4, 0, 0.2, 1)</td><td>Movimento contínuo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Princípios</h3>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Animar opacidade e transform (rápido, performático).</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Animar width/height/top/left (lento, causa reflow).</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Respeitar <code>prefers-reduced-motion</code> — utilizadores podem desligar movimento.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Animações longas em ações frequentes. Hover de 500ms cansa rápido.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== ICONOGRAPHY ============== -->
+      <section id="iconography" class="section">
+        <div class="section__eyebrow">Iconography</div>
+        <h2 class="h-1">Iconography</h2>
+        <p class="lead">Sistema de ícones consistente em estilo, peso e tamanho. <strong style="color: var(--text-primary)">Recomendação:</strong> Lucide Icons (open-source, completo, neutro).</p>
+
+        <div class="callout callout--warning">
+          <strong>Em desenvolvimento</strong>
+          A biblioteca de ícones final será definida na Fase 2 com a equipa de design. Esta secção será atualizada com a lista completa, regras de uso, tamanhos padrão e exemplos.
+        </div>
+
+        <h3 class="h-2">Tamanhos padrão</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Token</th><th>Tamanho</th><th>Contexto</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>icon-sm</code></td><td>16px</td><td>Inline com texto, dentro de inputs</td></tr>
+              <tr><td><code>icon-md</code></td><td>20px</td><td>Botões, ícones de navegação</td></tr>
+              <tr><td><code>icon-lg</code></td><td>24px</td><td>Headers, destaques</td></tr>
+              <tr><td><code>icon-xl</code></td><td>32px</td><td>Hero, empty states</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Princípios</h3>
+        <p>Stroke width consistente (1.5-2px). Cantos suaves coerentes com radius do sistema. Cor herdada de <code>currentColor</code> para flexibilidade.</p>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#color">Color</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#spacing">Spacing</a></li>
+        <li><a href="#layout">Grid & Breakpoints</a></li>
+        <li><a href="#radius">Border radius</a></li>
+        <li><a href="#elevation">Elevation</a></li>
+        <li><a href="#motion">Motion</a></li>
+        <li><a href="#iconography">Iconography</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="index.html">Início</a> · <a href="components.html">Componentes</a></div>
+  </footer>
+
+</body>
+</html>
