@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Princípios · PCDIGA Design System</title>
+  <meta name="description" content="Os cinco princípios que guiam todas as decisões de design na PCDIGA — do botão ao checkout." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html" class="is-active">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema light/dark" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Princípios</div>
+        <ul class="sidebar__list">
+          <li><a href="#overview" class="is-active">Overview</a></li>
+          <li><a href="#clareza">1. Clareza primeiro</a></li>
+          <li><a href="#menos">2. Menos é melhor</a></li>
+          <li><a href="#hierarquia">3. Hierarquia clara</a></li>
+          <li><a href="#consistencia">4. Consistência</a></li>
+          <li><a href="#objetivo">5. Servir o objetivo</a></li>
+          <li><a href="#aplicar">Como aplicar</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Áreas</div>
+        <ul class="sidebar__list">
+          <li><a href="foundations.html">Foundations <span class="badge" style="background:var(--success-bg); color:var(--success)">v1</span></a></li>
+          <li><a href="components.html">Componentes <span class="badge">em breve</span></a></li>
+          <li><a href="patterns.html">Padrões <span class="badge">em breve</span></a></li>
+          <li><a href="content.html">Conteúdo <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Princípios</div>
+        <h1 class="h-display hero__title">Princípios</h1>
+        <p class="lead">Cinco princípios que guiam todas as decisões de design na PCDIGA — do botão ao checkout. Não são regras técnicas. São a forma como pensamos antes de desenhar qualquer coisa.</p>
+        <div class="callout">
+          <strong>Como usar</strong>
+          Sempre que estiveres com uma decisão difícil — qual variante, quantos campos, que copy — volta aqui. Os princípios não dão a resposta exata, mas eliminam as opções erradas.
+        </div>
+      </section>
+
+      <!-- ============== 1. CLAREZA ============== -->
+      <section id="clareza" class="section">
+        <div class="section__eyebrow">Princípio 1</div>
+        <h2 class="h-1">Clareza primeiro</h2>
+        <p class="lead">O utilizador percebe em segundos o que é, porque importa, e o que fazer a seguir. Se demora a perceber, falhámos.</p>
+
+        <h3 class="h-2">O que isto significa na prática</h3>
+        <p>Cada página tem um objetivo único. Cada secção contribui para esse objetivo. Cada elemento tem que justificar a sua presença visual.</p>
+        <p>Se um designer da PCDIGA olha para uma página nossa pela primeira vez e tem de perguntar "o que é isto?" — está mal.</p>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Headline que explica o que é a página em ≤7 palavras. Subtítulo que reforça em ≤15.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Headlines vagas, abstratas, ou que precisam de contexto extra para fazer sentido.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">CTA principal visível sem scroll, com texto que descreve a ação ("Configurar PC", "Adicionar ao carrinho").</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Saber mais" sem contexto, "Clica aqui", ou CTAs que escondem a verdadeira ação.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 2. MENOS ============== -->
+      <section id="menos" class="section">
+        <div class="section__eyebrow">Princípio 2</div>
+        <h2 class="h-1">Menos é melhor</h2>
+        <p class="lead">Cada elemento justifica o seu lugar. Reduzir fricção é mais valioso do que adicionar features. Se há dúvida, retira.</p>
+
+        <h3 class="h-2">O que isto significa na prática</h3>
+        <p>Configuradores complexos? Uma decisão por step. Forms longos? Apenas os campos essenciais. Páginas de produto? Foco no que decide a compra, não em tudo o que se sabe sobre o produto.</p>
+        <p>O caminho do "menos" é mais difícil. Adicionar é fácil — qualquer um adiciona. Remover requer perceber o que importa de verdade.</p>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Antes de adicionar um campo a um form, pergunta: "se este campo não existir, o utilizador consegue avançar?" Se sim, remove.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Adicionar todas as opções "para quem precisar". Quem precisa raramente compensa o ruído para os outros 95%.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mostrar 4-6 produtos em destaque por secção. Suficiente para escolher, sem paralisar.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">12+ produtos em carrosséis horizontais infinitos. Ninguém faz scroll até ao fim.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 3. HIERARQUIA ============== -->
+      <section id="hierarquia" class="section">
+        <div class="section__eyebrow">Princípio 3</div>
+        <h2 class="h-1">Hierarquia clara</h2>
+        <p class="lead">Tudo não pode ter o mesmo peso visual. O olho precisa de saber para onde ir. Se tudo grita, nada se ouve.</p>
+
+        <h3 class="h-2">O que isto significa na prática</h3>
+        <p>Em cada vista, identifica o que é mais importante e dá-lhe peso visual proporcional. O resto suporta — não compete.</p>
+        <p>Hierarquia faz-se com tamanho, cor, posição, densidade e espaço. Não precisa de ser óbvia para o designer — precisa de ser óbvia para quem está a usar.</p>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Um (1) CTA primário por vista. Tudo o resto é secundário ou ghost.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">3 botões laranja com o mesmo peso. O utilizador hesita, e quem hesita não converte.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Preço atual em destaque, preço anterior em secundário, % desconto em pill.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Preço, badge, stock, parcelas — todos com o mesmo tamanho e peso. Resultado: nenhum se destaca.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 4. CONSISTÊNCIA ============== -->
+      <section id="consistencia" class="section">
+        <div class="section__eyebrow">Princípio 4</div>
+        <h2 class="h-1">Consistência</h2>
+        <p class="lead">Mesmo padrão, mesma estrutura, em todas as páginas. O utilizador aprende uma vez, aplica em todo o lado. Esta é a razão de existir do design system.</p>
+
+        <h3 class="h-2">O que isto significa na prática</h3>
+        <p>Antes de criar uma variante nova, pergunta: "já existe um padrão para isto?" Se sim, usa. Se não tem como usar, melhora o padrão existente — não inventes paralelo.</p>
+        <p>Consistência ≠ uniformidade. Significa que diferenças visuais comunicam diferenças reais (estado, prioridade, função) — não acidentes de quem desenhou.</p>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Usar tokens (<code>--brand-primary</code>, <code>--space-4</code>) em vez de valores hardcoded. Se mudar, muda em todo o lado.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Para esta página fica melhor mais escuro" — esta exceção depois multiplica-se em 50 outras.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mesma posição para CTAs principais, mesmo padrão para preços, mesma forma de mostrar stock.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Reinventar o card de produto em cada listagem. O utilizador deixa de reconhecer o que é clicável.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== 5. OBJETIVO ============== -->
+      <section id="objetivo" class="section">
+        <div class="section__eyebrow">Princípio 5</div>
+        <h2 class="h-1">Servir o objetivo</h2>
+        <p class="lead">Bonito não chega. O design existe para guiar o utilizador a uma ação — comprar, configurar, decidir, comparar. Se o design é elogiado mas a conversão não cresce, falhámos.</p>
+
+        <h3 class="h-2">O que isto significa na prática</h3>
+        <p>Cada página tem um objetivo de negócio. Cada decisão de design pergunta: "isto aproxima ou afasta esse objetivo?" Decoração que não serve o objetivo é ruído.</p>
+        <p>Isto não significa que o design fica feio. Significa que beleza e função andam juntas — quando colidem, função ganha.</p>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Antes de cada decisão, formula: "qual o objetivo desta página? esta opção aproxima-me dele?"</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Animações longas, hovers complexos ou efeitos visuais que distraem do CTA.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Medir. Olhar para os dados. Iterar com base no que funciona, não no que parece bem em screenshot.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Validar design só por gosto interno. O cliente é quem decide se funciona — através do comportamento dele.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== APLICAR ============== -->
+      <section id="aplicar" class="section">
+        <div class="section__eyebrow">Aplicar</div>
+        <h2 class="h-1">Como aplicar os princípios</h2>
+        <p class="lead">Os princípios não são frases bonitas para por num poster. São perguntas para fazer antes, durante e depois de cada decisão.</p>
+
+        <h3 class="h-2">Antes de começar</h3>
+        <p>Antes de abrir o Figma ou o editor, responde:</p>
+        <ul style="color: var(--text-secondary); padding-left: 20px; line-height: 1.8;">
+          <li>Qual é o objetivo desta página/feature/componente?</li>
+          <li>Quem vai usar isto, em que contexto?</li>
+          <li>Qual é a ação principal que queremos que aconteça?</li>
+          <li>O que pode bloquear ou confundir essa ação?</li>
+        </ul>
+
+        <h3 class="h-2">Durante o design</h3>
+        <p>Em cada decisão, passa pelos 5 princípios:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Pergunta</th><th>Princípio</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Isto é claro à primeira vista?</td><td>1. Clareza</td></tr>
+              <tr><td>Posso simplificar ou retirar algo?</td><td>2. Menos</td></tr>
+              <tr><td>Está claro o que é mais importante?</td><td>3. Hierarquia</td></tr>
+              <tr><td>Estou a usar padrões e tokens existentes?</td><td>4. Consistência</td></tr>
+              <tr><td>Isto serve o objetivo da página?</td><td>5. Objetivo</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Antes de entregar</h3>
+        <p>Faz o teste dos 3 segundos: pede a alguém que não esteve envolvido para olhar para a página durante 3 segundos. Depois pergunta:</p>
+        <ul style="color: var(--text-secondary); padding-left: 20px; line-height: 1.8;">
+          <li>O que é esta página?</li>
+          <li>Qual é a coisa mais importante aqui?</li>
+          <li>O que é suposto eu fazer a seguir?</li>
+        </ul>
+        <p>Se a resposta a qualquer destas perguntas for hesitante, volta atrás. Reduz, simplifica, hierarquiza.</p>
+
+        <div class="callout" style="margin-top: 32px;">
+          <strong>Próximo passo</strong>
+          Com os princípios em mente, explora as <a href="foundations.html">Foundations</a> — os blocos atómicos (cores, tipografia, espaçamento) que aplicam os princípios na linguagem visual.
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#clareza">Clareza primeiro</a></li>
+        <li><a href="#menos">Menos é melhor</a></li>
+        <li><a href="#hierarquia">Hierarquia clara</a></li>
+        <li><a href="#consistencia">Consistência</a></li>
+        <li><a href="#objetivo">Servir o objetivo</a></li>
+        <li><a href="#aplicar">Como aplicar</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="index.html">Início</a> · <a href="foundations.html">Foundations</a></div>
+  </footer>
+
+</body>
+</html>

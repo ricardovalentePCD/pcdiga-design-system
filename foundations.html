@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundations · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html" class="is-active">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema light/dark" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Foundations</div>
+        <ul class="sidebar__list">
+          <li><a href="#overview" class="is-active">Overview</a></li>
+          <li><a href="#color">Color</a></li>
+          <li><a href="#typography">Typography</a></li>
+          <li><a href="#spacing">Spacing</a></li>
+          <li><a href="#layout">Grid & Breakpoints</a></li>
+          <li><a href="#radius">Border radius</a></li>
+          <li><a href="#elevation">Elevation</a></li>
+          <li><a href="#motion">Motion</a></li>
+          <li><a href="#iconography">Iconography</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Mais</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Componentes <span class="badge">em breve</span></a></li>
+          <li><a href="patterns.html">Padrões <span class="badge">em breve</span></a></li>
+          <li><a href="content.html">Conteúdo <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Foundations</div>
+        <h1 class="h-display hero__title">Foundations</h1>
+        <p class="lead">Os blocos atómicos do design da PCDIGA: cores, tipografia, espaçamento e tudo o que define a linguagem visual antes de chegar a componentes. Tokens oficiais sincronizados com o Figma.</p>
+        <div class="callout">
+          <strong>Light + Dark mode</strong>
+          A PCDIGA suporta os dois modes. Quase todos os tokens têm valores diferentes em <code>light</code> e <code>dark</code>. Usa o botão no topo direito para alternar — toda a documentação reage ao mode ativo.
+        </div>
+      </section>
+
+      <!-- ============== COLOR ============== -->
+      <section id="color" class="section">
+        <div class="section__eyebrow">Color</div>
+        <h2 class="h-1">Color</h2>
+        <p class="lead">A PCDIGA tem dois sistemas de marca: <strong style="color: var(--brand-orange)">PCDIGA</strong> (laranja, B2C) e <strong style="color: var(--brand-blue)">PCDIGA Empresarial</strong> (azul, B2B). Cada um com escala neutra completa 50–900. Tokens contextuais (stocks, badges, notificações) e neutros são partilhados.</p>
+
+        <!-- PCDIGA Brand Scale -->
+        <h3 class="h-2">PCDIGA — escala laranja</h3>
+        <p>Cor da marca PCDIGA (B2C). <code>500</code> é a primary, valores acima escurecem, abaixo clareiam.</p>
+        <div class="scale-row">
+          <div class="scale-row__step" style="background:#FFEDE9; color:#330F07;"><strong>50</strong><span>#FFEDE9</span></div>
+          <div class="scale-row__step" style="background:#FFDBD3; color:#330F07;"><strong>100</strong><span>#FFDBD3</span></div>
+          <div class="scale-row__step" style="background:#FFB8A7; color:#330F07;"><strong>200</strong><span>#FFB8A7</span></div>
+          <div class="scale-row__step" style="background:#FF947B; color:#330F07;"><strong>300</strong><span>#FF947B</span></div>
+          <div class="scale-row__step" style="background:#FF714F; color:#330F07;"><strong>400</strong><span>#FF714F</span></div>
+          <div class="scale-row__step" style="background:#FF4D23; color:#fff;"><strong>500</strong><span>#FF4D23</span></div>
+          <div class="scale-row__step" style="background:#CC3E1C; color:#fff;"><strong>600</strong><span>#CC3E1C</span></div>
+          <div class="scale-row__step" style="background:#A02E15; color:#fff;"><strong>700</strong><span>—</span></div>
+          <div class="scale-row__step" style="background:#661F0E; color:#fff;"><strong>800</strong><span>#661F0E</span></div>
+          <div class="scale-row__step" style="background:#330F07; color:#fff;"><strong>900</strong><span>#330F07</span></div>
+        </div>
+
+        <!-- Empresarial Brand Scale -->
+        <h3 class="h-2">PCDIGA Empresarial — escala azul</h3>
+        <p>Cor da marca PCDIGA Empresarial (B2B). <code>500</code> é a primary deste sistema.</p>
+        <div class="scale-row">
+          <div class="scale-row__step" style="background:#EAEFF5; color:#0A121E;"><strong>50</strong><span>#EAEFF5</span></div>
+          <div class="scale-row__step" style="background:#D6DEEA; color:#0A121E;"><strong>100</strong><span>#D6DEEA</span></div>
+          <div class="scale-row__step" style="background:#ACBDD6; color:#0A121E;"><strong>200</strong><span>#ACBDD6</span></div>
+          <div class="scale-row__step" style="background:#839CC1; color:#0A121E;"><strong>300</strong><span>#839CC1</span></div>
+          <div class="scale-row__step" style="background:#597BAD; color:#fff;"><strong>400</strong><span>#597BAD</span></div>
+          <div class="scale-row__step" style="background:#305A98; color:#fff;"><strong>500</strong><span>#305A98</span></div>
+          <div class="scale-row__step" style="background:#26487A; color:#fff;"><strong>600</strong><span>#26487A</span></div>
+          <div class="scale-row__step" style="background:#1D365B; color:#fff;"><strong>700</strong><span>#1D365B</span></div>
+          <div class="scale-row__step" style="background:#13243D; color:#fff;"><strong>800</strong><span>#13243D</span></div>
+          <div class="scale-row__step" style="background:#0A121E; color:#fff;"><strong>900</strong><span>#0A121E</span></div>
+        </div>
+
+        <!-- Greys -->
+        <h3 class="h-2">Greys</h3>
+        <p>Escala neutra partilhada entre sistemas. Usar para texto secundário, backgrounds, separadores e estados disabled.</p>
+        <div class="scale-row">
+          <div class="scale-row__step" style="background:#FAFAFA; color:#000;"><strong>20</strong><span>#FAFAFA</span></div>
+          <div class="scale-row__step" style="background:#F6F6F6; color:#000;"><strong>50</strong><span>#F6F6F6</span></div>
+          <div class="scale-row__step" style="background:#F0F0F0; color:#000;"><strong>500</strong><span>#F0F0F0</span></div>
+          <div class="scale-row__step" style="background:#E2E2E2; color:#000;"><strong>550</strong><span>#E2E2E2</span></div>
+          <div class="scale-row__step" style="background:#C4C4C4; color:#000;"><strong>600</strong><span>#C4C4C4</span></div>
+          <div class="scale-row__step" style="background:#8D929B; color:#fff;"><strong>700</strong><span>#8D929B</span></div>
+          <div class="scale-row__step" style="background:#7E7E7E; color:#fff;"><strong>800</strong><span>#7E7E7E</span></div>
+          <div class="scale-row__step" style="background:#575959; color:#fff;"><strong>900</strong><span>#575959</span></div>
+        </div>
+
+        <!-- Primary buttons -->
+        <h3 class="h-2">Primary buttons</h3>
+        <p>O <code>--brand-orange</code> e <code>--brand-blue</code> mudam consoante o mode ativo (laranja PCDIGA suaviza-se em dark, azul Empresarial clareia).</p>
+        <div class="swatch-grid">
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#1C5A9D;"></span>
+              <span data-label="DARK" style="background:#5199E7;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Primary Blue</div>
+              <span class="swatch__token">--brand-blue</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#1C5A9D</span><small>L</small><span class="swatch__hex">#5199E7</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span data-label="LIGHT" style="background:#FF4D23;"></span>
+              <span data-label="DARK" style="background:#FF7352;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Primary Orange</div>
+              <span class="swatch__token">--brand-orange</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#FF4D23</span><small>L</small><span class="swatch__hex">#FF7352</span><small>D</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hover -->
+        <h3 class="h-2">Hover</h3>
+        <p>Estado hover dos botões primários. Diferente em light e dark — em dark o orange clareia ligeiramente, em light escurece.</p>
+        <div class="swatch-grid">
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#144171;"></span>
+              <span data-label="DARK" style="background:#3069A6;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Hover Blue</div>
+              <span class="swatch__token">--brand-blue-hover</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#144171</span><small>L</small><span class="swatch__hex">#3069A6</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span data-label="LIGHT" style="background:#CC3E1C;"></span>
+              <span data-label="DARK" style="background:#FF623D;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Hover Orange</div>
+              <span class="swatch__token">--brand-orange-hover</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#CC3E1C</span><small>L</small><span class="swatch__hex">#FF623D</span><small>D</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Surfaces -->
+        <h3 class="h-2">Surfaces (backgrounds)</h3>
+        <p>Hierarquia de fundos. Light usa branco/cinzas claros, dark usa pretos com elevação subtil.</p>
+        <div class="swatch-grid">
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#F6F6F6;"></span>
+              <span data-label="DARK" style="background:#161616;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Background</div>
+              <span class="swatch__token">--bg-base</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#F6F6F6</span><small>L</small><span class="swatch__hex">#161616</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#FFFFFF; border-right: 1px solid var(--ui-card-border);"></span>
+              <span data-label="DARK" style="background:#282828;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Cards e blocos</div>
+              <span class="swatch__token">--bg-card</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#FFFFFF</span><small>L</small><span class="swatch__hex">#282828</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#FBFBFB;"></span>
+              <span data-label="DARK" style="background:#1E1E1E;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Blocos homepage</div>
+              <span class="swatch__token">--bg-homepage</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#FBFBFB</span><small>L</small><span class="swatch__hex">#1E1E1E</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#F6F6F6;"></span>
+              <span data-label="DARK" style="background:#3E3E3E;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Barra de pesquisa</div>
+              <span class="swatch__token">--bg-search</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#F6F6F6</span><small>L</small><span class="swatch__hex">#3E3E3E</span><small>D</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <h3 class="h-2">Text</h3>
+        <p>Cores de texto invertidas entre modes. <code>--text-primary</code> é sempre o texto de leitura, <code>--text-inverse</code> o oposto (para usar sobre fundos contrastantes).</p>
+        <div class="swatch-grid">
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#000000;"></span>
+              <span data-label="DARK" style="background:#FFFFFF;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Texto principal</div>
+              <span class="swatch__token">--text-primary</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#000000</span><small>L</small><span class="swatch__hex">#FFFFFF</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#FFFFFF; border-right: 1px solid var(--ui-card-border);"></span>
+              <span data-label="DARK" style="background:#000000;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Texto inverso</div>
+              <span class="swatch__token">--text-inverse</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#FFFFFF</span><small>L</small><span class="swatch__hex">#000000</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#747272;"></span>
+              <span data-label="DARK" style="background:#393737;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Cinza tabela</div>
+              <span class="swatch__token">--text-table</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#747272</span><small>L</small><span class="swatch__hex">#393737</span><small>D</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stocks -->
+        <h3 class="h-2">Stock states</h3>
+        <p>Cores específicas para comunicar disponibilidade do produto. Ajustam-se em dark para manter contraste sem ser agressivas.</p>
+        <div class="swatch-grid">
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span data-label="LIGHT" style="background:#4E9645;"></span>
+              <span data-label="DARK" style="background:#70D99E;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Disponível</div>
+              <span class="swatch__token">--stock-available</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#4E9645</span><small>L</small><span class="swatch__hex">#70D99E</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span data-label="LIGHT" style="background:#D01DBE;"></span>
+              <span data-label="DARK" style="background:#D01DBE;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Pré-venda</div>
+              <span class="swatch__token">--stock-presale</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#D01DBE</span><small>igual</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span data-label="LIGHT" style="background:#FF0000;"></span>
+              <span data-label="DARK" style="background:#FF6B6B;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Esgotado</div>
+              <span class="swatch__token">--stock-out</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#FF0000</span><small>L</small><span class="swatch__hex">#FF6B6B</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span data-label="LIGHT" style="background:#005CA2;"></span>
+              <span data-label="DARK" style="background:#4182C8;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Por encomenda</div>
+              <span class="swatch__token">--stock-order</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#005CA2</span><small>L</small><span class="swatch__hex">#4182C8</span><small>D</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <h3 class="h-2">Notifications</h3>
+        <p>Backgrounds suaves para mensagens de sistema (sucesso, erro). Texto contrastante por cima.</p>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch__color" style="background:#D8EEDD;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Sucesso (bg)</div>
+              <span class="swatch__token">--notif-green-bg</span>
+              <span class="swatch__hex">#D8EEDD</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background:#FFD9D1;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Erro/aviso (bg)</div>
+              <span class="swatch__token">--notif-pink-bg</span>
+              <span class="swatch__hex">#FFD9D1</span>
+            </div>
+          </div>
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span data-label="LIGHT" style="background:#F80101;"></span>
+              <span data-label="DARK" style="background:#FF6B6B;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Vermelho aviso</div>
+              <span class="swatch__token">--warning</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#F80101</span><small>L</small><span class="swatch__hex">#FF6B6B</span><small>D</small></div>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background:#52A35A;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Verde notificação</div>
+              <span class="swatch__token">--notif-green-text</span>
+              <span class="swatch__hex">#52A35A</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges -->
+        <h3 class="h-2">Badges</h3>
+        <p>Sistema de duas cores: cor de fundo do badge + cor do texto dentro do badge. Combinações pré-definidas garantem contraste.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Uso</th><th>Background</th><th>Texto</th><th>Preview</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Oferta / disponível</td>
+                <td><code>#E2EFE3</code></td>
+                <td><code>#11542D</code></td>
+                <td><span style="display:inline-block; padding:4px 10px; border-radius:6px; background:#E2EFE3; color:#11542D; font-weight:600; font-size:12px;">Disponível</span></td>
+              </tr>
+              <tr>
+                <td>Pré-venda</td>
+                <td><code>#EEA6E7</code></td>
+                <td><code>#8B017D</code></td>
+                <td><span style="display:inline-block; padding:4px 10px; border-radius:6px; background:#EEA6E7; color:#8B017D; font-weight:600; font-size:12px;">Pré-venda</span></td>
+              </tr>
+              <tr>
+                <td>Cancelada / fraude</td>
+                <td><code>#EB5757</code></td>
+                <td><code>#933535</code></td>
+                <td><span style="display:inline-block; padding:4px 10px; border-radius:6px; background:#EB5757; color:#933535; font-weight:600; font-size:12px;">Cancelada</span></td>
+              </tr>
+              <tr>
+                <td>Novidade / pendente</td>
+                <td><code>#CEDDF2</code></td>
+                <td><code>#305A98</code></td>
+                <td><span style="display:inline-block; padding:4px 10px; border-radius:6px; background:#CEDDF2; color:#305A98; font-weight:600; font-size:12px;">Novidade</span></td>
+              </tr>
+              <tr>
+                <td>Campanhas / promoções</td>
+                <td><code>#FFEFCF</code></td>
+                <td><code>#4C483E</code></td>
+                <td><span style="display:inline-block; padding:4px 10px; border-radius:6px; background:#FFEFCF; color:#4C483E; font-weight:600; font-size:12px;">Promo</span></td>
+              </tr>
+              <tr>
+                <td>Desconto preço</td>
+                <td><code>#F5CC45</code></td>
+                <td><code>#000000</code></td>
+                <td><span style="display:inline-block; padding:4px 10px; border-radius:6px; background:#F5CC45; color:#000; font-weight:600; font-size:12px;">-30%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Links -->
+        <h3 class="h-2">Links</h3>
+        <p>Comportamento de links varia por sistema. PCDIGA usa laranja, Empresarial usa azul, Visited é roxo (universal).</p>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch__color" style="background:#305A98;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Link normal</div>
+              <span class="swatch__token">--link</span>
+              <span class="swatch__hex">#305A98</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background:#26487A;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Hover Empresarial</div>
+              <span class="swatch__token">--link-hover-empresarial</span>
+              <span class="swatch__hex">#26487A</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background:#CC3E1C;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Hover PCDIGA</div>
+              <span class="swatch__token">--link-hover-pcdiga</span>
+              <span class="swatch__hex">#CC3E1C</span>
+            </div>
+          </div>
+          <div class="swatch">
+            <div class="swatch__color" style="background:#9A06A4;"></div>
+            <div class="swatch__info">
+              <div class="swatch__name">Visited</div>
+              <span class="swatch__token">--link-visited</span>
+              <span class="swatch__hex">#9A06A4</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logo -->
+        <h3 class="h-2">Logo</h3>
+        <p>O logo PCDIGA muda de cor entre modes — azul Empresarial em light, branco em dark.</p>
+        <div class="swatch-grid">
+          <div class="swatch swatch--dual">
+            <div class="swatch__color">
+              <span class="is-light" data-label="LIGHT" style="background:#1C5A9D;"></span>
+              <span data-label="DARK" style="background:#FFFFFF;"></span>
+            </div>
+            <div class="swatch__info">
+              <div class="swatch__name">Logo</div>
+              <span class="swatch__token">--logo</span>
+              <div class="swatch__hex--dual"><span class="swatch__hex">#1C5A9D</span><small>L</small><span class="swatch__hex">#FFFFFF</span><small>D</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Usage -->
+        <h3 class="h-2">Usage</h3>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Usar <code>var(--brand-orange)</code> em vez de <code>#FF4D23</code>. Tokens funcionam automaticamente em light e dark.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Hardcodar valores hex. Vais ter que duplicar tudo em dark mode e a manutenção fica impossível.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Usar <code>--stock-available</code> apenas para "Em stock" — verde tem semântica clara para o utilizador.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Verde para descontos ou preços. Cor de desconto é amarelo (<code>#F5CC45</code>) ou laranja brand.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Um sistema por contexto: PCDIGA (laranja) em pcdiga.com, Empresarial (azul) em pcdiga.com/empresarial.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Misturar laranja e azul como cores principais na mesma página. O utilizador deixa de saber em que sistema está.</p>
+          </div>
+        </div>
+
+        <h3 class="h-2">Acessibilidade</h3>
+        <div class="callout callout--warning">
+          <strong>Contraste WCAG AA</strong>
+          Todos os tokens de marca foram testados para AA. Stock <code>#FF0000</code> em light tem rácio limítrofe — para textos pequenos preferir o tom dark <code>#FF6B6B</code> com fundo branco também passa AA.
+        </div>
+      </section>
+
+      <!-- ============== TYPOGRAPHY ============== -->
+      <section id="typography" class="section">
+        <div class="section__eyebrow">Typography</div>
+        <h2 class="h-1">Typography</h2>
+        <p class="lead">A PCDIGA usa <strong style="color: var(--text-primary)">Inter</strong> — sans-serif moderna, neutra e otimizada para ecrãs. Toda a UI usa esta família, em vários pesos.</p>
+
+        <h3 class="h-2">Type scale</h3>
+
+        <div class="specimen">
+          <div class="specimen__meta"><strong>Display</strong>56px / 1.05<br/>weight 800</div>
+          <div class="specimen__sample" style="font-size: 56px; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;">Configurar PC</div>
+        </div>
+        <div class="specimen">
+          <div class="specimen__meta"><strong>H1</strong>36px / 1.15<br/>weight 700</div>
+          <div class="specimen__sample" style="font-size: 36px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;">Smartphones em destaque</div>
+        </div>
+        <div class="specimen">
+          <div class="specimen__meta"><strong>H2</strong>28px / 1.2<br/>weight 700</div>
+          <div class="specimen__sample" style="font-size: 28px; font-weight: 700; line-height: 1.2;">Recomendados PCDIGA</div>
+        </div>
+        <div class="specimen">
+          <div class="specimen__meta"><strong>H3</strong>20px / 1.3<br/>weight 600</div>
+          <div class="specimen__sample" style="font-size: 20px; font-weight: 600; line-height: 1.3;">Especificações técnicas</div>
+        </div>
+        <div class="specimen">
+          <div class="specimen__meta"><strong>Body L</strong>18px / 1.6<br/>weight 400</div>
+          <div class="specimen__sample" style="font-size: 18px; font-weight: 400; line-height: 1.6;">Texto introdutório de páginas — descrições principais que precisam de respiro.</div>
+        </div>
+        <div class="specimen">
+          <div class="specimen__meta"><strong>Body</strong>16px / 1.6<br/>weight 400</div>
+          <div class="specimen__sample" style="font-size: 16px; font-weight: 400; line-height: 1.6;">Texto de leitura padrão. Toda a documentação e descrições longas usam este tamanho.</div>
+        </div>
+        <div class="specimen">
+          <div class="specimen__meta"><strong>Body S</strong>14px / 1.5<br/>weight 400</div>
+          <div class="specimen__sample" style="font-size: 14px; font-weight: 400; line-height: 1.5;">Texto secundário — descrições de cards, microcopy, labels longas.</div>
+        </div>
+        <div class="specimen">
+          <div class="specimen__meta"><strong>Caption</strong>12px / 1.4<br/>weight 500</div>
+          <div class="specimen__sample" style="font-size: 12px; font-weight: 500; line-height: 1.4; color: var(--ui-text-muted);">Metadata, timestamps, notas de rodapé, badges.</div>
+        </div>
+
+        <h3 class="h-2">Pesos</h3>
+        <div class="callout">
+          <strong>Regra prática</strong>
+          Não misturar mais de 3 pesos na mesma página. Pesos típicos: 400 (body), 600 (CTAs/h3), 700 (h1/h2). 800 reserva-se a hero/display.
+        </div>
+
+        <h3 class="h-2">Regras práticas</h3>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Line-height generoso (1.5–1.6) em texto corrido para legibilidade.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Letter-spacing negativo em texto pequeno. Só em títulos grandes (h1, display).</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Limitar largura de parágrafos a ~60–70 caracteres.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">All-caps em parágrafos. Reservar para badges, labels muito curtos ou eyebrows.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== SPACING ============== -->
+      <section id="spacing" class="section">
+        <div class="section__eyebrow">Spacing</div>
+        <h2 class="h-1">Spacing</h2>
+        <p class="lead">Escala de espaçamento baseada em <strong style="color: var(--text-primary)">4px</strong>. Todos os paddings, margins e gaps usam estes valores — nunca valores arbitrários.</p>
+
+        <div class="scale">
+          <div class="scale__item"><span class="scale__token">--space-1</span><span class="scale__value">4px</span><div class="scale__visual" style="width: 4px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-2</span><span class="scale__value">8px</span><div class="scale__visual" style="width: 8px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-3</span><span class="scale__value">12px</span><div class="scale__visual" style="width: 12px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-4</span><span class="scale__value">16px</span><div class="scale__visual" style="width: 16px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-5</span><span class="scale__value">20px</span><div class="scale__visual" style="width: 20px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-6</span><span class="scale__value">24px</span><div class="scale__visual" style="width: 24px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-8</span><span class="scale__value">32px</span><div class="scale__visual" style="width: 32px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-10</span><span class="scale__value">40px</span><div class="scale__visual" style="width: 40px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-12</span><span class="scale__value">48px</span><div class="scale__visual" style="width: 48px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-16</span><span class="scale__value">64px</span><div class="scale__visual" style="width: 64px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-20</span><span class="scale__value">80px</span><div class="scale__visual" style="width: 80px;"></div></div>
+          <div class="scale__item"><span class="scale__token">--space-24</span><span class="scale__value">96px</span><div class="scale__visual" style="width: 96px;"></div></div>
+        </div>
+
+        <h3 class="h-2">Aplicação típica</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Contexto</th><th>Token</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Padding interno em badges</td><td><code>--space-1</code></td><td>4px</td></tr>
+              <tr><td>Gap entre ícone e texto</td><td><code>--space-2</code></td><td>8px</td></tr>
+              <tr><td>Gap entre items de lista</td><td><code>--space-3</code></td><td>12px</td></tr>
+              <tr><td>Padding interno de cards</td><td><code>--space-5</code> a <code>--space-6</code></td><td>20–24px</td></tr>
+              <tr><td>Gap entre cards numa grid</td><td><code>--space-4</code> a <code>--space-6</code></td><td>16–24px</td></tr>
+              <tr><td>Margin entre secções</td><td><code>--space-12</code> a <code>--space-16</code></td><td>48–64px</td></tr>
+              <tr><td>Padding vertical de hero</td><td><code>--space-16</code> a <code>--space-24</code></td><td>64–96px</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============== LAYOUT ============== -->
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Grid & Breakpoints</h2>
+        <p class="lead">Sistema de layout responsivo com 4 breakpoints principais. Mobile-first.</p>
+
+        <h3 class="h-2">Breakpoints</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Token</th><th>Range</th><th>Tipo de device</th><th>Container max</th></tr></thead>
+            <tbody>
+              <tr><td><code>sm</code></td><td>0 – 639px</td><td>Mobile</td><td>100% – 24px</td></tr>
+              <tr><td><code>md</code></td><td>640 – 1023px</td><td>Tablet</td><td>720px</td></tr>
+              <tr><td><code>lg</code></td><td>1024 – 1279px</td><td>Laptop</td><td>1024px</td></tr>
+              <tr><td><code>xl</code></td><td>1280px+</td><td>Desktop</td><td>1280px</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Grid</h3>
+        <p>12 colunas em desktop, 8 em tablet, 4 em mobile. Gutter sempre <code>--space-6</code> (24px).</p>
+      </section>
+
+      <!-- ============== RADIUS ============== -->
+      <section id="radius" class="section">
+        <div class="section__eyebrow">Border radius</div>
+        <h2 class="h-1">Border radius</h2>
+        <p class="lead">Raios suaves para uma estética moderna sem ser arredondada demais.</p>
+
+        <div class="card-grid">
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-orange); border-radius: 4px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-sm</div>
+            <p class="card__desc">4px · Inputs, badges, tags</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-orange); border-radius: 8px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-md</div>
+            <p class="card__desc">8px · Botões, cards pequenos</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-orange); border-radius: 12px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-lg</div>
+            <p class="card__desc">12px · Cards de produto, modals</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-orange); border-radius: 16px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-xl</div>
+            <p class="card__desc">16px · Hero cards, banners</p>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div style="height: 60px; background: var(--brand-orange); border-radius: 999px; margin-bottom: 16px;"></div>
+            <div class="card__title">--radius-pill</div>
+            <p class="card__desc">Full · Pills, status badges</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== ELEVATION ============== -->
+      <section id="elevation" class="section">
+        <div class="section__eyebrow">Elevation</div>
+        <h2 class="h-1">Elevation</h2>
+        <p class="lead">Sombras adaptam-se ao mode. Em dark, hierarquia faz-se mais por surface tokens do que por sombras pesadas.</p>
+
+        <div class="card-grid">
+          <div style="background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: 12px; padding: 32px; box-shadow: var(--shadow-sm);">
+            <div style="font-weight: 600; margin-bottom: 8px;">--shadow-sm</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--ui-text-muted);">Cards estáticos, dividers</div>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: 12px; padding: 32px; box-shadow: var(--shadow-md);">
+            <div style="font-weight: 600; margin-bottom: 8px;">--shadow-md</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--ui-text-muted);">Dropdowns, popovers</div>
+          </div>
+          <div style="background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: 12px; padding: 32px; box-shadow: var(--shadow-lg);">
+            <div style="font-weight: 600; margin-bottom: 8px;">--shadow-lg</div>
+            <div style="font-family: var(--font-mono); font-size: 12px; color: var(--ui-text-muted);">Modals, dialogs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== MOTION ============== -->
+      <section id="motion" class="section">
+        <div class="section__eyebrow">Motion</div>
+        <h2 class="h-1">Motion</h2>
+        <p class="lead">Movimento serve a UX — comunica feedback, hierarquia e continuidade. <strong style="color: var(--text-primary)">Nunca decoração</strong>.</p>
+
+        <h3 class="h-2">Durações</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Token</th><th>Valor</th><th>Quando usar</th></tr></thead>
+            <tbody>
+              <tr><td><code>--duration-fast</code></td><td>120ms</td><td>Hover, focus, micro-interações</td></tr>
+              <tr><td><code>--duration-base</code></td><td>200ms</td><td>Toggle, dropdowns, accordions</td></tr>
+              <tr><td><code>--duration-slow</code></td><td>320ms</td><td>Modals, page transitions</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Princípios</h3>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Animar opacidade e transform (rápido, performático).</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Animar width/height/top/left (causa reflow).</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Respeitar <code>prefers-reduced-motion</code>.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Animações longas em ações frequentes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== ICONOGRAPHY ============== -->
+      <section id="iconography" class="section">
+        <div class="section__eyebrow">Iconography</div>
+        <h2 class="h-1">Iconography</h2>
+        <p class="lead">Sistema de ícones consistente em estilo, peso e tamanho. <strong style="color: var(--text-primary)">Recomendação:</strong> Lucide Icons (open-source, completo, neutro).</p>
+
+        <div class="callout callout--warning">
+          <strong>Em desenvolvimento</strong>
+          A biblioteca de ícones final será definida na Fase 2 com a equipa de design.
+        </div>
+
+        <h3 class="h-2">Tamanhos padrão</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Token</th><th>Tamanho</th><th>Contexto</th></tr></thead>
+            <tbody>
+              <tr><td><code>icon-sm</code></td><td>16px</td><td>Inline com texto, dentro de inputs</td></tr>
+              <tr><td><code>icon-md</code></td><td>20px</td><td>Botões, ícones de navegação</td></tr>
+              <tr><td><code>icon-lg</code></td><td>24px</td><td>Headers, destaques</td></tr>
+              <tr><td><code>icon-xl</code></td><td>32px</td><td>Hero, empty states</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#color">Color</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#spacing">Spacing</a></li>
+        <li><a href="#layout">Grid & Breakpoints</a></li>
+        <li><a href="#radius">Border radius</a></li>
+        <li><a href="#elevation">Elevation</a></li>
+        <li><a href="#motion">Motion</a></li>
+        <li><a href="#iconography">Iconography</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="index.html">Início</a> · <a href="components.html">Componentes</a></div>
+  </footer>
+
+</body>
+</html>
