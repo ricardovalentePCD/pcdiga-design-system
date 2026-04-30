@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Price · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html">Input</a></li>
+          <li><a href="price.html" class="is-active">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html">Product Card</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Componente</div>
+        <h1 class="h-display hero__title">Price</h1>
+        <p class="lead">Apresentação consistente de preços em PCDIGA. Inclui preço atual, preço anterior (se em desconto) e badge de % de poupança.</p>
+        <div class="example">
+          <span class="price price--lg price--sale">
+            <span class="price__current">399,99 €</span>
+            <span class="price__original">499,99 €</span>
+            <span class="price__discount">-20%</span>
+          </span>
+        </div>
+      </section>
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomy</div>
+        <h2 class="h-1">Anatomia</h2>
+        <p>Um price tem entre 1 e 4 partes consoante o estado.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Parte</th><th>Quando</th><th>Notas</th></tr></thead>
+            <tbody>
+              <tr><td><code>price__current</code></td><td>Sempre</td><td>O preço a pagar. Weight 900 (Lato Black).</td></tr>
+              <tr><td><code>price__original</code></td><td>Em desconto</td><td>Preço anterior, com line-through. Cor muted.</td></tr>
+              <tr><td><code>price__discount</code></td><td>Em desconto</td><td>Sticker amarelo com % de poupança.</td></tr>
+              <tr><td><code>price__suffix</code></td><td>Opcional</td><td>"em 12x sem juros", "c/IVA", etc.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="variants" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Variantes</h2>
+
+        <h3 class="h-2">Preço regular</h3>
+        <p>Apenas o preço atual. Sem desconto.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <span class="price"><span class="price__current">29,99 €</span></span>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price"&gt;
+  &lt;span class="price__current"&gt;29,99 €&lt;/span&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Preço em desconto (sale)</h3>
+        <p>Preço atual + preço anterior + badge de poupança. <code>price--sale</code> destaca o preço atual a laranja.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <span class="price price--sale">
+              <span class="price__current">399,99 €</span>
+              <s class="price__original">499,99 €</s>
+              <span class="price__discount">-20%</span>
+            </span>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price price--sale"&gt;
+  &lt;span class="price__current"&gt;399,99 €&lt;/span&gt;
+  &lt;s class="price__original"&gt;499,99 €&lt;/s&gt;
+  &lt;span class="price__discount"&gt;-20%&lt;/span&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Com suffix (parcelas, taxa, …)</h3>
+        <p>Informação extra abaixo do preço principal. Mantém a leitura limpa.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <span class="price">
+              <span class="price__current">1 199,00 €</span>
+              <span class="price__suffix">ou 12x 99,92 € sem juros</span>
+            </span>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price"&gt;
+  &lt;span class="price__current"&gt;1 199,00 €&lt;/span&gt;
+  &lt;span class="price__suffix"&gt;ou 12x 99,92 € sem juros&lt;/span&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="sizes" class="section">
+        <div class="section__eyebrow">Sizes</div>
+        <h2 class="h-1">Sizes</h2>
+        <p>Quatro tamanhos. Default <code>md</code> em product cards. <code>xl</code> só em PDP onde o preço é o foco principal.</p>
+
+        <h3 class="h-2">XL — PDP hero</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <span class="price price--xl price--sale">
+              <span class="price__current">1 299,00 €</span>
+              <s class="price__original">1 599,00 €</s>
+              <span class="price__discount">-19%</span>
+            </span>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price price--xl price--sale"&gt;
+  &lt;span class="price__current"&gt;1 299,00 €&lt;/span&gt;
+  &lt;s class="price__original"&gt;1 599,00 €&lt;/s&gt;
+  &lt;span class="price__discount"&gt;-19%&lt;/span&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">LG — destaque</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <span class="price price--lg price--sale">
+              <span class="price__current">399,99 €</span>
+              <s class="price__original">499,99 €</s>
+            </span>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price price--lg price--sale"&gt;
+  &lt;span class="price__current"&gt;399,99 €&lt;/span&gt;
+  &lt;s class="price__original"&gt;499,99 €&lt;/s&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">MD — default (cards, listings)</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <span class="price price--sale">
+              <span class="price__current">29,99 €</span>
+              <s class="price__original">39,99 €</s>
+            </span>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price price--sale"&gt;
+  &lt;span class="price__current"&gt;29,99 €&lt;/span&gt;
+  &lt;s class="price__original"&gt;39,99 €&lt;/s&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">SM — bundles, related</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <span class="price price--sm price--sale">
+              <span class="price__current">9,99 €</span>
+              <s class="price__original">14,99 €</s>
+            </span>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price price--sm price--sale"&gt;
+  &lt;span class="price__current"&gt;9,99 €&lt;/span&gt;
+  &lt;s class="price__original"&gt;14,99 €&lt;/s&gt;
+&lt;/span&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Token</th><th>Current size</th><th>Quando usar</th></tr></thead>
+            <tbody>
+              <tr><td><code>price--sm</code></td><td>1.125rem</td><td>Bundles, produtos relacionados, listings densas</td></tr>
+              <tr><td><code>price</code></td><td>1.5rem</td><td>Default — product cards e listings normais</td></tr>
+              <tr><td><code>price--lg</code></td><td>2rem</td><td>Destaques, hero de campanhas</td></tr>
+              <tr><td><code>price--xl</code></td><td>2.5rem</td><td>Apenas em PDP — preço principal do produto</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="formatting" class="section">
+        <div class="section__eyebrow">Formatação</div>
+        <h2 class="h-1">Regras de formatação (PT)</h2>
+        <p>A PCDIGA é portuguesa — formato português obrigatório.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Regra</th><th>Certo</th><th>Errado</th></tr></thead>
+            <tbody>
+              <tr><td>Separador decimal</td><td><code>29,99</code></td><td><code>29.99</code></td></tr>
+              <tr><td>Separador de milhares</td><td><code>1 299,00</code> (espaço)</td><td><code>1,299.00</code> ou <code>1.299,00</code></td></tr>
+              <tr><td>Símbolo</td><td><code>29,99 €</code> (espaço antes)</td><td><code>€29.99</code></td></tr>
+              <tr><td>Decimais</td><td>Sempre 2 (<code>30,00</code>)</td><td><code>30</code> ou <code>30.0</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <strong>JS helper</strong>
+          Em código, usar <code>new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR' }).format(value)</code> — garante formato correto automaticamente.
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mostrar a poupança em € ou %, não ambas. Usuário processa uma — duas confundem.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Poupa 100€ -20% antes 499,99€" — overload de informação na mesma linha.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Em PDP usar <code>price--xl</code>. O preço é a decisão principal.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Mesmo size de preço em listing e PDP. Hierarquia diferente, sizes diferentes.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mostrar parcelas em <code>price__suffix</code> apenas se relevante (acima de 100€).</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"em 12x de 0,83€ sem juros" para um produto de 9,99€. Nem o cliente pensa nisso.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Screen reader</strong></td><td>Marcar o preço anterior com <code>&lt;s&gt;</code> ou <code>aria-label="Preço anterior 499 euros 99 cêntimos"</code> para clarificar.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Cor</strong></td><td>O <code>price--sale</code> destaca a laranja, mas o sticker <code>-20%</code> reforça textualmente. Cor não é o único sinal.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Contraste</strong></td><td>Preço atual em <code>--text-primary</code> ou laranja PCDIGA — ambos passam AA em qualquer mode.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Tamanho mínimo</strong></td><td>14px em mobile (price--sm). Abaixo disso compromete leitura.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#variants">Variantes</a></li>
+        <li><a href="#sizes">Sizes</a></li>
+        <li><a href="#formatting">Formatação</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="input.html">← Input</a> · <a href="sticker.html">Sticker →</a></div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html" class="is-active">Input</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html">Product Card</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Badge <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Modal <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Tabs <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Dropdown <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Componente</div>
+        <h1 class="h-display hero__title">Input</h1>
+        <p class="lead">Campos de formulário onde o utilizador escreve. O coração de qualquer checkout, registo ou pesquisa. Bons inputs reduzem fricção, maus inputs perdem clientes.</p>
+        <div class="example">
+          <div class="input-field">
+            <label class="input-field__label" for="demo-input">Email</label>
+            <input id="demo-input" class="input" type="email" placeholder="nome@gmail.com" />
+            <span class="input-field__helper">Vai receber a confirmação de encomenda neste endereço.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Anatomia</h2>
+        <p>Um input completo tem 4 partes. Apenas o input é obrigatório — o resto adiciona contexto e clareza.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Parte</th><th>Obrigatório</th><th>Função</th></tr></thead>
+            <tbody>
+              <tr><td><code>input-field__label</code></td><td>Recomendado</td><td>Diz ao utilizador o que preencher. Sempre acima do campo.</td></tr>
+              <tr><td><code>input</code></td><td>Sim</td><td>O campo onde se escreve.</td></tr>
+              <tr><td><code>input-field__helper</code></td><td>Opcional</td><td>Texto de apoio: formato esperado, motivo do campo.</td></tr>
+              <tr><td><code>input-field__error</code></td><td>Em erro</td><td>Substitui o helper quando há validação falhada.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">States</div>
+        <h2 class="h-1">States</h2>
+        <p>Cada estado comunica algo diferente ao utilizador. Garantir que o feedback visual é imediato e claro.</p>
+
+        <h3 class="h-2">Default</h3>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Nome completo</label>
+              <input class="input" type="text" placeholder="O teu nome completo" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-field"&gt;
+  &lt;label class="input-field__label" for="name"&gt;Nome completo&lt;/label&gt;
+  &lt;input class="input" id="name" type="text"
+         placeholder="O teu nome completo" /&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Focus</h3>
+        <p>Borda laranja + outline subtil. Indica que o teclado está a apontar para este campo. Aplicado automaticamente no <code>:focus</code>.</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Email</label>
+              <input class="input" type="email" placeholder="nome@gmail.com" style="border-color: var(--brand-orange); box-shadow: 0 0 0 3px rgba(255, 77, 35, 0.15);" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>/* CSS — aplicado automaticamente */
+.input:focus {
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 0 3px rgba(255, 77, 35, 0.15);
+}</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Filled</h3>
+        <p>Com valor preenchido. Sem estado especial — o conteúdo fala por si.</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Email</label>
+              <input class="input" type="email" value="joao.silva@gmail.com" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-field"&gt;
+  &lt;label class="input-field__label" for="email"&gt;Email&lt;/label&gt;
+  &lt;input class="input" id="email" type="email"
+         value="joao.silva@gmail.com" /&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Error</h3>
+        <p>Borda vermelha + mensagem de erro específica. <strong style="color: var(--text-primary)">Nunca dizer apenas "Erro"</strong> — explicar o que está mal.</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Email</label>
+              <input class="input input--error" type="email" value="joao.silva.gmail.com" />
+              <span class="input-field__error">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Falta o símbolo @ no email.
+              </span>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-field"&gt;
+  &lt;label class="input-field__label" for="email"&gt;Email&lt;/label&gt;
+  &lt;input class="input input--error" id="email" type="email"
+         aria-invalid="true" aria-describedby="email-err" /&gt;
+  &lt;span class="input-field__error" id="email-err"&gt;
+    Falta o símbolo @ no email.
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Disabled</h3>
+        <p>Campo não editável. Cor mais clara, cursor not-allowed. Usar quando o campo é dependente de outro ainda não preenchido.</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Distrito</label>
+              <input class="input" type="text" placeholder="Selecciona o país primeiro" disabled />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-field"&gt;
+  &lt;label class="input-field__label" for="dist"&gt;Distrito&lt;/label&gt;
+  &lt;input class="input" id="dist" type="text"
+         placeholder="Selecciona o país primeiro" disabled /&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="sizes" class="section">
+        <div class="section__eyebrow">Sizes</div>
+        <h2 class="h-1">Sizes</h2>
+        <p>Três tamanhos. <code>md</code> é o default. Usar <code>sm</code> em filtros e tabelas, <code>lg</code> em hero forms (newsletter, pesquisa principal).</p>
+
+        <div class="cb">
+          <div class="cb__preview cb__preview--column" style="gap: 16px;">
+            <div class="input-field">
+              <label class="input-field__label">Small</label>
+              <input class="input input--sm" type="text" placeholder="Procurar produto…" />
+            </div>
+            <div class="input-field">
+              <label class="input-field__label">Medium (default)</label>
+              <input class="input" type="text" placeholder="Procurar produto…" />
+            </div>
+            <div class="input-field">
+              <label class="input-field__label">Large</label>
+              <input class="input input--lg" type="text" placeholder="Procurar produto…" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;input class="input input--sm" type="text" /&gt;
+&lt;input class="input" type="text" /&gt;
+&lt;input class="input input--lg" type="text" /&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Token</th><th>Padding</th><th>Font size</th><th>Quando usar</th></tr></thead>
+            <tbody>
+              <tr><td><code>input--sm</code></td><td>6px 10px</td><td>13px</td><td>Filtros, tabelas, ações inline</td></tr>
+              <tr><td><code>input</code></td><td>10px 14px</td><td>14px</td><td>Default — formulários gerais</td></tr>
+              <tr><td><code>input--lg</code></td><td>14px 16px</td><td>16px</td><td>Newsletter hero, pesquisa principal</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="variants" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Variantes</h2>
+
+        <h3 class="h-2">Com helper text</h3>
+        <p>Texto auxiliar que explica o que preencher ou o formato esperado.</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">NIF</label>
+              <input class="input" type="text" placeholder="000000000" maxlength="9" />
+              <span class="input-field__helper">9 dígitos. Aparecerá na fatura.</span>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-field"&gt;
+  &lt;label class="input-field__label" for="nif"&gt;NIF&lt;/label&gt;
+  &lt;input class="input" id="nif" type="text" maxlength="9"
+         aria-describedby="nif-h" /&gt;
+  &lt;span class="input-field__helper" id="nif-h"&gt;
+    9 dígitos. Aparecerá na fatura.
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Required (obrigatório)</h3>
+        <p>Asterisco vermelho ao lado do label indica obrigatoriedade.</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Email <span class="required">*</span></label>
+              <input class="input" type="email" placeholder="nome@gmail.com" required />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-field"&gt;
+  &lt;label class="input-field__label" for="email"&gt;
+    Email &lt;span class="required"&gt;*&lt;/span&gt;
+  &lt;/label&gt;
+  &lt;input class="input" id="email" type="email"
+         required aria-required="true" /&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Com ícone (input-group)</h3>
+        <p>Usar <code>.input-group</code> para integrar ícones (pesquisa, password reveal, etc.).</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Pesquisar</label>
+              <div class="input-group">
+                <span class="input-group__icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <input class="input" type="search" placeholder="Procurar produto…" />
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-field"&gt;
+  &lt;label class="input-field__label" for="search"&gt;Pesquisar&lt;/label&gt;
+  &lt;div class="input-group"&gt;
+    &lt;span class="input-group__icon"&gt;
+      &lt;svg ...&gt;&lt;/svg&gt;
+    &lt;/span&gt;
+    &lt;input class="input" id="search" type="search" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Email</h3>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Email</label>
+              <input class="input" type="email" placeholder="nome@gmail.com" autocomplete="email" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;input class="input" type="email"
+       placeholder="nome@gmail.com"
+       autocomplete="email" /&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Telefone</h3>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Telefone</label>
+              <input class="input" type="tel" placeholder="912 345 678" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;input class="input" type="tel"
+       placeholder="912 345 678"
+       autocomplete="tel" /&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Password</h3>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Password</label>
+              <input class="input" type="password" placeholder="••••••••" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;input class="input" type="password"
+       placeholder="••••••••" /&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Number (quantidade)</h3>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-field">
+              <label class="input-field__label">Quantidade</label>
+              <input class="input" type="number" min="1" max="99" value="1" style="max-width: 100px;" />
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;input class="input" type="number"
+       min="1" max="99" value="1" /&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Apenas os campos essenciais. Cada campo extra reduz a probabilidade de o utilizador completar o form.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Para o caso de precisarmos um dia". Se não usas, não pedes.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Label sempre visível, acima do campo. Mantém-se quando o utilizador começa a escrever.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Placeholder a fazer de label. Desaparece ao escrever — utilizador esquece o que está a preencher.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mensagens de erro específicas: "Falta o @ no email", "Password tem que ter 8+ caracteres".</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Erro", "Inválido", "Tente novamente". O utilizador não sabe o que corrigir.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Validar quando faz sentido — em onBlur ou submit. Validar em tempo real ao escrever frustra.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Ficar vermelho ao 1º caracter. O utilizador ainda não acabou de escrever.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Label associado</strong></td><td>Sempre <code>&lt;label for="id"&gt;</code> ligado ao <code>id</code> do input. Crítico para screen readers.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Required</strong></td><td>Atributo <code>required</code> + asterisco visual + <code>aria-required="true"</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Erros</strong></td><td><code>aria-invalid="true"</code> + <code>aria-describedby</code> apontando ao id da mensagem.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Autocomplete</strong></td><td>Usar <code>autocomplete="email"</code>, <code>autocomplete="tel"</code>, etc. Browser preenche automaticamente.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Tipo correcto</strong></td><td><code>type="email"</code>, <code>type="tel"</code>, <code>type="number"</code>. Mobile adapta o teclado.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Tab order</strong></td><td>Ordem natural de cima para baixo. Não usar <code>tabindex</code> com números &gt; 0.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Touch target</strong></td><td>Mínimo 44px de altura no tap. <code>md</code> e <code>lg</code> garantem; <code>sm</code> só em desktop.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#states">States</a></li>
+        <li><a href="#sizes">Sizes</a></li>
+        <li><a href="#variants">Variantes</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="button.html">← Button</a> · <a href="price.html">Price →</a></div>
+  </footer>
+
+</body>
+</html>

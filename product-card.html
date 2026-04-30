@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Card · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html">Input</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html" class="is-active">Product Card</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Badge <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Modal <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Tabs <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Componente</div>
+        <h1 class="h-display hero__title">Product Card</h1>
+        <p class="lead">O cartão de produto é o componente mais usado da PCDIGA — está em listings, homepage, related, bundle. Especificação alinhada com Figma (node 9:57).</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card">
+              <div class="product-card__image">
+                <div class="product-card__stickers">
+                  <span class="product-card__sticker">NOVIDADE</span>
+                </div>
+                <div class="product-card__placeholder">imagem do produto</div>
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Auriculares Apple AirPods (2ª Geração) Wireless Brancos com Caixa de Carregamento</h3>
+                <p class="product-card__description">Os novos AirPods recriam a experiência auditiva dos auscultadores sem fios. Retire-os da caixa e estão prontos a usar.</p>
+                <div class="product-card__meta">
+                  <span class="product-card__sku">RZ03-03492400-R361</span>
+                  <span class="product-card__energy" aria-label="Classe energética F numa escala de A a G">
+                    <span class="product-card__energy-letter">F</span>
+                    <span class="product-card__energy-scale">A<br/>↕<br/>G</span>
+                  </span>
+                </div>
+                <div class="product-card__stock-block">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+                  <span class="product-card__stock-text">
+                    <span class="product-card__stock">Em stock</span>
+                    <span class="product-card__delivery">Entrega prevista a 17 JAN</span>
+                  </span>
+                </div>
+                <div class="product-card__price-row">
+                  <span class="product-card__price-current">9 999,00 €</span>
+                  <span class="product-card__price-old">
+                    9 999,00€
+                    <span class="product-card__pvpr">PVPR <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
+                  </span>
+                </div>
+                <div class="product-card__actions">
+                  <button class="product-card__action" type="button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                    Comparar
+                  </button>
+                  <button class="product-card__action" type="button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Favoritos
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;article class="product-card"&gt;
+  &lt;a href="/pdp/..." class="product-card__image"&gt;
+    &lt;img src="..." alt="Auriculares Apple AirPods 2ª Geração" /&gt;
+  &lt;/a&gt;
+  &lt;div class="product-card__stickers"&gt;
+    &lt;span class="product-card__sticker"&gt;NOVIDADE&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="product-card__body"&gt;
+    &lt;h3 class="product-card__title"&gt;
+      &lt;a href="/pdp/..."&gt;Auriculares Apple AirPods (2ª Geração)…&lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;p class="product-card__description"&gt;
+      Os novos AirPods recriam a experiência auditiva…
+    &lt;/p&gt;
+    &lt;div class="product-card__meta"&gt;
+      &lt;span class="product-card__sku"&gt;RZ03-03492400-R361&lt;/span&gt;
+      &lt;span class="product-card__energy"&gt;
+        &lt;span class="product-card__energy-letter"&gt;F&lt;/span&gt;
+        &lt;span class="product-card__energy-scale"&gt;A↕G&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="product-card__stock-block"&gt;
+      &lt;svg ...&gt;&lt;/svg&gt;
+      &lt;span class="product-card__stock-text"&gt;
+        &lt;span class="product-card__stock"&gt;Em stock&lt;/span&gt;
+        &lt;span class="product-card__delivery"&gt;Entrega prevista a 17 JAN&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="product-card__price-row"&gt;
+      &lt;span class="product-card__price-current"&gt;9 999,00 €&lt;/span&gt;
+      &lt;span class="product-card__price-old"&gt;
+        9 999,00€
+        &lt;span class="product-card__pvpr"&gt;PVPR&lt;/span&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="product-card__actions"&gt;
+      &lt;button class="product-card__action"&gt;Comparar&lt;/button&gt;
+      &lt;button class="product-card__action"&gt;Favoritos&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Anatomia</h2>
+        <p>Card de 302px de largura, padding 16px, gap 16px entre secções. Não tem botão "Adicionar ao carrinho" — em PCDIGA a compra inicia-se ao entrar na PDP.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Parte</th><th>Obrigatório</th><th>Spec</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color: var(--text-primary)">Imagem</strong></td><td>Sim</td><td>Aspect 270:250, fundo branco, radius 2px</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Stickers</strong></td><td>Opcional</td><td>Abaixo da imagem (não em cima). Brand-blue por defeito.</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Title</strong></td><td>Sim</td><td>Lato Bold 14px / line-height 18px. Máx 2 linhas com ellipsis.</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Descrição</strong></td><td>Recomendado</td><td>Lato Regular 12px / 16px. Máx 3 linhas com ellipsis.</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">SKU</strong></td><td>Recomendado</td><td>10px monospace, opacity 70%</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Etiqueta energética</strong></td><td>Quando aplicável</td><td>Para electrodomésticos / monitores. Cor laranja.</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Stock + entrega</strong></td><td>Sim</td><td>Ícone check + 14px Medium + linha de entrega 12px Medium</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Preço actual</strong></td><td>Sim</td><td>Lato Black 24px laranja brand</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Preço PVPR</strong></td><td>Em desconto</td><td>14px regular + badge "PVPR" 8px Bold</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Comparar / Favoritos</strong></td><td>Recomendado</td><td>Texto + ícone 20px, gap 16px entre eles</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">States</div>
+        <h2 class="h-1">States</h2>
+        <p>Hover sobre o card eleva ligeiramente. Comparar e Favoritos têm hover próprio (laranja).</p>
+
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card" style="transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+              <div class="product-card__image">
+                <div class="product-card__placeholder">imagem</div>
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Card em estado hover</h3>
+                <p class="product-card__description">Eleva-se 4px com sombra subtil.</p>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>/* CSS — aplicado automaticamente */
+.product-card:hover {
+  transform: translateY(-2px);
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="stock" class="section">
+        <div class="section__eyebrow">Stock states</div>
+        <h2 class="h-1">Estados de stock</h2>
+        <p>Quatro estados, alinhados com os tokens semânticos do <a href="foundations.html#color">Foundations → Color → Stocks</a>.</p>
+
+        <h3 class="h-2">Em stock</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card">
+              <div class="product-card__image"><div class="product-card__placeholder">imagem</div></div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Produto disponível</h3>
+                <div class="product-card__stock-block">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+                  <span class="product-card__stock-text">
+                    <span class="product-card__stock">Em stock</span>
+                    <span class="product-card__delivery">Entrega prevista a 17 JAN</span>
+                  </span>
+                </div>
+                <div class="product-card__price-row">
+                  <span class="product-card__price-current">99,99 €</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__stock-block"&gt;
+  &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;span class="product-card__stock-text"&gt;
+    &lt;span class="product-card__stock"&gt;Em stock&lt;/span&gt;
+    &lt;span class="product-card__delivery"&gt;Entrega prevista a 17 JAN&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Esgotado</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card">
+              <div class="product-card__image"><div class="product-card__placeholder">imagem</div></div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Produto esgotado</h3>
+                <div class="product-card__stock-block">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--stock-out);"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                  <span class="product-card__stock-text">
+                    <span class="product-card__stock product-card__stock--out">Esgotado</span>
+                  </span>
+                </div>
+                <div class="product-card__price-row">
+                  <span class="product-card__price-current">99,99 €</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__stock-block"&gt;
+  &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;span class="product-card__stock-text"&gt;
+    &lt;span class="product-card__stock product-card__stock--out"&gt;Esgotado&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Por encomenda</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card">
+              <div class="product-card__image"><div class="product-card__placeholder">imagem</div></div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Produto por encomenda</h3>
+                <div class="product-card__stock-block">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--stock-order);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span class="product-card__stock-text">
+                    <span class="product-card__stock product-card__stock--order">Por encomenda</span>
+                    <span class="product-card__delivery" style="color: var(--stock-order);">5–7 dias úteis</span>
+                  </span>
+                </div>
+                <div class="product-card__price-row">
+                  <span class="product-card__price-current">99,99 €</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__stock-block"&gt;
+  &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;span class="product-card__stock-text"&gt;
+    &lt;span class="product-card__stock product-card__stock--order"&gt;
+      Por encomenda
+    &lt;/span&gt;
+    &lt;span class="product-card__delivery"&gt;5–7 dias úteis&lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="variants" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Variantes de stickers</h2>
+        <p>Stickers aparecem como <strong style="color:var(--text-primary)">overlay no top-left da imagem</strong>. Default é <code>NOVIDADE</code> em azul brand. Suporta variantes para promo (laranja) e esgotado (vermelho).</p>
+
+        <h3 class="h-2">Stickers múltiplos</h3>
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card">
+              <div class="product-card__image">
+                <div class="product-card__stickers">
+                  <span class="product-card__sticker">NOVIDADE</span>
+                  <span class="product-card__sticker product-card__sticker--promo">-20%</span>
+                </div>
+                <div class="product-card__placeholder">imagem</div>
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Produto novo em promoção</h3>
+                <div class="product-card__price-row">
+                  <span class="product-card__price-current">79,99 €</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__image"&gt;
+  &lt;div class="product-card__stickers"&gt;
+    &lt;span class="product-card__sticker"&gt;NOVIDADE&lt;/span&gt;
+    &lt;span class="product-card__sticker product-card__sticker--promo"&gt;
+      -20%
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;img src="..." alt="..." /&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Patrocinado</h3>
+        <p>Quando o produto é patrocinado, badge subtil com border + ícone info dentro da imagem (bottom-left).</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card">
+              <div class="product-card__image">
+                <div class="product-card__placeholder">imagem</div>
+                <span class="product-card__sponsored">
+                  Patrocinado
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </span>
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Produto patrocinado</h3>
+                <div class="product-card__price-row">
+                  <span class="product-card__price-current">149,00 €</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__image"&gt;
+  &lt;img src="..." alt="..." /&gt;
+  &lt;span class="product-card__sponsored"&gt;
+    Patrocinado
+    &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="grid" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Em listing (grid)</h2>
+        <p>Cards em grid responsiva. Min 280px por card. Em desktop tipicamente 4 por linha, em laptop 3, em tablet 2, em mobile 1. Gap <code>--space-4</code> (16px). Usar a classe <code>.product-grid</code>.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="product-grid" style="max-width: 100%;">
+              <article class="product-card">
+                <div class="product-card__image">
+                  <div class="product-card__stickers"><span class="product-card__sticker">NOVIDADE</span></div>
+                  <div class="product-card__placeholder">imagem</div>
+                </div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">Smartphone Xiaomi 15T Pro 256GB Cinza</h3>
+                  <p class="product-card__description">Smartphone topo de gama com câmara Leica e processador Dimensity.</p>
+                  <div class="product-card__stock-block">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+                    <span class="product-card__stock-text"><span class="product-card__stock">Em stock</span></span>
+                  </div>
+                  <div class="product-card__price-row">
+                    <span class="product-card__price-current">399,99 €</span>
+                  </div>
+                </div>
+              </article>
+              <article class="product-card">
+                <div class="product-card__image"><div class="product-card__placeholder">imagem</div></div>
+                <div class="product-card__body">
+                  <h3 class="product-card__title">ASUS ROG Strix G16 RTX 4060 16GB</h3>
+                  <p class="product-card__description">Portátil gaming com placa RTX 4060 e ecrã QHD 165Hz.</p>
+                  <div class="product-card__stock-block">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+                    <span class="product-card__stock-text"><span class="product-card__stock">Em stock</span></span>
+                  </div>
+                  <div class="product-card__price-row">
+                    <span class="product-card__price-current">1 299,00 €</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-grid"&gt;
+  &lt;article class="product-card"&gt;...&lt;/article&gt;
+  &lt;article class="product-card"&gt;...&lt;/article&gt;
+  &lt;article class="product-card"&gt;...&lt;/article&gt;
+  &lt;article class="product-card"&gt;...&lt;/article&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Imagem em aspect-ratio 270:250 com fundo branco. Garante alinhamento perfeito em grids.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Imagens em fundos coloridos ou com ratios diferentes. Cards saltam visualmente.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Title em 2 linhas máximo, com ellipsis. Description em 3 linhas máximo.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Texto sem corte. Um card fica enorme, parte o ritmo da grid.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Stickers <strong style="color:var(--text-primary)">abaixo</strong> da imagem, max 2 lado a lado.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Stickers sobre a imagem ou múltiplos a tapar conteúdo.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mostrar entrega prevista quando há stock — informação valiosa para decisão de compra.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Em stock" sem qualquer contexto temporal. Stock=hoje? amanhã? Cliente fica na dúvida.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Card como link</strong></td><td>A imagem e título são <code>&lt;a href="..."&gt;</code> para PDP. Screen reader anuncia o produto uma vez.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Comparar / Favoritos</strong></td><td><code>&lt;button&gt;</code> com <code>aria-label="Adicionar X aos favoritos"</code> e <code>aria-pressed</code> quando ativo.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Imagem</strong></td><td><code>alt</code> descritivo: "Auriculares Apple AirPods (2ª Geração)". Não "imagem".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Stickers</strong></td><td>Lidos pelo screen reader. "NOVIDADE, Auriculares Apple…".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Stock</strong></td><td>Texto explícito + cor + ícone. Daltónicos identificam pelo texto e ícone.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">SKU</strong></td><td>Acessível para utilizadores que confirmam referência do produto.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Etiqueta energética</strong></td><td>Adicionar <code>aria-label="Classe energética F"</code>. O ícone gráfico não é descritivo sozinho.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#states">States</a></li>
+        <li><a href="#stock">Stock states</a></li>
+        <li><a href="#variants">Variantes</a></li>
+        <li><a href="#grid">Em listing</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="sticker.html">← Sticker</a> · <a href="components.html">Componentes</a></div>
+  </footer>
+
+</body>
+</html>
