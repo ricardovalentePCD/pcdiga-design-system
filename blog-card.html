@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Card · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html">Input</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html">Product Card</a></li>
+          <li><a href="blog-card.html" class="is-active">Blog Card</a></li>
+          <li><a href="badge.html">Badge</a></li>
+          <li><a href="tabs.html">Tabs</a></li>
+          <li><a href="toast.html">Toast</a></li>
+          <li><a href="modal.html">Modal</a></li>
+          <li><a href="quantity.html">Quantity stepper</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Componente</div>
+        <h1 class="h-display hero__title">Blog Card</h1>
+        <p class="lead">Card destacado para campanhas, ofertas e novidades. Combina título, descrição, CTA "Saber mais", imagem grande e datas de validade. Usado em blocos da homepage (3 cards lado a lado) e páginas de campanha.</p>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <a href="#" class="blog-card" style="max-width: 360px; margin: 0 auto;">
+              <div class="blog-card__top">
+                <div class="blog-card__heading">
+                  <h3 class="blog-card__title">Compra um portátil GeForce RTX e recebe o jogo Outriders</h3>
+                  <p class="blog-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id convallis ultrices commodo libero a massa erat amet.</p>
+                </div>
+                <span class="blog-card__cta">
+                  Saber mais
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </span>
+              </div>
+              <div class="blog-card__media">
+                <div class="blog-card__image">
+                  <div class="blog-card__placeholder">imagem da campanha</div>
+                </div>
+                <p class="blog-card__validity">
+                  <span class="light">Válido de</span> <strong>09-03-2021</strong> <span class="light">a</span> <strong>21-03-2021</strong><span class="light">, salvo ruptura antecipada de stock.</span>
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;a href="/campanha/..." class="blog-card"&gt;
+  &lt;div class="blog-card__top"&gt;
+    &lt;div class="blog-card__heading"&gt;
+      &lt;h3 class="blog-card__title"&gt;
+        Compra um portátil GeForce RTX e recebe o jogo Outriders
+      &lt;/h3&gt;
+      &lt;p class="blog-card__description"&gt;
+        Lorem ipsum dolor sit amet…
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="blog-card__cta"&gt;
+      Saber mais
+      &lt;svg ...&gt;&lt;/svg&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="blog-card__media"&gt;
+    &lt;div class="blog-card__image"&gt;
+      &lt;img src="..." alt="..." /&gt;
+    &lt;/div&gt;
+    &lt;p class="blog-card__validity"&gt;
+      &lt;span class="light"&gt;Válido de&lt;/span&gt;
+      &lt;strong&gt;09-03-2021&lt;/strong&gt;
+      &lt;span class="light"&gt;a&lt;/span&gt;
+      &lt;strong&gt;21-03-2021&lt;/strong&gt;
+      &lt;span class="light"&gt;, salvo ruptura antecipada de stock.&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Anatomia</h2>
+        <p>Card de campanha tem 6 partes obrigatórias e estrutura fixa para garantir alinhamento entre cards num bloco.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Parte</th><th>Spec</th><th>Notas</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Título</strong></td><td>Lato Bold 20px / 28px</td><td>Máx 2 linhas com ellipsis. Min-height 56px para alinhamento.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Descrição</strong></td><td>Lato Regular 14px / 20px</td><td>Máx 3 linhas com ellipsis. Min-height 60px.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">CTA "Saber mais"</strong></td><td>Lato Bold 16px laranja + seta 24px</td><td>Hover: gap aumenta levemente.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Imagem</strong></td><td>Height 257px, full width</td><td>object-fit: cover. Aspect-ratio livre.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Validade</strong></td><td>Lato Regular 14px / 20px</td><td>"Válido de X a Y, salvo ruptura antecipada de stock". Datas em Bold.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Container</strong></td><td>Padding 24px, gap 16px, radius 4px, bg cards-e-blocos</td><td>Card todo é clicável (link).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="block" class="section">
+        <div class="section__eyebrow">Bloco da Homepage</div>
+        <h2 class="h-1">Bloco "Campanhas Especiais e Ofertas"</h2>
+        <p>O uso principal — 3 cards lado a lado abaixo de um título central com ícone "+". Em mobile colapsa para 1 coluna.</p>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-6);">
+            <div class="blog-block">
+              <div class="blog-block__separator"></div>
+              <h2 class="blog-block__title">
+                Campanhas especiais e ofertas
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              </h2>
+              <div class="blog-block__grid">
+                <a href="#" class="blog-card">
+                  <div class="blog-card__top">
+                    <div class="blog-card__heading">
+                      <h3 class="blog-card__title">Compra uma portátil GeForce RTX e recebe o Jogo Outriders</h3>
+                      <p class="blog-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id convallis ultrices commodo libero a massa erat amet.</p>
+                    </div>
+                    <span class="blog-card__cta">Saber mais
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                  </div>
+                  <div class="blog-card__media">
+                    <div class="blog-card__image"><div class="blog-card__placeholder">imagem 1</div></div>
+                    <p class="blog-card__validity"><span class="light">Válido de</span> <strong>09-03-2021</strong> <span class="light">a</span> <strong>21-03-2021</strong><span class="light">, salvo ruptura antecipada de stock.</span></p>
+                  </div>
+                </a>
+                <a href="#" class="blog-card">
+                  <div class="blog-card__top">
+                    <div class="blog-card__heading">
+                      <h3 class="blog-card__title">Promoção AMD Ryzen — descontos exclusivos esta semana</h3>
+                      <p class="blog-card__description">Aproveita as ofertas em processadores AMD Ryzen das séries 5000 e 7000. Stock limitado.</p>
+                    </div>
+                    <span class="blog-card__cta">Saber mais
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                  </div>
+                  <div class="blog-card__media">
+                    <div class="blog-card__image"><div class="blog-card__placeholder">imagem 2</div></div>
+                    <p class="blog-card__validity"><span class="light">Válido de</span> <strong>15-03-2021</strong> <span class="light">a</span> <strong>30-03-2021</strong><span class="light">, salvo ruptura antecipada de stock.</span></p>
+                  </div>
+                </a>
+                <a href="#" class="blog-card">
+                  <div class="blog-card__top">
+                    <div class="blog-card__heading">
+                      <h3 class="blog-card__title">Smartphones Samsung — até 30% de desconto</h3>
+                      <p class="blog-card__description">A Galaxy S24 Ultra, Buds3 Pro e Watch7 com preços imperdíveis. Aproveita.</p>
+                    </div>
+                    <span class="blog-card__cta">Saber mais
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                  </div>
+                  <div class="blog-card__media">
+                    <div class="blog-card__image"><div class="blog-card__placeholder">imagem 3</div></div>
+                    <p class="blog-card__validity"><span class="light">Válido de</span> <strong>20-03-2021</strong> <span class="light">a</span> <strong>05-04-2021</strong><span class="light">, salvo ruptura antecipada de stock.</span></p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;section class="blog-block"&gt;
+  &lt;div class="blog-block__separator"&gt;&lt;/div&gt;
+  &lt;h2 class="blog-block__title"&gt;
+    Campanhas especiais e ofertas
+    &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;/h2&gt;
+  &lt;div class="blog-block__grid"&gt;
+    &lt;a href="..." class="blog-card"&gt;...&lt;/a&gt;
+    &lt;a href="..." class="blog-card"&gt;...&lt;/a&gt;
+    &lt;a href="..." class="blog-card"&gt;...&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="responsive" class="section">
+        <div class="section__eyebrow">Responsive</div>
+        <h2 class="h-1">Comportamento responsivo</h2>
+        <p>Em mobile o bloco transforma-se num <strong style="color: var(--text-primary)">carrossel horizontal scrollable</strong> (não stacked vertical). Cards reduzem de tamanho — padding, título, descrição e imagem todos mais pequenos.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Breakpoint</th><th>Layout</th><th>Card spec</th></tr></thead>
+            <tbody>
+              <tr><td>Desktop (≥1024px)</td><td>3 cards grid, gap 24px</td><td>1/3 da largura · padding 24px · título 20px · imagem 257px</td></tr>
+              <tr><td>Tablet (640–1023px)</td><td>2 cards grid, 3º wrap</td><td>1/2 da largura · padding 24px · título 20px · imagem 257px</td></tr>
+              <tr><td>Mobile (&lt;640px)</td><td>Carrossel horizontal, scroll-snap</td><td>324px fixo · padding 16px · título 16px · imagem 164px</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="h-2">Preview mobile (carrossel)</h3>
+        <p>Simulação de viewport 375px. Em real mobile, faz scroll horizontal nos cards.</p>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: 0;">
+            <div style="width: 375px; max-width: 100%; margin: 0 auto; background: var(--bg-base); border: 1px solid var(--ui-card-border); border-radius: var(--radius-md); overflow: hidden; padding: 16px 0;">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+                <div style="width: 1px; height: 32px; background: var(--ui-card-border);"></div>
+                <h4 style="display: flex; align-items: center; gap: 8px; font-size: 16px; line-height: 24px; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.02em; margin: 0; padding: 0 16px; text-align: center;">
+                  Campanhas especiais e ofertas
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--brand-orange)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                </h4>
+                <div style="display: flex; gap: 8px; overflow-x: auto; padding: 0 16px 8px; width: 100%; scroll-snap-type: x mandatory;">
+                  <a href="#" style="flex-shrink: 0; width: 280px; background: var(--bg-card); border-radius: 4px; padding: 16px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: inherit; scroll-snap-align: start;">
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                      <h5 style="font-size: 16px; line-height: 24px; font-weight: 700; color: var(--text-primary); margin: 0; min-height: 48px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Compra um portátil GeForce RTX e recebe Outriders</h5>
+                      <p style="font-size: 12px; line-height: 16px; color: var(--text-primary); margin: 0; min-height: 48px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id convallis ultrices.</p>
+                      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; line-height: 24px; font-weight: 700; color: var(--brand-orange);">
+                        Saber mais
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      </span>
+                    </div>
+                    <div style="height: 164px; background: linear-gradient(135deg, #2a2a2a, #1a1a1a); border-radius: 2px; display: grid; place-items: center; color: #888; font-family: var(--font-mono); font-size: 10px;">imagem 1</div>
+                    <p style="font-size: 12px; color: var(--text-primary); margin: 0; opacity: 0.85;"><span>Válido de</span> <strong>09-03-2021</strong> <span>a</span> <strong>21-03-2021</strong>.</p>
+                  </a>
+                  <a href="#" style="flex-shrink: 0; width: 280px; background: var(--bg-card); border-radius: 4px; padding: 16px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: inherit; scroll-snap-align: start;">
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                      <h5 style="font-size: 16px; line-height: 24px; font-weight: 700; color: var(--text-primary); margin: 0; min-height: 48px;">AMD Ryzen — descontos exclusivos</h5>
+                      <p style="font-size: 12px; line-height: 16px; color: var(--text-primary); margin: 0; min-height: 48px;">Aproveita as ofertas em processadores AMD Ryzen séries 5000 e 7000.</p>
+                      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; line-height: 24px; font-weight: 700; color: var(--brand-orange);">
+                        Saber mais
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                      </span>
+                    </div>
+                    <div style="height: 164px; background: linear-gradient(135deg, #2a2a2a, #1a1a1a); border-radius: 2px; display: grid; place-items: center; color: #888; font-family: var(--font-mono); font-size: 10px;">imagem 2</div>
+                    <p style="font-size: 12px; color: var(--text-primary); margin: 0; opacity: 0.85;"><span>Válido de</span> <strong>15-03-2021</strong> <span>a</span> <strong>30-03-2021</strong>.</p>
+                  </a>
+                  <a href="#" style="flex-shrink: 0; width: 280px; background: var(--bg-card); border-radius: 4px; padding: 16px; scroll-snap-align: start;">
+                    <span style="color: var(--ui-text-muted); font-size: 11px;">→ scroll →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>/* CSS — aplicado automaticamente em &lt; 640px via media query */
+@media (max-width: 640px) {
+  .blog-block__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 8px;
+  }
+  .blog-block__grid &gt; .blog-card {
+    flex-shrink: 0;
+    width: 324px;
+    padding: 16px;
+    scroll-snap-align: start;
+  }
+  /* Title 16px, descrição 12px, imagem 164px ... */
+}</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Spec mobile detalhado</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Elemento</th><th>Desktop</th><th>Mobile</th></tr></thead>
+            <tbody>
+              <tr><td>Card width</td><td>1/3 do container (~512px)</td><td>324px fixo (carrossel)</td></tr>
+              <tr><td>Card padding</td><td>24px</td><td>16px</td></tr>
+              <tr><td>Card gap interno</td><td>16px</td><td>8px</td></tr>
+              <tr><td>Título</td><td>20px / 28px Bold (min-h 56px)</td><td>16px / 24px Bold (min-h 48px)</td></tr>
+              <tr><td>Descrição</td><td>14px / 20px (min-h 60px)</td><td>12px / 16px (min-h 48px)</td></tr>
+              <tr><td>Imagem</td><td>257px</td><td>164px</td></tr>
+              <tr><td>Validade</td><td>14px</td><td>12px</td></tr>
+              <tr><td>"Saber mais"</td><td>16px Bold + seta 24px</td><td>16px Bold + seta 24px (igual)</td></tr>
+              <tr><td>Bloco — separador</td><td>256px</td><td>32px</td></tr>
+              <tr><td>Bloco — título</td><td>32px / 40px Bold + ícone 32px</td><td>16px / 24px Bold + ícone 20px</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">3 cards no bloco — número balanceado para captar atenção sem saturar.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">5+ cards num bloco. Excesso de campanhas dilui o foco do utilizador.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Títulos com benefício claro: "Compra X e recebe Y", "Até 30% off em smartphones".</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Títulos genéricos: "Promoção", "Oferta especial". Sem hook, sem clique.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Sempre datas de validade. "Salvo ruptura antecipada de stock" cobre disponibilidade.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Campanhas sem prazo. Cria expectativa errada e gera reclamações.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Imagens com produto/contexto da campanha visíveis. Aspect-ratio consistente.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Imagens stock genéricas ou com texto incrustado (acessibilidade comprometida).</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Card como link</strong></td><td>Card todo é <code>&lt;a href&gt;</code>. Screen reader anuncia uma vez "campanha X, link".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Imagem alt</strong></td><td>Descrição do contexto: "Portátil ASUS ROG com jogo Outriders". Não "imagem".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Saber mais</strong></td><td>Texto incluído no link do card — não é botão separado. Screen reader lê tudo junto.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Validade</strong></td><td>Datas em Bold com <code>&lt;strong&gt;</code> — também enfatizadas para screen reader.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Touch target</strong></td><td>Área clicável é todo o card — &gt; 44px em qualquer dimensão.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#block">Bloco Homepage</a></li>
+        <li><a href="#responsive">Responsive</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="product-card.html">← Product Card</a> · <a href="badge.html">Badge →</a></div>
+  </footer>
+
+</body>
+</html>

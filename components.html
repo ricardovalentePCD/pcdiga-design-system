@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Componentes · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema light/dark" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html" class="is-active">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html">Input</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html">Product Card</a></li>
+          <li><a href="blog-card.html">Blog Card</a></li>
+          <li><a href="badge.html">Badge</a></li>
+          <li><a href="tabs.html">Tabs</a></li>
+          <li><a href="toast.html">Toast</a></li>
+          <li><a href="modal.html">Modal</a></li>
+          <li><a href="quantity.html">Quantity stepper</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Pagination <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Dropdown <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Mais</div>
+        <ul class="sidebar__list">
+          <li><a href="foundations.html">Foundations <span class="badge" style="background:rgba(78,150,69,0.15); color:var(--stock-available); border-color:rgba(78,150,69,0.3);">v1</span></a></li>
+          <li><a href="patterns.html">Padrões <span class="badge">em breve</span></a></li>
+          <li><a href="content.html">Conteúdo <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <div class="hero__eyebrow">Fase 2 · em desenvolvimento</div>
+        <h1 class="h-display hero__title">Componentes</h1>
+        <p class="lead">Blocos reutilizáveis que constroem todas as páginas PCDIGA. Cada componente tem variantes, estados e regras claras de uso.</p>
+        <div class="callout">
+          <strong>11 publicados, 3 em planeamento</strong>
+          Componentes críticos para e-commerce documentados: Button, Input, Price, Sticker, Product Card, Blog Card, Badge, Tabs, Toast, Modal, Quantity stepper. Restam Pagination, Dropdown e Comparador.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__eyebrow">Disponíveis</div>
+        <h2 class="h-1" style="margin-bottom: 16px;">Publicados</h2>
+        <p class="lead" style="margin-bottom: 32px;">Documentação completa: anatomia, variantes, estados, props, acessibilidade, do/don't, código copy-paste.</p>
+
+        <div class="comp-grid">
+
+          <a href="button.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview">
+              <span class="btn btn--primary btn--sm">Comprar</span>
+            </div>
+            <div class="comp-card__title">Button</div>
+            <p class="comp-card__desc">CTA principal e secundário. Variants, sizes, states e versão loading.</p>
+          </a>
+
+          <a href="input.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview">
+              <input class="input input--sm" placeholder="nome@gmail.com" style="max-width: 80%;" />
+            </div>
+            <div class="comp-card__title">Input</div>
+            <p class="comp-card__desc">Campos de formulário com label, helper, error states e ícones.</p>
+          </a>
+
+          <a href="price.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview">
+              <span class="price price--sm price--sale">
+                <span class="price__current">399,99€</span>
+                <span class="price__original">499,99€</span>
+              </span>
+            </div>
+            <div class="comp-card__title">Price</div>
+            <p class="comp-card__desc">Apresentação consistente de preços com desconto, tamanhos e parcelas.</p>
+          </a>
+
+          <a href="sticker.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="gap: 6px; flex-direction: row; flex-wrap: wrap;">
+              <span class="sticker sticker--available">Disponível</span>
+              <span class="sticker sticker--discount">-20%</span>
+            </div>
+            <div class="comp-card__title">Sticker</div>
+            <p class="comp-card__desc">Etiquetas para estado de stock, promoções, novidades, descontos.</p>
+          </a>
+
+          <a href="product-card.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 0; height: 110px;">
+              <div style="background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: 6px; padding: 8px; width: 90%; height: 90%; display: flex; gap: 8px; align-items: center;">
+                <div style="width: 32px; height: 32px; background: var(--bg-base); border-radius: 4px; flex-shrink: 0;"></div>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0;">
+                  <div style="height: 6px; background: var(--ui-card-border); border-radius: 2px; width: 80%;"></div>
+                  <div style="height: 6px; background: var(--ui-card-border); border-radius: 2px; width: 50%;"></div>
+                  <div style="height: 8px; background: var(--brand-orange); border-radius: 2px; width: 40%; margin-top: 4px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="comp-card__title">Product Card</div>
+            <p class="comp-card__desc">O cartão mais usado da PCDIGA — com sticker, preço, stock e CTA.</p>
+          </a>
+
+          <a href="blog-card.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 6px;">
+              <div style="background: var(--bg-card); border-radius: 4px; padding: 6px; width: 90%; height: 90%; display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--ui-card-border);">
+                <div style="height: 6px; background: var(--ui-card-border); border-radius: 1px; width: 80%;"></div>
+                <div style="height: 4px; background: var(--ui-card-border); border-radius: 1px; width: 100%; opacity: 0.6;"></div>
+                <div style="font-size: 7px; font-weight: 700; color: var(--brand-orange);">Saber mais →</div>
+                <div style="height: 16px; background: var(--bg-base); border-radius: 1px; margin-top: 2px;"></div>
+              </div>
+            </div>
+            <div class="comp-card__title">Blog Card</div>
+            <p class="comp-card__desc">Cards de blog/campanhas para a homepage com título, imagem e datas de validade.</p>
+          </a>
+
+          <a href="badge.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview">
+              <span class="badge-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <span class="ds-badge">3</span>
+              </span>
+            </div>
+            <div class="comp-card__title">Badge</div>
+            <p class="comp-card__desc">Indicadores numéricos para carrinho, favoritos, notificações.</p>
+          </a>
+
+          <a href="tabs.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 0;">
+              <div class="tabs" style="font-size: 11px;">
+                <button class="tabs__item is-active" style="padding: 6px 10px; font-size: 11px;">Specs</button>
+                <button class="tabs__item" style="padding: 6px 10px; font-size: 11px;">Reviews</button>
+              </div>
+            </div>
+            <div class="comp-card__title">Tabs</div>
+            <p class="comp-card__desc">Separadores horizontais para PDP, área de cliente.</p>
+          </a>
+
+          <a href="toast.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 8px;">
+              <div class="toast toast--success" style="min-width: auto; padding: 6px 8px; font-size: 11px; box-shadow: none;">
+                <span class="toast__icon" style="width: 14px; height: 14px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="3"/></svg></span>
+                <div class="toast__body"><p class="toast__title" style="font-size: 11px;">Adicionado</p></div>
+              </div>
+            </div>
+            <div class="comp-card__title">Toast</div>
+            <p class="comp-card__desc">Notificações temporárias com 4 variantes semânticas.</p>
+          </a>
+
+          <a href="modal.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 4px;">
+              <div style="background: rgba(0,0,0,0.3); border-radius: 4px; padding: 8px; width: 90%; height: 90%; display: grid; place-items: center;">
+                <div style="background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: 4px; padding: 6px 10px; width: 80%; font-size: 10px; color: var(--text-primary); font-weight: 700;">Confirmar?</div>
+              </div>
+            </div>
+            <div class="comp-card__title">Modal</div>
+            <p class="comp-card__desc">Diálogos sobrepostos para confirmações e formulários focados.</p>
+          </a>
+
+          <a href="quantity.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview">
+              <div class="qty qty--sm">
+                <button class="qty__btn" type="button">−</button>
+                <input class="qty__input" type="number" value="2" />
+                <button class="qty__btn" type="button">+</button>
+              </div>
+            </div>
+            <div class="comp-card__title">Quantity stepper</div>
+            <p class="comp-card__desc">Selector −/+ para quantidades em cart e PDP.</p>
+          </a>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__eyebrow">Em planeamento</div>
+        <h2 class="h-1" style="margin-bottom: 16px;">Próximos componentes</h2>
+        <p class="lead" style="margin-bottom: 32px;">Iterações seguintes. A ordem segue criticidade no e-commerce PCDIGA.</p>
+
+        <div class="comp-grid">
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Pagination</div>
+            <p class="comp-card__desc">Navegação entre páginas de listings.</p>
+          </div>
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Dropdown / Select</div>
+            <p class="comp-card__desc">Selects e menus contextuais.</p>
+          </div>
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Comparador</div>
+            <p class="comp-card__desc">Drawer + tabela de comparação de produtos.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__eyebrow">Como usar</div>
+        <h2 class="h-1" style="margin-bottom: 16px;">Estrutura de cada componente</h2>
+        <p class="lead">Cada página de componente segue a mesma estrutura, para que a equipa saiba onde encontrar o que procura.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Secção</th><th>O que tem</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Overview</strong></td><td>O que é o componente e quando usar.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Anatomy</strong></td><td>Diagrama anotado com as partes do componente.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Variants</strong></td><td>Todas as variantes lado a lado.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">States</strong></td><td>Default, hover, active, focus, disabled, loading.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Sizes</strong></td><td>Tamanhos disponíveis (sm/md/lg).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Acessibilidade</strong></td><td>ARIA, keyboard, screen reader, contraste.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Do's & Don'ts</strong></td><td>Padrões certos vs anti-padrões com explicação.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Code</strong></td><td>HTML/CSS pronto a copiar.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="index.html">Início</a> · <a href="foundations.html">Foundations</a></div>
+  </footer>
+
+</body>
+</html>

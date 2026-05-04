@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modal · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html">Input</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html">Product Card</a></li>
+          <li><a href="campaign-card.html">Campaign Card</a></li>
+          <li><a href="badge.html">Badge</a></li>
+          <li><a href="tabs.html">Tabs</a></li>
+          <li><a href="toast.html">Toast</a></li>
+          <li><a href="modal.html" class="is-active">Modal</a></li>
+          <li><a href="quantity.html">Quantity stepper</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Componente</div>
+        <h1 class="h-display hero__title">Modal</h1>
+        <p class="lead">Diálogo sobreposto que requer atenção do utilizador. Usar para confirmações ("Apagar encomenda?"), formulários focados (login, edição) ou conteúdo crítico que não deve ser ignorado.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="modal-backdrop">
+              <div class="modal">
+                <div class="modal__header">
+                  <h3 class="modal__title">Apagar encomenda?</h3>
+                  <button class="modal__close" aria-label="Fechar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  </button>
+                </div>
+                <div class="modal__body">
+                  <p>Esta ação não pode ser desfeita. A encomenda <strong style="color:var(--text-primary)">#1234</strong> será permanentemente removida do teu histórico.</p>
+                </div>
+                <div class="modal__footer">
+                  <button class="btn btn--ghost">Cancelar</button>
+                  <button class="btn btn--primary">Apagar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="modal-backdrop" role="dialog" aria-modal="true"&gt;
+  &lt;div class="modal" aria-labelledby="modal-title"&gt;
+    &lt;div class="modal__header"&gt;
+      &lt;h3 class="modal__title" id="modal-title"&gt;
+        Apagar encomenda?
+      &lt;/h3&gt;
+      &lt;button class="modal__close" aria-label="Fechar"&gt;
+        &lt;svg ...&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="modal__body"&gt;
+      &lt;p&gt;Esta ação não pode ser desfeita...&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="modal__footer"&gt;
+      &lt;button class="btn btn--ghost"&gt;Cancelar&lt;/button&gt;
+      &lt;button class="btn btn--primary"&gt;Apagar&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Anatomia</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Parte</th><th>Função</th></tr></thead>
+            <tbody>
+              <tr><td><code>modal-backdrop</code></td><td>Overlay escuro sobre a página, captura cliques fora.</td></tr>
+              <tr><td><code>modal</code></td><td>Container do diálogo, max-width 480px (default).</td></tr>
+              <tr><td><code>modal__header</code></td><td>Title + botão fechar (X). Border-bottom subtil.</td></tr>
+              <tr><td><code>modal__body</code></td><td>Conteúdo principal. Pode ter forms, texto, lista.</td></tr>
+              <tr><td><code>modal__footer</code></td><td>Botões de ação alinhados à direita. Primary à direita, ghost à esquerda.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="sizes" class="section">
+        <div class="section__eyebrow">Sizes</div>
+        <h2 class="h-1">Sizes</h2>
+
+        <h3 class="h-2">Small (sm) — 360px</h3>
+        <p>Confirmações simples, alertas curtos.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="modal-backdrop">
+              <div class="modal modal--sm">
+                <div class="modal__header">
+                  <h3 class="modal__title">Sair sem guardar?</h3>
+                  <button class="modal__close" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                </div>
+                <div class="modal__body">
+                  <p>Vais perder as alterações.</p>
+                </div>
+                <div class="modal__footer">
+                  <button class="btn btn--ghost">Voltar</button>
+                  <button class="btn btn--primary">Sair</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="modal modal--sm"&gt;...&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Medium (default) — 480px</h3>
+        <p>Confirmações com contexto, forms compactos.</p>
+
+        <h3 class="h-2">Large (lg) — 640px</h3>
+        <p>Forms longos, conteúdo rico (ex: detalhes de encomenda).</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="modal-backdrop">
+              <div class="modal modal--lg">
+                <div class="modal__header">
+                  <h3 class="modal__title">Editar morada de envio</h3>
+                  <button class="modal__close" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                </div>
+                <div class="modal__body">
+                  <div style="display: grid; gap: 16px;">
+                    <div class="input-field">
+                      <label class="input-field__label">Nome completo</label>
+                      <input class="input" type="text" value="João Silva" />
+                    </div>
+                    <div class="input-field">
+                      <label class="input-field__label">Morada</label>
+                      <input class="input" type="text" placeholder="Rua, número, andar" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal__footer">
+                  <button class="btn btn--ghost">Cancelar</button>
+                  <button class="btn btn--primary">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="modal modal--lg"&gt;
+  ... form completo ...
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Title que descreve a decisão: "Apagar encomenda?", "Confirmar compra".</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Aviso", "Atenção". Vagos e não explicam o que está a acontecer.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Botões com verbo da ação: "Apagar", "Confirmar", "Guardar".</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"OK" / "Cancel". Sem contexto sobre o que vai acontecer.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Primary à direita, ghost à esquerda. Padrão consistente em todos os diálogos.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Trocar a posição entre modais. Quebra a previsibilidade.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Modal só para decisões importantes. ESC e clique fora fecham.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Modal para mensagens de status simples — usa Toast.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Role</strong></td><td><code>role="dialog"</code> + <code>aria-modal="true"</code> no backdrop.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Title associado</strong></td><td><code>aria-labelledby="title-id"</code> apontando ao id do <code>modal__title</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Focus trap</strong></td><td>Tab dentro do modal não sai para a página por trás. Shift+Tab também.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Foco inicial</strong></td><td>Foco vai para o primeiro elemento interactivo (geralmente o botão fechar ou input).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Foco de retorno</strong></td><td>Ao fechar, foco volta ao trigger que abriu o modal.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">ESC</strong></td><td>Fecha o modal. Confirmar com utilizador se há dados não guardados.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Backdrop click</strong></td><td>Fecha o modal. Mesma confirmação se aplicável.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Scroll lock</strong></td><td>Desactivar scroll do <code>body</code> enquanto modal aberto.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#sizes">Sizes</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="toast.html">← Toast</a> · <a href="quantity.html">Quantity stepper →</a></div>
+  </footer>
+
+</body>
+</html>

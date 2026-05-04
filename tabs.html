@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html">Input</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html">Product Card</a></li>
+          <li><a href="campaign-card.html">Campaign Card</a></li>
+          <li><a href="badge.html">Badge</a></li>
+          <li><a href="tabs.html" class="is-active">Tabs</a></li>
+          <li><a href="toast.html">Toast</a></li>
+          <li><a href="modal.html">Modal</a></li>
+          <li><a href="quantity.html">Quantity stepper</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Componente</div>
+        <h1 class="h-display hero__title">Tabs</h1>
+        <p class="lead">Separadores horizontais para alternar entre vistas relacionadas. Crítico em PDP (Especificações, Avaliações, Info adicional) e área de cliente (Encomendas, Devoluções, Faturas).</p>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: 0;">
+            <div class="tabs">
+              <button class="tabs__item is-active">Especificações</button>
+              <button class="tabs__item">Avaliações</button>
+              <button class="tabs__item">Info adicional</button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="tabs" role="tablist"&gt;
+  &lt;button class="tabs__item is-active" role="tab" aria-selected="true"&gt;
+    Especificações
+  &lt;/button&gt;
+  &lt;button class="tabs__item" role="tab" aria-selected="false"&gt;
+    Avaliações
+  &lt;/button&gt;
+  &lt;button class="tabs__item" role="tab" aria-selected="false"&gt;
+    Info adicional
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Anatomia</h2>
+        <p>Container <code>.tabs</code> com border-bottom + items <code>.tabs__item</code>. Tab ativo herda border-bottom laranja brand. Painel de conteúdo abaixo com <code>.tabs__panel</code>.</p>
+      </section>
+
+      <section id="variants" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Variantes</h2>
+
+        <h3 class="h-2">Default</h3>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: 0;">
+            <div class="tabs">
+              <button class="tabs__item is-active">Especificações</button>
+              <button class="tabs__item">Avaliações</button>
+              <button class="tabs__item">Info adicional</button>
+            </div>
+            <div class="tabs__panel">
+              <p style="margin: 0; color: var(--ui-text-secondary);">Conteúdo do tab ativo aparece aqui.</p>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="tabs"&gt;...&lt;/div&gt;
+&lt;div class="tabs__panel"&gt;
+  &lt;!-- conteúdo do tab ativo --&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Com badge contador</h3>
+        <p>Para indicar quantos items em cada secção. Útil em área de cliente.</p>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: 0;">
+            <div class="tabs">
+              <button class="tabs__item is-active">Encomendas <span class="ds-badge ds-badge--sm">3</span></button>
+              <button class="tabs__item">Devoluções <span class="ds-badge ds-badge--sm ds-badge--neutral">0</span></button>
+              <button class="tabs__item">Faturas <span class="ds-badge ds-badge--sm">12</span></button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;button class="tabs__item is-active"&gt;
+  Encomendas
+  &lt;span class="ds-badge ds-badge--sm"&gt;3&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Com ícone</h3>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: 0;">
+            <div class="tabs">
+              <button class="tabs__item is-active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Especificações
+              </button>
+              <button class="tabs__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Avaliações
+              </button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;button class="tabs__item is-active"&gt;
+  &lt;svg ...&gt;&lt;/svg&gt;
+  Especificações
+&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">States</div>
+        <h2 class="h-1">States</h2>
+
+        <h3 class="h-2">Default + Active + Disabled</h3>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: 0;">
+            <div class="tabs">
+              <button class="tabs__item is-active">Active</button>
+              <button class="tabs__item">Default</button>
+              <button class="tabs__item" disabled>Disabled</button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;button class="tabs__item is-active"&gt;Active&lt;/button&gt;
+&lt;button class="tabs__item"&gt;Default&lt;/button&gt;
+&lt;button class="tabs__item" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">3-5 tabs. Mais que isso, considera filtros ou navegação separada.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">8+ tabs com scroll horizontal. Utilizador perde-se.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Tab default = mais relevante para o utilizador (ex: "Especificações" em PDP).</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Tab default vazio. Se não tem conteúdo, esconde a tab.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Labels curtos e claros: "Specs", "Reviews", "Info". Verbo+objeto desnecessário.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Ver as especificações técnicas" — verboso, ocupa espaço.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Roles</strong></td><td><code>role="tablist"</code> no container, <code>role="tab"</code> nos items, <code>role="tabpanel"</code> no painel.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Estado</strong></td><td><code>aria-selected="true"</code> no tab ativo, <code>"false"</code> nos outros.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Associação</strong></td><td><code>aria-controls="panel-id"</code> no tab + <code>id</code> correspondente no painel.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Keyboard</strong></td><td>← → entre tabs, Tab para sair, Enter/Space para ativar (se não auto-ativar com setas).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Disabled</strong></td><td><code>disabled</code> + <code>aria-disabled="true"</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#variants">Variantes</a></li>
+        <li><a href="#states">States</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="badge.html">← Badge</a> · <a href="toast.html">Toast →</a></div>
+  </footer>
+
+</body>
+</html>

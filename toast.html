@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toast · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html" class="is-active">Componentes</a>
+      <a href="patterns.html">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Componentes</div>
+        <ul class="sidebar__list">
+          <li><a href="components.html">Overview</a></li>
+          <li><a href="button.html">Button</a></li>
+          <li><a href="input.html">Input</a></li>
+          <li><a href="price.html">Price</a></li>
+          <li><a href="sticker.html">Sticker</a></li>
+          <li><a href="product-card.html">Product Card</a></li>
+          <li><a href="campaign-card.html">Campaign Card</a></li>
+          <li><a href="badge.html">Badge</a></li>
+          <li><a href="tabs.html">Tabs</a></li>
+          <li><a href="toast.html" class="is-active">Toast</a></li>
+          <li><a href="modal.html">Modal</a></li>
+          <li><a href="quantity.html">Quantity stepper</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Componente</div>
+        <h1 class="h-display hero__title">Toast</h1>
+        <p class="lead">Notificação temporária num canto do ecrã. Confirma ações ("Adicionado ao carrinho"), avisa de erros ("Stock insuficiente"), informa de status ("Encomenda enviada"). Auto-desaparece após 3-5s.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="toast toast--success">
+              <span class="toast__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <div class="toast__body">
+                <p class="toast__title">Adicionado ao carrinho</p>
+                <p class="toast__message">Smartphone Xiaomi 15T Pro 256GB Cinza</p>
+              </div>
+              <button class="toast__close" aria-label="Fechar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="toast toast--success" role="status"&gt;
+  &lt;span class="toast__icon"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;div class="toast__body"&gt;
+    &lt;p class="toast__title"&gt;Adicionado ao carrinho&lt;/p&gt;
+    &lt;p class="toast__message"&gt;Smartphone Xiaomi 15T Pro&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button class="toast__close" aria-label="Fechar"&gt;
+    &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="variants" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">4 variantes</h2>
+
+        <h3 class="h-2">Success</h3>
+        <p>Confirma ação bem sucedida — adicionado, guardado, enviado.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="toast toast--success">
+              <span class="toast__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+              <div class="toast__body">
+                <p class="toast__title">Encomenda enviada</p>
+                <p class="toast__message">Recebes confirmação por email em breve.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="toast toast--success" role="status"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Error</h3>
+        <p>Algo correu mal. Mensagem específica do que aconteceu.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="toast toast--error">
+              <span class="toast__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="currentColor"/><line x1="15" y1="9" x2="9" y2="15" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="9" y1="9" x2="15" y2="15" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+              <div class="toast__body">
+                <p class="toast__title">Pagamento recusado</p>
+                <p class="toast__message">Verifica os dados do cartão e tenta novamente.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="toast toast--error" role="alert"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Warning</h3>
+        <p>Atenção a um possível problema — não bloqueante.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="toast toast--warning">
+              <span class="toast__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" fill="currentColor"/><line x1="12" y1="9" x2="12" y2="13" stroke="#000" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="#000" stroke-width="2" stroke-linecap="round"/></svg></span>
+              <div class="toast__body">
+                <p class="toast__title">Stock limitado</p>
+                <p class="toast__message">Restam apenas 2 unidades em stock.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="toast toast--warning"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Info</h3>
+        <p>Informação neutra — confirmação de ação não-crítica, dica.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div class="toast toast--info">
+              <span class="toast__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="currentColor"/><line x1="12" y1="16" x2="12" y2="12" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="12" y1="8" x2="12.01" y2="8" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+              <div class="toast__body">
+                <p class="toast__title">Produto adicionado ao comparador</p>
+                <p class="toast__message">Já tens 2 produtos para comparar.</p>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="toast toast--info"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="behavior" class="section">
+        <div class="section__eyebrow">Comportamento</div>
+        <h2 class="h-1">Comportamento e timing</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Variante</th><th>Auto-dismiss</th><th>Posição</th></tr></thead>
+            <tbody>
+              <tr><td>Success / Info</td><td>3000ms</td><td>top-right</td></tr>
+              <tr><td>Warning</td><td>5000ms</td><td>top-right</td></tr>
+              <tr><td>Error</td><td>Manual (não auto-dismiss)</td><td>top-right</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <strong>Stack vertical</strong>
+          Toasts múltiplos empilham com gap de 8px. Mais recente em cima. Máximo 3 visíveis em simultâneo — os restantes ficam em fila.
+        </div>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mensagens curtas e específicas: "Adicionado", "Erro de pagamento". Title em 1 linha.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Toasts longos com 3+ linhas. Se precisa de muito texto, usa Modal.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Error toasts ficam até o utilizador fechar — erros são importantes de ler.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Auto-dismiss em erros críticos. Utilizador pode não ver a mensagem.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Pausar timer em hover — utilizador a ler não deve perder a mensagem.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Toasts para confirmações importantes (ex: "Apagar conta"). Usar Modal com confirmação explícita.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Role</strong></td><td><code>role="status"</code> para info/success (anuncia sem interromper). <code>role="alert"</code> para errors (anuncia imediatamente).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Live region</strong></td><td>Container de toasts com <code>aria-live="polite"</code> ou <code>"assertive"</code> para errors.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Close button</strong></td><td>Sempre <code>aria-label="Fechar notificação"</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Foco</strong></td><td>Não roubar focus do utilizador. Toasts não são modais.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Reduced motion</strong></td><td>Respeitar <code>prefers-reduced-motion</code> — sem slide-in animation.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#variants">Variantes</a></li>
+        <li><a href="#behavior">Comportamento</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="tabs.html">← Tabs</a> · <a href="modal.html">Modal →</a></div>
+  </footer>
+
+</body>
+</html>
