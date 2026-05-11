@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Padrões · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html" class="is-active">Overview</a></li>
+          <li><a href="pdp.html">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Cart <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Mais</div>
+        <ul class="sidebar__list">
+          <li><a href="foundations.html">Foundations</a></li>
+          <li><a href="components.html">Componentes</a></li>
+          <li><a href="content.html">Conteúdo</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="hero">
+        <div class="hero__eyebrow">Fase 3 · em desenvolvimento</div>
+        <h1 class="h-display hero__title">Padrões</h1>
+        <p class="lead">Padrões são a forma como vários componentes se combinam para resolver problemas concretos da PCDIGA — comprar um produto, configurar um PC, fazer checkout. Cada padrão documenta o "porquê" e o "como" de páginas inteiras.</p>
+        <div class="callout">
+          <strong>2 publicados, 6 em planeamento</strong>
+          Esta fase começa pelas duas páginas que mais convertem em e-commerce: PDP e PLP. As restantes (Cart, Checkout, Search, Empty/Error states, Comparador) entram em iterações seguintes.
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__eyebrow">Diferença</div>
+        <h2 class="h-1" style="margin-bottom: 16px;">Componente vs. Padrão</h2>
+        <p class="lead" style="margin-bottom: 24px;">Quando algo é <strong style="color: var(--text-primary)">reutilizável e atómico</strong>, é componente. Quando combina vários componentes para resolver uma jornada do utilizador, é padrão.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Componente</th><th>Padrão</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Button, Input, Price, Sticker</td>
+                <td>Página de produto (PDP), Checkout, Cart</td>
+              </tr>
+              <tr>
+                <td>Bloco lego, peça atómica</td>
+                <td>Página completa, jornada de utilizador</td>
+              </tr>
+              <tr>
+                <td>Documenta variantes/states</td>
+                <td>Documenta layout, componentes usados, fluxo</td>
+              </tr>
+              <tr>
+                <td>Reutilizado em todos os contextos</td>
+                <td>Específico de uma jornada/contexto</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__eyebrow">Disponíveis</div>
+        <h2 class="h-1" style="margin-bottom: 16px;">Publicados</h2>
+
+        <div class="comp-grid">
+
+          <a href="pdp.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 4px;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 100%; height: 100%;">
+                <div style="background: #FFF; border-radius: 2px;"></div>
+                <div style="display: flex; flex-direction: column; gap: 3px; padding: 2px;">
+                  <div style="height: 4px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                  <div style="height: 4px; background: var(--ui-card-border); border-radius: 1px; width: 70%;"></div>
+                  <div style="height: 8px; background: var(--brand-orange); border-radius: 1px; width: 40%; margin-top: 2px;"></div>
+                  <div style="height: 6px; background: var(--ui-card-border); border-radius: 1px; margin-top: 4px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="comp-card__title">PDP — Página de produto</div>
+            <p class="comp-card__desc">Galeria, título, preço, stock, "Adicionar ao carrinho", tabs (specs/reviews) e produtos relacionados.</p>
+          </a>
+
+          <a href="plp.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 4px;">
+              <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4px; width: 100%; height: 100%;">
+                <div style="background: var(--bg-card); border-radius: 2px; padding: 2px; display: flex; flex-direction: column; gap: 2px;">
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px; width: 80%;"></div>
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px;">
+                  <div style="background: var(--bg-card); border-radius: 1px;"></div>
+                  <div style="background: var(--bg-card); border-radius: 1px;"></div>
+                  <div style="background: var(--bg-card); border-radius: 1px;"></div>
+                  <div style="background: var(--bg-card); border-radius: 1px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="comp-card__title">PLP — Listings</div>
+            <p class="comp-card__desc">Filtros laterais, ordenação, breadcrumbs, grid de product cards, paginação.</p>
+          </a>
+
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__eyebrow">Em planeamento</div>
+        <h2 class="h-1" style="margin-bottom: 16px;">Próximos padrões</h2>
+        <p class="lead" style="margin-bottom: 32px;">Ordem por criticidade no funil de conversão da PCDIGA.</p>
+
+        <div class="comp-grid">
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Cart</div>
+            <p class="comp-card__desc">Mini-cart no header e cart full-page. Linhas, totais, sugestões.</p>
+          </div>
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Checkout</div>
+            <p class="comp-card__desc">Steps, validação, métodos de envio e pagamento, resumo.</p>
+          </div>
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Search</div>
+            <p class="comp-card__desc">Search bar com sugestões, results page, sem resultados.</p>
+          </div>
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Empty states</div>
+            <p class="comp-card__desc">Carrinho vazio, sem favoritos, sem encomendas, sem resultados.</p>
+          </div>
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Error states</div>
+            <p class="comp-card__desc">404, 500, erros checkout, problemas de stock, falha pagamento.</p>
+          </div>
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Comparador</div>
+            <p class="comp-card__desc">Drawer + tabela de comparação de produtos (Figma 1:10237).</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__eyebrow">Estrutura</div>
+        <h2 class="h-1" style="margin-bottom: 16px;">Formato de cada padrão</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Secção</th><th>O que tem</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Overview</strong></td><td>Quando usar este padrão. Que problema do utilizador resolve.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Anatomia</strong></td><td>Diagrama anotado com as zonas principais da página.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Layout</strong></td><td>Preview da página completa em desktop e mobile.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Componentes usados</strong></td><td>Lista de componentes do design system que entram neste padrão.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Variantes</strong></td><td>Estados diferentes: em stock, esgotado, sem resultados, em desconto.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">UX rationale</strong></td><td>Porquê estas decisões. Que comportamento do utilizador estamos a desenhar.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Do's & Don'ts</strong></td><td>Padrões certos vs anti-padrões.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="components.html">← Componentes</a> · <a href="content.html">Conteúdo →</a></div>
+  </footer>
+
+</body>
+</html>

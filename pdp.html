@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDP — Página de produto · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html">Overview</a></li>
+          <li><a href="pdp.html" class="is-active">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Cart <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Pattern</div>
+        <h1 class="h-display hero__title">PDP</h1>
+        <p class="lead">Product Detail Page — a página onde o utilizador decide se vai comprar. É a página com maior conversão da PCDIGA. Cada elemento tem que servir essa decisão: o preço claro, o stock visível, o CTA óbvio.</p>
+        <div class="callout">
+          <strong>Objetivo da página</strong>
+          Levar o utilizador a clicar em "Adicionar ao carrinho" com confiança. Tudo o resto (specs, reviews, info adicional) é suporte a essa decisão.
+        </div>
+      </section>
+
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Layout completo</h2>
+        <p>Em desktop, duas colunas: galeria à esquerda, info+compra à direita. Em mobile, stack vertical com galeria primeiro.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pattern-frame">
+              <div class="pattern-frame__chrome">
+                <span class="pattern-frame__dot"></span>
+                <span class="pattern-frame__dot"></span>
+                <span class="pattern-frame__dot"></span>
+                <span class="pattern-frame__url">pcdiga.com/produto/xiaomi-15t-pro-256gb</span>
+              </div>
+              <div class="pattern-frame__body">
+                <nav class="crumbs">
+                  <a href="#">Smartphones</a>
+                  <span class="crumbs__sep">/</span>
+                  <a href="#">Xiaomi</a>
+                  <span class="crumbs__sep">/</span>
+                  <span class="crumbs__current">Xiaomi 15T Pro 256GB Cinza</span>
+                </nav>
+
+                <div class="pdp">
+                  <div class="pdp__gallery">
+                    <div class="pdp__gallery-main">
+                      <div class="product-card__placeholder" style="width: 80%; height: 80%;">imagem principal</div>
+                    </div>
+                    <div class="pdp__gallery-thumbs">
+                      <div class="pdp__gallery-thumb is-active">1</div>
+                      <div class="pdp__gallery-thumb">2</div>
+                      <div class="pdp__gallery-thumb">3</div>
+                      <div class="pdp__gallery-thumb">4</div>
+                    </div>
+                  </div>
+
+                  <div class="pdp__info">
+                    <div>
+                      <div class="pdp__brand">XIAOMI</div>
+                      <h1 class="pdp__title">Smartphone Xiaomi 15T Pro 256GB Dual SIM Cinza</h1>
+                      <p class="pdp__sku">REF: RZ03-03492400-R361</p>
+                    </div>
+
+                    <div class="pdp__stickers">
+                      <span class="sticker sticker--available">Disponível</span>
+                      <span class="sticker sticker--discount">-20%</span>
+                    </div>
+
+                    <div class="pdp__price-block">
+                      <span class="price price--xl price--sale">
+                        <span class="price__current">399,99 €</span>
+                        <s class="price__original">499,99 €</s>
+                        <span class="price__discount">-20%</span>
+                      </span>
+                      <p style="font-size: 13px; color: var(--ui-text-muted); margin: 8px 0 0;">ou 12x 33,33 € sem juros</p>
+                    </div>
+
+                    <div class="product-card__stock-block">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+                      <span class="product-card__stock-text">
+                        <span class="product-card__stock">Em stock</span>
+                        <span class="product-card__delivery">Entrega prevista a 17 JAN</span>
+                      </span>
+                    </div>
+
+                    <div class="pdp__buy-row">
+                      <div class="qty">
+                        <button class="qty__btn" type="button">−</button>
+                        <input class="qty__input" type="number" value="1" />
+                        <button class="qty__btn" type="button">+</button>
+                      </div>
+                      <button class="btn btn--primary btn--lg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        Adicionar ao carrinho
+                      </button>
+                    </div>
+
+                    <div class="pdp__meta">
+                      <div class="pdp__meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        Envio gratuito acima de 50 €
+                      </div>
+                      <div class="pdp__meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        2 anos garantia oficial
+                      </div>
+                      <div class="pdp__meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M10 11v6M14 11v6"/></svg>
+                        14 dias para devolver
+                      </div>
+                      <div class="pdp__meta-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                        Suporte 7 dias / semana
+                      </div>
+                    </div>
+
+                    <div style="display: flex; gap: 16px; margin-top: 8px;">
+                      <button class="btn btn--ghost btn--sm">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                        Comparar
+                      </button>
+                      <button class="btn btn--ghost btn--sm">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        Adicionar aos favoritos
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div style="margin-top: 48px;">
+                  <div class="tabs">
+                    <button class="tabs__item is-active">Especificações</button>
+                    <button class="tabs__item">Avaliações <span class="ds-badge ds-badge--sm">23</span></button>
+                    <button class="tabs__item">Info adicional</button>
+                  </div>
+                  <div class="tabs__panel">
+                    <p style="font-size: 14px; color: var(--ui-text-secondary); margin: 0;">Tabela de especificações técnicas do produto: processador, memória, armazenamento, câmaras, bateria, conectividade, dimensões, peso.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;main class="pdp"&gt;
+  &lt;div class="pdp__gallery"&gt;
+    &lt;div class="pdp__gallery-main"&gt;&lt;img src="..." /&gt;&lt;/div&gt;
+    &lt;div class="pdp__gallery-thumbs"&gt;
+      &lt;button class="pdp__gallery-thumb is-active"&gt;...&lt;/button&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pdp__info"&gt;
+    &lt;div class="pdp__brand"&gt;XIAOMI&lt;/div&gt;
+    &lt;h1 class="pdp__title"&gt;Xiaomi 15T Pro 256GB Cinza&lt;/h1&gt;
+    &lt;p class="pdp__sku"&gt;REF: ...&lt;/p&gt;
+
+    &lt;div class="pdp__stickers"&gt;
+      &lt;span class="sticker sticker--available"&gt;Disponível&lt;/span&gt;
+      &lt;span class="sticker sticker--discount"&gt;-20%&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="pdp__price-block"&gt;
+      &lt;span class="price price--xl price--sale"&gt;...&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div class="product-card__stock-block"&gt;...&lt;/div&gt;
+
+    &lt;div class="pdp__buy-row"&gt;
+      &lt;div class="qty"&gt;...&lt;/div&gt;
+      &lt;button class="btn btn--primary btn--lg"&gt;
+        Adicionar ao carrinho
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="pdp__meta"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+
+&lt;div class="tabs"&gt;...&lt;/div&gt;
+&lt;div class="tabs__panel"&gt;...&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Zonas da página</h2>
+        <p>Por ordem de importância visual descendo a página.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Zona</th><th>Conteúdo</th><th>Componentes</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">1. Breadcrumbs</strong></td><td>Categoria → marca → produto. Permite voltar à listagem.</td><td>—</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">2. Galeria</strong></td><td>Imagem principal grande + thumbnails. Aspect-ratio 1:1, fundo branco.</td><td>—</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">3. Info do produto</strong></td><td>Marca, título, SKU, stickers de estado.</td><td>Sticker</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">4. Preço</strong></td><td>Preço atual em destaque (xl), preço antigo, parcelas. Bordas top/bottom para enfatizar.</td><td>Price (xl)</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">5. Stock + entrega</strong></td><td>Visibilidade clara: em stock + data de entrega.</td><td>—</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">6. CTA principal</strong></td><td>Quantity stepper + "Adicionar ao carrinho" lg. <strong style="color: var(--text-primary)">A ação mais importante</strong>.</td><td>Button (primary lg), Quantity</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">7. Trust signals</strong></td><td>Envio, garantia, devolução, suporte. 4 ícones para confiança.</td><td>—</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">8. Ações secundárias</strong></td><td>Comparar, Favoritos.</td><td>Button (ghost)</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">9. Tabs</strong></td><td>Especificações (default), Avaliações, Info adicional.</td><td>Tabs, Badge</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">10. Bundle / Combinação</strong></td><td>Produtos relacionados frequentemente comprados em conjunto.</td><td>Product Card</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">11. Related</strong></td><td>"Quem comprou este, também comprou…"</td><td>Product Card</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="components" class="section">
+        <div class="section__eyebrow">Componentes usados</div>
+        <h2 class="h-1">Componentes deste pattern</h2>
+        <div class="comp-grid">
+          <a href="price.html" class="comp-card">
+            <div class="comp-card__preview"><span class="price price--sm price--sale"><span class="price__current">399,99 €</span><s class="price__original">499,99 €</s></span></div>
+            <div class="comp-card__title">Price (xl em PDP)</div>
+            <p class="comp-card__desc">Preço hero com xl size + parcelas.</p>
+          </a>
+          <a href="sticker.html" class="comp-card">
+            <div class="comp-card__preview" style="gap: 6px; flex-direction: row;"><span class="sticker sticker--available">Disponível</span><span class="sticker sticker--discount">-20%</span></div>
+            <div class="comp-card__title">Sticker</div>
+            <p class="comp-card__desc">Estado de stock e desconto.</p>
+          </a>
+          <a href="quantity.html" class="comp-card">
+            <div class="comp-card__preview"><div class="qty qty--sm"><button class="qty__btn">−</button><input class="qty__input" value="1" /><button class="qty__btn">+</button></div></div>
+            <div class="comp-card__title">Quantity stepper</div>
+            <p class="comp-card__desc">Selector −/+ no buy-row.</p>
+          </a>
+          <a href="button.html" class="comp-card">
+            <div class="comp-card__preview"><button class="btn btn--primary btn--sm">Adicionar</button></div>
+            <div class="comp-card__title">Button (primary lg)</div>
+            <p class="comp-card__desc">CTA principal "Adicionar ao carrinho".</p>
+          </a>
+          <a href="tabs.html" class="comp-card">
+            <div class="comp-card__preview" style="padding: 0;"><div class="tabs" style="font-size: 11px;"><button class="tabs__item is-active" style="padding: 6px 10px; font-size: 11px;">Specs</button><button class="tabs__item" style="padding: 6px 10px; font-size: 11px;">Reviews</button></div></div>
+            <div class="comp-card__title">Tabs</div>
+            <p class="comp-card__desc">Specs / Reviews / Info abaixo do fold.</p>
+          </a>
+          <a href="product-card.html" class="comp-card">
+            <div class="comp-card__preview" style="padding: 0; height: 80px;"><div style="background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: 4px; padding: 6px; width: 70%; height: 70%; display: flex; gap: 6px;"><div style="width: 24px; height: 24px; background: var(--bg-base); border-radius: 2px;"></div><div style="flex: 1; display: flex; flex-direction: column; gap: 2px;"><div style="height: 4px; background: var(--ui-card-border); border-radius: 1px; width: 80%;"></div><div style="height: 6px; background: var(--brand-orange); border-radius: 1px; width: 50%; margin-top: 2px;"></div></div></div></div>
+            <div class="comp-card__title">Product Card</div>
+            <p class="comp-card__desc">Bundle e produtos relacionados.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Estados do produto</h2>
+
+        <h3 class="h-2">Em stock + desconto (default)</h3>
+        <p>Já mostrado no exemplo principal. CTA primary, stock verde, badge de desconto visível.</p>
+
+        <h3 class="h-2">Esgotado</h3>
+        <p>CTA muda para "Avisar quando disponível". Sticker vermelho, sem entrega prevista. Q-stepper escondido.</p>
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pattern-frame">
+              <div class="pattern-frame__body">
+                <div style="max-width: 480px;">
+                  <div class="pdp__brand">SONY</div>
+                  <h2 class="pdp__title" style="font-size: 22px; line-height: 28px;">PlayStation 5 Pro 2TB</h2>
+                  <div class="pdp__stickers" style="margin: 12px 0;">
+                    <span class="sticker sticker--cancelled">Esgotado</span>
+                  </div>
+                  <div class="pdp__price-block">
+                    <span class="price price--lg">
+                      <span class="price__current">799,00 €</span>
+                    </span>
+                  </div>
+                  <div class="product-card__stock-block">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-out)" style="color: var(--stock-out);"><circle cx="12" cy="12" r="10" fill="currentColor"/><line x1="15" y1="9" x2="9" y2="15" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><line x1="9" y1="9" x2="15" y2="15" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+                    <span class="product-card__stock-text">
+                      <span class="product-card__stock product-card__stock--out">Esgotado</span>
+                    </span>
+                  </div>
+                  <div style="margin-top: 16px; display: flex; gap: 12px;">
+                    <button class="btn btn--secondary">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                      Avisar quando disponível
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;!-- Em vez do .pdp__buy-row habitual --&gt;
+&lt;button class="btn btn--secondary"&gt;
+  &lt;svg ...bell&gt;&lt;/svg&gt;
+  Avisar quando disponível
+&lt;/button&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Por encomenda</h3>
+        <p>Stock azul, mensagem "5–7 dias úteis". CTA mantém-se "Adicionar ao carrinho" (entrega futura).</p>
+
+        <h3 class="h-2">Pré-venda</h3>
+        <p>Sticker rosa "Pré-venda", data de lançamento visível, CTA "Reservar".</p>
+      </section>
+
+      <section id="rationale" class="section">
+        <div class="section__eyebrow">UX rationale</div>
+        <h2 class="h-1">Porquê estas decisões</h2>
+
+        <h3 class="h-2">Galeria à esquerda, info à direita</h3>
+        <p>Padrão consolidado em e-commerce. O olho lê em F-pattern: imagem captura primeiro, depois desce para preço e CTA. Inverter (imagem à direita) quebra a leitura natural ocidental.</p>
+
+        <h3 class="h-2">Preço com bordas top + bottom</h3>
+        <p>O preço é a informação mais consultada na PDP. As bordas isolam o bloco, ajudando o olho a regressar a ele rapidamente.</p>
+
+        <h3 class="h-2">Quantity à esquerda do CTA</h3>
+        <p>Padrão consolidado: ler "1 × Adicionar ao carrinho" da esquerda para a direita. Inverter força um movimento não-natural.</p>
+
+        <h3 class="h-2">Trust signals em grid 2×2</h3>
+        <p>Envio, garantia, devolução, suporte respondem aos 4 medos do utilizador no momento da compra. Grid 2×2 ocupa pouco espaço e é scaneável.</p>
+
+        <h3 class="h-2">Tabs abaixo do fold</h3>
+        <p>Specs, reviews e info são valiosos mas <strong style="color: var(--text-primary)">secundários à decisão de compra</strong>. Ficam abaixo do fold para não competir com o CTA.</p>
+
+        <h3 class="h-2">Comparar e Favoritos como ghost</h3>
+        <p>São ações secundárias. Botões ghost garantem que não competem visualmente com o CTA primary "Adicionar ao carrinho".</p>
+      </section>
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">CTA "Adicionar ao carrinho" sempre acima do fold. Em mobile fica sticky no fundo do ecrã.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">CTA escondido depois de scroll. O utilizador esquece-se que está numa PDP.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mostrar preço, stock e CTA a 1 segundo de ver a página.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Esconder preço atrás de "Ver preço" ou requerer login para ver.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">"Adicionar ao carrinho" → toast de confirmação. Não navegar para o carrinho automaticamente.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Forçar redireccionamento para o carrinho — quebra a navegação se o utilizador queria continuar a comprar.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Especificações em tabela estruturada. Linha por característica, valor numa coluna separada.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Specs em parágrafo corrido. Utilizador vem comparar valores específicos.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Estado de stock claro: "Em stock", "Pré-venda 15 mai", "Por encomenda 5-7 dias".</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Disponibilidade limitada" sem detalhes. O utilizador não sabe o que esperar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="mobile" class="section">
+        <div class="section__eyebrow">Mobile</div>
+        <h2 class="h-1">PDP em mobile</h2>
+        <p>Stack vertical. Galeria primeiro (com swipe horizontal entre imagens), depois info, preço, CTA. Trust signals em scroll horizontal ou stack 1×4.</p>
+        <div class="callout">
+          <strong>CTA sticky no fundo</strong>
+          Em mobile, "Adicionar ao carrinho" fica fixo no bottom do viewport quando o utilizador faz scroll para baixo. Garante que está sempre visível.
+        </div>
+      </section>
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Estrutura semântica</strong></td><td><code>&lt;main&gt;</code> → <code>&lt;article&gt;</code> com <code>&lt;h1&gt;</code> único para o título do produto.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Galeria</strong></td><td>Thumbnails como <code>&lt;button&gt;</code> com <code>aria-label="Ver imagem 2 de 5"</code>. Imagem principal com <code>alt</code> descritivo.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Preço</strong></td><td>Preço atual em <code>&lt;strong&gt;</code>, preço antigo em <code>&lt;s&gt;</code>. Screen reader anuncia "antigo X, novo Y".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Stock</strong></td><td>Texto explícito + ícone. Daltónicos identificam pelo texto.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Tabs</strong></td><td><code>role="tablist"</code>, navegação por setas, <code>aria-selected</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Toast feedback</strong></td><td><code>role="status"</code> ao adicionar — anuncia "X adicionado ao carrinho".</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#states">Variantes</a></li>
+        <li><a href="#rationale">UX rationale</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="patterns.html">← Padrões</a> · <a href="plp.html">PLP →</a></div>
+  </footer>
+
+</body>
+</html>
