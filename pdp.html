@@ -51,480 +51,790 @@
       </div>
     </aside>
 
-    <main class="main main--wide">
+    <main class="main">
 
       <section id="overview" class="hero">
-        <div class="hero__eyebrow">Pattern · spec real PCDIGA</div>
+        <div class="hero__eyebrow">Pattern · Product Detail Page</div>
         <h1 class="h-display hero__title">PDP</h1>
-        <p class="lead">Product Detail Page — onde o utilizador decide a compra. Spec baseado no Figma <code>1:434</code> e na PDP live (Sony WH-CH520). Layout a 1920px de largura máxima.</p>
+        <p class="lead">Product Detail Page — a página onde o utilizador decide a compra. Documentada por blocos individuais para facilitar consulta, manutenção e implementação em CMS.</p>
         <div class="callout">
-          <strong>Referências usadas</strong>
-          Live: <a href="https://www.pcdiga.com/perifericos/pc-audio/headphones/headphones-sony-wh-ch520-bluetooth-azuis-whch520l-ce7-4548736142862" target="_blank">PCDIGA Sony WH-CH520</a>. Figma: node <code>1:434</code>.
-        </div>
-      </section>
-
-      <section id="layout" class="section">
-        <div class="section__eyebrow">Layout</div>
-        <h2 class="h-1">Layout completo</h2>
-        <p>Duas colunas em desktop: galeria à esquerda + bloco de compra à direita. Abaixo: bundle "A Combinação Perfeita" e tabs de informação.</p>
-
-        <div class="cb">
-          <div class="cb__preview" style="display: block; padding: var(--space-4);">
-            <div class="pattern-frame">
-              <div class="pattern-frame__chrome">
-                <span class="pattern-frame__dot"></span>
-                <span class="pattern-frame__dot"></span>
-                <span class="pattern-frame__dot"></span>
-                <span class="pattern-frame__url">pcdiga.com/perifericos/pc-audio/headphones/headphones-sony-wh-ch520-bluetooth-azuis</span>
-              </div>
-              <div class="pattern-frame__body">
-                <nav class="crumbs">
-                  <a href="#">Home</a>
-                  <span class="crumbs__sep">/</span>
-                  <a href="#">Periféricos</a>
-                  <span class="crumbs__sep">/</span>
-                  <a href="#">PC Audio</a>
-                  <span class="crumbs__sep">/</span>
-                  <span class="crumbs__current">Headphones</span>
-                </nav>
-
-                <div class="pdp">
-                  <!-- LEFT: Gallery -->
-                  <div class="pdp__gallery">
-                    <div class="pdp__gallery-main">
-                      <div class="product-card__placeholder" style="width: 70%; height: 70%;">Sony WH-CH520</div>
-                    </div>
-                    <div class="pdp__gallery-thumbs">
-                      <div class="pdp__gallery-thumb is-active">1</div>
-                      <div class="pdp__gallery-thumb">2</div>
-                      <div class="pdp__gallery-thumb">3</div>
-                      <div class="pdp__gallery-thumb">4</div>
-                    </div>
-                  </div>
-
-                  <!-- RIGHT: Info + buy block -->
-                  <div class="pdp__info">
-
-                    <!-- Meta bar: Part-Number / EAN / Garantia / Trustpilot -->
-                    <div class="pdp__meta-bar">
-                      <span class="pdp__meta-bar-item">Part-Number: <strong>WHCH520L.CE7</strong></span>
-                      <span class="pdp__meta-bar-sep"></span>
-                      <span class="pdp__meta-bar-item">EAN: <strong>4548736142862</strong></span>
-                      <span class="pdp__meta-bar-sep"></span>
-                      <span class="pdp__meta-bar-item">Garantia: <strong>36 Meses</strong></span>
-                      <span class="pdp__meta-bar-sep"></span>
-                      <span class="pdp__meta-bar-item" style="color: var(--stock-available);">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                        <strong>4.5</strong> · Trustpilot
-                      </span>
-                    </div>
-
-                    <!-- Brand logo -->
-                    <a href="#" class="pdp__brand-logo">SONY</a>
-
-                    <!-- Title -->
-                    <h1 class="pdp__title">Headphones Sony WH-CH520 Bluetooth Azuis</h1>
-
-                    <!-- Price block -->
-                    <div>
-                      <span class="price price--xl price--sale">
-                        <span class="price__current">39,00 €</span>
-                        <s class="price__original">69,90 €</s>
-                        <button type="button" aria-label="Preço recomendado pelo fabricante" style="display: inline-flex; align-items: center; gap: 4px; background: transparent; border: 0; cursor: pointer; color: var(--ui-text-muted); font-size: 11px; font-weight: 700;">
-                          PVPR
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                        </button>
-                      </span>
-                      <p class="pdp__promo-dates">
-                        Preço promocional válido de <strong>04/05/2026</strong> até <strong>31/05/2026</strong>, salvo rutura antecipada de stock.
-                      </p>
-                    </div>
-
-                    <!-- Add to cart row -->
-                    <div class="pdp__add-row">
-                      <div class="qty">
-                        <button class="qty__btn" type="button" aria-label="Diminuir quantidade">−</button>
-                        <input class="qty__input" type="number" value="1" />
-                        <button class="qty__btn" type="button" aria-label="Aumentar quantidade">+</button>
-                      </div>
-                      <button class="btn btn--primary">ADICIONAR</button>
-                    </div>
-
-                    <!-- Shipping notice -->
-                    <div class="pdp__shipping-notice">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                      Produto não se qualifica para envio grátis
-                    </div>
-
-                    <!-- Stock + delivery -->
-                    <div class="product-card__stock-block" style="margin: 0;">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
-                      <span class="product-card__stock-text">
-                        <span class="product-card__stock" style="font-size: 16px;">Em Stock</span>
-                        <span class="product-card__delivery">Entrega prevista a 13 de maio</span>
-                      </span>
-                    </div>
-
-                    <!-- PCDIGACare addons -->
-                    <div class="pdp__addons">
-                      <div class="pdp__addons-title">Seguros / Garantia Extra:</div>
-                      <label class="pdp__addon">
-                        <input type="checkbox" />
-                        <div class="pdp__addon-info">
-                          <span class="pdp__addon-name">PCDIGACare Dano e Roubo</span>
-                          <span class="pdp__addon-price">por <strong>3,99 €</strong>/mês</span>
-                        </div>
-                      </label>
-                      <label class="pdp__addon">
-                        <input type="checkbox" />
-                        <div class="pdp__addon-info">
-                          <span class="pdp__addon-name">PCDIGACare Proteção Multirrisco 3 Anos</span>
-                          <span class="pdp__addon-price">por <strong>44,00 €</strong></span>
-                        </div>
-                      </label>
-                      <label class="pdp__addon">
-                        <input type="checkbox" />
-                        <div class="pdp__addon-info">
-                          <span class="pdp__addon-name">PCDIGACare Garantia Troca Direta 4º Ano</span>
-                          <span class="pdp__addon-price">por <strong>4,99 €</strong></span>
-                        </div>
-                      </label>
-                    </div>
-
-                    <!-- Secondary actions -->
-                    <div class="pdp__secondary-actions">
-                      <button class="btn btn--secondary btn--sm">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Ver Stock Lojas
-                      </button>
-                      <button class="btn btn--secondary btn--sm">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                        Financiamento
-                      </button>
-                    </div>
-
-                    <div class="pdp__financing-strip">
-                      <span style="background: var(--brand-orange); color: #fff; padding: 2px 6px; border-radius: 3px; font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em;">Aplazame</span>
-                      <span>Financie o seu pagamento a partir de <strong>200 €</strong></span>
-                    </div>
-
-                    <!-- Features expandable -->
-                    <div class="pdp__features">
-                      <button class="pdp__features-title">
-                        Características Principais
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                      </button>
-                      <ul class="pdp__features-list">
-                        <li>Apresentamos os auscultadores sem fios WH-CH520 — para uma experiência auditiva de alta qualidade.</li>
-                        <li>O nosso Digital Sound Enhancement Engine (DSEE) restaura os ficheiros de música digital.</li>
-                        <li>Desfrute de até 50 horas de autonomia com a carga completa.</li>
-                        <li>Banda de cabeça ajustável, almofadas suaves e design leve.</li>
-                        <li>Bluetooth com Ligação Multiponto — liga 2 dispositivos em simultâneo.</li>
-                      </ul>
-                    </div>
-
-                    <!-- Footer actions -->
-                    <div class="pdp__footer-actions">
-                      <button class="btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Favoritos
-                      </button>
-                      <button class="btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-                        Comparar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- BUNDLE — A Combinação Perfeita -->
-                <div class="bundle">
-                  <h2 class="bundle__title">A Combinação Perfeita</h2>
-                  <div class="bundle__row">
-                    <div class="bundle__product">
-                      <div class="bundle__product-image">
-                        <div class="product-card__placeholder" style="width: 70%; height: 70%; font-size: 9px;">Sony WH-CH520</div>
-                      </div>
-                      <div class="bundle__product-name">Headphones Sony WH-CH520 Bluetooth Azuis</div>
-                      <div class="bundle__product-price"><strong>39,00 €</strong></div>
-                    </div>
-                    <div class="bundle__plus">+</div>
-                    <div class="bundle__product">
-                      <div class="bundle__product-image">
-                        <span class="bundle__discount-badge">-40%</span>
-                        <div class="product-card__placeholder" style="width: 70%; height: 70%; font-size: 9px;">Powerbank Baseus</div>
-                      </div>
-                      <div class="bundle__product-name">Powerbank Baseus Blade 2 12000mAh 65W Azul</div>
-                      <div class="bundle__product-price"><strong>29,90 €</strong><s>49,90 €</s></div>
-                    </div>
-                    <div class="bundle__total">
-                      <span style="font-size: 12px; color: var(--ui-text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700;">Total combinado</span>
-                      <div class="bundle__total-price">
-                        <strong>68,90 €</strong>
-                        <s>88,90 €</s>
-                      </div>
-                      <span class="bundle__savings">Poupas 22%</span>
-                      <button class="btn btn--primary">Adicionar 2 artigos</button>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- TABS -->
-                <div style="margin-top: 48px;">
-                  <div class="tabs">
-                    <button class="tabs__item is-active">Detalhes do Produto</button>
-                    <button class="tabs__item">Informações Técnicas</button>
-                    <button class="tabs__item">Avaliações <span class="ds-badge ds-badge--sm">12</span></button>
-                  </div>
-                  <div class="tabs__panel">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px;">
-                      <div>
-                        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-orange); font-weight: 700; margin-bottom: 8px;">CRIADOS PARA O DIA A DIA</div>
-                        <p style="font-size: 14px; color: var(--ui-text-secondary); margin: 0;">Com até 50 horas de autonomia, pode ouvir as suas músicas favoritas sem ter de se preocupar com ficar sem bateria.</p>
-                      </div>
-                      <div>
-                        <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-orange); font-weight: 700; margin-bottom: 8px;">FÁCIL LIGAÇÃO E UTILIZAÇÃO SIMPLES</div>
-                        <p style="font-size: 14px; color: var(--ui-text-secondary); margin: 0;">Os WH-CH520 dispõem de Ligação Multiponto, operação fácil com botões e podem ser controlados por voz.</p>
-                      </div>
-                    </div>
-
-                    <h4 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0 0 8px;">Especificações:</h4>
-                    <ul style="font-size: 13px; color: var(--ui-text-secondary); padding-left: 20px; line-height: 1.7; margin: 0 0 24px;">
-                      <li>Tipo de Headphone: Fechado, On Ear</li>
-                      <li>Tamanho driver: 30 mm</li>
-                      <li>Resposta de Frequência: 20Hz – 20000Hz</li>
-                      <li>Conectividade: Bluetooth 5.2</li>
-                      <li>Autonomia da bateria: Até 50 horas</li>
-                      <li>Peso: 147 g</li>
-                    </ul>
-
-                    <h4 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0 0 8px;">Conteúdo da embalagem:</h4>
-                    <ul style="font-size: 13px; color: var(--ui-text-secondary); padding-left: 20px; line-height: 1.7; margin: 0;">
-                      <li>Headphone</li>
-                      <li>Cabo USB (carregamento)</li>
-                      <li>Garantia</li>
-                      <li>Guia do Utilizador</li>
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;main class="pdp"&gt;
-  &lt;div class="pdp__gallery"&gt;
-    &lt;div class="pdp__gallery-main"&gt;...&lt;/div&gt;
-    &lt;div class="pdp__gallery-thumbs"&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;div class="pdp__info"&gt;
-    &lt;div class="pdp__meta-bar"&gt;
-      &lt;span&gt;Part-Number: &lt;strong&gt;...&lt;/strong&gt;&lt;/span&gt;
-      &lt;span&gt;EAN: &lt;strong&gt;...&lt;/strong&gt;&lt;/span&gt;
-      &lt;span&gt;Garantia: &lt;strong&gt;36 Meses&lt;/strong&gt;&lt;/span&gt;
-    &lt;/div&gt;
-
-    &lt;a class="pdp__brand-logo"&gt;SONY&lt;/a&gt;
-    &lt;h1 class="pdp__title"&gt;...&lt;/h1&gt;
-
-    &lt;span class="price price--xl price--sale"&gt;...&lt;/span&gt;
-    &lt;p class="pdp__promo-dates"&gt;
-      Preço promocional válido de &lt;strong&gt;DD/MM/YY&lt;/strong&gt;...
-    &lt;/p&gt;
-
-    &lt;div class="pdp__add-row"&gt;
-      &lt;div class="qty"&gt;...&lt;/div&gt;
-      &lt;button class="btn btn--primary"&gt;ADICIONAR&lt;/button&gt;
-    &lt;/div&gt;
-
-    &lt;div class="pdp__shipping-notice"&gt;
-      Produto não se qualifica para envio grátis
-    &lt;/div&gt;
-
-    &lt;div class="product-card__stock-block"&gt;...&lt;/div&gt;
-
-    &lt;div class="pdp__addons"&gt;
-      &lt;div class="pdp__addons-title"&gt;Seguros / Garantia Extra:&lt;/div&gt;
-      &lt;label class="pdp__addon"&gt;
-        &lt;input type="checkbox" /&gt;
-        &lt;div class="pdp__addon-info"&gt;
-          &lt;span class="pdp__addon-name"&gt;PCDIGACare Dano e Roubo&lt;/span&gt;
-          &lt;span class="pdp__addon-price"&gt;por &lt;strong&gt;3,99 €&lt;/strong&gt;/mês&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/label&gt;
-      ...
-    &lt;/div&gt;
-
-    &lt;div class="pdp__secondary-actions"&gt;
-      &lt;button class="btn btn--secondary btn--sm"&gt;Ver Stock Lojas&lt;/button&gt;
-      &lt;button class="btn btn--secondary btn--sm"&gt;Financiamento&lt;/button&gt;
-    &lt;/div&gt;
-
-    &lt;div class="pdp__financing-strip"&gt;...&lt;/div&gt;
-
-    &lt;div class="pdp__features"&gt;
-      &lt;button class="pdp__features-title"&gt;
-        Características Principais &lt;svg ...&gt;&lt;/svg&gt;
-      &lt;/button&gt;
-      &lt;ul class="pdp__features-list"&gt;...&lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;div class="pdp__footer-actions"&gt;
-      &lt;button&gt;Favoritos&lt;/button&gt;
-      &lt;button&gt;Comparar&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/main&gt;
-
-&lt;section class="bundle"&gt;
-  &lt;h2 class="bundle__title"&gt;A Combinação Perfeita&lt;/h2&gt;
-  &lt;div class="bundle__row"&gt;
-    &lt;div class="bundle__product"&gt;...&lt;/div&gt;
-    &lt;div class="bundle__plus"&gt;+&lt;/div&gt;
-    &lt;div class="bundle__product"&gt;...&lt;/div&gt;
-    &lt;div class="bundle__total"&gt;
-      Total: &lt;strong&gt;68,90 €&lt;/strong&gt;
-      &lt;button class="btn btn--primary"&gt;Adicionar 2 artigos&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/section&gt;
-
-&lt;div class="tabs"&gt;
-  &lt;button class="tabs__item is-active"&gt;Detalhes do Produto&lt;/button&gt;
-  &lt;button class="tabs__item"&gt;Informações Técnicas&lt;/button&gt;
-  &lt;button class="tabs__item"&gt;Avaliações&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-          </div>
+          <strong>Como ler esta página</strong>
+          A secção <a href="#anatomy">Anatomia</a> mostra o screenshot completo da PDP com cada bloco numerado. As secções seguintes documentam cada bloco isoladamente: o que faz, quando aparece, que componentes usa e o HTML/CSS pronto a copiar.
         </div>
       </section>
 
       <section id="anatomy" class="section">
         <div class="section__eyebrow">Anatomia</div>
         <h2 class="h-1">Zonas da página</h2>
-        <p>Estrutura completa baseada no live PCDIGA, organizada por ordem de leitura.</p>
+        <p>Screenshot real da PDP PCDIGA com cada zona numerada. Cada número corresponde a um bloco documentado abaixo.</p>
+
+        <div class="anatomy-image">
+          <img class="anatomy-image__img" src="assets/img/pdp-anatomy.png" alt="Screenshot anotado da PDP PCDIGA" />
+          <a class="anatomy-label" href="#block-breadcrumbs" style="top: 3.8%;  left: 30%;">1</a>
+          <a class="anatomy-label" href="#block-topbar"      style="top: 5.8%;  left: 50%;">2</a>
+          <a class="anatomy-label" href="#block-gallery"     style="top: 17%;   left: 32%;">3</a>
+          <a class="anatomy-label" href="#block-actions"     style="top: 36.8%; left: 31%;">4</a>
+          <a class="anatomy-label" href="#block-title"       style="top: 9.7%;  left: 65%;">5</a>
+          <a class="anatomy-label" href="#block-price"       style="top: 11.3%; left: 58%;">6</a>
+          <a class="anatomy-label" href="#block-shipping"    style="top: 13.7%; left: 60%;">7</a>
+          <a class="anatomy-label" href="#block-stock"       style="top: 15%;   left: 60%;">8</a>
+          <a class="anatomy-label" href="#block-buy"         style="top: 16.6%; left: 67%;">9</a>
+          <a class="anatomy-label" href="#block-care"        style="top: 19.5%; left: 65%;">10</a>
+          <a class="anatomy-label" href="#block-stores"      style="top: 22.6%; left: 65%;">11</a>
+          <a class="anatomy-label" href="#block-financing"   style="top: 25.5%; left: 65%;">12</a>
+          <a class="anatomy-label" href="#block-features"    style="top: 32%;   left: 65%;">13</a>
+          <a class="anatomy-label" href="#block-tabs"        style="top: 40.5%; left: 50%;">14</a>
+        </div>
+
+        <div class="anatomy-legend">
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">1</span><strong>Breadcrumbs</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">2</span><strong>Top bar</strong> · Part-Number, EAN, Garantia, Trustpilot, brand</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">3</span><strong>Galeria 2×2</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">4</span><strong>Favoritos / Comparar</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">5</span><strong>Título</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">6</span><strong>Preço</strong> · atual + PVPR + datas promo</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">7</span><strong>Portes Grátis</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">8</span><strong>Stock + entrega</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">9</span><strong>Add to cart</strong> · qty + ADICIONAR</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">10</span><strong>PCDIGACare</strong> · seguros (radio)</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">11</span><strong>Ver Stock Lojas</strong> · colapsável</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">12</span><strong>Financiamento</strong> · seQura + Klarna</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">13</span><strong>Características Principais</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">14</span><strong>Tabs full-width</strong></div>
+        </div>
+      </section>
+
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Estrutura</h2>
+        <p>Desktop: top bar full-width → grid 2 colunas (galeria + buy block) → tabs full-width. Largura máxima 1920px centrada.</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Zona</th><th>Conteúdo</th><th>Componentes</th></tr></thead>
+            <thead><tr><th>Breakpoint</th><th>Grid</th><th>Notas</th></tr></thead>
             <tbody>
-              <tr><td><strong style="color:var(--text-primary)">1. Breadcrumbs</strong></td><td>Home → Categoria → Sub-cat → Tipo de produto. Dropdown na última para irmãos.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">2. Galeria</strong></td><td>Imagem principal grande, fundo branco, aspect 1:1. Thumbnails abaixo.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">3. Meta bar</strong></td><td>Part-Number · EAN · Garantia · Trustpilot. Acima do título, font pequena.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">4. Brand logo</strong></td><td>Logo da marca clicável (vai para loja da marca).</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">5. Título</strong></td><td>H1 com nome completo do produto.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">6. Preço</strong></td><td>Atual em xl + PVPR struck-through + info tooltip + datas da promoção.</td><td>Price (xl)</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">7. Add to cart</strong></td><td>Quantity stepper + botão "ADICIONAR" (uppercase, lg, full-width).</td><td>Quantity, Button</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">8. Shipping notice</strong></td><td>"Produto qualifica/não qualifica para envio grátis". Border-left subtil.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">9. Stock + entrega</strong></td><td>Check verde + "Em Stock" + data de entrega estimada.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">10. PCDIGACare addons</strong></td><td>Bloco com 3 checkboxes (Dano e Roubo, Multirrisco, Troca Direta).</td><td>Input (checkbox)</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">11. Ver Stock Lojas / Financiamento</strong></td><td>2 botões secundários lado a lado.</td><td>Button (secondary sm)</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">12. Aplazame strip</strong></td><td>"Financie o seu pagamento a partir de 200 €".</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">13. Características Principais</strong></td><td>Lista expansível com 5-6 bullets de venda.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">14. Favoritos / Comparar</strong></td><td>Ações secundárias com ícone, no fim da coluna.</td><td>Button (ghost)</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">15. A Combinação Perfeita</strong></td><td>Bundle: este + complementar com desconto combinado.</td><td>Product Card</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">16. Tabs</strong></td><td>Detalhes do Produto / Informações Técnicas / Avaliações (contador).</td><td>Tabs, Badge</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">≥ 1024px</strong></td><td>2 colunas · galeria (50%) + info (50%)</td><td>Top bar e tabs full-width. Max-width 1920px.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">768–1023px</strong></td><td>2 colunas · galeria (45%) + info (55%)</td><td>Galeria mantém grid 2×2.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">&lt; 768px</strong></td><td>Stack vertical</td><td>Ordem: galeria → meta → título → preço → ADICIONAR sticky → resto.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section id="diff" class="section">
-        <div class="section__eyebrow">Comparação</div>
-        <h2 class="h-1">Diferenças vs. versão anterior do pattern</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Mudança</th><th>Detalhe</th></tr></thead>
-            <tbody>
-              <tr><td>Meta bar adicionado</td><td>Part-Number / EAN / Garantia / Trustpilot acima do título.</td></tr>
-              <tr><td>Brand logo</td><td>Acima do título, clicável para loja da marca.</td></tr>
-              <tr><td>PVPR com info tooltip</td><td>Botão "PVPR" com <code>ⓘ</code> em vez de simples "Antigo: X €".</td></tr>
-              <tr><td>Datas da promoção</td><td>"Preço promocional válido de X até Y, salvo rutura antecipada de stock."</td></tr>
-              <tr><td>CTA "ADICIONAR" uppercase</td><td>Texto em uppercase, lg full-width (não "Adicionar ao carrinho").</td></tr>
-              <tr><td>Shipping notice</td><td>"Produto não se qualifica para envio grátis" como bloco visual.</td></tr>
-              <tr><td>PCDIGACare addons</td><td>3 checkboxes para Dano e Roubo, Multirrisco, Troca Direta.</td></tr>
-              <tr><td>Ver Stock Lojas + Financiamento</td><td>Botões secundários (não estavam no design original).</td></tr>
-              <tr><td>Aplazame strip</td><td>Bloco com badge "Aplazame" + texto sobre prestações.</td></tr>
-              <tr><td>Características Principais expansível</td><td>Lista de bullets sob accordion (Características como "preview" das specs).</td></tr>
-              <tr><td>Favoritos / Comparar como ghost</td><td>Movidos para o fim da coluna info, não como botões grandes.</td></tr>
-              <tr><td>Bundle "A Combinação Perfeita"</td><td>Bloco horizontal este+outro com desconto combinado.</td></tr>
-              <tr><td>Tabs renomeadas</td><td>"Detalhes do Produto / Informações Técnicas / Avaliações" (era Specs/Reviews/Info).</td></tr>
-              <tr><td>Trust signals removidos</td><td>"Envio grátis", "2 anos garantia", etc — não aparecem na PDP live; ficam no footer.</td></tr>
-              <tr><td>Max-width 1920px</td><td>Pattern preview ocupa até 1920px (eram 880px). Use <code>.main--wide</code>.</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <!-- ================================================== -->
+      <!-- BLOCKS                                              -->
+      <!-- ================================================== -->
+
+      <section id="blocks" class="section">
+        <div class="section__eyebrow">Blocos</div>
+        <h2 class="h-1">Documentação por bloco</h2>
+        <p>Cada bloco da PDP documentado individualmente — descrição, preview, HTML e componentes que usa.</p>
       </section>
 
-      <section id="components" class="section">
-        <div class="section__eyebrow">Componentes usados</div>
-        <h2 class="h-1">Componentes deste pattern</h2>
-        <div class="comp-grid">
-          <a href="price.html" class="comp-card">
-            <div class="comp-card__preview"><span class="price price--sm price--sale"><span class="price__current">39,00 €</span><s class="price__original">69,90 €</s></span></div>
-            <div class="comp-card__title">Price (xl + PVPR)</div>
-          </a>
-          <a href="quantity.html" class="comp-card">
-            <div class="comp-card__preview"><div class="qty qty--sm"><button class="qty__btn">−</button><input class="qty__input" value="1" /><button class="qty__btn">+</button></div></div>
-            <div class="comp-card__title">Quantity stepper</div>
-          </a>
-          <a href="button.html" class="comp-card">
-            <div class="comp-card__preview"><button class="btn btn--primary btn--sm">ADICIONAR</button></div>
-            <div class="comp-card__title">Button (ADICIONAR)</div>
-          </a>
-          <a href="input.html" class="comp-card">
-            <div class="comp-card__preview"><label style="display: inline-flex; gap: 6px; align-items: center; font-size: 12px;"><input type="checkbox" checked /> PCDIGACare</label></div>
-            <div class="comp-card__title">Input (checkbox)</div>
-          </a>
-          <a href="tabs.html" class="comp-card">
-            <div class="comp-card__preview" style="padding: 0;"><div class="tabs" style="font-size: 11px;"><button class="tabs__item is-active" style="padding: 6px 10px; font-size: 11px;">Detalhes</button><button class="tabs__item" style="padding: 6px 10px; font-size: 11px;">Specs</button></div></div>
-            <div class="comp-card__title">Tabs</div>
-          </a>
-          <a href="badge.html" class="comp-card">
-            <div class="comp-card__preview"><span class="ds-badge">12</span></div>
-            <div class="comp-card__title">Badge (avaliações)</div>
-          </a>
+      <!-- 1. Breadcrumbs -->
+      <article id="block-breadcrumbs" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">1</span>
+          <h3 class="block-doc__title">Breadcrumbs</h3>
         </div>
-      </section>
+        <p class="block-doc__desc">Caminho de navegação. Último item em uppercase com cor primária para destacar a categoria atual. Ajuda SEO e orientação.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <nav class="crumbs">
+              <a href="#">Home</a>
+              <span class="crumbs__sep">/</span>
+              <a href="#">Mobilidade</a>
+              <span class="crumbs__sep">/</span>
+              <a href="#">Smartphones e Telemóveis</a>
+              <span class="crumbs__sep">/</span>
+              <span class="crumbs__current">SMARTPHONES ANDROID</span>
+            </nav>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;nav class="crumbs"&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;span class="crumbs__sep"&gt;/&lt;/span&gt;
+  &lt;a href="#"&gt;Mobilidade&lt;/a&gt;
+  &lt;span class="crumbs__sep"&gt;/&lt;/span&gt;
+  &lt;a href="#"&gt;Smartphones e Telemóveis&lt;/a&gt;
+  &lt;span class="crumbs__sep"&gt;/&lt;/span&gt;
+  &lt;span class="crumbs__current"&gt;SMARTPHONES ANDROID&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+          <span class="block-doc__meta-tag">Posição: <strong>Topo</strong></span>
+          <span class="block-doc__meta-tag">Componentes: <strong>—</strong></span>
+        </div>
+      </article>
+
+      <!-- 2. Top bar -->
+      <article id="block-topbar" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">2</span>
+          <h3 class="block-doc__title">Top bar — meta + brand</h3>
+        </div>
+        <p class="block-doc__desc">Barra full-width com identificadores técnicos (Part-Number, EAN), garantia e Trustpilot à esquerda; logo da marca à direita. Reforça confiança e dá info que utilizadores técnicos procuram.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__top-bar">
+              <div class="pdp__top-bar-meta">
+                <span class="pdp__top-bar-item">PART-NUMBER: <strong>74925EU</strong></span>
+                <span class="pdp__top-bar-sep"></span>
+                <span class="pdp__top-bar-item">CÓDIGO EAN: <strong>6932554496944</strong></span>
+                <span class="pdp__top-bar-sep"></span>
+                <span class="pdp__top-bar-item">GARANTIA: <strong>36 MESES</strong></span>
+                <span class="pdp__top-bar-sep"></span>
+                <span class="pdp__top-bar-item pdp__top-bar-item--trustpilot">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--stock-available)"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <strong>4.5</strong>
+                  <span style="color: var(--ui-text-secondary); font-weight: 400;">· 4 opiniões</span>
+                </span>
+              </div>
+              <a href="#" class="pdp__top-bar-brand">xiaomi</a>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="pdp__top-bar"&gt;
+  &lt;div class="pdp__top-bar-meta"&gt;
+    &lt;span class="pdp__top-bar-item"&gt;
+      PART-NUMBER: &lt;strong&gt;74925EU&lt;/strong&gt;
+    &lt;/span&gt;
+    &lt;span class="pdp__top-bar-sep"&gt;&lt;/span&gt;
+    &lt;span class="pdp__top-bar-item"&gt;
+      CÓDIGO EAN: &lt;strong&gt;6932554496944&lt;/strong&gt;
+    &lt;/span&gt;
+    &lt;span class="pdp__top-bar-sep"&gt;&lt;/span&gt;
+    &lt;span class="pdp__top-bar-item"&gt;
+      GARANTIA: &lt;strong&gt;36 MESES&lt;/strong&gt;
+    &lt;/span&gt;
+    &lt;span class="pdp__top-bar-sep"&gt;&lt;/span&gt;
+    &lt;span class="pdp__top-bar-item pdp__top-bar-item--trustpilot"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+      &lt;strong&gt;4.5&lt;/strong&gt; · 4 opiniões
+    &lt;/span&gt;
+  &lt;/div&gt;
+  &lt;a href="#" class="pdp__top-bar-brand"&gt;xiaomi&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+          <span class="block-doc__meta-tag">Largura: <strong>Full-width</strong></span>
+          <span class="block-doc__meta-tag">Trustpilot: <strong>Só se houver opiniões</strong></span>
+        </div>
+      </article>
+
+      <!-- 3. Gallery -->
+      <article id="block-gallery" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">3</span>
+          <h3 class="block-doc__title">Galeria 2×2</h3>
+        </div>
+        <p class="block-doc__desc">Grid 2×2 com 4 cells iguais (aspect ratio 1:1, fundo branco). Cells 1-3 mostram imagens principais grandes. Cell 4 mostra um grid 2×2 de mini-thumbnails das imagens adicionais, com overlay "+ Ver Mais" na última quando há mais de 7 imagens.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__gallery" style="max-width: 560px;">
+              <div class="pdp__gallery-cell"><div class="pdp__gallery-placeholder">imagem 1</div></div>
+              <div class="pdp__gallery-cell"><div class="pdp__gallery-placeholder">imagem 2</div></div>
+              <div class="pdp__gallery-cell"><div class="pdp__gallery-placeholder">imagem 3</div></div>
+              <div class="pdp__gallery-cell pdp__gallery-cell--more">
+                <div class="pdp__gallery-mini">
+                  <div class="pdp__gallery-mini-thumb"><div class="pdp__gallery-placeholder" style="font-size: 8px;">img 4</div></div>
+                  <div class="pdp__gallery-mini-thumb"><div class="pdp__gallery-placeholder" style="font-size: 8px;">img 5</div></div>
+                  <div class="pdp__gallery-mini-thumb"><div class="pdp__gallery-placeholder" style="font-size: 8px;">img 6</div></div>
+                  <div class="pdp__gallery-mini-thumb pdp__gallery-mini-thumb--more"><div class="pdp__gallery-placeholder" style="font-size: 8px;">img 7</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="pdp__gallery"&gt;
+  &lt;div class="pdp__gallery-cell"&gt;
+    &lt;img src="..." alt="..." /&gt;
+  &lt;/div&gt;
+  &lt;div class="pdp__gallery-cell"&gt;...&lt;/div&gt;
+  &lt;div class="pdp__gallery-cell"&gt;...&lt;/div&gt;
+
+  &lt;!-- Cell 4 — mini-thumbnails --&gt;
+  &lt;div class="pdp__gallery-cell pdp__gallery-cell--more"&gt;
+    &lt;div class="pdp__gallery-mini"&gt;
+      &lt;div class="pdp__gallery-mini-thumb"&gt;&lt;img.../&gt;&lt;/div&gt;
+      &lt;div class="pdp__gallery-mini-thumb"&gt;&lt;img.../&gt;&lt;/div&gt;
+      &lt;div class="pdp__gallery-mini-thumb"&gt;&lt;img.../&gt;&lt;/div&gt;
+      &lt;div class="pdp__gallery-mini-thumb
+                  pdp__gallery-mini-thumb--more"&gt;
+        &lt;img.../&gt;
+        &lt;!-- ::after gera "+ Ver Mais" --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+          <span class="block-doc__meta-tag">Mínimo: <strong>1 imagem</strong></span>
+          <span class="block-doc__meta-tag">Fundo: <strong>Branco fixo</strong></span>
+        </div>
+      </article>
+
+      <!-- 4. Gallery actions -->
+      <article id="block-actions" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">4</span>
+          <h3 class="block-doc__title">Favoritos / Comparar</h3>
+        </div>
+        <p class="block-doc__desc">Ações secundárias centradas sob a galeria. Texto + ícone laranja, fundo transparente. Não competem com o CTA principal "ADICIONAR".</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__gallery-actions">
+              <button type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                Favoritos
+              </button>
+              <button type="button">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+                Comparar
+              </button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="pdp__gallery-actions"&gt;
+  &lt;button type="button"&gt;
+    &lt;svg&gt;...&lt;/svg&gt; Favoritos
+  &lt;/button&gt;
+  &lt;button type="button"&gt;
+    &lt;svg&gt;...&lt;/svg&gt; Comparar
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+          <span class="block-doc__meta-tag">Posição: <strong>Sob galeria</strong></span>
+          <span class="block-doc__meta-tag">Alinhamento: <strong>Centro</strong></span>
+        </div>
+      </article>
+
+      <!-- 5. Title -->
+      <article id="block-title" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">5</span>
+          <h3 class="block-doc__title">Título</h3>
+        </div>
+        <p class="block-doc__desc">H1 com o nome completo do produto: marca + linha + atributos chave. Texto descritivo, não inteligente. Ajuda SEO e identificação imediata.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <h1 class="pdp__title" style="margin:0;">Smartphone Xiaomi Poco X8 Pro Max 5G 6.83" 12GB/512GB Dual SIM Black</h1>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;h1 class="pdp__title"&gt;
+  Smartphone Xiaomi Poco X8 Pro Max 5G 6.83"
+  12GB/512GB Dual SIM Black
+&lt;/h1&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Tag: <strong>H1 único</strong></span>
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+        </div>
+      </article>
+
+      <!-- 6. Price -->
+      <article id="block-price" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">6</span>
+          <h3 class="block-doc__title">Preço</h3>
+        </div>
+        <p class="block-doc__desc">Preço atual em XL laranja brand. Se houver promoção, mostrar PVPR struck-through ao lado + tooltip explicando a sigla. Datas da promoção em texto pequeno por baixo (quando aplicável).</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <span class="price price--xl price--sale">
+              <span class="price__current">479,90 €</span>
+              <s class="price__original">499,00 €</s>
+              <button type="button" aria-label="Preço recomendado pelo fabricante" style="display: inline-flex; align-items: center; gap: 4px; background: transparent; border: 0; cursor: pointer; color: var(--ui-text-muted); font-size: 11px; font-weight: 700;">
+                PVPR
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              </button>
+            </span>
+            <p class="pdp__promo-dates" style="margin: 6px 0 0;">Preço promocional válido de <strong>17/05/2026</strong> até <strong>30/06/2026</strong>, salvo rutura antecipada de stock.</p>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="price price--xl price--sale"&gt;
+  &lt;span class="price__current"&gt;479,90 €&lt;/span&gt;
+  &lt;s class="price__original"&gt;499,00 €&lt;/s&gt;
+  &lt;button aria-label="Preço recomendado pelo fabricante"&gt;
+    PVPR &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/span&gt;
+
+&lt;!-- Datas só quando há PVPR --&gt;
+&lt;p class="pdp__promo-dates"&gt;
+  Preço promocional válido de &lt;strong&gt;17/05/2026&lt;/strong&gt;
+  até &lt;strong&gt;30/06/2026&lt;/strong&gt;...
+&lt;/p&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Componente: <strong><a href="price.html">Price (XL)</a></strong></span>
+          <span class="block-doc__meta-tag">PVPR: <strong>Só com promoção</strong></span>
+          <span class="block-doc__meta-tag">Datas: <strong>Obrigatório com PVPR</strong></span>
+        </div>
+      </article>
+
+      <!-- 7. Shipping -->
+      <article id="block-shipping" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">7</span>
+          <h3 class="block-doc__title">Portes</h3>
+        </div>
+        <p class="block-doc__desc">Linha com ícone camião + texto. Em laranja brand quando há portes grátis (caso geral); em cinza muted quando o produto não qualifica (ex: grandes eletrodomésticos).</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__shipping" style="margin: 0 0 var(--space-4);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              Portes Grátis · (Válido apenas para Portugal Continental)
+            </div>
+            <div class="pdp__shipping pdp__shipping--unavailable" style="margin: 0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              Produto não qualifica para envio grátis
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;!-- Variante padrão (laranja) --&gt;
+&lt;div class="pdp__shipping"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+  Portes Grátis · (Válido apenas para Portugal Continental)
+&lt;/div&gt;
+
+&lt;!-- Variante "não qualifica" (cinza) --&gt;
+&lt;div class="pdp__shipping pdp__shipping--unavailable"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+  Produto não qualifica para envio grátis
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Variantes: <strong>2</strong></span>
+          <span class="block-doc__meta-tag">Cor padrão: <strong>Orange</strong></span>
+        </div>
+      </article>
+
+      <!-- 8. Stock -->
+      <article id="block-stock" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">8</span>
+          <h3 class="block-doc__title">Stock + entrega</h3>
+        </div>
+        <p class="block-doc__desc">Check verde + estado do stock + data estimada de entrega. Reduz incerteza e cria confiança imediata. Variantes: Em Stock (verde), Esgotado (vermelho), Por encomenda (azul).</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="product-card__stock-block" style="margin: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+              <span class="product-card__stock-text">
+                <span class="product-card__stock" style="font-size: 16px;">Em Stock</span>
+                <span class="product-card__delivery">Entrega prevista a 22 de maio</span>
+              </span>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__stock-block"&gt;
+  &lt;svg fill="var(--stock-available)"&gt;...&lt;/svg&gt;
+  &lt;span class="product-card__stock-text"&gt;
+    &lt;span class="product-card__stock"&gt;Em Stock&lt;/span&gt;
+    &lt;span class="product-card__delivery"&gt;
+      Entrega prevista a 22 de maio
+    &lt;/span&gt;
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Variantes: <strong>3</strong></span>
+          <span class="block-doc__meta-tag">Data: <strong>Calculada</strong></span>
+        </div>
+      </article>
+
+      <!-- 9. Add to cart -->
+      <article id="block-buy" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">9</span>
+          <h3 class="block-doc__title">Add to cart</h3>
+        </div>
+        <p class="block-doc__desc">Quantity stepper + botão "ADICIONAR" (uppercase, primary, com ícone carrinho). É o CTA principal da página — o objectivo de tudo o resto é levar aqui.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__add-row">
+              <div class="qty">
+                <button class="qty__btn" type="button" aria-label="Diminuir quantidade">−</button>
+                <input class="qty__input" type="number" value="1" />
+                <button class="qty__btn" type="button" aria-label="Aumentar quantidade">+</button>
+              </div>
+              <button class="btn btn--primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                ADICIONAR
+              </button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="pdp__add-row"&gt;
+  &lt;div class="qty"&gt;
+    &lt;button class="qty__btn"&gt;−&lt;/button&gt;
+    &lt;input class="qty__input" type="number" value="1" /&gt;
+    &lt;button class="qty__btn"&gt;+&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn--primary"&gt;
+    &lt;svg&gt;...&lt;/svg&gt; ADICIONAR
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Componentes: <strong><a href="quantity.html">Quantity</a> + <a href="button.html">Button</a></strong></span>
+          <span class="block-doc__meta-tag">Mobile: <strong>Sticky bottom</strong></span>
+        </div>
+      </article>
+
+      <!-- 10. PCDIGACare -->
+      <article id="block-care" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">10</span>
+          <h3 class="block-doc__title">PCDIGACare — Seguros / Garantia Extra</h3>
+        </div>
+        <p class="block-doc__desc">Bloco de upsell de protecção. <strong>Radio buttons</strong> (não checkboxes) porque as opções são mutuamente exclusivas: ou paga mensal ou anual. Nenhuma opção pré-seleccionada — opt-in explícito.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__addons">
+              <div class="pdp__addons-title">Seguros/Garantia Extra:</div>
+              <label class="pdp__addon">
+                <input type="radio" name="pcdigacare-demo" />
+                <div class="pdp__addon-info">
+                  <span class="pdp__addon-name">PCDIGACare Dano e Roubo</span>
+                  <span class="pdp__addon-price">por <strong>11,99 €</strong> p/mês</span>
+                </div>
+              </label>
+              <label class="pdp__addon">
+                <input type="radio" name="pcdigacare-demo" />
+                <div class="pdp__addon-info">
+                  <span class="pdp__addon-name">PCDIGACare Dano e Roubo 1 Ano</span>
+                  <span class="pdp__addon-price">por <strong>119,00 €</strong></span>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="pdp__addons"&gt;
+  &lt;div class="pdp__addons-title"&gt;Seguros/Garantia Extra:&lt;/div&gt;
+
+  &lt;label class="pdp__addon"&gt;
+    &lt;input type="radio" name="pcdigacare" /&gt;
+    &lt;div class="pdp__addon-info"&gt;
+      &lt;span class="pdp__addon-name"&gt;
+        PCDIGACare Dano e Roubo
+      &lt;/span&gt;
+      &lt;span class="pdp__addon-price"&gt;
+        por &lt;strong&gt;11,99 €&lt;/strong&gt; p/mês
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+
+  &lt;label class="pdp__addon"&gt;
+    &lt;input type="radio" name="pcdigacare" /&gt;
+    ...
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Tipo: <strong>Radio (não checkbox)</strong></span>
+          <span class="block-doc__meta-tag">Default: <strong>Nenhum selecionado</strong></span>
+          <span class="block-doc__meta-tag">Componente: <strong><a href="input.html">Input</a></strong></span>
+        </div>
+      </article>
+
+      <!-- 11. Ver Stock Lojas -->
+      <article id="block-stores" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">11</span>
+          <h3 class="block-doc__title">Ver Stock Lojas — colapsável</h3>
+        </div>
+        <p class="block-doc__desc">Linha colapsável (default fechada) que mostra disponibilidade nas lojas físicas. Reduz fricção para utilizadores que querem ir buscar/levantar. Usa <code>&lt;details&gt;/&lt;summary&gt;</code> nativos.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <details class="pdp__collapsible">
+              <summary class="pdp__collapsible-header">
+                <span class="pdp__collapsible-header-left">
+                  <svg class="pdp__collapsible-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  Ver Stock Lojas
+                </span>
+                <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </summary>
+              <div class="pdp__collapsible-body">
+                <p style="margin: 0;">Disponibilidade nas lojas físicas PCDIGA. Em Lisboa (Parque das Nações, Benfica), Porto, Gaia, Braga e Leiria.</p>
+              </div>
+            </details>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;details class="pdp__collapsible"&gt;
+  &lt;summary class="pdp__collapsible-header"&gt;
+    &lt;span class="pdp__collapsible-header-left"&gt;
+      &lt;svg class="pdp__collapsible-icon"&gt;...&lt;/svg&gt;
+      Ver Stock Lojas
+    &lt;/span&gt;
+    &lt;svg class="chevron"&gt;...&lt;/svg&gt;
+  &lt;/summary&gt;
+  &lt;div class="pdp__collapsible-body"&gt;
+    &lt;!-- Lista de lojas com disponibilidade --&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Default: <strong>Colapsado</strong></span>
+          <span class="block-doc__meta-tag">Markup: <strong>details/summary</strong></span>
+        </div>
+      </article>
+
+      <!-- 12. Financiamento -->
+      <article id="block-financing" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">12</span>
+          <h3 class="block-doc__title">Financiamento — seQura + Klarna</h3>
+        </div>
+        <p class="block-doc__desc">Colapsável <strong>default aberto</strong>. Mostra opções de pagamento fracionado com logos coloridos. Aplazame e seQura na primeira linha, Klarna na segunda.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <details class="pdp__collapsible" open>
+              <summary class="pdp__collapsible-header">
+                <span class="pdp__collapsible-header-left">
+                  <svg class="pdp__collapsible-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  Financiamento
+                </span>
+                <svg class="chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="pdp__collapsible-body">
+                <div class="pdp__financing-options">
+                  <div class="pdp__financing-option">
+                    <span>Desde <strong>42,53 €/mês</strong> ou 3 prestações sem custos</span>
+                    <span class="pdp__financing-logo pdp__financing-logo--sequra">seQura</span>
+                    <a href="#">+info*</a>
+                  </div>
+                  <div class="pdp__financing-option">
+                    <span class="pdp__financing-logo pdp__financing-logo--klarna">Klarna</span>
+                    <span>3 pagamentos de <strong>159,96 €</strong> sem juros, com Klarna.</span>
+                    <a href="#">Saber mais</a>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;details class="pdp__collapsible" open&gt;
+  &lt;summary class="pdp__collapsible-header"&gt;...&lt;/summary&gt;
+  &lt;div class="pdp__collapsible-body"&gt;
+    &lt;div class="pdp__financing-options"&gt;
+
+      &lt;div class="pdp__financing-option"&gt;
+        &lt;span&gt;Desde &lt;strong&gt;42,53 €/mês&lt;/strong&gt;...&lt;/span&gt;
+        &lt;span class="pdp__financing-logo
+                     pdp__financing-logo--sequra"&gt;seQura&lt;/span&gt;
+        &lt;a href="#"&gt;+info*&lt;/a&gt;
+      &lt;/div&gt;
+
+      &lt;div class="pdp__financing-option"&gt;
+        &lt;span class="pdp__financing-logo
+                     pdp__financing-logo--klarna"&gt;Klarna&lt;/span&gt;
+        &lt;span&gt;3 pagamentos de &lt;strong&gt;159,96 €&lt;/strong&gt;...&lt;/span&gt;
+        &lt;a href="#"&gt;Saber mais&lt;/a&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/details&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Default: <strong>Aberto</strong></span>
+          <span class="block-doc__meta-tag">Parceiros: <strong>seQura, Klarna</strong></span>
+        </div>
+      </article>
+
+      <!-- 13. Características Principais -->
+      <article id="block-features" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">13</span>
+          <h3 class="block-doc__title">Características Principais</h3>
+        </div>
+        <p class="block-doc__desc">Bullets <strong>sempre visíveis</strong> com os argumentos chave de venda. 3-6 itens curtos. Permite ao utilizador validar a decisão de compra sem precisar de abrir as tabs de detalhe.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__features">
+              <ul class="pdp__features-list">
+                <li><strong>Processador de topo</strong> Mediatek Dimensity 9500s;</li>
+                <li><strong>Ecrã AMOLED</strong> 1.5K super brilhante de 120Hz;</li>
+                <li><strong>Câmaras de 50MP</strong> com OIS;</li>
+                <li><strong>Bateria de 8500mAh</strong> com carregamento HyperCharge a 100W;</li>
+                <li><strong>Classificação IP68</strong> para resistência à água e pó.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="pdp__features"&gt;
+  &lt;ul class="pdp__features-list"&gt;
+    &lt;li&gt;
+      &lt;strong&gt;Processador de topo&lt;/strong&gt;
+      Mediatek Dimensity 9500s;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Ecrã AMOLED&lt;/strong&gt; 1.5K super brilhante...&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Câmaras de 50MP&lt;/strong&gt; com OIS;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Bateria de 8500mAh&lt;/strong&gt;...&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Classificação IP68&lt;/strong&gt;...&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Itens: <strong>3–6</strong></span>
+          <span class="block-doc__meta-tag">Visibilidade: <strong>Sempre</strong></span>
+        </div>
+      </article>
+
+      <!-- 14. Tabs -->
+      <article id="block-tabs" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">14</span>
+          <h3 class="block-doc__title">Tabs full-width</h3>
+        </div>
+        <p class="block-doc__desc">Tabs em UPPERCASE distribuídas ao longo da largura total da página. Três tabs fixos: <strong>Detalhes do Produto</strong> (marketing copy), <strong>Informações Técnicas</strong> (specs frias), <strong>Avaliações</strong> (Trustpilot).</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="pdp__tabs">
+              <div class="tabs">
+                <button class="tabs__item is-active">Detalhes do Produto</button>
+                <button class="tabs__item">Informações Técnicas</button>
+                <button class="tabs__item">Avaliações</button>
+              </div>
+              <div class="tabs__panel">
+                <h4 style="font-size: 13px; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 8px;">Plataforma emblemática de 3 nm</h4>
+                <p style="font-size: 14px; color: var(--ui-text-secondary); margin: 0; line-height: 1.7;">Construído com base no processo de fabrico de 3 nm de 2.ª geração, o chipset adota um design composto exclusivamente por núcleos de grande porte...</p>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="pdp__tabs"&gt;
+  &lt;div class="tabs"&gt;
+    &lt;button class="tabs__item is-active"&gt;
+      Detalhes do Produto
+    &lt;/button&gt;
+    &lt;button class="tabs__item"&gt;Informações Técnicas&lt;/button&gt;
+    &lt;button class="tabs__item"&gt;Avaliações&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="tabs__panel"&gt;
+    &lt;!-- Conteúdo da tab ativa --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Largura: <strong>Full-width</strong></span>
+          <span class="block-doc__meta-tag">Estilo: <strong>UPPERCASE</strong></span>
+          <span class="block-doc__meta-tag">Componente: <strong><a href="tabs.html">Tabs</a></strong></span>
+        </div>
+      </article>
+
+      <!-- ================================================== -->
+      <!-- UX rationale                                        -->
+      <!-- ================================================== -->
 
       <section id="rationale" class="section">
         <div class="section__eyebrow">UX rationale</div>
         <h2 class="h-1">Porquê esta estrutura</h2>
 
-        <h3 class="h-2">Meta bar logo no topo</h3>
-        <p>Part-Number e EAN são procurados por utilizadores técnicos/comparadores. Garantia gera confiança imediata. Trustpilot mostra prova social no primeiro contacto visual.</p>
+        <h3 class="h-2">Top bar antes do título</h3>
+        <p>Part-Number e EAN são procurados por utilizadores técnicos. Garantia gera confiança imediata. Trustpilot mostra prova social no primeiro contacto visual. Tudo isto reforça credibilidade <em>antes</em> do utilizador decidir continuar a explorar.</p>
 
         <h3 class="h-2">Botão "ADICIONAR" em uppercase</h3>
-        <p>Padrão consistente do site PCDIGA. Uppercase + tamanho grande + cor brand = ação principal inequívoca. Ocupa toda a largura ao lado do qty stepper.</p>
+        <p>Padrão consistente do site PCDIGA. Uppercase + tamanho grande + cor brand = ação principal inequívoca. Ocupa toda a largura ao lado do qty stepper, eliminando ambiguidade sobre o que fazer.</p>
 
-        <h3 class="h-2">PCDIGACare entre CTA e ações secundárias</h3>
-        <p>Posição estratégica: depois do utilizador ver preço e stock, antes de scroll para mais detalhes. Maximum margin para upsell de proteção.</p>
+        <h3 class="h-2">PCDIGACare entre CTA e info secundária</h3>
+        <p>Posição estratégica: depois do utilizador ver preço e stock, antes de scroll para mais detalhes. Maximiza atenção para o upsell de protecção sem distrair o CTA primário.</p>
 
-        <h3 class="h-2">Características Principais expansível</h3>
-        <p>5-6 bullets de venda visíveis sem precisar de abrir as tabs. Utilizador vê os argumentos chave acima do fold sem competir com o CTA.</p>
+        <h3 class="h-2">Características sempre visíveis</h3>
+        <p>3-6 bullets de venda acima do fold sem precisar de abrir as tabs. O utilizador valida a decisão sem competir com o CTA. Tabs ficam para quem quer aprofundar.</p>
 
-        <h3 class="h-2">Bundle abaixo da PDP, não dentro</h3>
-        <p>"A Combinação Perfeita" aparece DEPOIS do bloco principal — não distrai do CTA primário, mas oferece upsell visível antes das tabs detalhadas.</p>
+        <h3 class="h-2">Favoritos / Comparar sob a galeria</h3>
+        <p>Ações secundárias afastadas do CTA principal. Posição visual lógica (relacionadas com a imagem do produto) sem competir com "ADICIONAR".</p>
 
         <h3 class="h-2">Tabs com nomes específicos PCDIGA</h3>
-        <p>"Detalhes do Produto" (marketing copy + features) vs "Informações Técnicas" (specs frias) vs "Avaliações" (Trustpilot). Diferente de "Specs/Reviews/Info" mais genéricos.</p>
+        <p>"Detalhes do Produto" (marketing copy + features) vs "Informações Técnicas" (specs frias) vs "Avaliações" (Trustpilot). Linguagem que o utilizador português entende, em vez de "Specs/Reviews/Info" mais genéricos.</p>
       </section>
+
+      <!-- ================================================== -->
+      <!-- Variantes / states                                  -->
+      <!-- ================================================== -->
 
       <section id="states" class="section">
         <div class="section__eyebrow">Variantes</div>
         <h2 class="h-1">Estados do produto</h2>
-        <h3 class="h-2">Default — Em stock + desconto</h3>
-        <p>Já mostrado no exemplo principal. CTA primary visível, PCDIGACare expandido, financiamento disponível.</p>
-
-        <h3 class="h-2">Esgotado</h3>
-        <p>CTA muda para "Avisar quando disponível" (secondary), PCDIGACare permanece, Qty stepper desaparece, stock fica vermelho.</p>
-
-        <h3 class="h-2">Por encomenda</h3>
-        <p>Stock azul "Por encomenda · 5-7 dias úteis". CTA mantém-se "ADICIONAR" — encomenda futura é compra válida.</p>
-
-        <h3 class="h-2">Sem PVPR (preço regular)</h3>
-        <p>Preço atual só, sem badge PVPR nem datas de promoção. Tudo o resto idêntico.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Estado</th><th>Stock</th><th>CTA</th><th>Outros</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Em stock + desconto</strong></td><td>Verde "Em Stock"</td><td>ADICIONAR primary</td><td>PVPR + datas promo visíveis</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Em stock sem promoção</strong></td><td>Verde "Em Stock"</td><td>ADICIONAR primary</td><td>Sem PVPR nem datas</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Esgotado</strong></td><td>Vermelho "Esgotado"</td><td>"Avisar quando disponível" (secondary)</td><td>Qty stepper escondido</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Por encomenda</strong></td><td>Azul "Por encomenda · 5-7 dias"</td><td>ADICIONAR primary</td><td>Encomenda futura</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts                                       -->
+      <!-- ================================================== -->
 
       <section id="usage" class="section">
         <div class="section__eyebrow">Usage</div>
@@ -540,11 +850,11 @@
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">PCDIGACare addons opt-in (desmarcados por defeito). Utilizador escolhe ativamente.</p>
+            <p class="dodont__text">PCDIGACare addons opt-in (nenhum radio seleccionado por defeito). Utilizador escolhe ativamente.</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">PCDIGACare pré-selecionado. Dark pattern — utilizador pode comprar sem perceber.</p>
+            <p class="dodont__text">PCDIGACare pré-seleccionado. Dark pattern — utilizador pode comprar sem perceber.</p>
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
@@ -556,24 +866,63 @@
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Bundle ABAIXO da PDP principal, com CTA próprio "Adicionar 2 artigos".</p>
+            <p class="dodont__text">Características Principais sempre visíveis (não dentro de colapsável).</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">Bundle DENTRO do bloco principal competindo com o CTA "ADICIONAR".</p>
+            <p class="dodont__text">Esconder características num colapsável "Ver mais" — utilizador precisa de validar a compra rapidamente.</p>
           </div>
         </div>
       </section>
 
+      <!-- ================================================== -->
+      <!-- Mobile                                              -->
+      <!-- ================================================== -->
+
       <section id="mobile" class="section">
         <div class="section__eyebrow">Mobile</div>
         <h2 class="h-1">PDP em mobile</h2>
-        <p>Stack vertical. Ordem de blocos: <strong style="color:var(--text-primary)">galeria → meta → título → preço → ADICIONAR → stock → addons → secondary actions → features → favoritos/comparar → bundle → tabs</strong>.</p>
+        <p>Stack vertical. Ordem dos blocos: <strong style="color:var(--text-primary)">breadcrumbs → top bar (collapse) → galeria → favoritos/comparar → título → preço → portes → stock → ADICIONAR → PCDIGACare → colapsáveis → características → tabs</strong>.</p>
         <div class="callout">
           <strong>ADICIONAR sticky em mobile</strong>
-          Quando o utilizador faz scroll para baixo, o CTA "ADICIONAR" + qty stepper fica fixo no fundo do viewport. Garante decisão de compra sempre acessível.
+          Quando o utilizador faz scroll para baixo, o CTA "ADICIONAR" + qty stepper fica fixo no fundo do viewport. Garante decisão de compra sempre acessível, mesmo em produtos com muita info técnica.
         </div>
       </section>
+
+      <!-- ================================================== -->
+      <!-- Componentes usados                                  -->
+      <!-- ================================================== -->
+
+      <section id="components" class="section">
+        <div class="section__eyebrow">Componentes usados</div>
+        <h2 class="h-1">Componentes deste pattern</h2>
+        <div class="comp-grid">
+          <a href="price.html" class="comp-card">
+            <div class="comp-card__preview"><span class="price price--sm price--sale"><span class="price__current">39,00 €</span><s class="price__original">69,90 €</s></span></div>
+            <div class="comp-card__title">Price (XL + PVPR)</div>
+          </a>
+          <a href="quantity.html" class="comp-card">
+            <div class="comp-card__preview"><div class="qty qty--sm"><button class="qty__btn">−</button><input class="qty__input" value="1" /><button class="qty__btn">+</button></div></div>
+            <div class="comp-card__title">Quantity stepper</div>
+          </a>
+          <a href="button.html" class="comp-card">
+            <div class="comp-card__preview"><button class="btn btn--primary btn--sm">ADICIONAR</button></div>
+            <div class="comp-card__title">Button (ADICIONAR)</div>
+          </a>
+          <a href="input.html" class="comp-card">
+            <div class="comp-card__preview"><label style="display: inline-flex; gap: 6px; align-items: center; font-size: 12px;"><input type="radio" /> Radio</label></div>
+            <div class="comp-card__title">Input (radio)</div>
+          </a>
+          <a href="tabs.html" class="comp-card">
+            <div class="comp-card__preview" style="padding: 0;"><div class="tabs" style="font-size: 11px;"><button class="tabs__item is-active" style="padding: 6px 10px; font-size: 11px;">Detalhes</button><button class="tabs__item" style="padding: 6px 10px; font-size: 11px;">Specs</button></div></div>
+            <div class="comp-card__title">Tabs</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
 
       <section id="accessibility" class="section">
         <div class="section__eyebrow">Acessibilidade</div>
@@ -583,11 +932,11 @@
             <tbody>
               <tr><td><strong style="color:var(--text-primary)">H1 único</strong></td><td>Nome do produto. Outros headings descem para H2/H3.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">PVPR tooltip</strong></td><td>Botão com <code>aria-label="Preço recomendado pelo fabricante"</code>.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Galeria</strong></td><td>Thumbnails com <code>aria-label="Imagem N de N"</code>. Carousel acessível por keyboard.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Addons</strong></td><td>Cada checkbox dentro de <code>&lt;label&gt;</code>. Preço associado ao nome via <code>aria-describedby</code>.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Características expansível</strong></td><td><code>aria-expanded</code> + <code>aria-controls</code> no botão.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Galeria</strong></td><td>Thumbnails com <code>aria-label="Imagem N de N"</code>. Lightbox acessível por keyboard.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">PCDIGACare</strong></td><td>Cada radio dentro de <code>&lt;label&gt;</code>. Mesmo <code>name</code> garante exclusividade.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Colapsáveis</strong></td><td><code>&lt;details&gt;/&lt;summary&gt;</code> nativos — acessibilidade out of the box.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Tabs</strong></td><td><code>role="tablist"</code>, navegação por setas, foco visível.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Bundle</strong></td><td>"Adicionar 2 artigos" anuncia exatamente o que vai acontecer.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">CTA</strong></td><td>"ADICIONAR" como texto descritivo. Após click anuncia "Produto adicionado ao carrinho".</td></tr>
             </tbody>
           </table>
         </div>
@@ -599,14 +948,28 @@
       <div class="toc__title">Nesta página</div>
       <ul class="toc__list">
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#layout">Layout</a></li>
         <li><a href="#anatomy">Anatomia</a></li>
-        <li><a href="#diff">Mudanças vs. anterior</a></li>
-        <li><a href="#components">Componentes</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#blocks"><strong>Blocos</strong></a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-breadcrumbs">1. Breadcrumbs</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-topbar">2. Top bar</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-gallery">3. Galeria</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-actions">4. Favoritos / Comparar</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-title">5. Título</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-price">6. Preço</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-shipping">7. Portes</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-stock">8. Stock</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-buy">9. Add to cart</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-care">10. PCDIGACare</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-stores">11. Stock Lojas</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-financing">12. Financiamento</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-features">13. Características</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-tabs">14. Tabs</a></li>
         <li><a href="#rationale">UX rationale</a></li>
         <li><a href="#states">Variantes</a></li>
         <li><a href="#usage">Do's & Don'ts</a></li>
         <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#components">Componentes</a></li>
         <li><a href="#accessibility">Acessibilidade</a></li>
       </ul>
     </aside>
