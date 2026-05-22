@@ -1362,37 +1362,96 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   gap: var(--space-8);
   align-items: start;
 }
+/* PDP — Galeria 2×2 (3 cells iguais + 1 cell com thumbnails das adicionais) */
 .pdp__gallery {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: var(--space-3);
 }
-.pdp__gallery-main {
+.pdp__gallery-cell {
   background: #FFFFFF;
   aspect-ratio: 1;
   border-radius: var(--radius-md);
   display: grid;
   place-items: center;
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .15s;
 }
-.pdp__gallery-thumbs {
-  display: flex;
-  gap: var(--space-2);
+.pdp__gallery-cell:hover { transform: scale(1.02); }
+.pdp__gallery-cell img { max-width: 80%; max-height: 80%; object-fit: contain; }
+
+/* Cell #4 — "Ver mais" com mini-thumbnails das imagens adicionais */
+.pdp__gallery-cell--more {
+  background: var(--bg-card);
+  padding: var(--space-2);
 }
-.pdp__gallery-thumb {
-  flex: 1;
-  aspect-ratio: 1;
+.pdp__gallery-cell--more .pdp__gallery-mini {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-1);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.pdp__gallery-mini-thumb {
   background: #FFFFFF;
   border-radius: var(--radius-sm);
-  border: 2px solid transparent;
-  cursor: pointer;
   display: grid;
   place-items: center;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: #999;
+  overflow: hidden;
+  position: relative;
 }
-.pdp__gallery-thumb.is-active { border-color: var(--brand-orange); }
+.pdp__gallery-mini-thumb img { max-width: 75%; max-height: 75%; object-fit: contain; }
+.pdp__gallery-cell--more-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: #FFF;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  grid-column: 2;
+  grid-row: 2;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.pdp__gallery-mini-thumb--more {
+  position: relative;
+}
+.pdp__gallery-mini-thumb--more::after {
+  content: '+ Ver Mais';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #FFF;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pdp__gallery-placeholder {
+  width: 80%; height: 80%;
+  display: grid; place-items: center;
+  color: #B0B0B0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, #F6F6F6 0%, #E0E0E0 100%);
+  border-radius: 2px;
+}
 .pdp__info {
   display: flex;
   flex-direction: column;
@@ -1444,23 +1503,39 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
 }
 .pdp__meta-item svg { color: var(--brand-orange); flex-shrink: 0; }
 
-/* PDP — Meta bar (Part-Number, EAN, Garantia, Trustpilot) */
-.pdp__meta-bar {
+/* PDP — Top bar (full-width acima do produto: Part-Number, EAN, Garantia, Trustpilot + brand) */
+.pdp__top-bar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+.pdp__top-bar-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-5);
   align-items: center;
   font-size: 12px;
   color: var(--ui-text-secondary);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--ui-card-border);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
-.pdp__meta-bar-item { display: inline-flex; align-items: center; gap: 4px; }
-.pdp__meta-bar-item strong { color: var(--text-primary); font-weight: 700; }
-.pdp__meta-bar-sep {
-  width: 1px;
-  height: 12px;
-  background: var(--ui-card-border);
+.pdp__top-bar-item { display: inline-flex; align-items: center; gap: 6px; }
+.pdp__top-bar-item strong { color: var(--text-primary); font-weight: 700; }
+.pdp__top-bar-item--trustpilot { color: var(--stock-available); text-transform: none; letter-spacing: 0; }
+.pdp__top-bar-sep { width: 1px; height: 12px; background: var(--ui-card-border); }
+.pdp__top-bar-brand {
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 /* PDP — Brand logo */
@@ -1488,18 +1563,22 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
 }
 .pdp__promo-dates strong { color: var(--text-primary); font-weight: 700; }
 
-/* PDP — Shipping notice */
-.pdp__shipping-notice {
+/* PDP — Shipping (Portes Grátis ou similar — texto em laranja) */
+.pdp__shipping {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  color: var(--ui-text-secondary);
-  padding: 8px 12px;
-  background: var(--bg-card);
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--ui-text-muted);
+  font-size: 14px;
+  color: var(--brand-orange);
+  font-weight: 700;
+  padding: 0;
 }
+.pdp__shipping svg { color: var(--brand-orange); flex-shrink: 0; }
+.pdp__shipping--unavailable {
+  color: var(--ui-text-muted);
+  font-weight: 400;
+}
+.pdp__shipping--unavailable svg { color: var(--ui-text-muted); }
 
 /* PDP — Add to cart row (qty + button orange ADICIONAR) */
 .pdp__add-row {
@@ -1553,45 +1632,71 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   white-space: nowrap;
 }
 
-/* PDP — Secondary actions (Ver Stock Lojas, Financiamento, Aplazame) */
-.pdp__secondary-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2);
-}
-.pdp__secondary-actions .btn { justify-content: center; }
-.pdp__financing-strip {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3);
-  background: var(--bg-card);
-  border-radius: var(--radius-md);
-  font-size: 12px;
-  color: var(--ui-text-secondary);
-  border: 1px solid var(--ui-card-border);
-}
-.pdp__financing-strip strong { color: var(--text-primary); }
-
-/* PDP — Características Principais expand */
-.pdp__features {
+/* PDP — Collapsibles (Ver Stock Lojas, Financiamento) */
+.pdp__collapsible {
   border-top: 1px solid var(--ui-card-border);
-  padding-top: var(--space-4);
 }
-.pdp__features-title {
+.pdp__collapsible:last-child { border-bottom: 1px solid var(--ui-card-border); }
+.pdp__collapsible-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: var(--space-4) 0;
   background: transparent;
   border: 0;
-  padding: 0;
+  cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-primary);
-  cursor: pointer;
-  margin-bottom: var(--space-3);
+}
+.pdp__collapsible-header-left {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.pdp__collapsible-header svg.chevron {
+  transition: transform .2s;
+  color: var(--ui-text-muted);
+}
+.pdp__collapsible[open] .chevron { transform: rotate(180deg); }
+.pdp__collapsible-icon { color: var(--brand-orange); }
+.pdp__collapsible-body {
+  padding-bottom: var(--space-4);
+  font-size: 13px;
+  color: var(--ui-text-secondary);
+  line-height: 1.6;
+}
+
+/* PDP — Financing options (seQura + Klarna) dentro do collapsible */
+.pdp__financing-options { display: flex; flex-direction: column; gap: var(--space-3); }
+.pdp__financing-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ui-text-secondary);
+}
+.pdp__financing-option strong { color: var(--text-primary); font-weight: 700; }
+.pdp__financing-option a { color: var(--brand-orange); font-weight: 700; text-decoration: none; }
+.pdp__financing-option a:hover { text-decoration: underline; }
+.pdp__financing-logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.pdp__financing-logo--sequra { background: #00C2A0; color: #fff; }
+.pdp__financing-logo--klarna { background: #FFA8CD; color: #17120F; }
+
+/* PDP — Características Principais (sempre visíveis, bullets) */
+.pdp__features {
+  padding-top: var(--space-4);
 }
 .pdp__features-list {
   list-style: disc;
@@ -1602,18 +1707,57 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   color: var(--ui-text-secondary);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-2);
 }
+.pdp__features-list li strong { color: var(--text-primary); }
 
-/* PDP — Footer actions (Favoritos / Comparar) */
-.pdp__footer-actions {
+/* PDP — Gallery footer (Favoritos / Comparar centrados sob a imagem) */
+.pdp__gallery-actions {
   display: flex;
-  gap: var(--space-4);
+  justify-content: center;
+  gap: var(--space-6);
   align-items: center;
   padding-top: var(--space-3);
 }
-.pdp__footer-actions .btn { padding-left: 0; padding-right: 0; background: transparent; border: 0; color: var(--text-primary); }
-.pdp__footer-actions .btn:hover { color: var(--brand-orange); }
+.pdp__gallery-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 0;
+  padding: 4px 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.pdp__gallery-actions button:hover { color: var(--brand-orange); }
+.pdp__gallery-actions svg { color: var(--brand-orange); }
+
+/* PDP Tabs — full-width uppercase */
+.pdp__tabs {
+  margin-top: var(--space-12);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-6);
+}
+.pdp__tabs .tabs {
+  width: 100%;
+  justify-content: space-around;
+  border-bottom: 2px solid var(--ui-card-border);
+}
+.pdp__tabs .tabs__item {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--space-3) var(--space-5);
+  border-bottom-width: 3px;
+  margin-bottom: -2px;
+  flex: 1;
+  justify-content: center;
+}
+.pdp__tabs .tabs__panel { padding-top: var(--space-6); }
 
 /* BUNDLE — A Combinação Perfeita */
 .bundle {
@@ -1998,3 +2142,117 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   .cb { grid-template-columns: 1fr; }
   .cb__preview { border-right: 0; border-bottom: 1px solid var(--ui-card-border); }
 }
+
+/* ---------- Anatomy image with numbered overlay labels ---------- */
+.anatomy-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--ui-card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: var(--space-5) 0;
+}
+.anatomy-image__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.anatomy-label {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: var(--brand-orange);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.anatomy-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-2) var(--space-4);
+  margin: var(--space-4) 0 var(--space-6);
+  padding: var(--space-4);
+  background: var(--bg-card);
+  border: 1px solid var(--ui-card-border);
+  border-radius: var(--radius-lg);
+}
+.anatomy-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ui-text-secondary);
+}
+.anatomy-legend__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--brand-orange);
+  color: #fff;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.anatomy-legend__item strong { color: var(--text-primary); font-weight: 700; }
+
+/* ---------- Block doc cards (smaller previews) ---------- */
+.block-doc { margin: var(--space-6) 0; }
+.block-doc__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+.block-doc__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--brand-orange);
+  color: #fff;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.block-doc__title { font-size: 20px; font-weight: 900; color: var(--text-primary); margin: 0; }
+.block-doc__desc { font-size: 14px; color: var(--ui-text-secondary); margin: 0 0 var(--space-3); line-height: 1.6; }
+.block-doc__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-size: 12px;
+  color: var(--ui-text-muted);
+}
+.block-doc__meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--ui-card-border);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.block-doc__meta-tag strong { color: var(--text-primary); font-weight: 700; }
