@@ -54,393 +54,516 @@
     <main class="main">
 
       <section id="overview" class="hero">
-        <div class="hero__eyebrow">Pattern</div>
+        <div class="hero__eyebrow">Pattern · Product Listing Page</div>
         <h1 class="h-display hero__title">PLP</h1>
-        <p class="lead">Product Listing Page — onde o utilizador navega catálogos, aplica filtros e escolhe que produtos abrir. Crítico para descoberta. Bons filtros + boa ordenação reduzem o tempo até à decisão.</p>
+        <p class="lead">Product Listing Page — a página onde o utilizador navega catálogos, aplica filtros e escolhe que produtos abrir. Bons filtros + boa ordenação reduzem o tempo até à decisão. Documentada por blocos individuais.</p>
         <div class="callout">
-          <strong>Objetivo da página</strong>
-          Ajudar o utilizador a chegar à PDP certa o mais rápido possível. Filtros relevantes, grid escaneável, contadores claros.
-        </div>
-      </section>
-
-      <section id="layout" class="section">
-        <div class="section__eyebrow">Layout</div>
-        <h2 class="h-1">Layout completo</h2>
-        <p>Em desktop, sidebar com filtros à esquerda + grid de produtos à direita. Em mobile, filtros num drawer/bottom-sheet.</p>
-
-        <div class="cb">
-          <div class="cb__preview" style="display: block; padding: var(--space-4);">
-            <div class="pattern-frame">
-              <div class="pattern-frame__chrome">
-                <span class="pattern-frame__dot"></span>
-                <span class="pattern-frame__dot"></span>
-                <span class="pattern-frame__dot"></span>
-                <span class="pattern-frame__url">pcdiga.com/smartphones</span>
-              </div>
-              <div class="pattern-frame__body">
-                <nav class="crumbs">
-                  <a href="#">Início</a>
-                  <span class="crumbs__sep">/</span>
-                  <span class="crumbs__current">Smartphones</span>
-                </nav>
-
-                <h1 style="font-size: 24px; font-weight: 700; color: var(--text-primary); margin: 0 0 24px;">Smartphones</h1>
-
-                <div class="plp">
-                  <aside class="plp__sidebar">
-                    <div class="plp__filter-group">
-                      <div class="plp__filter-title">Marca</div>
-                      <ul class="plp__filter-list">
-                        <li><label class="plp__filter-item"><input type="checkbox" checked /> Apple <span class="count">42</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" checked /> Samsung <span class="count">38</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> Xiaomi <span class="count">29</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> Honor <span class="count">12</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> Google <span class="count">8</span></label></li>
-                      </ul>
-                    </div>
-
-                    <div class="plp__filter-group">
-                      <div class="plp__filter-title">Preço</div>
-                      <ul class="plp__filter-list">
-                        <li><label class="plp__filter-item"><input type="checkbox" /> Até 200 € <span class="count">18</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> 200 – 500 € <span class="count">52</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" checked /> 500 – 1000 € <span class="count">34</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> 1000 € + <span class="count">21</span></label></li>
-                      </ul>
-                    </div>
-
-                    <div class="plp__filter-group">
-                      <div class="plp__filter-title">Memória</div>
-                      <ul class="plp__filter-list">
-                        <li><label class="plp__filter-item"><input type="checkbox" /> 64 GB <span class="count">12</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> 128 GB <span class="count">45</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> 256 GB <span class="count">38</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> 512 GB <span class="count">22</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> 1 TB <span class="count">8</span></label></li>
-                      </ul>
-                    </div>
-
-                    <div class="plp__filter-group">
-                      <div class="plp__filter-title">Disponibilidade</div>
-                      <ul class="plp__filter-list">
-                        <li><label class="plp__filter-item"><input type="checkbox" checked /> Em stock <span class="count">98</span></label></li>
-                        <li><label class="plp__filter-item"><input type="checkbox" /> Pré-venda <span class="count">5</span></label></li>
-                      </ul>
-                    </div>
-                  </aside>
-
-                  <div class="plp__main">
-                    <div class="plp__results-header">
-                      <div class="plp__results-count"><strong>34</strong> produtos encontrados</div>
-                      <div class="plp__sort">
-                        <span>Ordenar por</span>
-                        <select>
-                          <option>Mais relevantes</option>
-                          <option>Preço: menor → maior</option>
-                          <option>Preço: maior → menor</option>
-                          <option>Mais recentes</option>
-                          <option>Melhor avaliados</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="plp__chips">
-                      <span class="plp__chip">
-                        Apple
-                        <button aria-label="Remover filtro Apple">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                        </button>
-                      </span>
-                      <span class="plp__chip">
-                        Samsung
-                        <button aria-label="Remover filtro Samsung">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                        </button>
-                      </span>
-                      <span class="plp__chip">
-                        500 – 1000 €
-                        <button aria-label="Remover filtro preço">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                        </button>
-                      </span>
-                      <span class="plp__chip">
-                        Em stock
-                        <button aria-label="Remover filtro stock">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                        </button>
-                      </span>
-                      <button class="btn btn--ghost btn--sm" style="margin-left: auto;">Limpar filtros</button>
-                    </div>
-
-                    <div class="product-grid" style="grid-template-columns: repeat(3, 1fr); gap: 16px;">
-                      <article class="product-card">
-                        <div class="product-card__image">
-                          <div class="product-card__stickers"><span class="product-card__sticker">NOVIDADE</span></div>
-                          <div class="product-card__placeholder">imagem</div>
-                        </div>
-                        <div class="product-card__body">
-                          <div class="product-card__brand">XIAOMI</div>
-                          <div class="product-card__title">Smartphone Xiaomi 15T Pro 256GB Cinza</div>
-                          <div class="product-card__stock-block">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
-                            <span class="product-card__stock-text"><span class="product-card__stock">Em stock</span></span>
-                          </div>
-                          <div class="product-card__price-row">
-                            <span class="product-card__price-current">399,99 €</span>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="product-card">
-                        <div class="product-card__image">
-                          <div class="product-card__stickers product-card__stickers--right"><span class="product-card__sticker product-card__sticker--discount">15%</span></div>
-                          <div class="product-card__placeholder">imagem</div>
-                        </div>
-                        <div class="product-card__body">
-                          <div class="product-card__brand">SAMSUNG</div>
-                          <div class="product-card__title">Galaxy S24 Ultra 512GB Preto</div>
-                          <div class="product-card__stock-block">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
-                            <span class="product-card__stock-text"><span class="product-card__stock">Em stock</span></span>
-                          </div>
-                          <div class="product-card__price-row">
-                            <span class="product-card__price-current">1 099,00 €</span>
-                            <span class="product-card__price-old">1 299,00 €</span>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="product-card">
-                        <div class="product-card__image">
-                          <div class="product-card__placeholder">imagem</div>
-                        </div>
-                        <div class="product-card__body">
-                          <div class="product-card__brand">APPLE</div>
-                          <div class="product-card__title">iPhone 16 Pro 256GB Titânio Natural</div>
-                          <div class="product-card__stock-block">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-order)" style="color: var(--stock-order);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="12 6 12 12 16 14" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
-                            <span class="product-card__stock-text"><span class="product-card__stock product-card__stock--order">Por encomenda</span></span>
-                          </div>
-                          <div class="product-card__price-row">
-                            <span class="product-card__price-current">1 449,00 €</span>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="product-card">
-                        <div class="product-card__image">
-                          <div class="product-card__placeholder">imagem</div>
-                        </div>
-                        <div class="product-card__body">
-                          <div class="product-card__brand">HONOR</div>
-                          <div class="product-card__title">Honor Magic7 Pro 512GB Verde</div>
-                          <div class="product-card__stock-block">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
-                            <span class="product-card__stock-text"><span class="product-card__stock">Em stock</span></span>
-                          </div>
-                          <div class="product-card__price-row">
-                            <span class="product-card__price-current">899,00 €</span>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="product-card">
-                        <div class="product-card__image">
-                          <div class="product-card__stickers product-card__stickers--right"><span class="product-card__sticker product-card__sticker--discount">25%</span></div>
-                          <div class="product-card__placeholder">imagem</div>
-                        </div>
-                        <div class="product-card__body">
-                          <div class="product-card__brand">GOOGLE</div>
-                          <div class="product-card__title">Pixel 9 Pro 256GB Obsidian</div>
-                          <div class="product-card__stock-block">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
-                            <span class="product-card__stock-text"><span class="product-card__stock">Em stock</span></span>
-                          </div>
-                          <div class="product-card__price-row">
-                            <span class="product-card__price-current">749,00 €</span>
-                            <span class="product-card__price-old">999,00 €</span>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="product-card">
-                        <div class="product-card__image">
-                          <div class="product-card__placeholder">imagem</div>
-                        </div>
-                        <div class="product-card__body">
-                          <div class="product-card__brand">SAMSUNG</div>
-                          <div class="product-card__title">Galaxy A55 256GB Azul Claro</div>
-                          <div class="product-card__stock-block">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2"/></svg>
-                            <span class="product-card__stock-text"><span class="product-card__stock">Em stock</span></span>
-                          </div>
-                          <div class="product-card__price-row">
-                            <span class="product-card__price-current">399,00 €</span>
-                          </div>
-                        </div>
-                      </article>
-                    </div>
-
-                    <div style="display: flex; justify-content: center; padding-top: 24px;">
-                      <div class="pager">
-                        <button class="pager__btn" disabled aria-label="Página anterior">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-                        </button>
-                        <button class="pager__btn is-active">1</button>
-                        <button class="pager__btn">2</button>
-                        <button class="pager__btn">3</button>
-                        <span class="pager__btn" style="border: 0;">…</span>
-                        <button class="pager__btn">6</button>
-                        <button class="pager__btn" aria-label="Página seguinte">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;main class="plp"&gt;
-  &lt;aside class="plp__sidebar"&gt;
-    &lt;div class="plp__filter-group"&gt;
-      &lt;div class="plp__filter-title"&gt;Marca&lt;/div&gt;
-      &lt;ul class="plp__filter-list"&gt;
-        &lt;li&gt;&lt;label class="plp__filter-item"&gt;
-          &lt;input type="checkbox" /&gt; Apple
-          &lt;span class="count"&gt;42&lt;/span&gt;
-        &lt;/label&gt;&lt;/li&gt;
-        ...
-      &lt;/ul&gt;
-    &lt;/div&gt;
-    ...
-  &lt;/aside&gt;
-
-  &lt;div class="plp__main"&gt;
-    &lt;div class="plp__results-header"&gt;
-      &lt;div class="plp__results-count"&gt;
-        &lt;strong&gt;34&lt;/strong&gt; produtos encontrados
-      &lt;/div&gt;
-      &lt;div class="plp__sort"&gt;
-        &lt;span&gt;Ordenar por&lt;/span&gt;
-        &lt;select&gt;...&lt;/select&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="plp__chips"&gt;
-      &lt;span class="plp__chip"&gt;Apple &lt;button&gt;&times;&lt;/button&gt;&lt;/span&gt;
-      ...
-    &lt;/div&gt;
-
-    &lt;div class="product-grid"&gt;
-      &lt;article class="product-card"&gt;...&lt;/article&gt;
-      ...
-    &lt;/div&gt;
-
-    &lt;nav class="pager"&gt;...&lt;/nav&gt;
-  &lt;/div&gt;
-&lt;/main&gt;</code></pre>
-          </div>
+          <strong>Como ler esta página</strong>
+          A secção <a href="#anatomy">Anatomia</a> mostra o screenshot completo da PLP com cada bloco numerado. As secções seguintes documentam cada bloco isoladamente: o que faz, quando aparece, que componentes usa e o HTML pronto a copiar.
         </div>
       </section>
 
       <section id="anatomy" class="section">
         <div class="section__eyebrow">Anatomia</div>
         <h2 class="h-1">Zonas da página</h2>
+        <p>Screenshot real da PLP PCDIGA com cada zona numerada. Cada número corresponde a um bloco documentado abaixo.</p>
+
+        <div class="anatomy-image">
+          <img class="anatomy-image__img" src="assets/img/plp-anatomy.png" alt="Screenshot anotado da PLP PCDIGA" />
+          <a class="anatomy-label" href="#block-breadcrumbs"  style="top: 3.8%;  left: 28%;">1</a>
+          <a class="anatomy-label" href="#block-title"        style="top: 5%;    left: 27%;">2</a>
+          <a class="anatomy-label" href="#block-toolbar"      style="top: 7.7%;  left: 52%;">3</a>
+          <a class="anatomy-label" href="#block-filters"      style="top: 30%;   left: 26%;">4</a>
+          <a class="anatomy-label" href="#block-card"         style="top: 13%;   left: 40%;">5</a>
+          <a class="anatomy-label" href="#block-grid"         style="top: 50%;   left: 52%;">6</a>
+          <a class="anatomy-label" href="#block-pagination"   style="top: 71%;   left: 52%;">7</a>
+        </div>
+
+        <div class="anatomy-legend">
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">1</span><strong>Breadcrumbs</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">2</span><strong>Título da página</strong></div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">3</span><strong>Toolbar</strong> · esconder filtros, paginação, ordenação</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">4</span><strong>Filtros</strong> · sidebar esquerda</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">5</span><strong>Product card</strong> · unidade individual</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">6</span><strong>Product grid</strong> · grelha responsiva</div>
+          <div class="anatomy-legend__item"><span class="anatomy-legend__num">7</span><strong>Pagination</strong></div>
+        </div>
+      </section>
+
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Estrutura</h2>
+        <p>Desktop: breadcrumbs + título full-width → grid 2 colunas (filtros 240px + main 1fr) → pagination full-width centrada. Largura máxima 1920px centrada.</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Zona</th><th>Conteúdo</th><th>Componentes</th></tr></thead>
+            <thead><tr><th>Breakpoint</th><th>Grid</th><th>Notas</th></tr></thead>
             <tbody>
-              <tr><td><strong style="color:var(--text-primary)">1. Breadcrumbs</strong></td><td>Início → Categoria → Sub-categoria.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">2. Heading</strong></td><td>Nome da categoria. H1 da página.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">3. Sidebar filtros</strong></td><td>Marca, preço, atributos técnicos, disponibilidade. Sempre visível em desktop.</td><td>Input (checkbox)</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">4. Results header</strong></td><td>Contador "X produtos encontrados" + dropdown ordenação.</td><td>—</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">5. Chips ativos</strong></td><td>Filtros aplicados, removíveis. Botão "Limpar filtros" no fim.</td><td>Button (ghost sm)</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">6. Grid de produtos</strong></td><td>3 ou 4 cards por linha em desktop, 2 em tablet, 1-2 em mobile.</td><td>Product Card</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">7. Pagination</strong></td><td>Páginas numeradas + setas anterior/seguinte.</td><td>—</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">≥ 1024px</strong></td><td>Filtros 240px + main 1fr · 4 colunas de cards</td><td>Grid auto-fill (minmax 280px). Cards têm aspect ratio consistente.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">768–1023px</strong></td><td>Filtros 240px + main 1fr · 3 colunas de cards</td><td>Cards reduzem proporcionalmente.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">&lt; 768px</strong></td><td>Filtros em drawer · 2 colunas de cards</td><td>Toolbar com botão "Filtrar" que abre drawer overlay.</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section id="components" class="section">
-        <div class="section__eyebrow">Componentes usados</div>
-        <h2 class="h-1">Componentes deste pattern</h2>
-        <div class="comp-grid">
-          <a href="product-card.html" class="comp-card">
-            <div class="comp-card__preview" style="padding: 0; height: 80px;"><div style="background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: 4px; padding: 6px; width: 70%; height: 80%;"><div style="height: 30px; background: var(--bg-base); border-radius: 2px; margin-bottom: 4px;"></div><div style="height: 4px; background: var(--ui-card-border); border-radius: 1px; margin-bottom: 2px;"></div><div style="height: 6px; background: var(--brand-orange); border-radius: 1px; width: 50%;"></div></div></div>
-            <div class="comp-card__title">Product Card</div>
-            <p class="comp-card__desc">O bloco principal da grid.</p>
-          </a>
-          <a href="input.html" class="comp-card">
-            <div class="comp-card__preview"><input class="input input--sm" placeholder="Filtro" style="max-width: 80%;" /></div>
-            <div class="comp-card__title">Input (checkbox)</div>
-            <p class="comp-card__desc">Filtros laterais com contadores.</p>
-          </a>
-          <a href="button.html" class="comp-card">
-            <div class="comp-card__preview"><button class="btn btn--ghost btn--sm">Limpar</button></div>
-            <div class="comp-card__title">Button (ghost)</div>
-            <p class="comp-card__desc">"Limpar filtros" e ações secundárias.</p>
-          </a>
-        </div>
+      <!-- ================================================== -->
+      <!-- BLOCKS                                              -->
+      <!-- ================================================== -->
+
+      <section id="blocks" class="section">
+        <div class="section__eyebrow">Blocos</div>
+        <h2 class="h-1">Documentação por bloco</h2>
+        <p>Cada bloco da PLP documentado individualmente — descrição, preview, HTML e componentes que usa.</p>
       </section>
 
-      <section id="states" class="section">
-        <div class="section__eyebrow">Variantes</div>
-        <h2 class="h-1">Estados da listagem</h2>
+      <!-- 1. Breadcrumbs -->
+      <article id="block-breadcrumbs" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">1</span>
+          <h3 class="block-doc__title">Breadcrumbs</h3>
+        </div>
+        <p class="block-doc__desc">Caminho de navegação. Último item em uppercase com cor primária. Em PLP, o último item corresponde à categoria/sub-categoria activa.</p>
 
-        <h3 class="h-2">Sem resultados</h3>
-        <p>Quando filtros aplicados não retornam produtos. Mensagem clara + sugestão para alargar critérios.</p>
         <div class="cb">
-          <div class="cb__preview" style="display: block;">
-            <div class="pattern-frame">
-              <div class="pattern-frame__body" style="text-align: center; padding: 64px 24px;">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--ui-text-muted); margin-bottom: 16px;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                <h3 style="font-size: 18px; font-weight: 700; color: var(--text-primary); margin: 0 0 8px;">Sem resultados para os filtros aplicados</h3>
-                <p style="font-size: 14px; color: var(--ui-text-secondary); margin: 0 0 16px;">Tenta remover algum filtro ou alargar a faixa de preço.</p>
-                <button class="btn btn--secondary">Limpar todos os filtros</button>
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <nav class="crumbs">
+              <a href="#">Home</a>
+              <span class="crumbs__sep">/</span>
+              <a href="#">Mobilidade</a>
+              <span class="crumbs__sep">/</span>
+              <span class="crumbs__current">SMARTPHONES E TELEMÓVEIS</span>
+            </nav>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;nav class="crumbs"&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;span class="crumbs__sep"&gt;/&lt;/span&gt;
+  &lt;a href="#"&gt;Mobilidade&lt;/a&gt;
+  &lt;span class="crumbs__sep"&gt;/&lt;/span&gt;
+  &lt;span class="crumbs__current"&gt;
+    SMARTPHONES E TELEMÓVEIS
+  &lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+          <span class="block-doc__meta-tag">Posição: <strong>Topo</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </article>
+
+      <!-- 2. Page title -->
+      <article id="block-title" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">2</span>
+          <h3 class="block-doc__title">Título da página</h3>
+        </div>
+        <p class="block-doc__desc">H1 com o nome da categoria. Pode ter barra vertical laranja como acento decorativo à esquerda. Ajuda SEO e dá contexto imediato.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <h1 style="display: flex; align-items: center; gap: 12px; font-size: 28px; font-weight: 900; color: var(--text-primary); margin: 0;">
+              <span style="width: 4px; height: 28px; background: var(--brand-orange); border-radius: 2px;"></span>
+              Smartphones e Telemóveis
+            </h1>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;h1 class="plp__page-title"&gt;
+  &lt;span class="plp__page-title-bar"&gt;&lt;/span&gt;
+  Smartphones e Telemóveis
+&lt;/h1&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Tag: <strong>H1 único</strong></span>
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </article>
+
+      <!-- 3. Toolbar -->
+      <article id="block-toolbar" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">3</span>
+          <h3 class="block-doc__title">Toolbar — esconder filtros + paginação + ordenação</h3>
+        </div>
+        <p class="block-doc__desc">Barra com controlos da listagem. Esquerda: toggle para esconder/mostrar filtros (com bandeira de idioma). Direita: produtos por página (16/32/48) e dropdown de ordenação (Relevância, Preço, Novidade…).</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="plp__results-header">
+              <button style="display: inline-flex; align-items: center; gap: 6px; background: transparent; border: 0; color: var(--ui-text-secondary); font-size: 13px; cursor: pointer; font-weight: 700;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+                Esconder Filtros 🇵🇹
+              </button>
+              <div style="display: flex; align-items: center; gap: var(--space-4);">
+                <div class="plp__sort">
+                  Produtos por página:
+                  <select><option>16</option><option>32</option><option>48</option></select>
+                </div>
+                <div class="plp__sort">
+                  Ordenar Por:
+                  <select><option>Relevância</option><option>Preço ↑</option><option>Preço ↓</option><option>Mais recentes</option></select>
+                </div>
               </div>
             </div>
           </div>
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="empty-state"&gt;
-  &lt;svg ...search&gt;&lt;/svg&gt;
-  &lt;h3&gt;Sem resultados para os filtros aplicados&lt;/h3&gt;
-  &lt;p&gt;Tenta remover algum filtro ou alargar a faixa de preço.&lt;/p&gt;
-  &lt;button class="btn btn--secondary"&gt;Limpar todos os filtros&lt;/button&gt;
+<pre><code>&lt;div class="plp__results-header"&gt;
+  &lt;button class="plp__filters-toggle"&gt;
+    &lt;svg&gt;...&lt;/svg&gt; Esconder Filtros 🇵🇹
+  &lt;/button&gt;
+
+  &lt;div class="plp__toolbar-right"&gt;
+    &lt;div class="plp__sort"&gt;
+      Produtos por página:
+      &lt;select&gt;
+        &lt;option&gt;16&lt;/option&gt;
+        &lt;option&gt;32&lt;/option&gt;
+        &lt;option&gt;48&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="plp__sort"&gt;
+      Ordenar Por:
+      &lt;select&gt;
+        &lt;option&gt;Relevância&lt;/option&gt;
+        &lt;option&gt;Preço ↑&lt;/option&gt;
+        ...
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </div>
         </div>
 
-        <h3 class="h-2">Loading</h3>
-        <p>Skeletons no formato de Product Card durante fetch. Manter estrutura para evitar layout shift.</p>
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Quando: <strong>Sempre</strong></span>
+          <span class="block-doc__meta-tag">Default ordem: <strong>Relevância</strong></span>
+          <span class="block-doc__meta-tag">Por página: <strong>16</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </article>
 
-        <h3 class="h-2">Sem filtros aplicados</h3>
-        <p>Não mostrar a barra de chips. Results header tem só "X produtos" + ordenação.</p>
-      </section>
+      <!-- 4. Filters -->
+      <article id="block-filters" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">4</span>
+          <h3 class="block-doc__title">Filtros — sidebar</h3>
+        </div>
+        <p class="block-doc__desc">Coluna fixa à esquerda (240px) com grupos de filtros expansíveis. Cada grupo: título uppercase + chevron, lista de checkboxes com contagem entre parênteses. Preço usa range slider duplo. "Ver tudo" expande filtros longos.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <aside class="plp__sidebar" style="max-width: 280px;">
+              <div style="font-size: 13px; font-weight: 900; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-3);">Filtros</div>
+
+              <div class="plp__filter-group">
+                <div class="plp__filter-title">Stock <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <ul class="plp__filter-list">
+                  <li><label class="plp__filter-item"><input type="checkbox" /> Em Stock <span class="count">(531)</span></label></li>
+                  <li><label class="plp__filter-item"><input type="checkbox" /> Sem Stock <span class="count">(8)</span></label></li>
+                </ul>
+              </div>
+
+              <div class="plp__filter-group">
+                <div class="plp__filter-title">Preço <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <div style="padding: var(--space-2) 0;">
+                  <div style="position: relative; height: 4px; background: var(--ui-card-border); border-radius: 2px;">
+                    <div style="position: absolute; left: 10%; right: 30%; top: 0; bottom: 0; background: var(--brand-orange); border-radius: 2px;"></div>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--ui-text-muted);">
+                    <span>0,99 €</span><span>2 599,90 €</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="plp__filter-group">
+                <div class="plp__filter-title">Fabricante <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
+                <ul class="plp__filter-list">
+                  <li><label class="plp__filter-item"><input type="checkbox" /> Xiaomi <span class="count">(108)</span></label></li>
+                  <li><label class="plp__filter-item"><input type="checkbox" /> Samsung <span class="count">(89)</span></label></li>
+                  <li><label class="plp__filter-item"><input type="checkbox" /> Spigen <span class="count">(69)</span></label></li>
+                </ul>
+                <a href="#" style="display: inline-block; margin-top: var(--space-2); color: var(--brand-orange); font-size: 12px; font-weight: 700;">Ver tudo (+19)</a>
+              </div>
+            </aside>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;aside class="plp__sidebar"&gt;
+  &lt;div class="plp__filters-heading"&gt;Filtros&lt;/div&gt;
+
+  &lt;!-- Grupo expansível --&gt;
+  &lt;details class="plp__filter-group" open&gt;
+    &lt;summary class="plp__filter-title"&gt;
+      Fabricante
+      &lt;svg class="chevron"&gt;...&lt;/svg&gt;
+    &lt;/summary&gt;
+    &lt;ul class="plp__filter-list"&gt;
+      &lt;li&gt;
+        &lt;label class="plp__filter-item"&gt;
+          &lt;input type="checkbox" /&gt;
+          Xiaomi
+          &lt;span class="count"&gt;(108)&lt;/span&gt;
+        &lt;/label&gt;
+      &lt;/li&gt;
+      ...
+    &lt;/ul&gt;
+    &lt;a href="#" class="plp__filter-more"&gt;Ver tudo (+19)&lt;/a&gt;
+  &lt;/details&gt;
+
+  &lt;!-- Range slider para preço --&gt;
+  &lt;details class="plp__filter-group" open&gt;
+    &lt;summary class="plp__filter-title"&gt;Preço&lt;/summary&gt;
+    &lt;div class="plp__range-slider"&gt;
+      &lt;input type="range" min="0" max="2599" /&gt;
+      &lt;input type="range" min="0" max="2599" /&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+
+&lt;/aside&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Largura: <strong>240px</strong></span>
+          <span class="block-doc__meta-tag">Mobile: <strong>Drawer overlay</strong></span>
+          <span class="block-doc__meta-tag">Markup: <strong>details/summary</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </article>
+
+      <!-- 5. Product card -->
+      <article id="block-card" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">5</span>
+          <h3 class="block-doc__title">Product card</h3>
+        </div>
+        <p class="block-doc__desc">Unidade individual da grelha. Contém: stickers (Dias Pcdiguianos / Top Vendas / -10€) sobre a imagem, título, specs curtas, SKU, classe energética, stock + entrega, preço com PVPR, comparar e favoritos. Está documentado em detalhe na sua própria página.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4); max-width: 320px;">
+            <div class="product-card">
+              <div class="product-card__sticker-stack">
+                <span class="sticker sticker--campaign">Dias Pcdiguianos</span>
+                <span class="sticker sticker--top">Top Vendas</span>
+              </div>
+              <div class="product-card__image">
+                <div class="pdp__gallery-placeholder">imagem produto</div>
+              </div>
+              <h3 class="product-card__title">Smartphone Xiaomi Poco X8 Pro Max 5G 6.83" 12GB/512GB Dual SIM Black</h3>
+              <p class="product-card__specs">Android 16 · Mediatek Dimensity 9500s · 512GB ROM · 12GB RAM</p>
+              <div class="product-card__sku">74925EU</div>
+              <div class="product-card__stock-block">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+                <span class="product-card__stock-text">
+                  <span class="product-card__stock">Em Stock</span>
+                  <span class="product-card__delivery">Entrega prevista a 26 de maio</span>
+                </span>
+              </div>
+              <span class="price price--sale">
+                <span class="price__current">459,90 €</span>
+                <s class="price__original">469,90 €</s>
+              </span>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;article class="product-card"&gt;
+  &lt;div class="product-card__sticker-stack"&gt;
+    &lt;span class="sticker sticker--campaign"&gt;
+      Dias Pcdiguianos
+    &lt;/span&gt;
+    &lt;span class="sticker sticker--top"&gt;Top Vendas&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;div class="product-card__image"&gt;
+    &lt;img src="..." alt="..." /&gt;
+  &lt;/div&gt;
+
+  &lt;h3 class="product-card__title"&gt;...&lt;/h3&gt;
+  &lt;p class="product-card__specs"&gt;...&lt;/p&gt;
+  &lt;div class="product-card__sku"&gt;74925EU&lt;/div&gt;
+
+  &lt;div class="product-card__stock-block"&gt;...&lt;/div&gt;
+
+  &lt;span class="price price--sale"&gt;...&lt;/span&gt;
+&lt;/article&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Componente: <strong><a href="product-card.html">Product Card</a></strong></span>
+          <span class="block-doc__meta-tag">Hover: <strong>Lift + border</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </article>
+
+      <!-- 6. Product grid -->
+      <article id="block-grid" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">6</span>
+          <h3 class="block-doc__title">Product grid</h3>
+        </div>
+        <p class="block-doc__desc">Grelha responsiva de product cards. Auto-fill com minmax(280px, 1fr) — adapta o número de colunas ao espaço disponível sem media queries. Gap consistente vertical e horizontal.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="product-grid" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="product-card">
+                <div class="product-card__image"><div class="pdp__gallery-placeholder">img 1</div></div>
+                <h3 class="product-card__title">Produto 1</h3>
+                <span class="price"><span class="price__current">299,90 €</span></span>
+              </div>
+              <div class="product-card">
+                <div class="product-card__image"><div class="pdp__gallery-placeholder">img 2</div></div>
+                <h3 class="product-card__title">Produto 2</h3>
+                <span class="price"><span class="price__current">399,90 €</span></span>
+              </div>
+              <div class="product-card">
+                <div class="product-card__image"><div class="pdp__gallery-placeholder">img 3</div></div>
+                <h3 class="product-card__title">Produto 3</h3>
+                <span class="price"><span class="price__current">499,90 €</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-grid"&gt;
+  &lt;article class="product-card"&gt;...&lt;/article&gt;
+  &lt;article class="product-card"&gt;...&lt;/article&gt;
+  &lt;article class="product-card"&gt;...&lt;/article&gt;
+  &lt;!-- N cards --&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.product-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns:
+    repeat(auto-fill, minmax(280px, 1fr));
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Grid: <strong>auto-fill minmax(280px)</strong></span>
+          <span class="block-doc__meta-tag">Cards por página: <strong>16 / 32 / 48</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </article>
+
+      <!-- 7. Pagination -->
+      <article id="block-pagination" class="block-doc">
+        <div class="block-doc__head">
+          <span class="block-doc__num">7</span>
+          <h3 class="block-doc__title">Pagination</h3>
+        </div>
+        <p class="block-doc__desc">Botões numerados com setas prev/next. A página activa em laranja brand. Páginas longas usam ellipsis (1 2 3 4 … 34). Centrada horizontalmente sob a grelha.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4); text-align: center;">
+            <div class="pager">
+              <button class="pager__btn" disabled aria-label="Página anterior">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="pager__btn is-active">1</button>
+              <button class="pager__btn">2</button>
+              <button class="pager__btn">3</button>
+              <button class="pager__btn">4</button>
+              <span class="pager__btn" style="border: 0;">…</span>
+              <button class="pager__btn">34</button>
+              <button class="pager__btn" aria-label="Página seguinte">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;nav class="pager" aria-label="Paginação"&gt;
+  &lt;button class="pager__btn" disabled
+          aria-label="Página anterior"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pager__btn is-active"
+          aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pager__btn"&gt;2&lt;/button&gt;
+  &lt;button class="pager__btn"&gt;3&lt;/button&gt;
+  &lt;button class="pager__btn"&gt;4&lt;/button&gt;
+  &lt;span class="pager__btn pager__btn--ellipsis"&gt;…&lt;/span&gt;
+  &lt;button class="pager__btn"&gt;34&lt;/button&gt;
+  &lt;button class="pager__btn"
+          aria-label="Página seguinte"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Alinhamento: <strong>Centro</strong></span>
+          <span class="block-doc__meta-tag">Cor activa: <strong>Orange brand</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </article>
+
+      <!-- ================================================== -->
+      <!-- UX rationale                                        -->
+      <!-- ================================================== -->
 
       <section id="rationale" class="section">
         <div class="section__eyebrow">UX rationale</div>
-        <h2 class="h-1">Porquê estas decisões</h2>
+        <h2 class="h-1">Porquê esta estrutura</h2>
 
-        <h3 class="h-2">Sidebar fixa em desktop, drawer em mobile</h3>
-        <p>Em desktop, sidebar persistente permite ajustar filtros e ver resultados em tempo real. Em mobile, drawer evita ocupar espaço de visualização — utilizador foca primeiro na grid.</p>
+        <h3 class="h-2">Filtros sempre visíveis (desktop)</h3>
+        <p>Sidebar fixa em vez de drawer. O utilizador desktop tem espaço — esconder filtros num modal acrescenta um clique por cada refinamento. Em mobile sim, drawer, porque o espaço não chega.</p>
 
-        <h3 class="h-2">Contadores nos filtros</h3>
-        <p>Mostrar quantos produtos por opção poupa cliques inúteis. Se "Honor (12)" o utilizador sabe à partida o que esperar.</p>
+        <h3 class="h-2">Contagem ao lado de cada filtro</h3>
+        <p>"Xiaomi (108)" comunica imediatamente quantos resultados o filtro vai dar. Sem contagem, o utilizador clica e descobre que ficou com 3 produtos. Reduz cliques inúteis.</p>
 
-        <h3 class="h-2">Chips ativos com remoção rápida</h3>
-        <p>Filtros aplicados visíveis no topo permitem ajustes sem navegar à sidebar. <code>×</code> em cada chip remove instantaneamente.</p>
+        <h3 class="h-2">Ordem dos grupos de filtros</h3>
+        <p>De mais usado para menos usado: <strong style="color:var(--text-primary)">Stock</strong> (decisão imediata) → <strong style="color:var(--text-primary)">Categoria</strong> (refinar tipo) → <strong style="color:var(--text-primary)">Preço</strong> (orçamento) → <strong style="color:var(--text-primary)">Fabricante</strong> (preferência) → atributos específicos.</p>
 
-        <h3 class="h-2">Default 3 colunas em desktop</h3>
-        <p>3 colunas dão ao card largura suficiente (≥280px) para conteúdo legível mas mostram 6 produtos por linha de scroll. Menos = poucos resultados visíveis. Mais = cards apertados.</p>
+        <h3 class="h-2">"Esconder Filtros" não "Mostrar Mais"</h3>
+        <p>Default = filtros visíveis. O toggle apenas <em>esconde</em> para dar mais espaço à grelha. Inverter (filtros escondidos por defeito) penaliza o utilizador que quase sempre quer filtrar.</p>
 
-        <h3 class="h-2">Pagination clássica vs infinite scroll</h3>
-        <p>Optamos por pagination numerada — utilizador sabe quantas páginas existem, pode saltar para a última. Infinite scroll dificulta voltar a um produto visto antes.</p>
+        <h3 class="h-2">Produtos por página em vez de scroll infinito</h3>
+        <p>Pagination clássica permite ao utilizador estimar o total ("34 páginas"), partilhar URLs com estado, e voltar atrás sem perder a posição. Scroll infinito é traiçoeiro para PLPs grandes.</p>
+
+        <h3 class="h-2">PVPR ao lado do preço actual</h3>
+        <p>Mostrar o preço de tabela (PVPR) struck-through ao lado do preço actual cria contraste imediato. Não usar barras de "desconto %" — o utilizador faz a conta com a presença visual.</p>
       </section>
+
+      <!-- ================================================== -->
+      <!-- Variantes / states                                  -->
+      <!-- ================================================== -->
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Estados da listagem</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Estado</th><th>O que aparece</th><th>Diferenças</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Default</strong></td><td>Listagem normal com filtros e cards</td><td>Já mostrado na anatomia</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Com filtros activos</strong></td><td>Linha de "chips" removíveis acima da grelha</td><td>Cada chip mostra <code>Filtro</code> + ✕. Botão "Limpar tudo" no fim.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Sem resultados</strong></td><td>Mensagem vazia + sugestões</td><td>"Não encontrámos produtos. Tenta remover filtros." + lista de sugestões clicáveis.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Loading</strong></td><td>Skeleton cards (8 cards placeholder)</td><td>Pulse animation. Mantém estrutura para evitar layout shift.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Filtros escondidos</strong></td><td>Grelha ocupa toda a largura</td><td>Botão "Mostrar Filtros" no toolbar. Grid expande para 5/6 colunas.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts                                       -->
+      <!-- ================================================== -->
 
       <section id="usage" class="section">
         <div class="section__eyebrow">Usage</div>
@@ -448,48 +571,166 @@
         <div class="dodont">
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Filtros aplicados visíveis como chips no topo da grid. Remoção 1 clique.</p>
+            <p class="dodont__text">Contagem ao lado de cada filtro: "Xiaomi (108)". O utilizador sabe o impacto antes de clicar.</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">Filtros só na sidebar. Utilizador esquece-se que aplicou e abre a sidebar para verificar.</p>
+            <p class="dodont__text">Filtros sem contagem. Obriga o utilizador a clicar para descobrir que ficou com 3 produtos.</p>
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Aplicar filtros instantaneamente (sem botão "Aplicar"). Resultados atualizam em tempo real.</p>
+            <p class="dodont__text">Filtros activos como chips removíveis acima da grelha.</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">Botão "Aplicar filtros" obrigatório em desktop. Adiciona fricção desnecessária.</p>
+            <p class="dodont__text">Esconder filtros activos só na sidebar. O utilizador esquece-se do que aplicou.</p>
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Mostrar contador "34 produtos" sempre visível. Atualiza com filtros.</p>
+            <p class="dodont__text">Paginação clássica com número total de páginas visível.</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">Esconder o contador. Utilizador não sabe se vale a pena scroll.</p>
+            <p class="dodont__text">Scroll infinito sem indicador de progresso ou total — utilizador perde a noção de quanto falta.</p>
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Empty state com sugestão concreta: "Limpar filtros" ou "Alargar faixa de preço".</p>
+            <p class="dodont__text">Manter URLs partilháveis: filtros e paginação como query params (<code>?fabricante=xiaomi&page=2</code>).</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">"Sem resultados" sem ação. Utilizador fica encurralado.</p>
+            <p class="dodont__text">Filtros em estado interno (sem URL). Utilizador perde tudo ao recarregar a página.</p>
           </div>
         </div>
       </section>
 
+      <!-- ================================================== -->
+      <!-- Mobile                                              -->
+      <!-- ================================================== -->
+
       <section id="mobile" class="section">
         <div class="section__eyebrow">Mobile</div>
         <h2 class="h-1">PLP em mobile</h2>
-        <p>Filtros num drawer/bottom-sheet acessível por botão "Filtros (3)" — número indica filtros ativos. Grid passa a 2 colunas (ou 1 em narrow).</p>
+        <p>Filtros passam a <strong style="color:var(--text-primary)">drawer overlay</strong> activado por botão no toolbar. Grelha em 2 colunas. Cards ligeiramente mais compactos (specs reduzidas).</p>
         <div class="callout">
-          <strong>Sticky header</strong>
-          Em mobile, o results header (contador + ordenação) fica sticky no topo durante scroll. Botão "Filtros" sempre acessível.
+          <strong>Toolbar mobile</strong>
+          O toolbar fica sticky no topo após scroll para manter "Filtrar" + "Ordenar" sempre acessíveis. Contador de filtros activos como badge no botão "Filtrar".
         </div>
       </section>
+
+      <!-- ================================================== -->
+      <!-- Componentes usados                                  -->
+      <!-- ================================================== -->
+
+      <section id="components" class="section">
+        <div class="section__eyebrow">Componentes usados</div>
+        <h2 class="h-1">Componentes deste pattern</h2>
+        <div class="comp-grid">
+          <a href="product-card.html" class="comp-card">
+            <div class="comp-card__preview"><div style="width: 60px; height: 60px; background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);"></div></div>
+            <div class="comp-card__title">Product Card</div>
+          </a>
+          <a href="sticker.html" class="comp-card">
+            <div class="comp-card__preview"><span class="sticker sticker--campaign">Dias Pcdiguianos</span></div>
+            <div class="comp-card__title">Sticker</div>
+          </a>
+          <a href="price.html" class="comp-card">
+            <div class="comp-card__preview"><span class="price price--sm price--sale"><span class="price__current">39,00 €</span><s class="price__original">69,90 €</s></span></div>
+            <div class="comp-card__title">Price</div>
+          </a>
+          <a href="input.html" class="comp-card">
+            <div class="comp-card__preview"><label style="display: inline-flex; gap: 6px; align-items: center; font-size: 12px;"><input type="checkbox" /> Filtro</label></div>
+            <div class="comp-card__title">Input (checkbox)</div>
+          </a>
+          <a href="button.html" class="comp-card">
+            <div class="comp-card__preview"><button class="btn btn--secondary btn--sm">Aplicar</button></div>
+            <div class="comp-card__title">Button</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mapping DS -> produção                              -->
+      <!-- ================================================== -->
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes Design System ↔ Site real</h2>
+        <p>Mapa de equivalência entre as classes usadas neste design system e as que existem na PLP em produção (pcdiga.com). Preenche conforme inspeccionas os blocos no site real.</p>
+        <div class="callout">
+          <strong>Como manter</strong>
+          Quando inspeccionares um bloco na PLP live, copia o nome da classe wrapper principal e cola na coluna "Classe site". Cada bloco também tem este campo no <code>block-doc__meta</code> respectivo — actualizar ambos.
+        </div>
+
+        <div class="table-wrap">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 20%;">Bloco</th>
+                <th style="width: 28%;">Classe Design System</th>
+                <th style="width: 28%;">Classe site real</th>
+                <th style="width: 19%;">Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a href="#block-breadcrumbs">Breadcrumbs</a></td>
+                <td><code>.crumbs</code></td>
+                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
+                <td>Igual à PDP</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><a href="#block-title">Título da página</a></td>
+                <td><code>.plp__page-title</code></td>
+                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
+                <td>Barra laranja decorativa</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><a href="#block-toolbar">Toolbar</a></td>
+                <td><code>.plp__results-header</code></td>
+                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
+                <td>Sort: <code>.plp__sort</code></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><a href="#block-filters">Filtros</a></td>
+                <td><code>.plp__sidebar</code></td>
+                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
+                <td>Grupos: <code>.plp__filter-group</code></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><a href="#block-card">Product card</a></td>
+                <td><code>.product-card</code></td>
+                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
+                <td>Componente standalone</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><a href="#block-grid">Product grid</a></td>
+                <td><code>.product-grid</code></td>
+                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
+                <td>auto-fill minmax(280px)</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><a href="#block-pagination">Pagination</a></td>
+                <td><code>.pager</code></td>
+                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
+                <td>Botões: <code>.pager__btn</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
 
       <section id="accessibility" class="section">
         <div class="section__eyebrow">Acessibilidade</div>
@@ -497,12 +738,13 @@
         <div class="table-wrap">
           <table>
             <tbody>
-              <tr><td><strong style="color:var(--text-primary)">Heading hierarchy</strong></td><td><code>&lt;h1&gt;</code> para nome da categoria, <code>&lt;h2&gt;</code> para grupos de filtros se forem visíveis.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Filtros</strong></td><td>Cada checkbox em <code>&lt;label&gt;</code>. Grupo em <code>&lt;fieldset&gt;</code> com <code>&lt;legend&gt;</code>.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Live region</strong></td><td>Contador "34 produtos encontrados" com <code>aria-live="polite"</code> — anuncia quando filtros mudam.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Pagination</strong></td><td><code>&lt;nav aria-label="Paginação"&gt;</code>. Página ativa com <code>aria-current="page"</code>.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Chips</strong></td><td>Botão de remover com <code>aria-label="Remover filtro Apple"</code>.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Empty state</strong></td><td><code>role="status"</code> para anunciar mudança ("Sem resultados").</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">H1 único</strong></td><td>Nome da categoria. Cards usam <code>&lt;h3&gt;</code> para o título do produto.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Filtros</strong></td><td>Cada filtro dentro de <code>&lt;label&gt;</code>. Grupos como <code>&lt;fieldset&gt;</code> com <code>&lt;legend&gt;</code> ou <code>details/summary</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Chips activos</strong></td><td>Botão "remover" com <code>aria-label="Remover filtro: Xiaomi"</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Pagination</strong></td><td><code>&lt;nav aria-label="Paginação"&gt;</code>. Página activa com <code>aria-current="page"</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Ordenação</strong></td><td><code>&lt;select&gt;</code> nativo associado a <code>&lt;label&gt;</code>. Anuncia mudança via <code>aria-live</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Grid</strong></td><td>Não usar <code>role="grid"</code> — é conteúdo, não tabela de dados. Manter como lista de articles.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Loading</strong></td><td>Skeleton cards com <code>aria-busy="true"</code> no container.</td></tr>
             </tbody>
           </table>
         </div>
@@ -514,13 +756,22 @@
       <div class="toc__title">Nesta página</div>
       <ul class="toc__list">
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#layout">Layout</a></li>
         <li><a href="#anatomy">Anatomia</a></li>
-        <li><a href="#components">Componentes</a></li>
-        <li><a href="#states">Variantes</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#blocks"><strong>Blocos</strong></a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-breadcrumbs">1. Breadcrumbs</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-title">2. Título</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-toolbar">3. Toolbar</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-filters">4. Filtros</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-card">5. Product card</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-grid">6. Product grid</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-pagination">7. Pagination</a></li>
         <li><a href="#rationale">UX rationale</a></li>
+        <li><a href="#states">Variantes</a></li>
         <li><a href="#usage">Do's & Don'ts</a></li>
         <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#mapping"><strong>Mapping DS ↔ site</strong></a></li>
         <li><a href="#accessibility">Acessibilidade</a></li>
       </ul>
     </aside>
