@@ -2256,3 +2256,49 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   letter-spacing: 0.04em;
 }
 .block-doc__meta-tag strong { color: var(--text-primary); font-weight: 700; }
+.block-doc__meta-tag--prod {
+  background: rgba(255, 77, 35, 0.08);
+  border-color: rgba(255, 77, 35, 0.35);
+  color: var(--brand-orange);
+}
+.block-doc__meta-tag--prod strong { color: var(--brand-orange); font-family: var(--font-mono); text-transform: none; letter-spacing: 0; }
+
+/* ---------- Mapping table (DS classes -> production) ---------- */
+.mapping-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.mapping-table th,
+.mapping-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--ui-card-border);
+  vertical-align: top;
+}
+.mapping-table th {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--ui-text-muted);
+  background: var(--bg-card);
+}
+.mapping-table tbody tr:hover { background: var(--bg-card); }
+.mapping-table code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--ui-card-border);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.mapping-table td.mapping-table__prod code {
+  color: var(--brand-orange);
+  border-color: rgba(255, 77, 35, 0.35);
+  background: rgba(255, 77, 35, 0.08);
+}
+.mapping-table .is-todo {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ui-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
