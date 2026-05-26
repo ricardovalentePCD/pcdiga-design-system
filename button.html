@@ -43,6 +43,7 @@
           <li><a href="sticker.html">Sticker</a></li>
           <li><a href="product-card.html">Product Card</a></li>
           <li><a href="blog-card.html">Blog Card</a></li>
+          <li><a href="campaigns.html">Campanhas e Ofertas</a></li>
           <li><a href="badge.html">Badge</a></li>
           <li><a href="tabs.html">Tabs</a></li>
           <li><a href="toast.html">Toast</a></li>
@@ -69,14 +70,13 @@
         <div class="example">
           <button class="btn btn--primary">Comprar agora</button>
           <button class="btn btn--secondary">Adicionar ao carrinho</button>
-          <button class="btn btn--ghost">Ver detalhes</button>
         </div>
       </section>
 
       <section id="variants" class="section">
         <div class="section__eyebrow">Variantes</div>
         <h2 class="h-1">Variantes</h2>
-        <p>Quatro variantes que comunicam hierarquia de ação. <strong style="color: var(--text-primary)">Apenas uma Primary por vista</strong> — a ação principal.</p>
+        <p>Duas variantes que comunicam hierarquia de ação. <strong style="color: var(--text-primary)">Apenas uma Primary por vista</strong> — a ação principal.</p>
 
         <h3 class="h-2">Primary</h3>
         <p>Para a ação principal de cada página. Laranja PCDIGA. Captura a atenção.</p>
@@ -99,18 +99,6 @@
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
 <pre><code>&lt;button class="btn btn--secondary"&gt;Ver detalhes&lt;/button&gt;</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Ghost</h3>
-        <p>Para ações terciárias. Sem fill nem border. Usar quando há muitas ações próximas e não queremos competir.</p>
-        <div class="cb">
-          <div class="cb__preview">
-            <button class="btn btn--ghost">Cancelar</button>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;button class="btn btn--ghost"&gt;Cancelar&lt;/button&gt;</code></pre>
           </div>
         </div>
 
@@ -171,50 +159,30 @@
 
         <div class="table-wrap">
           <table>
-            <thead><tr><th>State</th><th>Primary</th><th>Secondary</th><th>Ghost</th></tr></thead>
+            <thead><tr><th>State</th><th>Primary</th><th>Secondary</th></tr></thead>
             <tbody>
               <tr>
                 <td><strong style="color:var(--text-primary)">Default</strong></td>
                 <td><button class="btn btn--primary btn--sm">Ação</button></td>
                 <td><button class="btn btn--secondary btn--sm">Ação</button></td>
-                <td><button class="btn btn--ghost btn--sm">Ação</button></td>
               </tr>
               <tr>
                 <td><strong style="color:var(--text-primary)">Hover</strong></td>
                 <td><button class="btn btn--primary btn--sm" style="background: var(--brand-orange-hover);">Ação</button></td>
                 <td><button class="btn btn--secondary btn--sm" style="background: var(--bg-card);">Ação</button></td>
-                <td><button class="btn btn--ghost btn--sm" style="background: var(--bg-base);">Ação</button></td>
               </tr>
               <tr>
                 <td><strong style="color:var(--text-primary)">Disabled</strong></td>
                 <td><button class="btn btn--primary btn--sm" disabled>Ação</button></td>
                 <td><button class="btn btn--secondary btn--sm" disabled>Ação</button></td>
-                <td><button class="btn btn--ghost btn--sm" disabled>Ação</button></td>
               </tr>
               <tr>
                 <td><strong style="color:var(--text-primary)">Loading</strong></td>
                 <td><button class="btn btn--primary btn--sm btn--loading">Ação</button></td>
                 <td><button class="btn btn--secondary btn--sm btn--loading">Ação</button></td>
-                <td><button class="btn btn--ghost btn--sm btn--loading">Ação</button></td>
               </tr>
             </tbody>
           </table>
-        </div>
-
-        <h3 class="h-2">Focus</h3>
-        <p>Outline de 3px laranja claro à volta. <strong style="color: var(--text-primary)">Não remover</strong> — é crítico para acessibilidade keyboard. Aplicado automaticamente via <code>:focus-visible</code>.</p>
-        <div class="cb">
-          <div class="cb__preview">
-            <button class="btn btn--primary" style="outline: 3px solid rgba(255, 77, 35, 0.4); outline-offset: 2px;">Focused</button>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>/* CSS — aplicado automaticamente */
-.btn:focus-visible {
-  outline: 3px solid rgba(255, 77, 35, 0.4);
-  outline-offset: 2px;
-}</code></pre>
-          </div>
         </div>
 
         <h3 class="h-2">Disabled</h3>
@@ -261,7 +229,7 @@
       <section id="anatomy" class="section">
         <div class="section__eyebrow">Anatomy</div>
         <h2 class="h-1">Estrutura</h2>
-        <p>Um botão é um elemento <code>&lt;button&gt;</code> ou <code>&lt;a&gt;</code> com a classe <code>.btn</code> + uma variante (<code>--primary</code>, <code>--secondary</code>, <code>--ghost</code>).</p>
+        <p>Um botão é um elemento <code>&lt;button&gt;</code> ou <code>&lt;a&gt;</code> com a classe <code>.btn</code> + uma variante (<code>--primary</code> ou <code>--secondary</code>).</p>
 
         <div class="table-wrap">
           <table>
@@ -324,7 +292,6 @@
             <tbody>
               <tr><td><strong style="color:var(--text-primary)">Role</strong></td><td>Usar sempre <code>&lt;button&gt;</code>. Para links visuais como botão, usar <code>&lt;a&gt;</code> com a classe.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Keyboard</strong></td><td>Tab para focar. Enter ou Space para ativar.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Focus visible</strong></td><td>Outline 3px laranja claro. Visível em qualquer tema.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Disabled</strong></td><td>Atributo <code>disabled</code> + <code>aria-disabled="true"</code>. Não focável.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Loading</strong></td><td>Adicionar <code>aria-busy="true"</code>. Manter o texto de fundo para screen readers (ainda que invisível).</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Icon-only</strong></td><td>Obrigatório <code>aria-label="..."</code>. Sem isto o screen reader não anuncia nada.</td></tr>

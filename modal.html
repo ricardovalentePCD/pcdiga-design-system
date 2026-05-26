@@ -43,6 +43,7 @@
           <li><a href="sticker.html">Sticker</a></li>
           <li><a href="product-card.html">Product Card</a></li>
           <li><a href="blog-card.html">Blog Card</a></li>
+          <li><a href="campaigns.html">Campanhas e Ofertas</a></li>
           <li><a href="badge.html">Badge</a></li>
           <li><a href="tabs.html">Tabs</a></li>
           <li><a href="toast.html">Toast</a></li>
@@ -57,23 +58,36 @@
       <section id="overview" class="hero">
         <div class="hero__eyebrow">Componente</div>
         <h1 class="h-display hero__title">Modal</h1>
-        <p class="lead">Diálogo sobreposto que requer atenção do utilizador. Usar para confirmações ("Apagar encomenda?"), formulários focados (login, edição) ou conteúdo crítico que não deve ser ignorado.</p>
+        <p class="lead">Diálogo sobreposto que requer atenção do utilizador. Usado em confirmações de ações destrutivas (remover do carrinho, apagar conta) e decisões críticas que não devem ser ignoradas.</p>
         <div class="cb">
           <div class="cb__preview">
             <div class="modal-backdrop">
               <div class="modal">
                 <div class="modal__header">
-                  <h3 class="modal__title">Apagar encomenda?</h3>
+                  <h3 class="modal__title">Remover produto do carrinho</h3>
                   <button class="modal__close" aria-label="Fechar">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                   </button>
                 </div>
                 <div class="modal__body">
-                  <p>Esta ação não pode ser desfeita. A encomenda <strong style="color:var(--text-primary)">#1234</strong> será permanentemente removida do teu histórico.</p>
+                  <p>Estás prestes a remover o seguinte produto do carrinho:</p>
+                  <div class="modal-product">
+                    <div class="modal-product__image">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--ui-text-muted)"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="modal-product__info">
+                      <p class="modal-product__name">Portátil Apple MacBook Neo 14" M4 Pro 16GB 1TB SSD Space Black</p>
+                      <div class="modal-product__meta">
+                        <span class="modal-product__price">2 499,00 €</span>
+                        <span class="modal-product__qty">Qtd: 1</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="modal__note">Se mudares de ideias, podes voltar a adicioná-lo a partir da página do produto.</p>
                 </div>
                 <div class="modal__footer">
-                  <button class="btn btn--ghost">Cancelar</button>
-                  <button class="btn btn--primary">Apagar</button>
+                  <button class="btn btn--secondary">CANCELAR</button>
+                  <button class="btn btn--primary">REMOVER PRODUTO</button>
                 </div>
               </div>
             </div>
@@ -84,22 +98,38 @@
   &lt;div class="modal" aria-labelledby="modal-title"&gt;
     &lt;div class="modal__header"&gt;
       &lt;h3 class="modal__title" id="modal-title"&gt;
-        Apagar encomenda?
+        Remover produto do carrinho
       &lt;/h3&gt;
       &lt;button class="modal__close" aria-label="Fechar"&gt;
         &lt;svg ...&gt;&lt;/svg&gt;
       &lt;/button&gt;
     &lt;/div&gt;
     &lt;div class="modal__body"&gt;
-      &lt;p&gt;Esta ação não pode ser desfeita...&lt;/p&gt;
+      &lt;p&gt;Estás prestes a remover o seguinte produto do carrinho:&lt;/p&gt;
+      &lt;div class="modal-product"&gt;
+        &lt;div class="modal-product__image"&gt;
+          &lt;img src="..." alt="" /&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-product__info"&gt;
+          &lt;p class="modal-product__name"&gt;Nome do produto&lt;/p&gt;
+          &lt;div class="modal-product__meta"&gt;
+            &lt;span class="modal-product__price"&gt;2 499,00 €&lt;/span&gt;
+            &lt;span class="modal-product__qty"&gt;Qtd: 1&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;p class="modal__note"&gt;Se mudares de ideias...&lt;/p&gt;
     &lt;/div&gt;
     &lt;div class="modal__footer"&gt;
-      &lt;button class="btn btn--ghost"&gt;Cancelar&lt;/button&gt;
-      &lt;button class="btn btn--primary"&gt;Apagar&lt;/button&gt;
+      &lt;button class="btn btn--secondary"&gt;CANCELAR&lt;/button&gt;
+      &lt;button class="btn btn--primary"&gt;REMOVER PRODUTO&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
           </div>
+        </div>
+        <div class="block-doc">
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: a confirmar</span>
         </div>
       </section>
 
@@ -113,82 +143,30 @@
               <tr><td><code>modal-backdrop</code></td><td>Overlay escuro sobre a página, captura cliques fora.</td></tr>
               <tr><td><code>modal</code></td><td>Container do diálogo, max-width 480px (default).</td></tr>
               <tr><td><code>modal__header</code></td><td>Title + botão fechar (X). Border-bottom subtil.</td></tr>
-              <tr><td><code>modal__body</code></td><td>Conteúdo principal. Pode ter forms, texto, lista.</td></tr>
-              <tr><td><code>modal__footer</code></td><td>Botões de ação alinhados à direita. Primary à direita, ghost à esquerda.</td></tr>
+              <tr><td><code>modal__title</code></td><td>Frase de ação: "Remover produto do carrinho".</td></tr>
+              <tr><td><code>modal__close</code></td><td>Botão X no canto superior direito.</td></tr>
+              <tr><td><code>modal__body</code></td><td>Texto introdutório + produto/contexto + nota.</td></tr>
+              <tr><td><code>modal-product</code></td><td>Mini card do produto a remover (imagem + nome + preço + qtd).</td></tr>
+              <tr><td><code>modal__note</code></td><td>Nota tranquilizadora ("Se mudares de ideias...").</td></tr>
+              <tr><td><code>modal__footer</code></td><td>Botões alinhados à direita. Secondary (CANCELAR) + Primary (REMOVER PRODUTO).</td></tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <section id="sizes" class="section">
-        <div class="section__eyebrow">Sizes</div>
-        <h2 class="h-1">Sizes</h2>
+      <section id="usecases" class="section">
+        <div class="section__eyebrow">Casos de uso</div>
+        <h2 class="h-1">Quando usar</h2>
+        <p>O modal só deve aparecer em decisões importantes ou ações destrutivas. Para feedback simples (produto adicionado, erro de rede) usa <a href="toast.html">Toast</a>.</p>
 
-        <h3 class="h-2">Small (sm) — 360px</h3>
-        <p>Confirmações simples, alertas curtos.</p>
-        <div class="cb">
-          <div class="cb__preview">
-            <div class="modal-backdrop">
-              <div class="modal modal--sm">
-                <div class="modal__header">
-                  <h3 class="modal__title">Sair sem guardar?</h3>
-                  <button class="modal__close" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-                </div>
-                <div class="modal__body">
-                  <p>Vais perder as alterações.</p>
-                </div>
-                <div class="modal__footer">
-                  <button class="btn btn--ghost">Voltar</button>
-                  <button class="btn btn--primary">Sair</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="modal modal--sm"&gt;...&lt;/div&gt;</code></pre>
-          </div>
-        </div>
+        <h3 class="h-2">Confirmar remoção do carrinho</h3>
+        <p>Caso principal — confirmar antes de remover um produto.</p>
 
-        <h3 class="h-2">Medium (default) — 480px</h3>
-        <p>Confirmações com contexto, forms compactos.</p>
+        <h3 class="h-2">Confirmar ações destrutivas</h3>
+        <p>Apagar conta, cancelar encomenda, eliminar morada guardada. Sempre com nome/contexto do que vai ser apagado.</p>
 
-        <h3 class="h-2">Large (lg) — 640px</h3>
-        <p>Forms longos, conteúdo rico (ex: detalhes de encomenda).</p>
-        <div class="cb">
-          <div class="cb__preview">
-            <div class="modal-backdrop">
-              <div class="modal modal--lg">
-                <div class="modal__header">
-                  <h3 class="modal__title">Editar morada de envio</h3>
-                  <button class="modal__close" aria-label="Fechar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-                </div>
-                <div class="modal__body">
-                  <div style="display: grid; gap: 16px;">
-                    <div class="input-field">
-                      <label class="input-field__label">Nome completo</label>
-                      <input class="input" type="text" value="João Silva" />
-                    </div>
-                    <div class="input-field">
-                      <label class="input-field__label">Morada</label>
-                      <input class="input" type="text" placeholder="Rua, número, andar" />
-                    </div>
-                  </div>
-                </div>
-                <div class="modal__footer">
-                  <button class="btn btn--ghost">Cancelar</button>
-                  <button class="btn btn--primary">Guardar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="modal modal--lg"&gt;
-  ... form completo ...
-&lt;/div&gt;</code></pre>
-          </div>
-        </div>
+        <h3 class="h-2">Forms críticos</h3>
+        <p>Editar morada de envio, mudar password. Foco total na tarefa, sem distrações da página.</p>
       </section>
 
       <section id="usage" class="section">
@@ -197,35 +175,43 @@
         <div class="dodont">
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Title que descreve a decisão: "Apagar encomenda?", "Confirmar compra".</p>
+            <p class="dodont__text">Title descritivo da ação: "Remover produto do carrinho", "Cancelar encomenda".</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">"Aviso", "Atenção". Vagos e não explicam o que está a acontecer.</p>
+            <p class="dodont__text">"Aviso", "Atenção", "Confirmação". Vagos — não explicam o que vai acontecer.</p>
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Botões com verbo da ação: "Apagar", "Confirmar", "Guardar".</p>
+            <p class="dodont__text">Mostrar o produto/item afetado dentro do modal. O utilizador vê exactamente o que vai remover.</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">"OK" / "Cancel". Sem contexto sobre o que vai acontecer.</p>
+            <p class="dodont__text">"Tens a certeza que queres remover este item?" sem mostrar qual item. Cria dúvida.</p>
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Primary à direita, ghost à esquerda. Padrão consistente em todos os diálogos.</p>
+            <p class="dodont__text">Botões com o verbo exacto da ação: "REMOVER PRODUTO", "CANCELAR".</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">Trocar a posição entre modais. Quebra a previsibilidade.</p>
+            <p class="dodont__text">"OK" / "Sim" / "Não". Sem contexto sobre o que cada botão faz.</p>
           </div>
           <div class="dodont__item dodont__item--do">
             <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Modal só para decisões importantes. ESC e clique fora fecham.</p>
+            <p class="dodont__text">Nota tranquilizadora se a ação é reversível: "Se mudares de ideias, podes voltar a adicioná-lo".</p>
           </div>
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
             <p class="dodont__text">Modal para mensagens de status simples — usa Toast.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Primary à direita (ação principal: REMOVER), Secondary à esquerda (CANCELAR).</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Trocar a posição entre modais. Quebra a previsibilidade.</p>
           </div>
         </div>
       </section>
@@ -239,11 +225,32 @@
               <tr><td><strong style="color:var(--text-primary)">Role</strong></td><td><code>role="dialog"</code> + <code>aria-modal="true"</code> no backdrop.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Title associado</strong></td><td><code>aria-labelledby="title-id"</code> apontando ao id do <code>modal__title</code>.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Focus trap</strong></td><td>Tab dentro do modal não sai para a página por trás. Shift+Tab também.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Foco inicial</strong></td><td>Foco vai para o primeiro elemento interactivo (geralmente o botão fechar ou input).</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Foco de retorno</strong></td><td>Ao fechar, foco volta ao trigger que abriu o modal.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">ESC</strong></td><td>Fecha o modal. Confirmar com utilizador se há dados não guardados.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Backdrop click</strong></td><td>Fecha o modal. Mesma confirmação se aplicável.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Foco inicial</strong></td><td>Foco vai para o botão menos destrutivo (CANCELAR), evita cliques acidentais em REMOVER.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Foco de retorno</strong></td><td>Ao fechar, foco volta ao trigger que abriu o modal (ex: ícone do lixo no carrinho).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">ESC</strong></td><td>Fecha o modal (equivalente a CANCELAR).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Backdrop click</strong></td><td>Fecha o modal sem confirmar — utilizador volta ao carrinho intacto.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Scroll lock</strong></td><td>Desactivar scroll do <code>body</code> enquanto modal aberto.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes site ↔ Design System</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Design System</th><th>Classe site (produção)</th></tr></thead>
+            <tbody>
+              <tr><td><code>.modal-backdrop</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal__header</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal__title</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal__close</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal__body</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal-product</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal__note</code></td><td><em>a confirmar</em></td></tr>
+              <tr><td><code>.modal__footer</code></td><td><em>a confirmar</em></td></tr>
             </tbody>
           </table>
         </div>
@@ -256,9 +263,10 @@
       <ul class="toc__list">
         <li><a href="#overview">Overview</a></li>
         <li><a href="#anatomy">Anatomia</a></li>
-        <li><a href="#sizes">Sizes</a></li>
+        <li><a href="#usecases">Casos de uso</a></li>
         <li><a href="#usage">Do's & Don'ts</a></li>
         <li><a href="#accessibility">Acessibilidade</a></li>
+        <li><a href="#mapping">Mapping</a></li>
       </ul>
     </aside>
   </div>

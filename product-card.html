@@ -43,6 +43,7 @@
           <li><a href="sticker.html">Sticker</a></li>
           <li><a href="product-card.html" class="is-active">Product Card</a></li>
           <li><a href="blog-card.html">Blog Card</a></li>
+          <li><a href="campaigns.html">Campanhas e Ofertas</a></li>
           <li><a href="badge.html">Badge</a></li>
           <li><a href="tabs.html">Tabs</a></li>
           <li><a href="toast.html">Toast</a></li>
@@ -189,13 +190,13 @@
           <table>
             <thead><tr><th>Parte</th><th>Obrigatório</th><th>Spec</th></tr></thead>
             <tbody>
-              <tr><td><strong style="color: var(--text-primary)">Imagem</strong></td><td>Sim</td><td>Aspect 270:250, fundo branco, radius 2px</td></tr>
-              <tr><td><strong style="color: var(--text-primary)">Stickers</strong></td><td>Opcional</td><td>Abaixo da imagem (não em cima). Brand-blue por defeito.</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Imagem</strong></td><td>Sim</td><td>Aspect 270:250, fundo branco, <strong style="color:var(--text-primary)">sem border</strong> — ocupa o espaço total da área.</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Stickers</strong></td><td>Opcional</td><td>Top-left: campanha/novidade/stock empilhados. Right-center: desconto.</td></tr>
               <tr><td><strong style="color: var(--text-primary)">Title</strong></td><td>Sim</td><td>Lato Bold 14px / line-height 18px. Máx 2 linhas com ellipsis.</td></tr>
               <tr><td><strong style="color: var(--text-primary)">Descrição</strong></td><td>Recomendado</td><td>Lato Regular 12px / 16px. Máx 3 linhas com ellipsis.</td></tr>
               <tr><td><strong style="color: var(--text-primary)">SKU</strong></td><td>Recomendado</td><td>10px monospace, opacity 70%</td></tr>
               <tr><td><strong style="color: var(--text-primary)">Etiqueta energética</strong></td><td>Quando aplicável</td><td>Para electrodomésticos / monitores. Cor laranja.</td></tr>
-              <tr><td><strong style="color: var(--text-primary)">Stock + entrega</strong></td><td>Sim</td><td>Ícone check + 14px Medium + linha de entrega 12px Medium</td></tr>
+              <tr><td><strong style="color: var(--text-primary)">Stock + entrega</strong></td><td>Sim</td><td>Stock <strong>vai como sticker</strong> no top-left da imagem. Linha de entrega (texto) no body.</td></tr>
               <tr><td><strong style="color: var(--text-primary)">Preço actual</strong></td><td>Sim</td><td>Lato Black 24px laranja brand</td></tr>
               <tr><td><strong style="color: var(--text-primary)">Preço PVPR</strong></td><td>Em desconto</td><td>14px regular + badge "PVPR" 8px Bold</td></tr>
               <tr><td><strong style="color: var(--text-primary)">Comparar / Favoritos</strong></td><td>Recomendado</td><td>Texto + ícone 20px, gap 16px entre eles</td></tr>
@@ -232,104 +233,13 @@
       </section>
 
       <section id="stock" class="section">
-        <div class="section__eyebrow">Stock states</div>
+        <div class="section__eyebrow">Stock</div>
         <h2 class="h-1">Estados de stock</h2>
-        <p>Quatro estados, alinhados com os tokens semânticos do <a href="foundations.html#color">Foundations → Color → Stocks</a>.</p>
+        <p>Os estados de stock (<strong style="color:var(--text-primary)">Em stock, Pré-venda, Sem stock, Em loja</strong>) são agora <a href="sticker.html#stock">variantes do componente Sticker</a> e <strong style="color:var(--text-primary)">não vivem dentro do product card</strong>. Aparecem como sticker no top-left da imagem, junto com promo ou novidade quando aplicável.</p>
 
-        <h3 class="h-2">Em stock</h3>
-        <div class="cb">
-          <div class="cb__preview">
-            <article class="product-card">
-              <div class="product-card__image"><div class="product-card__placeholder">imagem</div></div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">Produto disponível</h3>
-                <div class="product-card__stock-block">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="color: var(--stock-available);"><circle cx="12" cy="12" r="10" fill="currentColor"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  <span class="product-card__stock-text">
-                    <span class="product-card__stock">Em stock</span>
-                    <span class="product-card__delivery">Entrega prevista a 17 JAN</span>
-                  </span>
-                </div>
-                <div class="product-card__price-row">
-                  <span class="product-card__price-current">99,99 €</span>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="product-card__stock-block"&gt;
-  &lt;svg ...&gt;&lt;/svg&gt;
-  &lt;span class="product-card__stock-text"&gt;
-    &lt;span class="product-card__stock"&gt;Em stock&lt;/span&gt;
-    &lt;span class="product-card__delivery"&gt;Entrega prevista a 17 JAN&lt;/span&gt;
-  &lt;/span&gt;
-&lt;/div&gt;</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Esgotado</h3>
-        <div class="cb">
-          <div class="cb__preview">
-            <article class="product-card">
-              <div class="product-card__image"><div class="product-card__placeholder">imagem</div></div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">Produto esgotado</h3>
-                <div class="product-card__stock-block">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--stock-out);"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                  <span class="product-card__stock-text">
-                    <span class="product-card__stock product-card__stock--out">Esgotado</span>
-                  </span>
-                </div>
-                <div class="product-card__price-row">
-                  <span class="product-card__price-current">99,99 €</span>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="product-card__stock-block"&gt;
-  &lt;svg ...&gt;&lt;/svg&gt;
-  &lt;span class="product-card__stock-text"&gt;
-    &lt;span class="product-card__stock product-card__stock--out"&gt;Esgotado&lt;/span&gt;
-  &lt;/span&gt;
-&lt;/div&gt;</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Por encomenda</h3>
-        <div class="cb">
-          <div class="cb__preview">
-            <article class="product-card">
-              <div class="product-card__image"><div class="product-card__placeholder">imagem</div></div>
-              <div class="product-card__body">
-                <h3 class="product-card__title">Produto por encomenda</h3>
-                <div class="product-card__stock-block">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--stock-order);"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  <span class="product-card__stock-text">
-                    <span class="product-card__stock product-card__stock--order">Por encomenda</span>
-                    <span class="product-card__delivery" style="color: var(--stock-order);">5–7 dias úteis</span>
-                  </span>
-                </div>
-                <div class="product-card__price-row">
-                  <span class="product-card__price-current">99,99 €</span>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="product-card__stock-block"&gt;
-  &lt;svg ...&gt;&lt;/svg&gt;
-  &lt;span class="product-card__stock-text"&gt;
-    &lt;span class="product-card__stock product-card__stock--order"&gt;
-      Por encomenda
-    &lt;/span&gt;
-    &lt;span class="product-card__delivery"&gt;5–7 dias úteis&lt;/span&gt;
-  &lt;/span&gt;
-&lt;/div&gt;</code></pre>
-          </div>
+        <div class="callout">
+          <strong>Migração</strong>
+          Eliminar <code>.product-card__stock-block</code>, <code>.product-card__stock--out</code>, etc. Em substituição usar <code>&lt;span class="sticker sticker--available"&gt;Em stock&lt;/span&gt;</code> dentro de <code>.product-card__stickers</code>.
         </div>
       </section>
 
@@ -367,48 +277,73 @@
           </div>
         </div>
 
-        <h3 class="h-2">Desconto (top-right, amarelo)</h3>
-        <p>Para descontos numéricos. Posicionado no canto superior direito da imagem para máxima visibilidade.</p>
+        <h3 class="h-2">Desconto (direita, centrado verticalmente)</h3>
+        <p>Para descontos numéricos (€ ou %). Posicionado à <strong style="color:var(--text-primary)">direita da imagem, centrado verticalmente</strong>. Cor amarela com texto preto para máximo contraste.</p>
         <div class="cb">
           <div class="cb__preview">
             <article class="product-card">
               <div class="product-card__image">
-                <div class="product-card__stickers product-card__stickers--right">
-                  <span class="product-card__sticker product-card__sticker--discount">40%</span>
-                </div>
+                <span class="sticker sticker--discount product-card__discount">-100€</span>
                 <div class="product-card__placeholder">imagem</div>
               </div>
               <div class="product-card__body">
                 <h3 class="product-card__title">Produto com desconto</h3>
                 <div class="product-card__price-row">
                   <span class="product-card__price-current">59,90 €</span>
-                  <span class="product-card__price-old">99,90 €</span>
+                  <span class="product-card__price-old">159,90 €</span>
                 </div>
               </div>
             </article>
           </div>
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="product-card__stickers product-card__stickers--right"&gt;
-  &lt;span class="product-card__sticker product-card__sticker--discount"&gt;
-    40%
+<pre><code>&lt;div class="product-card__image"&gt;
+  &lt;img src="..." /&gt;
+  &lt;span class="sticker sticker--discount product-card__discount"&gt;
+    -100€
   &lt;/span&gt;
 &lt;/div&gt;</code></pre>
           </div>
         </div>
 
-        <h3 class="h-2">Combinado (campanha + desconto)</h3>
-        <p>Caso real PCDIGA: produto em campanha com desconto associado. Os dois stickers em posições opostas para não competirem.</p>
+        <h3 class="h-2">Pré-venda</h3>
+        <p>Para produtos em pré-venda. Sticker magenta no top-left junto a outros stickers.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <article class="product-card">
+              <div class="product-card__image">
+                <div class="product-card__stickers product-card__stickers--left">
+                  <span class="sticker sticker--presale">Pré-venda</span>
+                </div>
+                <div class="product-card__placeholder">imagem</div>
+              </div>
+              <div class="product-card__body">
+                <h3 class="product-card__title">Produto em pré-venda</h3>
+                <div class="product-card__price-row">
+                  <span class="product-card__price-current">1 299,00 €</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__stickers product-card__stickers--left"&gt;
+  &lt;span class="sticker sticker--presale"&gt;Pré-venda&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2">Combinado (campanha + stock + desconto)</h3>
+        <p>Caso real PCDIGA: produto em campanha, com stock confirmado e desconto. <strong style="color:var(--text-primary)">Stickers empilhados no top-left</strong> (campanha + stock); <strong style="color:var(--text-primary)">desconto à direita, centrado</strong>.</p>
         <div class="cb">
           <div class="cb__preview">
             <article class="product-card">
               <div class="product-card__image">
                 <div class="product-card__stickers product-card__stickers--left">
                   <span class="product-card__sticker product-card__sticker--campaign">Dias Pcdiguianos 🛠️</span>
+                  <span class="sticker sticker--available">Em stock</span>
                 </div>
-                <div class="product-card__stickers product-card__stickers--right">
-                  <span class="product-card__sticker product-card__sticker--discount">40%</span>
-                </div>
+                <span class="sticker sticker--discount product-card__discount">-100€</span>
                 <div class="product-card__placeholder">imagem</div>
               </div>
               <div class="product-card__body">
@@ -450,16 +385,19 @@
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
 <pre><code>&lt;div class="product-card__image"&gt;
+  &lt;!-- Top-left: campanha + stock empilhados --&gt;
   &lt;div class="product-card__stickers product-card__stickers--left"&gt;
     &lt;span class="product-card__sticker product-card__sticker--campaign"&gt;
       Dias Pcdiguianos 🛠️
     &lt;/span&gt;
+    &lt;span class="sticker sticker--available"&gt;Em stock&lt;/span&gt;
   &lt;/div&gt;
-  &lt;div class="product-card__stickers product-card__stickers--right"&gt;
-    &lt;span class="product-card__sticker product-card__sticker--discount"&gt;
-      40%
-    &lt;/span&gt;
-  &lt;/div&gt;
+
+  &lt;!-- Direita, centrado: desconto --&gt;
+  &lt;span class="sticker sticker--discount product-card__discount"&gt;
+    -100€
+  &lt;/span&gt;
+
   &lt;img src="..." /&gt;
 &lt;/div&gt;</code></pre>
           </div>

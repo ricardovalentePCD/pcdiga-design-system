@@ -43,6 +43,7 @@
           <li><a href="sticker.html" class="is-active">Sticker</a></li>
           <li><a href="product-card.html">Product Card</a></li>
           <li><a href="blog-card.html">Blog Card</a></li>
+          <li><a href="campaigns.html">Campanhas e Ofertas</a></li>
           <li><a href="badge.html">Badge</a></li>
           <li><a href="tabs.html">Tabs</a></li>
           <li><a href="toast.html">Toast</a></li>
@@ -65,11 +66,11 @@
       <section id="overview" class="hero">
         <div class="hero__eyebrow">Componente</div>
         <h1 class="h-display hero__title">Sticker</h1>
-        <p class="lead">Etiquetas pequenas para comunicar estado de stock, promoções, novidades ou descontos. São o sinal visual mais rápido na PCDIGA.</p>
+        <p class="lead">Etiquetas para comunicar estado de stock, pré-venda, promoções, novidades ou descontos. São o sinal visual mais rápido na PCDIGA. <strong style="color: var(--text-primary)">Tamanho único</strong>.</p>
         <div class="example" style="gap: 8px;">
-          <span class="sticker sticker--available">Disponível</span>
+          <span class="sticker sticker--available">Em stock</span>
           <span class="sticker sticker--presale">Pré-venda</span>
-          <span class="sticker sticker--cancelled">Esgotado</span>
+          <span class="sticker sticker--outofstock">Sem stock</span>
           <span class="sticker sticker--new">Novidade</span>
           <span class="sticker sticker--promo">Promo</span>
           <span class="sticker sticker--discount">-30%</span>
@@ -77,47 +78,20 @@
       </section>
 
       <section id="variants" class="section">
-        <div class="section__eyebrow">Variantes</div>
-        <h2 class="h-1">6 variantes</h2>
-        <p>Cada variante tem uma <strong style="color: var(--text-primary)">semântica fixa</strong> — não usar verde para promoções nem amarelo para esgotado.</p>
-
-        <h3 class="h-2">Disponível</h3>
-        <p>Stock confirmado, oferta válida.</p>
-        <div class="cb">
-          <div class="cb__preview"><span class="sticker sticker--available">Disponível</span></div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;span class="sticker sticker--available"&gt;Disponível&lt;/span&gt;</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Pré-venda</h3>
-        <p>Produto ainda não disponível, com data de lançamento.</p>
-        <div class="cb">
-          <div class="cb__preview"><span class="sticker sticker--presale">Pré-venda</span></div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;span class="sticker sticker--presale"&gt;Pré-venda&lt;/span&gt;</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Esgotado / cancelada</h3>
-        <p>Sem stock, encomenda cancelada, fraude.</p>
-        <div class="cb">
-          <div class="cb__preview"><span class="sticker sticker--cancelled">Esgotado</span></div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;span class="sticker sticker--cancelled"&gt;Esgotado&lt;/span&gt;</code></pre>
-          </div>
-        </div>
+        <div class="section__eyebrow">Variantes — Promo / Novidade / Desconto</div>
+        <h2 class="h-1">Promo, novidade e desconto</h2>
+        <p>Cada variante tem uma <strong style="color: var(--text-primary)">semântica fixa</strong>. Não trocar cores nem misturar significados.</p>
 
         <h3 class="h-2">Novidade</h3>
-        <p>Produtos recém-chegados, pendentes.</p>
+        <p>Produtos recém-chegados.</p>
         <div class="cb">
           <div class="cb__preview"><span class="sticker sticker--new">Novidade</span></div>
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
 <pre><code>&lt;span class="sticker sticker--new"&gt;Novidade&lt;/span&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
           </div>
         </div>
 
@@ -129,47 +103,80 @@
             <button class="cb__copy" type="button">Copiar</button>
 <pre><code>&lt;span class="sticker sticker--promo"&gt;Promo&lt;/span&gt;</code></pre>
           </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
+          </div>
         </div>
 
         <h3 class="h-2">Desconto</h3>
-        <p>Apenas para % de desconto numérico.</p>
+        <p>Apenas para % ou valor numérico de desconto. <strong style="color: var(--text-primary)">Em product card, posicionado à direita e centrado verticalmente</strong> na imagem.</p>
         <div class="cb">
-          <div class="cb__preview"><span class="sticker sticker--discount">-30%</span></div>
+          <div class="cb__preview"><span class="sticker sticker--discount">-100€</span></div>
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;span class="sticker sticker--discount"&gt;-30%&lt;/span&gt;</code></pre>
+<pre><code>&lt;span class="sticker sticker--discount"&gt;-100€&lt;/span&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
           </div>
         </div>
       </section>
 
-      <section id="sizes" class="section">
-        <div class="section__eyebrow">Sizes</div>
-        <h2 class="h-1">Sizes</h2>
-        <p>Três tamanhos. <code>md</code> é o default. <code>sm</code> para listings densas, <code>lg</code> para hero/destaque.</p>
+      <section id="stock" class="section">
+        <div class="section__eyebrow">Variantes — Stock</div>
+        <h2 class="h-1">Estados de stock</h2>
+        <p>As variantes de stock vivem dentro do sticker — <strong style="color: var(--text-primary)">não são um componente à parte</strong>. Comunicam ao utilizador, num único sinal, se o produto está disponível, em pré-venda ou esgotado.</p>
 
+        <h3 class="h-2">Em stock</h3>
+        <p>Produto com stock confirmado, pronto a enviar.</p>
         <div class="cb">
-          <div class="cb__preview" style="gap: 12px;">
-            <span class="sticker sticker--available sticker--sm">Small</span>
-            <span class="sticker sticker--available">Medium</span>
-            <span class="sticker sticker--available sticker--lg">Large</span>
-          </div>
+          <div class="cb__preview"><span class="sticker sticker--available">Em stock</span></div>
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;span class="sticker sticker--available sticker--sm"&gt;Small&lt;/span&gt;
-&lt;span class="sticker sticker--available"&gt;Medium&lt;/span&gt;
-&lt;span class="sticker sticker--available sticker--lg"&gt;Large&lt;/span&gt;</code></pre>
+<pre><code>&lt;span class="sticker sticker--available"&gt;Em stock&lt;/span&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
           </div>
         </div>
 
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Token</th><th>Padding</th><th>Font size</th><th>Quando usar</th></tr></thead>
-            <tbody>
-              <tr><td><code>sticker--sm</code></td><td>2px 6px</td><td>11px</td><td>Listings densas, mobile, dentro de cards pequenos</td></tr>
-              <tr><td><code>sticker</code></td><td>4px 10px</td><td>12px</td><td>Default — em product cards e PDP</td></tr>
-              <tr><td><code>sticker--lg</code></td><td>6px 14px</td><td>13px</td><td>Hero banners, destaques de campanha</td></tr>
-            </tbody>
-          </table>
+        <h3 class="h-2">Pré-venda</h3>
+        <p>Produto ainda não disponível, com data de lançamento futura. Cor própria (magenta/rosa) para se distinguir das outras variantes.</p>
+        <div class="cb">
+          <div class="cb__preview"><span class="sticker sticker--presale">Pré-venda</span></div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="sticker sticker--presale"&gt;Pré-venda&lt;/span&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
+          </div>
+        </div>
+
+        <h3 class="h-2">Sem stock</h3>
+        <p>Sem stock disponível para envio. Possibilidade de aviso quando voltar.</p>
+        <div class="cb">
+          <div class="cb__preview"><span class="sticker sticker--outofstock">Sem stock</span></div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="sticker sticker--outofstock"&gt;Sem stock&lt;/span&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
+          </div>
+        </div>
+
+        <h3 class="h-2">Em loja</h3>
+        <p>Sem stock para envio, mas disponível em loja física.</p>
+        <div class="cb">
+          <div class="cb__preview"><span class="sticker sticker--store">Em loja</span></div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="sticker sticker--store"&gt;Em loja&lt;/span&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
+          </div>
         </div>
       </section>
 
@@ -177,14 +184,17 @@
         <div class="section__eyebrow">Casos de uso</div>
         <h2 class="h-1">Onde usar</h2>
 
-        <h3 class="h-2">Em product cards (top-left, empilhados)</h3>
-        <p>Posicionados no top-left da imagem. Múltiplos stickers empilham verticalmente, com gap de 4px.</p>
+        <h3 class="h-2">Em product cards</h3>
+        <p><strong style="color: var(--text-primary)">Stock + promo</strong> empilham no top-left. <strong style="color: var(--text-primary)">Desconto</strong> é separado: aparece à <strong style="color: var(--text-primary)">direita e centrado verticalmente</strong> sobre a imagem.</p>
         <div class="cb">
           <div class="cb__preview">
-            <div style="position: relative; width: 200px; height: 200px; background: var(--bg-base); border: 1px solid var(--ui-card-border); border-radius: var(--radius-lg);">
+            <div style="position: relative; width: 220px; height: 220px; background: var(--bg-base); border: 1px solid var(--ui-card-border); border-radius: var(--radius-lg);">
               <div style="position: absolute; top: 8px; left: 8px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start;">
-                <span class="sticker sticker--discount sticker--sm">-25%</span>
-                <span class="sticker sticker--available sticker--sm">Disponível</span>
+                <span class="sticker sticker--promo">Dias PCdiguianos</span>
+                <span class="sticker sticker--available">Em stock</span>
+              </div>
+              <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); ">
+                <span class="sticker sticker--discount">-100€</span>
               </div>
             </div>
           </div>
@@ -192,41 +202,18 @@
             <button class="cb__copy" type="button">Copiar</button>
 <pre><code>&lt;div class="product-card__image"&gt;
   &lt;img src="..." alt="..." /&gt;
+
+  &lt;!-- Stickers top-left: promo + stock --&gt;
   &lt;div class="product-card__stickers"&gt;
-    &lt;span class="sticker sticker--discount sticker--sm"&gt;-25%&lt;/span&gt;
-    &lt;span class="sticker sticker--available sticker--sm"&gt;Disponível&lt;/span&gt;
+    &lt;span class="sticker sticker--promo"&gt;Dias PCdiguianos&lt;/span&gt;
+    &lt;span class="sticker sticker--available"&gt;Em stock&lt;/span&gt;
   &lt;/div&gt;
+
+  &lt;!-- Desconto: à direita, centrado --&gt;
+  &lt;span class="sticker sticker--discount product-card__discount"&gt;
+    -100€
+  &lt;/span&gt;
 &lt;/div&gt;</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Inline com título</h3>
-        <p>Junto a títulos de produto ou breadcrumbs. Em <code>sm</code> para não dominar o texto.</p>
-        <div class="cb">
-          <div class="cb__preview cb__preview--start">
-            <h3 style="margin: 0; display: inline-flex; align-items: center; gap: 8px; font-size: 18px;">
-              iPhone 15 Pro Max 256GB
-              <span class="sticker sticker--new sticker--sm">Novidade</span>
-            </h3>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;h3&gt;
-  iPhone 15 Pro Max 256GB
-  &lt;span class="sticker sticker--new sticker--sm"&gt;Novidade&lt;/span&gt;
-&lt;/h3&gt;</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Em hero / banners</h3>
-        <p>Tamanho <code>lg</code> para captar atenção em campanhas.</p>
-        <div class="cb">
-          <div class="cb__preview"><span class="sticker sticker--promo sticker--lg">CAMPANHA AMD DAYS · ATÉ 30 ABR</span></div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;span class="sticker sticker--promo sticker--lg"&gt;
-  CAMPANHA AMD DAYS · ATÉ 30 ABR
-&lt;/span&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -273,7 +260,7 @@
               <tr><td><strong style="color:var(--text-primary)">Cor não basta</strong></td><td>Cada sticker tem texto explícito. Daltónicos identificam pelo texto, não só pela cor.</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Contraste</strong></td><td>Todas as combinações background+texto passam WCAG AA (verificadas no Figma).</td></tr>
               <tr><td><strong style="color:var(--text-primary)">Screen reader</strong></td><td>Texto interno é lido normalmente. Não usar <code>aria-hidden</code>.</td></tr>
-              <tr><td><strong style="color:var(--text-primary)">Tamanho mínimo</strong></td><td>Mesmo em <code>sm</code> mantém 11px — não descer abaixo disso.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Tamanho</strong></td><td>Tamanho único, mantém 11–12px. Garante leitura em mobile sem competir com o título.</td></tr>
             </tbody>
           </table>
         </div>
@@ -285,8 +272,8 @@
       <div class="toc__title">Nesta página</div>
       <ul class="toc__list">
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#variants">Variantes</a></li>
-        <li><a href="#sizes">Sizes</a></li>
+        <li><a href="#variants">Promo / Novidade / Desconto</a></li>
+        <li><a href="#stock">Stock</a></li>
         <li><a href="#usecases">Casos de uso</a></li>
         <li><a href="#usage">Do's & Don'ts</a></li>
         <li><a href="#accessibility">Acessibilidade</a></li>

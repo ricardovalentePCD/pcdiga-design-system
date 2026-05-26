@@ -43,6 +43,7 @@
           <li><a href="sticker.html">Sticker</a></li>
           <li><a href="product-card.html">Product Card</a></li>
           <li><a href="blog-card.html">Blog Card</a></li>
+          <li><a href="campaigns.html">Campanhas e Ofertas</a></li>
           <li><a href="badge.html">Badge</a></li>
           <li><a href="tabs.html">Tabs</a></li>
           <li><a href="toast.html">Toast</a></li>
@@ -95,61 +96,70 @@
       <section id="states" class="section">
         <div class="section__eyebrow">States</div>
         <h2 class="h-1">States</h2>
-        <p>Cada estado comunica algo diferente ao utilizador. Garantir que o feedback visual é imediato e claro.</p>
+        <p>O input usa o padrão <strong style="color: var(--text-primary)">floating label</strong>: o label aparece dentro do campo quando vazio, e sobe para cima da border quando preenchido ou focado.</p>
 
-        <h3 class="h-2">Default</h3>
+        <h3 class="h-2">Empty (vazio)</h3>
+        <p>Quando o input não tem valor, o label aparece <strong style="color: var(--text-primary)">dentro</strong> do campo, no centro vertical, a fazer de placeholder. Não há label visível acima.</p>
         <div class="cb">
           <div class="cb__preview cb__preview--start">
-            <div class="input-field">
-              <label class="input-field__label">Nome completo</label>
-              <input class="input" type="text" placeholder="O teu nome completo" />
+            <div class="input-float">
+              <input class="input-float__input" type="password" />
+              <label class="input-float__label">Password Atual</label>
             </div>
           </div>
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="input-field"&gt;
-  &lt;label class="input-field__label" for="name"&gt;Nome completo&lt;/label&gt;
-  &lt;input class="input" id="name" type="text"
-         placeholder="O teu nome completo" /&gt;
+<pre><code>&lt;div class="input-float"&gt;
+  &lt;input class="input-float__input" id="pwd" type="password" /&gt;
+  &lt;label class="input-float__label" for="pwd"&gt;Password Atual&lt;/label&gt;
 &lt;/div&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
+          </div>
+        </div>
+
+        <h3 class="h-2">Filled (preenchido)</h3>
+        <p>Quando o input tem valor, o label <strong style="color: var(--text-primary)">sobe</strong> e fica posicionado em cima da border (com a border "cortada" à volta). O valor aparece dentro do campo.</p>
+        <div class="cb">
+          <div class="cb__preview cb__preview--start">
+            <div class="input-float is-filled">
+              <input class="input-float__input" type="text" value="Ricardo" />
+              <label class="input-float__label">Nome</label>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="input-float is-filled"&gt;
+  &lt;input class="input-float__input" id="name" type="text"
+         value="Ricardo" /&gt;
+  &lt;label class="input-float__label" for="name"&gt;Nome&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
           </div>
         </div>
 
         <h3 class="h-2">Focus</h3>
-        <p>Borda laranja + outline subtil. Indica que o teclado está a apontar para este campo. Aplicado automaticamente no <code>:focus</code>.</p>
+        <p>Border laranja. Comportamento do label idêntico ao Filled — sobe imediatamente quando o utilizador clica no campo.</p>
         <div class="cb">
           <div class="cb__preview cb__preview--start">
-            <div class="input-field">
-              <label class="input-field__label">Email</label>
-              <input class="input" type="email" placeholder="nome@gmail.com" style="border-color: var(--brand-orange); box-shadow: 0 0 0 3px rgba(255, 77, 35, 0.15);" />
+            <div class="input-float is-filled is-focused">
+              <input class="input-float__input" type="email" value="" />
+              <label class="input-float__label">Email</label>
             </div>
           </div>
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
-<pre><code>/* CSS — aplicado automaticamente */
-.input:focus {
+<pre><code>/* CSS — aplicado automaticamente em :focus */
+.input-float__input:focus {
   border-color: var(--brand-orange);
-  box-shadow: 0 0 0 3px rgba(255, 77, 35, 0.15);
+}
+.input-float__input:focus + .input-float__label {
+  transform: translateY(-50%) scale(0.85);
+  color: var(--brand-orange);
 }</code></pre>
-          </div>
-        </div>
-
-        <h3 class="h-2">Filled</h3>
-        <p>Com valor preenchido. Sem estado especial — o conteúdo fala por si.</p>
-        <div class="cb">
-          <div class="cb__preview cb__preview--start">
-            <div class="input-field">
-              <label class="input-field__label">Email</label>
-              <input class="input" type="email" value="joao.silva@gmail.com" />
-            </div>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;div class="input-field"&gt;
-  &lt;label class="input-field__label" for="email"&gt;Email&lt;/label&gt;
-  &lt;input class="input" id="email" type="email"
-         value="joao.silva@gmail.com" /&gt;
-&lt;/div&gt;</code></pre>
           </div>
         </div>
 

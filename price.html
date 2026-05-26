@@ -43,6 +43,7 @@
           <li><a href="sticker.html">Sticker</a></li>
           <li><a href="product-card.html">Product Card</a></li>
           <li><a href="blog-card.html">Blog Card</a></li>
+          <li><a href="campaigns.html">Campanhas e Ofertas</a></li>
           <li><a href="badge.html">Badge</a></li>
           <li><a href="tabs.html">Tabs</a></li>
           <li><a href="toast.html">Toast</a></li>
@@ -78,7 +79,6 @@
               <tr><td><code>price__current</code></td><td>Sempre</td><td>O preço a pagar. Weight 900 (Lato Black).</td></tr>
               <tr><td><code>price__original</code></td><td>Em desconto</td><td>Preço anterior, com line-through. Cor muted.</td></tr>
               <tr><td><code>price__discount</code></td><td>Em desconto</td><td>Sticker amarelo com % de poupança.</td></tr>
-              <tr><td><code>price__suffix</code></td><td>Opcional</td><td>"em 12x sem juros", "c/IVA", etc.</td></tr>
             </tbody>
           </table>
         </div>
@@ -122,23 +122,6 @@
           </div>
         </div>
 
-        <h3 class="h-2">Com suffix (parcelas, taxa, …)</h3>
-        <p>Informação extra abaixo do preço principal. Mantém a leitura limpa.</p>
-        <div class="cb">
-          <div class="cb__preview">
-            <span class="price">
-              <span class="price__current">1 199,00 €</span>
-              <span class="price__suffix">ou 12x 99,92 € sem juros</span>
-            </span>
-          </div>
-          <div class="cb__code">
-            <button class="cb__copy" type="button">Copiar</button>
-<pre><code>&lt;span class="price"&gt;
-  &lt;span class="price__current"&gt;1 199,00 €&lt;/span&gt;
-  &lt;span class="price__suffix"&gt;ou 12x 99,92 € sem juros&lt;/span&gt;
-&lt;/span&gt;</code></pre>
-          </div>
-        </div>
       </section>
 
       <section id="sizes" class="section">
@@ -272,14 +255,6 @@
           <div class="dodont__item dodont__item--dont">
             <div class="dodont__label">✗ Evita</div>
             <p class="dodont__text">Mesmo size de preço em listing e PDP. Hierarquia diferente, sizes diferentes.</p>
-          </div>
-          <div class="dodont__item dodont__item--do">
-            <div class="dodont__label">✓ Faz</div>
-            <p class="dodont__text">Mostrar parcelas em <code>price__suffix</code> apenas se relevante (acima de 100€).</p>
-          </div>
-          <div class="dodont__item dodont__item--dont">
-            <div class="dodont__label">✗ Evita</div>
-            <p class="dodont__text">"em 12x de 0,83€ sem juros" para um produto de 9,99€. Nem o cliente pensa nisso.</p>
           </div>
         </div>
       </section>
