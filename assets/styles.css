@@ -674,7 +674,7 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
 }
 .product-card:hover { transform: translateY(-2px); text-decoration: none; }
 
-/* Foto (aspect 270:250) — relative para overlays */
+/* Foto (aspect 270:250) — relative para overlays. Sem border, sem padding — imagem ocupa todo o espaço. */
 .product-card__image {
   background: #FFFFFF;
   border-radius: 2px;
@@ -683,7 +683,7 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   place-items: center;
   position: relative;
   overflow: hidden;
-  padding: var(--space-4);
+  padding: 0;
 }
 .product-card__image img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .product-card__placeholder {
@@ -963,7 +963,6 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   position: absolute;
   top: -6px;
   right: -8px;
-  border: 2px solid var(--bg-base);
 }
 
 /* ============ TABS ============ */
@@ -1087,6 +1086,41 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   border-top: 1px solid var(--ui-card-border);
   background: var(--bg-base);
 }
+.modal__note { font-size: 13px; color: var(--ui-text-muted); margin-top: var(--space-4); }
+
+/* Modal mini product card (carrinho remover) */
+.modal-product {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--bg-base);
+  border: 1px solid var(--ui-card-border);
+  border-radius: var(--radius-md);
+}
+.modal-product__image {
+  width: 80px; height: 80px;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.modal-product__image img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.modal-product__info { flex: 1; min-width: 0; }
+.modal-product__name {
+  font-size: 14px; font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-2);
+  line-height: 1.3;
+}
+.modal-product__meta {
+  display: flex; gap: var(--space-3);
+  font-size: 13px; color: var(--ui-text-muted);
+  align-items: center;
+}
+.modal-product__price { font-weight: 700; color: var(--text-primary); }
+.modal-product__qty { color: var(--ui-text-muted); }
 
 /* ============ QUANTITY STEPPER ============ */
 .qty {
@@ -2301,4 +2335,66 @@ td code, p code { font-family: var(--font-mono); background: var(--bg-card); pad
   color: var(--ui-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   Floating Label Input (real pattern from site)
+   ============================================================ */
+.input-float {
+  position: relative;
+  display: inline-block;
+  min-width: 280px;
+  width: 100%;
+  max-width: 360px;
+}
+.input-float__input {
+  width: 100%;
+  padding: 18px 16px 14px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--ui-card-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.input-float__input:focus { border-color: var(--brand-orange); }
+.input-float__label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 6px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--ui-text-muted);
+  background: transparent;
+  pointer-events: none;
+  transition: transform 0.15s ease, font-size 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.input-float.is-filled .input-float__label,
+.input-float.is-focused .input-float__label,
+.input-float__input:focus + .input-float__label {
+  top: 0;
+  transform: translateY(-50%) scale(1);
+  font-size: 12px;
+  color: var(--ui-text-muted);
+  background: var(--bg-base);
+}
+.input-float.is-focused .input-float__input,
+.input-float__input:focus { border-color: var(--brand-orange); }
+
+/* ============================================================
+   Sticker — novas variantes de stock + posicionamento
+   ============================================================ */
+.sticker--outofstock { background: #4F4F4F; color: #FFFFFF; }
+.sticker--store { background: #FFF1CC; color: #8B5A00; }
+/* desconto à direita centrado no product card */
+.product-card__discount {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px 0 0 4px;
 }
