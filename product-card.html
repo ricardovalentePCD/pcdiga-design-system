@@ -234,12 +234,53 @@
 
       <section id="stock" class="section">
         <div class="section__eyebrow">Stock</div>
-        <h2 class="h-1">Estados de stock</h2>
-        <p>Os estados de stock (<strong style="color:var(--text-primary)">Em stock, Pré-venda, Sem stock, Em loja</strong>) são agora <a href="sticker.html#stock">variantes do componente Sticker</a> e <strong style="color:var(--text-primary)">não vivem dentro do product card</strong>. Aparecem como sticker no top-left da imagem, junto com promo ou novidade quando aplicável.</p>
+        <h2 class="h-1">Pré-venda</h2>
+        <p>O único estado de stock comunicado como sticker é <strong style="color:var(--text-primary)">Pré-venda</strong>. Aparece como overlay no top-left da imagem, junto com promo ou novidade quando aplicável.</p>
 
-        <div class="callout">
-          <strong>Migração</strong>
-          Eliminar <code>.product-card__stock-block</code>, <code>.product-card__stock--out</code>, etc. Em substituição usar <code>&lt;span class="sticker sticker--available"&gt;Em stock&lt;/span&gt;</code> dentro de <code>.product-card__stickers</code>.
+        <h3 class="h-2">Pré-venda</h3>
+        <p>Produto ainda não disponível, com data de lançamento futura. Cor própria (magenta/rosa) para se distinguir das outras variantes.</p>
+        <div class="cb">
+          <div class="cb__preview"><span class="sticker sticker--presale">Pré-venda</span></div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;span class="sticker sticker--presale"&gt;Pré-venda&lt;/span&gt;</code></pre>
+          </div>
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <code>a confirmar</code></span>
+          </div>
+        </div>
+
+        <h3 class="h-2">Onde usar no card</h3>
+        <p><strong style="color: var(--text-primary)">Pré-venda + promo</strong> empilham no top-left. <strong style="color: var(--text-primary)">Desconto</strong> é separado: aparece à <strong style="color: var(--text-primary)">direita e centrado verticalmente</strong> sobre a imagem.</p>
+        <div class="cb">
+          <div class="cb__preview">
+            <div style="position: relative; width: 220px; height: 220px; background: var(--bg-base); border: 1px solid var(--ui-card-border); border-radius: var(--radius-lg);">
+              <div style="position: absolute; top: 8px; left: 8px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start;">
+                <span class="sticker sticker--promo">Dias PCdiguianos</span>
+                <span class="sticker sticker--presale">Pré-venda</span>
+              </div>
+              <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
+                <span class="sticker sticker--discount">-100€</span>
+              </div>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="product-card__image"&gt;
+  &lt;img src="..." alt="..." /&gt;
+
+  &lt;!-- Stickers top-left: promo + pré-venda --&gt;
+  &lt;div class="product-card__stickers"&gt;
+    &lt;span class="sticker sticker--promo"&gt;Dias PCdiguianos&lt;/span&gt;
+    &lt;span class="sticker sticker--presale"&gt;Pré-venda&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Desconto: à direita, centrado --&gt;
+  &lt;span class="sticker sticker--discount product-card__discount"&gt;
+    -100€
+  &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          </div>
         </div>
       </section>
 
@@ -333,15 +374,15 @@
           </div>
         </div>
 
-        <h3 class="h-2">Combinado (campanha + stock + desconto)</h3>
-        <p>Caso real PCDIGA: produto em campanha, com stock confirmado e desconto. <strong style="color:var(--text-primary)">Stickers empilhados no top-left</strong> (campanha + stock); <strong style="color:var(--text-primary)">desconto à direita, centrado</strong>.</p>
+        <h3 class="h-2">Combinado (campanha + pré-venda + desconto)</h3>
+        <p>Caso real PCDIGA: produto em campanha, em pré-venda e com desconto. <strong style="color:var(--text-primary)">Stickers empilhados no top-left</strong> (campanha + pré-venda); <strong style="color:var(--text-primary)">desconto à direita, centrado</strong>.</p>
         <div class="cb">
           <div class="cb__preview">
             <article class="product-card">
               <div class="product-card__image">
                 <div class="product-card__stickers product-card__stickers--left">
                   <span class="product-card__sticker product-card__sticker--campaign">Dias Pcdiguianos 🛠️</span>
-                  <span class="sticker sticker--available">Em stock</span>
+                  <span class="sticker sticker--presale">Pré-venda</span>
                 </div>
                 <span class="sticker sticker--discount product-card__discount">-100€</span>
                 <div class="product-card__placeholder">imagem</div>
@@ -385,12 +426,12 @@
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
 <pre><code>&lt;div class="product-card__image"&gt;
-  &lt;!-- Top-left: campanha + stock empilhados --&gt;
+  &lt;!-- Top-left: campanha + pré-venda empilhados --&gt;
   &lt;div class="product-card__stickers product-card__stickers--left"&gt;
     &lt;span class="product-card__sticker product-card__sticker--campaign"&gt;
       Dias Pcdiguianos 🛠️
     &lt;/span&gt;
-    &lt;span class="sticker sticker--available"&gt;Em stock&lt;/span&gt;
+    &lt;span class="sticker sticker--presale"&gt;Pré-venda&lt;/span&gt;
   &lt;/div&gt;
 
   &lt;!-- Direita, centrado: desconto --&gt;
