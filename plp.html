@@ -39,14 +39,17 @@
           <li><a href="patterns.html">Overview</a></li>
           <li><a href="pdp.html">PDP — Página de produto</a></li>
           <li><a href="plp.html" class="is-active">PLP — Listings</a></li>
+          <li><a href="cart.html">Cart</a></li>
         </ul>
       </div>
       <div class="sidebar__group">
         <div class="sidebar__title">Em planeamento</div>
         <ul class="sidebar__list">
-          <li><a href="#" class="is-disabled">Cart <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
         </ul>
       </div>
     </aside>
@@ -350,9 +353,9 @@
         <div class="cb">
           <div class="cb__preview" style="display: block; padding: var(--space-4); max-width: 320px;">
             <div class="product-card">
-              <div class="product-card__sticker-stack">
-                <span class="sticker sticker--campaign">Dias Pcdiguianos</span>
-                <span class="sticker sticker--top">Top Vendas</span>
+              <div class="product-card__stickers product-card__stickers--left">
+                <span class="product-card__sticker product-card__sticker--campaign">Dias Pcdiguianos</span>
+                <span class="product-card__sticker product-card__sticker--new">Top Vendas</span>
               </div>
               <div class="product-card__image">
                 <div class="pdp__gallery-placeholder">imagem produto</div>
@@ -376,11 +379,13 @@
           <div class="cb__code">
             <button class="cb__copy" type="button">Copiar</button>
 <pre><code>&lt;article class="product-card"&gt;
-  &lt;div class="product-card__sticker-stack"&gt;
-    &lt;span class="sticker sticker--campaign"&gt;
+  &lt;div class="product-card__stickers product-card__stickers--left"&gt;
+    &lt;span class="product-card__sticker product-card__sticker--campaign"&gt;
       Dias Pcdiguianos
     &lt;/span&gt;
-    &lt;span class="sticker sticker--top"&gt;Top Vendas&lt;/span&gt;
+    &lt;span class="product-card__sticker product-card__sticker--new"&gt;
+      Top Vendas
+    &lt;/span&gt;
   &lt;/div&gt;
 
   &lt;div class="product-card__image"&gt;
@@ -631,7 +636,7 @@
             <div class="comp-card__title">Product Card</div>
           </a>
           <a href="sticker.html" class="comp-card">
-            <div class="comp-card__preview"><span class="sticker sticker--campaign">Dias Pcdiguianos</span></div>
+            <div class="comp-card__preview"><span class="sticker sticker--promo">Promo</span></div>
             <div class="comp-card__title">Sticker</div>
           </a>
           <a href="price.html" class="comp-card">
@@ -779,7 +784,7 @@
 
   <footer class="site-footer">
     <div>PCDIGA Design System · v1.0 · 2026</div>
-    <div><a href="pdp.html">← PDP</a> · <a href="patterns.html">Padrões</a></div>
+    <div><a href="pdp.html">← PDP</a> · <a href="cart.html">Cart →</a></div>
   </footer>
 
 </body>

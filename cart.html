@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html">Overview</a></li>
+          <li><a href="pdp.html">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+          <li><a href="cart.html" class="is-active">Cart</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Pattern · Shopping cart</div>
+        <h1 class="h-display hero__title">Cart</h1>
+        <p class="lead">O carrinho é onde o utilizador pára para rever a decisão antes de pagar. Documentado em dois formatos: <strong style="color: var(--text-primary)">mini-cart</strong> (dropdown no header, feedback imediato após "ADICIONAR") e <strong style="color: var(--text-primary)">cart full-page</strong> (página dedicada com totais, promo code e checkout).</p>
+        <div class="callout">
+          <strong>Princípio central</strong>
+          O carrinho não é uma etapa decorativa. É a última oportunidade de remover fricção antes do checkout — preço claro, portes visíveis, totais sem surpresas, CTA único.
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Anatomia                                            -->
+      <!-- ================================================== -->
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Dois formatos</h2>
+        <p>O carrinho aparece em dois sítios. <strong style="color:var(--text-primary)">Mini-cart</strong> é confirmação rápida após adicionar. <strong style="color:var(--text-primary)">Full-page</strong> é o passo formal antes do checkout.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Formato</th><th>Quando aparece</th><th>Objectivo</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Mini-cart</strong></td><td>Hover/click no ícone de carrinho. Auto-abre 3s após "ADICIONAR".</td><td>Confirmar a acção. Mostrar resumo. Encaminhar para checkout sem mudar de página.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Cart full-page</strong></td><td>URL <code>/carrinho</code>. Clique em "Ver carrinho" ou ícone.</td><td>Rever antes do checkout. Alterar quantidades, aplicar promo, escolher método de envio.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Layout                                              -->
+      <!-- ================================================== -->
+
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Estrutura</h2>
+        <p>Mini-cart: dropdown 380px posicionado abaixo do ícone. Full-page: grid 2 colunas — linhas à esquerda (66%), resumo à direita sticky (34%).</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Breakpoint</th><th>Mini-cart</th><th>Full-page</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">≥ 1024px</strong></td><td>Dropdown 380px, max 5 linhas visíveis, scroll interno.</td><td>2 colunas. Resumo sticky no scroll.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">768–1023px</strong></td><td>Drawer lateral direito 360px.</td><td>2 colunas (60/40). Resumo não sticky.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">&lt; 768px</strong></td><td>Drawer full-width.</td><td>Stack vertical. CTA "FINALIZAR" sticky no fundo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- BLOCKS — Mini-cart                                  -->
+      <!-- ================================================== -->
+
+      <section id="blocks-mini" class="section">
+        <div class="section__eyebrow">Blocos · Mini-cart</div>
+        <h2 class="h-1">Mini-cart (dropdown header)</h2>
+        <p>Aparece após "ADICIONAR" como confirmação. Auto-fecha após 5s ou ao clicar fora. Reabre por hover/click no ícone do carrinho.</p>
+
+        <!-- 1. Trigger -->
+        <article id="block-trigger" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">1</span>
+            <h3 class="block-doc__title">Trigger — ícone com badge</h3>
+          </div>
+          <p class="block-doc__desc">Ícone no header com badge contador. Badge só aparece se carrinho tem ≥1 item.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="padding: var(--space-6); justify-content: center;">
+              <button class="cart-trigger" type="button" aria-label="Abrir carrinho · 3 produtos">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <span class="ds-badge ds-badge--sm cart-trigger__badge">3</span>
+              </button>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;button class="cart-trigger" type="button"
+        aria-label="Abrir carrinho · 3 produtos"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+  &lt;span class="ds-badge ds-badge--sm cart-trigger__badge"&gt;
+    3
+  &lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Badge: <strong>some quando 0 itens</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 2. Mini-cart dropdown -->
+        <article id="block-minicart" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">2</span>
+            <h3 class="block-doc__title">Dropdown — lista + resumo + CTA</h3>
+          </div>
+          <p class="block-doc__desc">Lista compacta de produtos no carrinho. Cada linha: thumbnail, nome (1-2 linhas), qty/preço, botão remover. No fim: subtotal + 2 CTAs (Ver carrinho secundário, Finalizar primary).</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="padding: var(--space-6); justify-content: center; align-items: flex-start;">
+              <div class="mini-cart">
+                <div class="mini-cart__head">
+                  <span class="mini-cart__title">3 produtos no carrinho</span>
+                  <button class="mini-cart__close" aria-label="Fechar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  </button>
+                </div>
+
+                <ul class="mini-cart__list">
+                  <li class="mini-cart-line">
+                    <div class="mini-cart-line__image">
+                      <div class="pdp__gallery-placeholder" style="font-size: 10px;">img</div>
+                    </div>
+                    <div class="mini-cart-line__info">
+                      <p class="mini-cart-line__name">Smartphone Xiaomi 15T Pro 256GB Cinza</p>
+                      <p class="mini-cart-line__meta">
+                        <span>Qtd: 1</span> · <span class="mini-cart-line__price">799,90 €</span>
+                      </p>
+                    </div>
+                    <button class="mini-cart-line__remove" aria-label="Remover">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    </button>
+                  </li>
+                  <li class="mini-cart-line">
+                    <div class="mini-cart-line__image">
+                      <div class="pdp__gallery-placeholder" style="font-size: 10px;">img</div>
+                    </div>
+                    <div class="mini-cart-line__info">
+                      <p class="mini-cart-line__name">Auriculares Sony WH-1000XM5</p>
+                      <p class="mini-cart-line__meta">
+                        <span>Qtd: 2</span> · <span class="mini-cart-line__price">699,80 €</span>
+                      </p>
+                    </div>
+                    <button class="mini-cart-line__remove" aria-label="Remover">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    </button>
+                  </li>
+                </ul>
+
+                <div class="mini-cart__totals">
+                  <div class="mini-cart__row">
+                    <span>Subtotal</span>
+                    <strong>1 499,70 €</strong>
+                  </div>
+                  <p class="mini-cart__note">Portes e impostos calculados no checkout.</p>
+                </div>
+
+                <div class="mini-cart__actions">
+                  <a href="#" class="btn btn--secondary btn--sm">Ver carrinho</a>
+                  <a href="#" class="btn btn--primary btn--sm">FINALIZAR</a>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="mini-cart" role="dialog"
+     aria-label="Resumo do carrinho"&gt;
+  &lt;div class="mini-cart__head"&gt;
+    &lt;span class="mini-cart__title"&gt;3 produtos&lt;/span&gt;
+    &lt;button class="mini-cart__close"&gt;...&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;ul class="mini-cart__list"&gt;
+    &lt;li class="mini-cart-line"&gt;
+      &lt;div class="mini-cart-line__image"&gt;...&lt;/div&gt;
+      &lt;div class="mini-cart-line__info"&gt;
+        &lt;p class="mini-cart-line__name"&gt;...&lt;/p&gt;
+        &lt;p class="mini-cart-line__meta"&gt;
+          Qtd: 1 · 799,90 €
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;button class="mini-cart-line__remove"&gt;...&lt;/button&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div class="mini-cart__totals"&gt;
+    &lt;div class="mini-cart__row"&gt;
+      Subtotal &lt;strong&gt;1 499,70 €&lt;/strong&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mini-cart__actions"&gt;
+    &lt;a class="btn btn--secondary btn--sm"&gt;Ver carrinho&lt;/a&gt;
+    &lt;a class="btn btn--primary btn--sm"&gt;FINALIZAR&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Width: <strong>380px (desktop)</strong></span>
+            <span class="block-doc__meta-tag">Max lines: <strong>5 visíveis + scroll</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 3. Mini-cart empty -->
+        <article id="block-minicart-empty" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">3</span>
+            <h3 class="block-doc__title">Mini-cart vazio</h3>
+          </div>
+          <p class="block-doc__desc">Quando o utilizador abre o mini-cart sem produtos. Mensagem amigável + CTA para listings populares.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="padding: var(--space-6); justify-content: center;">
+              <div class="mini-cart">
+                <div class="mini-cart__head">
+                  <span class="mini-cart__title">Carrinho vazio</span>
+                  <button class="mini-cart__close" aria-label="Fechar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  </button>
+                </div>
+                <div class="mini-cart__empty">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--ui-text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 12px;"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                  <p class="mini-cart__empty-title">Ainda não tens produtos</p>
+                  <p class="mini-cart__empty-msg">Começa a explorar para encontrar o que precisas.</p>
+                  <a href="#" class="btn btn--primary btn--sm">Ver destaques</a>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="mini-cart"&gt;
+  &lt;div class="mini-cart__empty"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    &lt;p class="mini-cart__empty-title"&gt;
+      Ainda não tens produtos
+    &lt;/p&gt;
+    &lt;p class="mini-cart__empty-msg"&gt;
+      Começa a explorar para encontrar
+      o que precisas.
+    &lt;/p&gt;
+    &lt;a class="btn btn--primary btn--sm"&gt;
+      Ver destaques
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- BLOCKS — Cart full-page                             -->
+      <!-- ================================================== -->
+
+      <section id="blocks-full" class="section">
+        <div class="section__eyebrow">Blocos · Cart full-page</div>
+        <h2 class="h-1">Cart full-page</h2>
+        <p>Página dedicada <code>/carrinho</code>. Layout 2 colunas: linhas à esquerda, resumo à direita (sticky no scroll).</p>
+
+        <!-- 4. Cart line -->
+        <article id="block-line" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">4</span>
+            <h3 class="block-doc__title">Linha de carrinho</h3>
+          </div>
+          <p class="block-doc__desc">Cada produto ocupa uma linha com: imagem, info (nome + meta), quantity stepper, preço unitário, total da linha, botão remover.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="cart-line">
+                <div class="cart-line__image">
+                  <div class="pdp__gallery-placeholder">imagem produto</div>
+                </div>
+                <div class="cart-line__info">
+                  <a href="#" class="cart-line__name">Smartphone Xiaomi 15T Pro 256GB Cinza</a>
+                  <p class="cart-line__meta">SKU: 74925EU · Cor: Cinza · Em stock</p>
+                  <button class="cart-line__inline-remove" type="button">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>
+                    Remover
+                  </button>
+                </div>
+                <div class="cart-line__qty">
+                  <div class="qty qty--sm">
+                    <button class="qty__btn" type="button" aria-label="Diminuir">−</button>
+                    <input class="qty__input" type="number" value="1" />
+                    <button class="qty__btn" type="button" aria-label="Aumentar">+</button>
+                  </div>
+                </div>
+                <div class="cart-line__price">
+                  <span class="cart-line__unit">799,90 €</span>
+                  <span class="cart-line__total">799,90 €</span>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="cart-line"&gt;
+  &lt;div class="cart-line__image"&gt;...&lt;/div&gt;
+  &lt;div class="cart-line__info"&gt;
+    &lt;a class="cart-line__name"&gt;...&lt;/a&gt;
+    &lt;p class="cart-line__meta"&gt;SKU · Cor · Stock&lt;/p&gt;
+    &lt;button class="cart-line__inline-remove"&gt;
+      Remover
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="cart-line__qty"&gt;
+    &lt;div class="qty qty--sm"&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="cart-line__price"&gt;
+    &lt;span class="cart-line__unit"&gt;799,90 €&lt;/span&gt;
+    &lt;span class="cart-line__total"&gt;799,90 €&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Componentes: <strong>Quantity stepper, Price</strong></span>
+            <span class="block-doc__meta-tag">Acção destrutiva: <strong>via Modal</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 5. Free shipping progress -->
+        <article id="block-shipping" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">5</span>
+            <h3 class="block-doc__title">Progresso para portes grátis</h3>
+          </div>
+          <p class="block-doc__desc">Barra de progresso com mensagem motivacional. Quando o utilizador está abaixo do threshold, mostra quanto falta. Quando atinge, mostra mensagem de sucesso.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="ship-progress">
+                <p class="ship-progress__msg">Falta <strong>14,10 €</strong> para teres <strong>portes grátis</strong></p>
+                <div class="ship-progress__bar">
+                  <div class="ship-progress__fill" style="width: 72%;"></div>
+                </div>
+              </div>
+
+              <div class="ship-progress ship-progress--reached" style="margin-top: 16px;">
+                <p class="ship-progress__msg">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--stock-available)" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+                  Tens <strong>portes grátis</strong> nesta encomenda
+                </p>
+                <div class="ship-progress__bar">
+                  <div class="ship-progress__fill" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;!-- Em progresso --&gt;
+&lt;div class="ship-progress"&gt;
+  &lt;p class="ship-progress__msg"&gt;
+    Falta &lt;strong&gt;14,10 €&lt;/strong&gt;
+    para teres portes grátis
+  &lt;/p&gt;
+  &lt;div class="ship-progress__bar"&gt;
+    &lt;div class="ship-progress__fill"
+         style="width: 72%;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Atingido --&gt;
+&lt;div class="ship-progress
+            ship-progress--reached"&gt;
+  &lt;p class="ship-progress__msg"&gt;
+    Tens portes grátis
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Threshold: <strong>50,00 €</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 6. Cart summary -->
+        <article id="block-summary" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">6</span>
+            <h3 class="block-doc__title">Resumo da encomenda</h3>
+          </div>
+          <p class="block-doc__desc">Caixa sticky com subtotal, portes, descontos e total. CTA primário "FINALIZAR ENCOMENDA". Última coisa que o utilizador lê antes de decidir.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="cart-summary" style="max-width: 380px;">
+                <h3 class="cart-summary__title">Resumo</h3>
+
+                <div class="cart-summary__rows">
+                  <div class="cart-summary__row">
+                    <span>Subtotal (3 produtos)</span>
+                    <strong>1 499,70 €</strong>
+                  </div>
+                  <div class="cart-summary__row">
+                    <span>Portes</span>
+                    <strong>Grátis</strong>
+                  </div>
+                  <div class="cart-summary__row cart-summary__row--discount">
+                    <span>Desconto (PROMO10)</span>
+                    <strong>−149,97 €</strong>
+                  </div>
+                </div>
+
+                <div class="cart-summary__total">
+                  <span>Total</span>
+                  <strong class="cart-summary__total-amount">1 349,73 €</strong>
+                </div>
+                <p class="cart-summary__note">IVA incluído</p>
+
+                <button class="btn btn--primary btn--lg" style="width: 100%; margin-top: 16px;">
+                  FINALIZAR ENCOMENDA
+                </button>
+
+                <a href="#" class="cart-summary__continue">← Continuar a comprar</a>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;aside class="cart-summary"&gt;
+  &lt;h3 class="cart-summary__title"&gt;Resumo&lt;/h3&gt;
+  &lt;div class="cart-summary__rows"&gt;
+    &lt;div class="cart-summary__row"&gt;
+      &lt;span&gt;Subtotal&lt;/span&gt;
+      &lt;strong&gt;1 499,70 €&lt;/strong&gt;
+    &lt;/div&gt;
+    &lt;div class="cart-summary__row"&gt;
+      &lt;span&gt;Portes&lt;/span&gt;
+      &lt;strong&gt;Grátis&lt;/strong&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="cart-summary__total"&gt;
+    &lt;span&gt;Total&lt;/span&gt;
+    &lt;strong&gt;1 349,73 €&lt;/strong&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn--primary btn--lg"&gt;
+    FINALIZAR ENCOMENDA
+  &lt;/button&gt;
+&lt;/aside&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Sticky: <strong>desktop ≥1024px</strong></span>
+            <span class="block-doc__meta-tag">CTA único: <strong>FINALIZAR</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 7. Promo code -->
+        <article id="block-promo" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">7</span>
+            <h3 class="block-doc__title">Código promocional</h3>
+          </div>
+          <p class="block-doc__desc">Input colapsável dentro do resumo. Apresentado fechado por defeito (acordeão) para não distrair quem não tem código.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="promo-code">
+                <button class="promo-code__toggle" type="button" aria-expanded="true">
+                  <span>Tens um código promocional?</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="promo-code__panel">
+                  <div class="promo-code__row">
+                    <input type="text" class="promo-code__input" placeholder="Ex: PROMO10" />
+                    <button class="btn btn--secondary btn--sm" type="button">Aplicar</button>
+                  </div>
+                  <p class="promo-code__success">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--stock-available)" style="vertical-align: middle;"><circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+                    Código <strong>PROMO10</strong> aplicado · −149,97 €
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="promo-code"&gt;
+  &lt;button class="promo-code__toggle"
+          aria-expanded="false"&gt;
+    Tens um código promocional?
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;div class="promo-code__panel"&gt;
+    &lt;div class="promo-code__row"&gt;
+      &lt;input type="text"
+             placeholder="Ex: PROMO10" /&gt;
+      &lt;button class="btn btn--secondary"&gt;
+        Aplicar
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Estado default: <strong>colapsado</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Estados                                             -->
+      <!-- ================================================== -->
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Estados do carrinho</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Estado</th><th>O que muda</th><th>CTA principal</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Vazio</strong></td><td>Lista substituída por mensagem + CTA para listings. Sem resumo.</td><td>"Ver destaques"</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">1 item</strong></td><td>Layout normal. Título "1 produto".</td><td>FINALIZAR</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Múltiplos itens</strong></td><td>Layout normal. Título "N produtos". Scroll interno em mini-cart se &gt;5.</td><td>FINALIZAR</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Portes grátis atingidos</strong></td><td>Barra full + check verde. Linha "Portes: Grátis" no resumo.</td><td>FINALIZAR</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Com promo aplicado</strong></td><td>Linha de desconto a verde no resumo. Total actualizado.</td><td>FINALIZAR</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Item esgotado</strong></td><td>Linha com badge "Esgotado" + CTA "Remover". CTA Finalizar bloqueado até resolver.</td><td>Remover esgotados primeiro</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Erro de promo</strong></td><td>Input com border vermelho + mensagem "Código inválido ou expirado".</td><td>FINALIZAR (sem desconto)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- UX Rationale                                        -->
+      <!-- ================================================== -->
+
+      <section id="rationale" class="section">
+        <div class="section__eyebrow">Porquê</div>
+        <h2 class="h-1">Decisões UX</h2>
+
+        <h3 class="h-2">Mini-cart auto-abre 3s após "ADICIONAR"</h3>
+        <p>Confirma a acção sem mudar de página. 3s é suficiente para registar visualmente sem interromper navegação. Se o utilizador continua a comprar, fecha sozinho.</p>
+
+        <h3 class="h-2">"Remover" via Modal de confirmação</h3>
+        <p>Remover um produto é destrutivo — clique acidental pode frustrar. Usar o <a href="modal.html">Modal "Remover produto do carrinho"</a> com CANCELAR + REMOVER PRODUTO confirma a intenção sem ser pesado.</p>
+
+        <h3 class="h-2">Promo code colapsado por defeito</h3>
+        <p>Se aparece aberto, o utilizador que não tem código sente que está a perder algo (FOMO). Colapsado, está disponível para quem precisa sem distrair os outros.</p>
+
+        <h3 class="h-2">Barra de portes grátis sempre que aplicável</h3>
+        <p>Motiva a adicionar mais itens. Mostra <strong style="color:var(--text-primary)">quanto falta</strong> (concreto) em vez de "Falta pouco" (vago). Quando atingido, confirmação verde imediata.</p>
+
+        <h3 class="h-2">Resumo sticky no scroll (desktop)</h3>
+        <p>Em carrinhos longos, o total + CTA não pode desaparecer. Sticky no lado direito mantém a decisão visível enquanto o utilizador revê os itens.</p>
+
+        <h3 class="h-2">CTA único e claro: "FINALIZAR ENCOMENDA"</h3>
+        <p>Uma só acção primária. "Continuar a comprar" como link secundário discreto. Pagamento ainda não, é só na próxima página (Checkout).</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts                                       -->
+      <!-- ================================================== -->
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Portes visíveis ANTES do checkout. "Portes: Grátis" ou "Portes: 4,90 €" no resumo.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Portes calculados no checkout" sem indicação. Surpresa de preço = abandono.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Confirmar remoção via Modal. Acção destrutiva merece um clique a mais.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Remover sem confirmação. Utilizador clica no X, perde produto, fica frustrado.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Promo code colapsado por defeito. Quem tem, abre. Quem não tem, ignora.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Promo code aberto e bem visível. Cria FOMO em quem não tem código e sente que está a pagar mais.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">CTA único: "FINALIZAR ENCOMENDA" primary. "Continuar a comprar" como link discreto.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Dois CTAs primary lado a lado. Utilizador hesita, não decide.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Total IVA incluído. Mostrar "IVA incluído" abaixo do total.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">IVA escondido até ao checkout. Em PT é norma legal mostrar preços com IVA — também é norma UX.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mobile                                              -->
+      <!-- ================================================== -->
+
+      <section id="mobile" class="section">
+        <div class="section__eyebrow">Mobile</div>
+        <h2 class="h-1">Cart em mobile</h2>
+        <p>Mini-cart passa a drawer full-width que entra pela direita. Cart full-page faz stack vertical: linhas → progresso de portes → resumo → CTA.</p>
+        <div class="callout">
+          <strong>FINALIZAR sticky no fundo</strong>
+          Em mobile, o CTA "FINALIZAR ENCOMENDA" fica fixo no fundo do viewport durante o scroll dos itens. Total visível ao lado do CTA (ex: "1 349,73 € · FINALIZAR"). Garante que o utilizador nunca tem de fazer scroll para finalizar.
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Componentes usados                                  -->
+      <!-- ================================================== -->
+
+      <section id="components" class="section">
+        <div class="section__eyebrow">Componentes usados</div>
+        <h2 class="h-1">Componentes deste pattern</h2>
+        <div class="comp-grid">
+          <a href="quantity.html" class="comp-card">
+            <div class="comp-card__preview"><div class="qty qty--sm"><button class="qty__btn">−</button><input class="qty__input" value="1" /><button class="qty__btn">+</button></div></div>
+            <div class="comp-card__title">Quantity stepper</div>
+          </a>
+          <a href="price.html" class="comp-card">
+            <div class="comp-card__preview"><span class="price"><span class="price__current">799,90 €</span></span></div>
+            <div class="comp-card__title">Price</div>
+          </a>
+          <a href="button.html" class="comp-card">
+            <div class="comp-card__preview"><button class="btn btn--primary btn--sm">FINALIZAR</button></div>
+            <div class="comp-card__title">Button (FINALIZAR)</div>
+          </a>
+          <a href="modal.html" class="comp-card">
+            <div class="comp-card__preview"><div style="width: 60px; height: 40px; background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);"></div></div>
+            <div class="comp-card__title">Modal (remover)</div>
+          </a>
+          <a href="input.html" class="comp-card">
+            <div class="comp-card__preview"><input type="text" placeholder="Promo" style="width: 70px; padding: 4px 6px; font-size: 11px; border: 1px solid var(--ui-card-border); border-radius: 4px;" /></div>
+            <div class="comp-card__title">Input (promo)</div>
+          </a>
+          <a href="badge.html" class="comp-card">
+            <div class="comp-card__preview"><span class="ds-badge">3</span></div>
+            <div class="comp-card__title">Badge (contador)</div>
+          </a>
+          <a href="toast.html" class="comp-card">
+            <div class="comp-card__preview"><div style="width: 80px; height: 28px; background: var(--stock-available); border-radius: 4px; opacity: 0.3;"></div></div>
+            <div class="comp-card__title">Toast (confirmações)</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mapping                                             -->
+      <!-- ================================================== -->
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes Design System ↔ Site real</h2>
+        <p>A preencher conforme se inspecciona o carrinho live na pcdiga.com.</p>
+
+        <div class="table-wrap">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 22%;">Bloco</th>
+                <th style="width: 30%;">Classe Design System</th>
+                <th style="width: 25%;">Classe site real</th>
+                <th style="width: 18%;">Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="#block-trigger">Trigger</a></td><td><code>.cart-trigger</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Header icon + badge</td></tr>
+              <tr><td>2</td><td><a href="#block-minicart">Mini-cart dropdown</a></td><td><code>.mini-cart</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Linhas: <code>.mini-cart-line</code></td></tr>
+              <tr><td>3</td><td><a href="#block-minicart-empty">Mini-cart vazio</a></td><td><code>.mini-cart__empty</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
+              <tr><td>4</td><td><a href="#block-line">Linha de carrinho</a></td><td><code>.cart-line</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Layout grid 4 colunas</td></tr>
+              <tr><td>5</td><td><a href="#block-shipping">Progresso portes grátis</a></td><td><code>.ship-progress</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Mod: <code>--reached</code></td></tr>
+              <tr><td>6</td><td><a href="#block-summary">Resumo</a></td><td><code>.cart-summary</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Sticky desktop</td></tr>
+              <tr><td>7</td><td><a href="#block-promo">Promo code</a></td><td><code>.promo-code</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Acordeão</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Mini-cart dialog</strong></td><td><code>role="dialog"</code> + <code>aria-label="Resumo do carrinho"</code>. Focus trap quando aberto. Esc fecha.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Trigger badge</strong></td><td><code>aria-label</code> dinâmico: "Abrir carrinho · N produtos". Screen reader anuncia a contagem.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Quantity stepper</strong></td><td>Botões: "Diminuir/Aumentar quantidade de [produto]". Mudança anunciada via <code>aria-live="polite"</code>.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Botão remover</strong></td><td><code>aria-label="Remover [nome do produto] do carrinho"</code>. Abre modal de confirmação (não acção directa).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Promo aplicado</strong></td><td>Mensagem de sucesso/erro em <code>aria-live="polite"</code> abaixo do input.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Total actualizado</strong></td><td>Linha de total com <code>aria-live="polite"</code> para anunciar mudanças após qty/remove.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Sticky CTA mobile</strong></td><td>Não esconder conteúdo. Padding-bottom no main para evitar overlap.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#blocks-mini"><strong>Mini-cart</strong></a></li>
+        <li><a href="#block-trigger" style="padding-left: 12px;">→ Trigger</a></li>
+        <li><a href="#block-minicart" style="padding-left: 12px;">→ Dropdown</a></li>
+        <li><a href="#block-minicart-empty" style="padding-left: 12px;">→ Vazio</a></li>
+        <li><a href="#blocks-full"><strong>Cart full-page</strong></a></li>
+        <li><a href="#block-line" style="padding-left: 12px;">→ Linha</a></li>
+        <li><a href="#block-shipping" style="padding-left: 12px;">→ Portes grátis</a></li>
+        <li><a href="#block-summary" style="padding-left: 12px;">→ Resumo</a></li>
+        <li><a href="#block-promo" style="padding-left: 12px;">→ Promo code</a></li>
+        <li><a href="#states">Estados</a></li>
+        <li><a href="#rationale">Decisões UX</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#mapping"><strong>Mapping DS ↔ site</strong></a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="plp.html">← PLP</a> · <a href="patterns.html">Padrões →</a></div>
+  </footer>
+
+</body>
+</html>
