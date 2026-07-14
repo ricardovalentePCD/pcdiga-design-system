@@ -40,13 +40,14 @@
           <li><a href="pdp.html" class="is-active">PDP — Página de produto</a></li>
           <li><a href="plp.html">PLP — Listings</a></li>
           <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html">Área de cliente</a></li>
         </ul>
       </div>
       <div class="sidebar__group">
         <div class="sidebar__title">Em planeamento</div>
         <ul class="sidebar__list">
           <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
-          <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
@@ -179,7 +180,7 @@
       <article id="block-topbar" class="block-doc">
         <div class="block-doc__head">
           <span class="block-doc__num">2</span>
-          <h3 class="block-doc__title">Top bar — meta + brand</h3>
+          <h3 class="block-doc__title">Top bar — meta + marca</h3>
         </div>
         <p class="block-doc__desc">Barra full-width com identificadores técnicos (Part-Number, EAN), garantia e Trustpilot à esquerda; logo da marca à direita. Reforça confiança e dá info que utilizadores técnicos procuram.</p>
 
@@ -495,7 +496,7 @@
       <article id="block-buy" class="block-doc">
         <div class="block-doc__head">
           <span class="block-doc__num">9</span>
-          <h3 class="block-doc__title">Add to cart</h3>
+          <h3 class="block-doc__title">Adicionar ao carrinho</h3>
         </div>
         <p class="block-doc__desc">Quantity stepper + botão "ADICIONAR" (uppercase, primary, com ícone carrinho). É o CTA principal da página — o objectivo de tudo o resto é levar aqui.</p>
 
@@ -912,7 +913,7 @@
 
       <section id="components" class="section">
         <div class="section__eyebrow">Componentes usados</div>
-        <h2 class="h-1">Componentes deste pattern</h2>
+        <h2 class="h-1">Componentes deste padrão</h2>
         <div class="comp-grid">
           <a href="price.html" class="comp-card">
             <div class="comp-card__preview"><span class="price price--sm price--sale"><span class="price__current">39,00 €</span><s class="price__original">69,90 €</s></span></div>
@@ -962,104 +963,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td><a href="#block-breadcrumbs">Breadcrumbs</a></td>
-                <td><code>.crumbs</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><a href="#block-topbar">Top bar</a></td>
-                <td><code>.pdp__top-bar</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Full-width container com meta + brand</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><a href="#block-gallery">Galeria 2×2</a></td>
-                <td><code>.pdp__gallery</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Cells: <code>.pdp__gallery-cell</code></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td><a href="#block-actions">Favoritos / Comparar</a></td>
-                <td><code>.pdp__gallery-actions</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td><a href="#block-title">Título</a></td>
-                <td><code>.pdp__title</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>É um <code>&lt;h1&gt;</code></td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td><a href="#block-price">Preço</a></td>
-                <td><code>.price.price--xl.price--sale</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Datas: <code>.pdp__promo-dates</code></td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td><a href="#block-shipping">Portes</a></td>
-                <td><code>.pdp__shipping</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Variante: <code>--unavailable</code></td>
-              </tr>
-              <tr>
-                <td>8</td>
-                <td><a href="#block-stock">Stock + entrega</a></td>
-                <td><code>.product-card__stock-block</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Reaproveitado do product-card</td>
-              </tr>
-              <tr>
-                <td>9</td>
-                <td><a href="#block-buy">Add to cart</a></td>
-                <td><code>.pdp__add-row</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Contém <code>.qty</code> + <code>.btn--primary</code></td>
-              </tr>
-              <tr>
-                <td>10</td>
-                <td><a href="#block-care">PCDIGACare</a></td>
-                <td><code>.pdp__addons</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Itens: <code>.pdp__addon</code></td>
-              </tr>
-              <tr>
-                <td>11</td>
-                <td><a href="#block-stores">Stock Lojas</a></td>
-                <td><code>.pdp__collapsible</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td><code>details/summary</code></td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td><a href="#block-financing">Financiamento</a></td>
-                <td><code>.pdp__collapsible</code> + <code>.pdp__financing-options</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Logos: <code>--sequra</code> / <code>--klarna</code></td>
-              </tr>
-              <tr>
-                <td>13</td>
-                <td><a href="#block-features">Características</a></td>
-                <td><code>.pdp__features</code> + <code>.pdp__features-list</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Sempre visível</td>
-              </tr>
-              <tr>
-                <td>14</td>
-                <td><a href="#block-tabs">Tabs</a></td>
-                <td><code>.pdp__tabs</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Reaproveita <code>.tabs</code></td>
-              </tr>
+              <tr><td>1</td><td><a href="#block-breadcrumbs">Breadcrumbs</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
+              <tr><td>2</td><td><a href="#block-topbar">Top bar</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Full-width com meta + marca</td></tr>
+              <tr><td>3</td><td><a href="#block-gallery">Galeria 2×2</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>4 células</td></tr>
+              <tr><td>4</td><td><a href="#block-actions">Favoritos / Comparar</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
+              <tr><td>5</td><td><a href="#block-title">Título</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>É um <code>&lt;h1&gt;</code></td></tr>
+              <tr><td>6</td><td><a href="#block-price">Preço</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Com PVPR + datas promo</td></tr>
+              <tr><td>7</td><td><a href="#block-shipping">Portes</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Variantes: grátis / indisponível</td></tr>
+              <tr><td>8</td><td><a href="#block-stock">Stock + entrega</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Reaproveitado do product card</td></tr>
+              <tr><td>9</td><td><a href="#block-buy">Adicionar ao carrinho</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Quantity stepper + CTA primário</td></tr>
+              <tr><td>10</td><td><a href="#block-care">PCDIGACare</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Seguros opt-in</td></tr>
+              <tr><td>11</td><td><a href="#block-stores">Stock lojas</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Colapsável nativo</td></tr>
+              <tr><td>12</td><td><a href="#block-financing">Financiamento</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Colapsável + logos seQura / Klarna</td></tr>
+              <tr><td>13</td><td><a href="#block-features">Características</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Sempre visíveis</td></tr>
+              <tr><td>14</td><td><a href="#block-tabs">Tabs</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Reaproveita o componente Tabs</td></tr>
             </tbody>
           </table>
         </div>
@@ -1104,9 +1021,9 @@
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-price">6. Preço</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-shipping">7. Portes</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-stock">8. Stock</a></li>
-        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-buy">9. Add to cart</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-buy">9. Adicionar ao carrinho</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-care">10. PCDIGACare</a></li>
-        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-stores">11. Stock Lojas</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-stores">11. Stock lojas</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-financing">12. Financiamento</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-features">13. Características</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-tabs">14. Tabs</a></li>

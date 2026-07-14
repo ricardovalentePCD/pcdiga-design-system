@@ -40,13 +40,14 @@
           <li><a href="pdp.html">PDP — Página de produto</a></li>
           <li><a href="plp.html">PLP — Listings</a></li>
           <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html">Área de cliente</a></li>
         </ul>
       </div>
       <div class="sidebar__group">
         <div class="sidebar__title">Em planeamento</div>
         <ul class="sidebar__list">
           <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
-          <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
@@ -69,8 +70,8 @@
         <h1 class="h-display hero__title">Padrões</h1>
         <p class="lead">Padrões são a forma como vários componentes se combinam para resolver problemas concretos da PCDIGA — comprar um produto, configurar um PC, fazer checkout. Cada padrão documenta o "porquê" e o "como" de páginas inteiras.</p>
         <div class="callout">
-          <strong>3 publicados, 5 em planeamento</strong>
-          Esta fase começa pelas três páginas que mais convertem em e-commerce: PDP, PLP e Cart. As restantes (Checkout, Search, Empty/Error states, Comparador) entram em iterações seguintes.
+          <strong>5 publicados, 4 em planeamento</strong>
+          PDP, PLP, Cart, Search e Área de cliente estão fechados. As restantes (Checkout, Empty/Error states, Comparador) entram em iterações seguintes.
         </div>
       </section>
 
@@ -147,6 +148,43 @@
             <p class="comp-card__desc">Filtros laterais, ordenação, breadcrumbs, grid de product cards, paginação.</p>
           </a>
 
+          <a href="area-cliente.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 4px;">
+              <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4px; width: 100%; height: 100%;">
+                <div style="background: var(--bg-card); border-radius: 2px; padding: 3px; display: flex; flex-direction: column; gap: 3px;">
+                  <div style="height: 4px; background: var(--brand-orange); border-radius: 1px;"></div>
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                </div>
+                <div style="background: var(--bg-card); border-radius: 2px; padding: 3px; display: flex; flex-direction: column; gap: 2px;">
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px; width: 40%;"></div>
+                  <div style="flex: 1; background: var(--ui-card-border); border-radius: 1px;"></div>
+                  <div style="height: 4px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="comp-card__title">Área de cliente</div>
+            <p class="comp-card__desc">Shell autenticado com sidebar de navegação + subpáginas (encomendas, dados, favoritos, assistência técnica).</p>
+          </a>
+
+          <a href="search.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding: 4px;">
+              <div style="display: flex; flex-direction: column; gap: 4px; width: 100%; height: 100%; padding: 4px;">
+                <div style="height: 12px; background: var(--bg-card); border-radius: 2px; display: flex; align-items: center; padding: 0 4px;"><div style="width: 6px; height: 6px; border: 1px solid var(--ui-card-border); border-radius: 50%;"></div></div>
+                <div style="background: var(--bg-card); border-radius: 2px; padding: 3px; flex: 1; display: flex; flex-direction: column; gap: 2px;">
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px;"></div>
+                  <div style="height: 3px; background: var(--ui-card-border); border-radius: 1px; width: 70%;"></div>
+                  <div style="height: 3px; background: var(--brand-orange); border-radius: 1px; width: 50%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="comp-card__title">Search</div>
+            <p class="comp-card__desc">Search bar, sugestões live, página de resultados e estado sem resultados.</p>
+          </a>
+
           <a href="cart.html" class="comp-card">
             <span class="comp-card__status comp-card__status--ready">v1</span>
             <div class="comp-card__preview" style="padding: 4px;">
@@ -179,12 +217,6 @@
             <div class="comp-card__preview"></div>
             <div class="comp-card__title">Checkout</div>
             <p class="comp-card__desc">Steps, validação, métodos de envio e pagamento, resumo.</p>
-          </div>
-          <div class="comp-card comp-card--planned">
-            <span class="comp-card__status">em breve</span>
-            <div class="comp-card__preview"></div>
-            <div class="comp-card__title">Search</div>
-            <p class="comp-card__desc">Search bar com sugestões, results page, sem resultados.</p>
           </div>
           <div class="comp-card comp-card--planned">
             <span class="comp-card__status">em breve</span>

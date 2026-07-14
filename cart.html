@@ -40,13 +40,14 @@
           <li><a href="pdp.html">PDP — Página de produto</a></li>
           <li><a href="plp.html">PLP — Listings</a></li>
           <li><a href="cart.html" class="is-active">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html">Área de cliente</a></li>
         </ul>
       </div>
       <div class="sidebar__group">
         <div class="sidebar__title">Em planeamento</div>
         <ul class="sidebar__list">
           <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
-          <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
@@ -112,14 +113,14 @@
 
       <section id="blocks-mini" class="section">
         <div class="section__eyebrow">Blocos · Mini-cart</div>
-        <h2 class="h-1">Mini-cart (dropdown header)</h2>
+        <h2 class="h-1">Mini-cart (dropdown do header)</h2>
         <p>Aparece após "ADICIONAR" como confirmação. Auto-fecha após 5s ou ao clicar fora. Reabre por hover/click no ícone do carrinho.</p>
 
         <!-- 1. Trigger -->
         <article id="block-trigger" class="block-doc">
           <div class="block-doc__head">
             <span class="block-doc__num">1</span>
-            <h3 class="block-doc__title">Trigger — ícone com badge</h3>
+            <h3 class="block-doc__title">Trigger — ícone do carrinho</h3>
           </div>
           <p class="block-doc__desc">Ícone no header com badge contador. Badge só aparece se carrinho tem ≥1 item.</p>
 
@@ -152,7 +153,7 @@
         <article id="block-minicart" class="block-doc">
           <div class="block-doc__head">
             <span class="block-doc__num">2</span>
-            <h3 class="block-doc__title">Dropdown — lista + resumo + CTA</h3>
+            <h3 class="block-doc__title">Dropdown — lista, totais e CTAs</h3>
           </div>
           <p class="block-doc__desc">Lista compacta de produtos no carrinho. Cada linha: thumbnail, nome (1-2 linhas), qty/preço, botão remover. No fim: subtotal + 2 CTAs (Ver carrinho secundário, Finalizar primary).</p>
 
@@ -677,7 +678,7 @@
 
       <section id="components" class="section">
         <div class="section__eyebrow">Componentes usados</div>
-        <h2 class="h-1">Componentes deste pattern</h2>
+        <h2 class="h-1">Componentes deste padrão</h2>
         <div class="comp-grid">
           <a href="quantity.html" class="comp-card">
             <div class="comp-card__preview"><div class="qty qty--sm"><button class="qty__btn">−</button><input class="qty__input" value="1" /><button class="qty__btn">+</button></div></div>
@@ -731,13 +732,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>1</td><td><a href="#block-trigger">Trigger</a></td><td><code>.cart-trigger</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Header icon + badge</td></tr>
-              <tr><td>2</td><td><a href="#block-minicart">Mini-cart dropdown</a></td><td><code>.mini-cart</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Linhas: <code>.mini-cart-line</code></td></tr>
-              <tr><td>3</td><td><a href="#block-minicart-empty">Mini-cart vazio</a></td><td><code>.mini-cart__empty</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
-              <tr><td>4</td><td><a href="#block-line">Linha de carrinho</a></td><td><code>.cart-line</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Layout grid 4 colunas</td></tr>
-              <tr><td>5</td><td><a href="#block-shipping">Progresso portes grátis</a></td><td><code>.ship-progress</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Mod: <code>--reached</code></td></tr>
-              <tr><td>6</td><td><a href="#block-summary">Resumo</a></td><td><code>.cart-summary</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Sticky desktop</td></tr>
-              <tr><td>7</td><td><a href="#block-promo">Promo code</a></td><td><code>.promo-code</code></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Acordeão</td></tr>
+              <tr><td>1</td><td><a href="#block-trigger">Trigger — ícone do carrinho</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Ícone + contador</td></tr>
+              <tr><td>2</td><td><a href="#block-minicart">Mini-cart (dropdown)</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
+              <tr><td>3</td><td><a href="#block-minicart-empty">Mini-cart vazio</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
+              <tr><td>4</td><td><a href="#block-line">Linha de carrinho</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Grid 4 colunas</td></tr>
+              <tr><td>5</td><td><a href="#block-shipping">Barra de portes grátis</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Estado em curso / atingido</td></tr>
+              <tr><td>6</td><td><a href="#block-summary">Caixa de resumo</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Sticky desktop</td></tr>
+              <tr><td>7</td><td><a href="#block-promo">Código promocional</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Acordeão</td></tr>
             </tbody>
           </table>
         </div>
@@ -782,7 +783,7 @@
         <li><a href="#block-line" style="padding-left: 12px;">→ Linha</a></li>
         <li><a href="#block-shipping" style="padding-left: 12px;">→ Portes grátis</a></li>
         <li><a href="#block-summary" style="padding-left: 12px;">→ Resumo</a></li>
-        <li><a href="#block-promo" style="padding-left: 12px;">→ Promo code</a></li>
+        <li><a href="#block-promo" style="padding-left: 12px;">→ Código promocional</a></li>
         <li><a href="#states">Estados</a></li>
         <li><a href="#rationale">Decisões UX</a></li>
         <li><a href="#usage">Do's & Don'ts</a></li>
@@ -796,7 +797,7 @@
 
   <footer class="site-footer">
     <div>PCDIGA Design System · v1.0 · 2026</div>
-    <div><a href="plp.html">← PLP</a> · <a href="patterns.html">Padrões →</a></div>
+    <div><a href="plp.html">← PLP</a> · <a href="search.html">Search →</a></div>
   </footer>
 
 </body>

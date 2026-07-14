@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área de cliente · Favoritos · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html">Overview</a></li>
+          <li><a href="pdp.html">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html" class="is-active">Área de cliente</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Área de cliente</div>
+        <ul class="sidebar__list">
+          <li><a href="area-cliente.html">Overview + Menu</a></li>
+          <li><a href="area-cliente-encomendas.html">Encomendas</a></li>
+          <li><a href="area-cliente-dados-pessoais.html">Dados Pessoais</a></li>
+          <li><a href="area-cliente-assistencia.html">Assistência Técnica</a></li>
+          <li><a href="area-cliente-favoritos.html" class="is-active">Favoritos</a></li>
+          <li><a href="#" class="is-disabled">Review de produtos <span class="badge">em breve</span></a></li>
+          <li><a href="area-cliente-newsletter.html">Newsletter</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Área de cliente · Favoritos</div>
+        <h1 class="h-display hero__title">Favoritos</h1>
+        <p class="lead">Produtos que o utilizador marcou como favoritos. Página dedicada com grid de cards + drawer flutuante acessível a partir do ícone coração no header. Cada card mostra imagem, nome, stock, entrega, preço + acções Comparar / Remover / ADICIONAR.</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Referências                                         -->
+      <!-- ================================================== -->
+
+      <section id="reference" class="section">
+        <div class="section__eyebrow">Referência</div>
+        <h2 class="h-1">Design de referência (Figma)</h2>
+        <p>Página completa com produtos:</p>
+        <div class="anatomy-image">
+          <img class="anatomy-image__img" src="assets/img/area-cliente/favoritos-desktop.jpg" alt="Favoritos com produtos — desktop" />
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Blocos                                              -->
+      <!-- ================================================== -->
+
+      <section id="blocks" class="section">
+        <div class="section__eyebrow">Blocos</div>
+        <h2 class="h-1">Componentes da página</h2>
+
+        <!-- 1. Card de favorito -->
+        <article id="block-favorite-card" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">1</span>
+            <h3 class="block-doc__title">Card de favorito</h3>
+          </div>
+          <p class="block-doc__desc">Layout 50/50: imagem à esquerda (fundo branco, contain) + info à direita — nome bold no topo, stock com check verde, preço laranja centrado, acções Comparar/Remover centradas com ícones, CTA <strong style="color:var(--text-primary)">ADICIONAR</strong> outlined laranja à largura da coluna direita.</p>
+
+          <div class="block-ref">
+            <figure class="block-ref__figma">
+              <div class="block-ref__label">Figma · Desktop</div>
+              <img src="assets/img/area-cliente/favorito-card-desktop.png" alt="Card favorito desktop — Figma" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+              <div class="block-ref__placeholder" style="display:none;">
+                PNG em falta:<br /><code>favorito-card-desktop.png</code>
+              </div>
+            </figure>
+            <div class="block-ref__code-wrap">
+              <div class="block-ref__label">HTML</div>
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;article class="__favorito"&gt;
+  &lt;div class="__favorito-imagem"&gt;
+    &lt;img src="..." alt="..." /&gt;
+  &lt;/div&gt;
+  &lt;div class="__favorito-info"&gt;
+    &lt;h4 class="__favorito-nome"&gt;
+      Headphones Sennheiser HD 550 Pretos
+    &lt;/h4&gt;
+    &lt;p class="__favorito-stock"&gt;
+      &lt;svg&gt;check&lt;/svg&gt;
+      &lt;strong&gt;Em stock&lt;/strong&gt; -
+      Entrega prevista a 29 Dezembro
+    &lt;/p&gt;
+    &lt;p class="__favorito-preco"&gt;
+      299,90 €
+    &lt;/p&gt;
+    &lt;div class="__favorito-acoes"&gt;
+      &lt;a href="#comparar"&gt;
+        &lt;svg&gt;setas&lt;/svg&gt; Comparar
+      &lt;/a&gt;
+      &lt;a href="#remover"&gt;
+        &lt;svg&gt;coração laranja&lt;/svg&gt; Remover
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;a href="#adicionar"
+       class="__favorito-cta"&gt;
+      ADICIONAR
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+            </div>
+          </div>
+
+          <h4 class="h-2" style="font-size: 15px; margin-top: var(--space-4);">Preview funcional</h4>
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="favorite-card" style="max-width: 560px;">
+                <div class="favorite-card__image">
+                  <div class="pdp__gallery-placeholder" style="font-size:11px; color: #666;">imagem produto</div>
+                </div>
+                <div class="favorite-card__body">
+                  <h4 class="favorite-card__name">Headphones Sennheiser HD 550 Pretos</h4>
+                  <p class="favorite-card__stock">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--stock-available)"><circle cx="12" cy="12" r="10"/><polyline points="8.5 12.5 11 15 16 10" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+                    <strong>Em stock</strong> - Entrega prevista a 29 Dezembro
+                  </p>
+                  <p class="favorite-card__price">299,90 €</p>
+                  <div class="favorite-card__actions">
+                    <a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg> Comparar</a>
+                    <a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--brand-orange)" stroke="var(--brand-orange)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Remover</a>
+                  </div>
+                  <a href="#" class="favorite-card__cta">ADICIONAR</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Grid: <strong>50/50 desktop</strong></span>
+            <span class="block-doc__meta-tag">Imagem: <strong>fundo branco, object-fit contain</strong></span>
+            <span class="block-doc__meta-tag">CTA: <strong>outlined laranja</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a definir</strong></span>
+          </div>
+        </article>
+
+        <!-- 2. Estado vazio -->
+        <article id="block-empty" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">2</span>
+            <h3 class="block-doc__title">Estado vazio</h3>
+          </div>
+          <p class="block-doc__desc">Utilizador sem favoritos guardados. Barra com mensagem informativa que sugere o comportamento — não é um erro.</p>
+
+          <div class="anatomy-image">
+            <img class="anatomy-image__img" src="assets/img/area-cliente/favoritos-desktop-vazio.png" alt="Favoritos — estado vazio" />
+          </div>
+
+          <div class="cb" style="margin-top: var(--space-4);">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="empty-bar">Guarda os teus favoritos e encontra-os aqui sempre que quiseres, de forma rápida e simples.</div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="empty-bar"&gt;
+  Guarda os teus favoritos e encontra-os
+  aqui sempre que quiseres, de forma
+  rápida e simples.
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Drawer flutuante -->
+        <article id="block-drawer" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">3</span>
+            <h3 class="block-doc__title">Drawer flutuante — a partir do header</h3>
+          </div>
+          <p class="block-doc__desc">Painel lateral direito, activado pelo ícone coração no header. Fundo laranja no header do drawer para reforçar a identidade. Lista compacta de produtos + CTA "VER E EDITAR FAVORITOS" no fim que leva à página completa.</p>
+
+          <div class="anatomy-image">
+            <img class="anatomy-image__img" src="assets/img/area-cliente/favoritos-drawer-desktop.png" alt="Favoritos drawer — desktop" />
+          </div>
+
+          <div class="block-doc__meta" style="margin-top: var(--space-4);">
+            <span class="block-doc__meta-tag">Largura: <strong>380px (desktop)</strong></span>
+            <span class="block-doc__meta-tag">Header: <strong>fundo laranja</strong></span>
+            <span class="block-doc__meta-tag">CTA final: <strong>Ver e editar favoritos</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Estados                                             -->
+      <!-- ================================================== -->
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Estados</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Estado</th><th>O que aparece</th><th>Notas</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Com favoritos</strong></td><td>Grid 2 colunas desktop / 1 mobile</td><td>Cards horizontais com CTA outlined.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Vazio</strong></td><td>Barra informativa</td><td>Mensagem clara, sem ilustração pesada.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Produto sem stock</strong></td><td>Sticker vermelho "Esgotado" + CTA disabled</td><td>Manter no grid — utilizador pode querer esperar.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Drawer</strong></td><td>Painel lateral 380px</td><td>Auto-abre 3s após adicionar aos favoritos.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Drawer vazio</strong></td><td>Mensagem + CTA para listings</td><td>Nunca mostrar drawer vazio de forma acidental.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Decisões UX                                         -->
+      <!-- ================================================== -->
+
+      <section id="rationale" class="section">
+        <div class="section__eyebrow">Porquê</div>
+        <h2 class="h-1">Decisões UX</h2>
+
+        <h3 class="h-2">Drawer + página completa</h3>
+        <p>Drawer = acesso rápido a partir de qualquer página. Página completa = espaço para rever, comparar, gerir. Utilizador escolhe consoante o contexto.</p>
+
+        <h3 class="h-2">Card horizontal em vez de vertical</h3>
+        <p>Cards horizontais em grid 2×N usam melhor o espaço em ecrãs largos. Mostram mais info ao mesmo tempo (nome longo, stock, entrega, preço, acções) sem precisar de hover.</p>
+
+        <h3 class="h-2">CTA "ADICIONAR" outlined, não filled</h3>
+        <p>Nos favoritos, o utilizador está a considerar a compra — mas ainda não decidiu. Outlined comunica "acção possível" sem gritar como PDP. Mantém foco na comparação entre produtos.</p>
+
+        <h3 class="h-2">Header laranja no drawer</h3>
+        <p>Reforça identidade de marca no acto de "adicionar aos favoritos". Toque emocional (laranja = quente, positivo).</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts                                       -->
+      <!-- ================================================== -->
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Mostrar stock + entrega no card. Reduz cliques para PDP.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Card só com imagem + preço. Utilizador tem de abrir cada produto para saber se está disponível.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Manter produtos sem stock no grid. Utilizador pode querer esperar ou activar alerta.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Esconder produtos esgotados sem avisar. Utilizador pergunta-se onde foram.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Drawer com CTA claro "Ver e editar favoritos" que leva à página. Uso rápido vs uso profundo.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Só drawer, sem página. Não escala com listas grandes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mobile                                              -->
+      <!-- ================================================== -->
+
+      <section id="mobile" class="section">
+        <div class="section__eyebrow">Mobile</div>
+        <h2 class="h-1">Favoritos em mobile</h2>
+        <p>Grid passa a 1 coluna. Card mantém layout horizontal (imagem 40% + info 60%). Drawer passa a full-width com fecho no canto superior direito.</p>
+        <div class="callout">
+          <strong>Ver design mobile</strong>
+          <a href="assets/img/area-cliente/favoritos-mobile.png">Com produtos</a> · <a href="assets/img/area-cliente/favoritos-mobile-vazio.png">Estado vazio</a> · <a href="assets/img/area-cliente/favoritos-drawer-mobile.png">Drawer</a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Componentes                                         -->
+      <!-- ================================================== -->
+
+      <section id="components" class="section">
+        <div class="section__eyebrow">Componentes usados</div>
+        <h2 class="h-1">Componentes deste padrão</h2>
+        <div class="comp-grid">
+          <a href="product-card.html" class="comp-card">
+            <div class="comp-card__preview"><div style="width: 60px; height: 60px; background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);"></div></div>
+            <div class="comp-card__title">Product card (variante horizontal)</div>
+          </a>
+          <a href="price.html" class="comp-card">
+            <div class="comp-card__preview"><span class="price"><span class="price__current">299,90 €</span></span></div>
+            <div class="comp-card__title">Price</div>
+          </a>
+          <a href="button.html" class="comp-card">
+            <div class="comp-card__preview"><button class="btn btn--secondary btn--sm" style="border-color: var(--brand-orange); color: var(--brand-orange);">ADICIONAR</button></div>
+            <div class="comp-card__title">Button (outlined laranja)</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mapping                                             -->
+      <!-- ================================================== -->
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes Design System ↔ Site real</h2>
+
+        <div class="table-wrap">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 28%;">Bloco</th>
+                <th style="width: 25%;">Classe Design System</th>
+                <th style="width: 25%;">Classe site real</th>
+                <th style="width: 17%;">Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="#block-favorite-card">Card de favorito</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Layout horizontal</td></tr>
+              <tr><td>2</td><td><a href="#block-empty">Estado vazio</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Barra informativa</td></tr>
+              <tr><td>3</td><td><a href="#block-drawer">Drawer flutuante</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Header laranja + CTA final</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Card actions</strong></td><td>Cada link com <code>aria-label</code> específico: "Remover Headphones Sennheiser dos favoritos".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Stock</strong></td><td>Texto explícito ("Em stock", "Esgotado"). Cor sozinha não comunica.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Drawer</strong></td><td><code>role="dialog"</code> + focus trap. Esc fecha. Retorna foco ao trigger.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Trigger no header</strong></td><td><code>aria-label="Abrir favoritos · 4 produtos"</code> com contador.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Remover</strong></td><td>Confirmação em toast com "Anular" durante 5s. Evita perda acidental.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#reference">Referência Figma</a></li>
+        <li><a href="#blocks"><strong>Blocos</strong></a></li>
+        <li><a href="#block-favorite-card" style="padding-left: 12px;">→ Card favorito</a></li>
+        <li><a href="#block-empty" style="padding-left: 12px;">→ Estado vazio</a></li>
+        <li><a href="#block-drawer" style="padding-left: 12px;">→ Drawer</a></li>
+        <li><a href="#states">Estados</a></li>
+        <li><a href="#rationale">Decisões UX</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#mapping"><strong>Mapping DS ↔ site</strong></a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="area-cliente-assistencia.html">← Assistência Técnica</a> · <a href="area-cliente-newsletter.html">Newsletter →</a></div>
+  </footer>
+
+</body>
+</html>

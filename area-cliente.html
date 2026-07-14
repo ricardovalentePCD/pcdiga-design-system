@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área de cliente · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html">Overview</a></li>
+          <li><a href="pdp.html">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html" class="is-active">Área de cliente</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Área de cliente</div>
+        <ul class="sidebar__list">
+          <li><a href="area-cliente.html" class="is-active">Overview + Menu</a></li>
+          <li><a href="area-cliente-encomendas.html">Encomendas</a></li>
+          <li><a href="area-cliente-dados-pessoais.html">Dados Pessoais</a></li>
+          <li><a href="area-cliente-assistencia.html">Assistência Técnica</a></li>
+          <li><a href="area-cliente-favoritos.html">Favoritos</a></li>
+          <li><a href="#" class="is-disabled">Review de produtos <span class="badge">em breve</span></a></li>
+          <li><a href="area-cliente-newsletter.html">Newsletter</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Pattern · Área de cliente</div>
+        <h1 class="h-display hero__title">Área de cliente</h1>
+        <p class="lead">Espaço autenticado onde o utilizador consulta e gere a sua actividade na PCDIGA — encomendas, dados pessoais, favoritos, pedidos de assistência, reviews, subscrições. Layout <strong style="color: var(--text-primary)">shell fixo</strong> (menu lateral + conteúdo) que se mantém em todas as subpáginas.</p>
+        <div class="callout">
+          <strong>Organizado por blocos</strong>
+          Cada subpágina tem a sua própria documentação. Esta página cobre o <strong style="color:var(--text-primary)">shell partilhado</strong> — menu lateral e header — que aparece em todas.
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Subpáginas                                          -->
+      <!-- ================================================== -->
+
+      <section id="subpages" class="section">
+        <div class="section__eyebrow">Subpáginas</div>
+        <h2 class="h-1">Blocos da Área de cliente</h2>
+
+        <div class="comp-grid">
+          <a href="area-cliente-encomendas.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding:4px;">
+              <div style="width:100%; height:100%; background: var(--bg-card); border-radius: 2px; display: flex; flex-direction: column; gap: 3px; padding: 4px;">
+                <div style="height:4px; background: var(--brand-orange); border-radius:1px; width: 40%;"></div>
+                <div style="height:3px; background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="height:3px; background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="height:3px; background: var(--ui-card-border); border-radius:1px;"></div>
+              </div>
+            </div>
+            <div class="comp-card__title">Encomendas</div>
+            <p class="comp-card__desc">Lista de encomendas com filtros de estado, cards expandidos e colapsados, acções por produto, modal de devolução.</p>
+          </a>
+
+          <a href="area-cliente-dados-pessoais.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding:4px;">
+              <div style="width:100%; height:100%; background: var(--bg-card); border-radius: 2px; display: grid; grid-template-columns: 1fr 1fr; gap:3px; padding: 4px;">
+                <div style="background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="background: var(--ui-card-border); border-radius:1px;"></div>
+              </div>
+            </div>
+            <div class="comp-card__title">Dados Pessoais</div>
+            <p class="comp-card__desc">Form de dados do utilizador, alteração de password, moradas (entrega/faturação) + modal de editar morada.</p>
+          </a>
+
+          <a href="area-cliente-assistencia.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding:4px;">
+              <div style="width:100%; height:100%; background: var(--bg-card); border-radius: 2px; display: flex; flex-direction: column; gap: 3px; padding: 4px;">
+                <div style="height:6px; background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="height:6px; background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="height:6px; background: var(--ui-card-border); border-radius:1px;"></div>
+              </div>
+            </div>
+            <div class="comp-card__title">Assistência Técnica</div>
+            <p class="comp-card__desc">Lista de pedidos de RMA com estado (aberto, em curso, fechado) + estado vazio.</p>
+          </a>
+
+          <a href="area-cliente-favoritos.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding:4px;">
+              <div style="width:100%; height:100%; background: var(--bg-card); border-radius: 2px; display: grid; grid-template-columns: 1fr 1fr; gap:3px; padding: 4px;">
+                <div style="background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="background: var(--ui-card-border); border-radius:1px;"></div>
+                <div style="background: var(--ui-card-border); border-radius:1px;"></div>
+              </div>
+            </div>
+            <div class="comp-card__title">Favoritos</div>
+            <p class="comp-card__desc">Grid de produtos guardados + estado vazio + drawer flutuante no header com CTA "Ver e editar favoritos".</p>
+          </a>
+
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">em breve</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Review de produtos</div>
+            <p class="comp-card__desc">Design a desenvolver mais tarde.</p>
+          </div>
+
+          <a href="area-cliente-newsletter.html" class="comp-card">
+            <span class="comp-card__status comp-card__status--ready">v1</span>
+            <div class="comp-card__preview" style="padding:4px;">
+              <div style="width:100%; height:100%; background: var(--bg-card); border-radius: 2px; padding: 4px; display: flex; flex-direction: column; gap: 3px; justify-content: center;">
+                <div style="height:4px; background: var(--brand-orange); border-radius:1px; width: 50%;"></div>
+                <div style="height:3px; background: var(--ui-card-border); border-radius:1px;"></div>
+              </div>
+            </div>
+            <div class="comp-card__title">Newsletter</div>
+            <p class="comp-card__desc">Subscrição de comunicações — toggle Emails + informação legal + Guardar alterações.</p>
+          </a>
+
+          <div class="comp-card comp-card--planned">
+            <span class="comp-card__status">link externo</span>
+            <div class="comp-card__preview"></div>
+            <div class="comp-card__title">Ajuda</div>
+            <p class="comp-card__desc">Não tem tela dedicada — o item redirecciona para o Centro de Ajuda externo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Anatomia shell                                      -->
+      <!-- ================================================== -->
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Duas zonas partilhadas</h2>
+        <p>Todas as subpáginas herdam a mesma estrutura de duas colunas: menu à esquerda + conteúdo à direita. O header da página (nome utilizador + título) fica sempre no topo do conteúdo.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Zona</th><th>Largura</th><th>Conteúdo</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Menu lateral</strong></td><td>240px fixa</td><td>7 items + "Terminar sessão".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Main</strong></td><td>Flex (resto)</td><td>Header (nome + título com barra laranja) + conteúdo da subpágina.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- BLOCKS — Menu                                       -->
+      <!-- ================================================== -->
+
+      <section id="menu" class="section">
+        <div class="section__eyebrow">Bloco · Menu</div>
+        <h2 class="h-1">Menu lateral</h2>
+        <p>Sidebar 240px com 7 links + botão "Terminar sessão". Cada item tem ícone à esquerda + label. Item activo destacado com <strong style="color:var(--text-primary)">border laranja</strong> e texto em bold. Alguns items (Favoritos, Review de produtos) aparecem sempre em bold no design — preferência editorial.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="padding: var(--space-6); justify-content: center; gap: var(--space-6);">
+            <div style="text-align:center;">
+              <img src="assets/img/area-cliente/menu.png" alt="Menu default" style="max-width: 220px; border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);" />
+              <p style="font-size:12px; color: var(--ui-text-muted); margin-top: 8px;">Default (sem item activo destacado)</p>
+            </div>
+            <div style="text-align:center;">
+              <img src="assets/img/area-cliente/menu-ativo.png" alt="Menu com item activo" style="max-width: 220px; border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);" />
+              <p style="font-size:12px; color: var(--ui-text-muted); margin-top: 8px;">Estado activo (border laranja)</p>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;nav class="account-nav" aria-label="Área de cliente"&gt;
+  &lt;a href="/encomendas"
+     class="account-nav__item is-active"
+     aria-current="page"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    As Minhas Encomendas
+  &lt;/a&gt;
+  &lt;a href="/dados-pessoais"
+     class="account-nav__item"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Dados Pessoais
+  &lt;/a&gt;
+  &lt;a href="/assistencia-tecnica"
+     class="account-nav__item"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Pedidos de Assistência Técnica
+  &lt;/a&gt;
+  &lt;a href="/favoritos"
+     class="account-nav__item"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Favoritos
+  &lt;/a&gt;
+  &lt;a href="/reviews"
+     class="account-nav__item"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Review de produtos
+  &lt;/a&gt;
+  &lt;a href="/newsletter"
+     class="account-nav__item"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Subscrição de Newsletter
+  &lt;/a&gt;
+  &lt;a href="/ajuda"
+     class="account-nav__item"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+    Ajuda
+  &lt;/a&gt;
+  &lt;button class="account-nav__logout"&gt;
+    Terminar sessão
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+          </div>
+        </div>
+
+        <h3 class="h-2" style="margin-top: var(--space-6);">Preview funcional</h3>
+        <p>Versão HTML com estilos aplicados (útil para copiar como base).</p>
+        <div class="cb">
+          <div class="cb__preview" style="padding: var(--space-6); justify-content: center;">
+            <nav class="account-nav">
+              <a href="#" class="account-nav__item is-active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                As Minhas Encomendas
+              </a>
+              <a href="#" class="account-nav__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Dados Pessoais
+              </a>
+              <a href="#" class="account-nav__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Pedidos de Assistência Técnica
+              </a>
+              <a href="#" class="account-nav__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                Favoritos
+              </a>
+              <a href="#" class="account-nav__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Review de produtos
+              </a>
+              <a href="#" class="account-nav__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Subscrição de Newsletter
+              </a>
+              <a href="#" class="account-nav__item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/></svg>
+                Ajuda
+              </a>
+              <button class="account-nav__logout">Terminar sessão</button>
+            </nav>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Largura: <strong>240px fixa (desktop)</strong></span>
+          <span class="block-doc__meta-tag">Items: <strong>7 + terminar sessão</strong></span>
+          <span class="block-doc__meta-tag">Ajuda: <strong>link externo (Centro de Ajuda)</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- BLOCKS — Header página                              -->
+      <!-- ================================================== -->
+
+      <section id="page-header" class="section">
+        <div class="section__eyebrow">Bloco · Header</div>
+        <h2 class="h-1">Header — nome + título</h2>
+        <p>Componente partilhado no topo de cada subpágina. Nome do utilizador em cima (label pequeno) + título da subpágina em baixo (h1) com barra laranja à esquerda — mesmo padrão que PDP e PLP.</p>
+
+        <div class="cb">
+          <div class="cb__preview" style="display: block; padding: var(--space-4);">
+            <div class="account-header">
+              <p class="account-header__user">Pedro Dias</p>
+              <h1 class="account-header__title">As minhas encomendas</h1>
+            </div>
+          </div>
+          <div class="cb__code">
+            <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="account-header"&gt;
+  &lt;p class="account-header__user"&gt;
+    Pedro Dias
+  &lt;/p&gt;
+  &lt;h1 class="account-header__title"&gt;
+    As minhas encomendas
+  &lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="block-doc__meta">
+          <span class="block-doc__meta-tag">Barra laranja: <strong>3px à esquerda do h1</strong></span>
+          <span class="block-doc__meta-tag">Nome: <strong>opcional (só logged in)</strong></span>
+          <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Layout responsive                                   -->
+      <!-- ================================================== -->
+
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Estrutura responsive</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Breakpoint</th><th>Menu</th><th>Main</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">≥ 1024px</strong></td><td>240px fixa à esquerda.</td><td>Ocupa restante largura.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">768–1023px</strong></td><td>Colapsada num botão. Abre em overlay.</td><td>Full-width.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">&lt; 768px</strong></td><td>Escondida por defeito. Dropdown ou hamburger.</td><td>Stack vertical, full-width.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts do shell                              -->
+      <!-- ================================================== -->
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Item de menu activo com destaque claro (border laranja + texto bold). Utilizador sabe sempre onde está.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Estado activo só a bold ou só a mudar cor. Diferença insuficiente entre ecrãs.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Ordem do menu por frequência de uso: Encomendas primeiro (mais consultado), Ajuda no fim.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Ordem alfabética. Faz sentido para bases de dados, não para utilizadores.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">"Terminar sessão" separado dos restantes items (com divisor). É acção diferente das outras.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Logout como link igual aos outros. Aumenta risco de clique acidental.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mapping                                             -->
+      <!-- ================================================== -->
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes Design System ↔ Site real</h2>
+        <p>A preencher conforme se inspecciona o shell live na pcdiga.com.</p>
+
+        <div class="table-wrap">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 28%;">Bloco</th>
+                <th style="width: 25%;">Classe Design System</th>
+                <th style="width: 25%;">Classe site real</th>
+                <th style="width: 17%;">Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="#menu">Menu lateral</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Sidebar 240px fixa</td></tr>
+              <tr><td>2</td><td><a href="#page-header">Header — nome + título</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Barra laranja à esquerda</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Menu — item activo</strong></td><td><code>aria-current="page"</code> no item ativo. Border laranja + bold não chega para screen reader sozinho.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Menu — landmark</strong></td><td><code>&lt;nav aria-label="Área de cliente"&gt;</code> para identificar como navegação secundária.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Terminar sessão</strong></td><td>É acção destrutiva (perde contexto). Confirmar com prompt inline ou modal, não logout imediato.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Menu mobile</strong></td><td>Toggle com <code>aria-expanded</code> + <code>aria-controls</code>. Focus vai ao 1º item quando abre.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Ajuda (link externo)</strong></td><td>Se abre em nova aba, incluir <code>rel="noopener noreferrer"</code> + indicação visual/aural do target externo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#subpages"><strong>Subpáginas</strong></a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#menu"><strong>Menu lateral</strong></a></li>
+        <li><a href="#page-header"><strong>Header página</strong></a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#mapping"><strong>Mapping DS ↔ site</strong></a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="search.html">← Search</a> · <a href="area-cliente-encomendas.html">Encomendas →</a></div>
+  </footer>
+
+</body>
+</html>

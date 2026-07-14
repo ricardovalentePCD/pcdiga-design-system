@@ -40,13 +40,14 @@
           <li><a href="pdp.html">PDP — Página de produto</a></li>
           <li><a href="plp.html" class="is-active">PLP — Listings</a></li>
           <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html">Área de cliente</a></li>
         </ul>
       </div>
       <div class="sidebar__group">
         <div class="sidebar__title">Em planeamento</div>
         <ul class="sidebar__list">
           <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
-          <li><a href="#" class="is-disabled">Search <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
           <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
@@ -193,7 +194,7 @@
       <article id="block-toolbar" class="block-doc">
         <div class="block-doc__head">
           <span class="block-doc__num">3</span>
-          <h3 class="block-doc__title">Toolbar — esconder filtros + paginação + ordenação</h3>
+          <h3 class="block-doc__title">Toolbar — esconder filtros, paginação e ordenação</h3>
         </div>
         <p class="block-doc__desc">Barra com controlos da listagem. Esquerda: toggle para esconder/mostrar filtros (com bandeira de idioma). Direita: produtos por página (16/32/48) e dropdown de ordenação (Relevância, Preço, Novidade…).</p>
 
@@ -468,7 +469,7 @@
       <article id="block-pagination" class="block-doc">
         <div class="block-doc__head">
           <span class="block-doc__num">7</span>
-          <h3 class="block-doc__title">Pagination</h3>
+          <h3 class="block-doc__title">Paginação</h3>
         </div>
         <p class="block-doc__desc">Botões numerados com setas prev/next. A página activa em laranja brand. Páginas longas usam ellipsis (1 2 3 4 … 34). Centrada horizontalmente sob a grelha.</p>
 
@@ -629,7 +630,7 @@
 
       <section id="components" class="section">
         <div class="section__eyebrow">Componentes usados</div>
-        <h2 class="h-1">Componentes deste pattern</h2>
+        <h2 class="h-1">Componentes deste padrão</h2>
         <div class="comp-grid">
           <a href="product-card.html" class="comp-card">
             <div class="comp-card__preview"><div style="width: 60px; height: 60px; background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);"></div></div>
@@ -679,55 +680,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td><a href="#block-breadcrumbs">Breadcrumbs</a></td>
-                <td><code>.crumbs</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Igual à PDP</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td><a href="#block-title">Título da página</a></td>
-                <td><code>.plp__page-title</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Barra laranja decorativa</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td><a href="#block-toolbar">Toolbar</a></td>
-                <td><code>.plp__results-header</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Sort: <code>.plp__sort</code></td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td><a href="#block-filters">Filtros</a></td>
-                <td><code>.plp__sidebar</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Grupos: <code>.plp__filter-group</code></td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td><a href="#block-card">Product card</a></td>
-                <td><code>.product-card</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Componente standalone</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td><a href="#block-grid">Product grid</a></td>
-                <td><code>.product-grid</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>auto-fill minmax(280px)</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td><a href="#block-pagination">Pagination</a></td>
-                <td><code>.pager</code></td>
-                <td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td>
-                <td>Botões: <code>.pager__btn</code></td>
-              </tr>
+              <tr><td>1</td><td><a href="#block-breadcrumbs">Breadcrumbs</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Igual à PDP</td></tr>
+              <tr><td>2</td><td><a href="#block-title">Título da página</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Barra laranja decorativa</td></tr>
+              <tr><td>3</td><td><a href="#block-toolbar">Toolbar</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Ordenação + paginação</td></tr>
+              <tr><td>4</td><td><a href="#block-filters">Filtros</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Sidebar com grupos</td></tr>
+              <tr><td>5</td><td><a href="#block-card">Product card</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Componente standalone</td></tr>
+              <tr><td>6</td><td><a href="#block-grid">Product grid</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>auto-fill minmax(280px)</td></tr>
+              <tr><td>7</td><td><a href="#block-pagination">Paginação</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Numérica + navegação</td></tr>
             </tbody>
           </table>
         </div>
@@ -770,7 +729,7 @@
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-filters">4. Filtros</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-card">5. Product card</a></li>
         <li style="padding-left: 12px; font-size: 12px;"><a href="#block-grid">6. Product grid</a></li>
-        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-pagination">7. Pagination</a></li>
+        <li style="padding-left: 12px; font-size: 12px;"><a href="#block-pagination">7. Paginação</a></li>
         <li><a href="#rationale">UX rationale</a></li>
         <li><a href="#states">Variantes</a></li>
         <li><a href="#usage">Do's & Don'ts</a></li>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área de cliente · Dados Pessoais · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html">Overview</a></li>
+          <li><a href="pdp.html">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html" class="is-active">Área de cliente</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Área de cliente</div>
+        <ul class="sidebar__list">
+          <li><a href="area-cliente.html">Overview + Menu</a></li>
+          <li><a href="area-cliente-encomendas.html">Encomendas</a></li>
+          <li><a href="area-cliente-dados-pessoais.html" class="is-active">Dados Pessoais</a></li>
+          <li><a href="area-cliente-assistencia.html">Assistência Técnica</a></li>
+          <li><a href="area-cliente-favoritos.html">Favoritos</a></li>
+          <li><a href="#" class="is-disabled">Review de produtos <span class="badge">em breve</span></a></li>
+          <li><a href="area-cliente-newsletter.html">Newsletter</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Área de cliente · Dados Pessoais</div>
+        <h1 class="h-display hero__title">Dados Pessoais</h1>
+        <p class="lead">Página onde o utilizador gere os seus dados: informação pessoal, password e moradas (entrega e faturação). Três cards separados por área lógica + modal dedicado para editar/eliminar moradas.</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Reference — Figma design                            -->
+      <!-- ================================================== -->
+
+      <section id="reference" class="section">
+        <div class="section__eyebrow">Referência</div>
+        <h2 class="h-1">Design de referência (Figma)</h2>
+        <p>Screenshot do design original para orientar a implementação.</p>
+        <div class="anatomy-image">
+          <img class="anatomy-image__img" src="assets/img/area-cliente/dados-pessoais-desktop.jpg" alt="Dados pessoais — desktop" />
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Blocos                                              -->
+      <!-- ================================================== -->
+
+      <section id="blocks" class="section">
+        <div class="section__eyebrow">Blocos</div>
+        <h2 class="h-1">Componentes da página</h2>
+
+        <!-- 1. Card Dados utilizador -->
+        <article id="block-user-form" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">1</span>
+            <h3 class="block-doc__title">Dados utilizador</h3>
+          </div>
+          <p class="block-doc__desc">Form com nome, email e data de nascimento. Botão GUARDAR ocupa a largura total do card.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="account-card">
+                <h3 class="account-card__title">Dados utilizador</h3>
+                <div class="account-card__body">
+                  <div class="input-float">
+                    <label class="input-float__label">Nome</label>
+                    <input class="input-float__input" type="text" placeholder="Primeiro nome" />
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">Email</label>
+                    <input class="input-float__input" type="email" placeholder="Inserir o seu email" />
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">Data de nascimento</label>
+                    <input class="input-float__input" type="text" placeholder="dia / mês / ano" />
+                  </div>
+                  <button class="btn btn--primary btn--lg" style="width: 100%;">GUARDAR</button>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="account-card"&gt;
+  &lt;h3 class="account-card__title"&gt;
+    Dados utilizador
+  &lt;/h3&gt;
+  &lt;div class="account-card__body"&gt;
+    &lt;div class="input-float"&gt;
+      &lt;label&gt;Nome&lt;/label&gt;
+      &lt;input type="text" /&gt;
+    &lt;/div&gt;
+    &lt;div class="input-float"&gt;
+      &lt;label&gt;Email&lt;/label&gt;
+      &lt;input type="email" /&gt;
+    &lt;/div&gt;
+    &lt;div class="input-float"&gt;
+      &lt;label&gt;Data de nascimento&lt;/label&gt;
+      &lt;input type="text"
+             placeholder="dia / mês / ano" /&gt;
+    &lt;/div&gt;
+    &lt;button class="btn btn--primary
+                    btn--lg"&gt;
+      GUARDAR
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Campos: <strong>3</strong></span>
+            <span class="block-doc__meta-tag">Input: <strong>floating label</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 2. Card Alterar password -->
+        <article id="block-password" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">2</span>
+            <h3 class="block-doc__title">Alterar password</h3>
+          </div>
+          <p class="block-doc__desc">Form com password actual + nova + confirmar. Botão GUARDAR separado do card de dados para evitar submeter tudo ao mesmo tempo.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="account-card">
+                <h3 class="account-card__title">Alterar password</h3>
+                <div class="account-card__body">
+                  <div class="input-float">
+                    <label class="input-float__label">Password</label>
+                    <input class="input-float__input" type="password" placeholder="••••••••" />
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">Nova Password</label>
+                    <input class="input-float__input" type="password" placeholder="••••••••" />
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">Confirmar Password</label>
+                    <input class="input-float__input" type="password" placeholder="••••••••" />
+                  </div>
+                  <button class="btn btn--primary btn--lg" style="width: 100%;">GUARDAR</button>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="account-card"&gt;
+  &lt;h3&gt;Alterar password&lt;/h3&gt;
+  &lt;div class="account-card__body"&gt;
+    &lt;div class="input-float"&gt;
+      &lt;label&gt;Password&lt;/label&gt;
+      &lt;input type="password" /&gt;
+    &lt;/div&gt;
+    &lt;div class="input-float"&gt;
+      &lt;label&gt;Nova Password&lt;/label&gt;
+      &lt;input type="password" /&gt;
+    &lt;/div&gt;
+    &lt;div class="input-float"&gt;
+      &lt;label&gt;Confirmar Password&lt;/label&gt;
+      &lt;input type="password" /&gt;
+    &lt;/div&gt;
+    &lt;button class="btn btn--primary"&gt;
+      GUARDAR
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Fluxo: <strong>separado do card Dados</strong></span>
+            <span class="block-doc__meta-tag">Validação: <strong>nova = confirmar</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 3. Moradas com tabs -->
+        <article id="block-addresses" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">3</span>
+            <h3 class="block-doc__title">Moradas — entrega e faturação</h3>
+          </div>
+          <p class="block-doc__desc">Card com 2 tabs no topo (Moradas de entrega / Morada de faturação). Cada tab lista as moradas guardadas com radio button (default), menu de acções (⋮) e link "+ Adicionar outra morada".</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="account-card">
+                <div class="address-tabs">
+                  <button class="address-tab is-active">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    Moradas de entrega
+                  </button>
+                  <button class="address-tab">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Morada de faturação
+                  </button>
+                </div>
+
+                <div class="address-list">
+                  <label class="address-item is-selected">
+                    <input type="radio" name="delivery-address" checked />
+                    <div class="address-item__body">
+                      <p><strong>Nome:</strong> Pedro João Dias &nbsp;&nbsp; <strong>Morada:</strong> Rua dos pedros nº 5 1° direito</p>
+                      <p><strong>Código Postal:</strong> 1885-215 Lisboa &nbsp;&nbsp; <strong>País:</strong> Portugal &nbsp;&nbsp; <strong>Telefone:</strong> 917 845 556 &nbsp;&nbsp; <strong>NIF:</strong> 218 215 017</p>
+                    </div>
+                    <button class="address-item__menu" aria-label="Opções">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+                    </button>
+                  </label>
+
+                  <label class="address-item">
+                    <input type="radio" name="delivery-address" />
+                    <div class="address-item__body">
+                      <p><strong>Nome:</strong> Cátia da silva mendes Maria &nbsp;&nbsp; <strong>Morada:</strong> Avenida João de Silva, com a travessa da avenida</p>
+                      <p><strong>Código Postal:</strong> 1885-215 Lisboa &nbsp;&nbsp; <strong>País:</strong> Portugal &nbsp;&nbsp; <strong>Telefone:</strong> 917 845 556 &nbsp;&nbsp; <strong>NIF:</strong> 218 215 017</p>
+                    </div>
+                    <button class="address-item__menu" aria-label="Opções">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+                    </button>
+                  </label>
+                </div>
+
+                <a href="#" class="address-add">+ Adicionar outra morada</a>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="account-card"&gt;
+  &lt;div class="address-tabs" role="tablist"&gt;
+    &lt;button class="address-tab is-active"&gt;
+      Moradas de entrega
+    &lt;/button&gt;
+    &lt;button class="address-tab"&gt;
+      Morada de faturação
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="address-list"&gt;
+    &lt;label class="address-item is-selected"&gt;
+      &lt;input type="radio"
+             name="delivery-address"
+             checked /&gt;
+      &lt;div class="address-item__body"&gt;
+        &lt;p&gt;Nome · Morada&lt;/p&gt;
+        &lt;p&gt;CP · País · Telefone · NIF&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;button class="address-item__menu"&gt;
+        &lt;svg&gt;⋮&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;a href="#" class="address-add"&gt;
+    + Adicionar outra morada
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Tabs: <strong>Entrega / Faturação</strong></span>
+            <span class="block-doc__meta-tag">Selecção: <strong>radio button + destaque laranja</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 4. Modal editar morada -->
+        <article id="block-address-modal" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">4</span>
+            <h3 class="block-doc__title">Modal — editar morada</h3>
+          </div>
+          <p class="block-doc__desc">Modal com form completo para editar ou eliminar uma morada. Campos: Nome, Apelido, NIF, Morada, Código Postal, Cidade, País, Indicativo, Telefone. Dois CTAs: GUARDAR (primary) + ELIMINAR (secondary destructive).</p>
+
+          <div class="anatomy-image">
+            <img class="anatomy-image__img" src="assets/img/area-cliente/dados-pessoais-desktop-popup.png" alt="Modal editar morada — desktop" />
+          </div>
+
+          <div class="cb" style="margin-top: var(--space-4);">
+            <div class="cb__preview" style="padding: var(--space-6); justify-content: center;">
+              <div class="modal-preview" style="max-width: 420px; width: 100%;">
+                <div class="modal-preview__head">
+                  <h3>EDITAR MORADA</h3>
+                  <button class="modal-preview__close" aria-label="Fechar">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  </button>
+                </div>
+                <div class="modal-preview__body" style="display: flex; flex-direction: column; gap: var(--space-2);">
+                  <div class="input-float">
+                    <label class="input-float__label">Nome</label>
+                    <input class="input-float__input" type="text" value="Pedro João" />
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">Apelido</label>
+                    <input class="input-float__input" type="text" value="Dias" />
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">NIF</label>
+                    <input class="input-float__input" type="text" value="218 215 017" />
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">Morada *</label>
+                    <input class="input-float__input" type="text" value="Rua dos pedros nº 51 1° direito" />
+                  </div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2);">
+                    <div class="input-float">
+                      <label class="input-float__label">Código-Postal</label>
+                      <input class="input-float__input" type="text" value="1885-215" />
+                    </div>
+                    <div class="input-float">
+                      <label class="input-float__label">Cidade *</label>
+                      <input class="input-float__input" type="text" value="Lisboa" />
+                    </div>
+                  </div>
+                  <div class="input-float">
+                    <label class="input-float__label">País</label>
+                    <input class="input-float__input" type="text" value="Portugal" />
+                  </div>
+                  <div style="display: grid; grid-template-columns: 100px 1fr; gap: var(--space-2);">
+                    <div class="input-float">
+                      <label class="input-float__label">Indicativo</label>
+                      <input class="input-float__input" type="text" value="+351" />
+                    </div>
+                    <div class="input-float">
+                      <label class="input-float__label">Número de Telefone</label>
+                      <input class="input-float__input" type="text" value="917 845 556" />
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-preview__foot" style="flex-direction: column; gap: var(--space-2);">
+                  <button class="btn btn--primary" style="width:100%;">GUARDAR</button>
+                  <button class="btn btn--secondary" style="width:100%;">ELIMINAR</button>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="modal-preview"&gt;
+  &lt;div class="modal-preview__head"&gt;
+    &lt;h3&gt;EDITAR MORADA&lt;/h3&gt;
+    &lt;button class="modal-preview__close"&gt;
+      &lt;svg&gt;X&lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class="modal-preview__body"&gt;
+    &lt;!-- 9 campos: Nome, Apelido, NIF,
+         Morada, CP, Cidade, País,
+         Indicativo, Telefone --&gt;
+    &lt;div class="input-float"&gt;
+      &lt;label&gt;Nome&lt;/label&gt;
+      &lt;input /&gt;
+    &lt;/div&gt;
+    &lt;!-- ... --&gt;
+  &lt;/div&gt;
+
+  &lt;div class="modal-preview__foot"&gt;
+    &lt;button class="btn btn--primary"&gt;
+      GUARDAR
+    &lt;/button&gt;
+    &lt;button class="btn btn--secondary"&gt;
+      ELIMINAR
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Campos: <strong>9</strong></span>
+            <span class="block-doc__meta-tag">Acção destrutiva: <strong>ELIMINAR (com confirmação secundária)</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Decisões UX                                         -->
+      <!-- ================================================== -->
+
+      <section id="rationale" class="section">
+        <div class="section__eyebrow">Porquê</div>
+        <h2 class="h-1">Decisões UX</h2>
+
+        <h3 class="h-2">Password num card separado</h3>
+        <p>Alterar password é acção diferente de actualizar dados. Ter form separado com o seu próprio GUARDAR evita erros — utilizador não muda password sem querer ao actualizar o email.</p>
+
+        <h3 class="h-2">Moradas com tabs Entrega / Faturação</h3>
+        <p>O utilizador raramente muda ambas as moradas ao mesmo tempo. Tabs reduzem ruído visual e ajudam a focar numa de cada vez.</p>
+
+        <h3 class="h-2">Radio button para morada default</h3>
+        <p>Uma morada é sempre a default. Radio button é a metáfora certa (única selecção) — checkbox implicaria que pode haver várias default, o que não é o caso.</p>
+
+        <h3 class="h-2">Editar morada em modal, não inline</h3>
+        <p>O form tem 9 campos. Inline expandiria muito o card e faria perder contexto das outras moradas. Modal isola o contexto de edição.</p>
+
+        <h3 class="h-2">ELIMINAR dentro do modal, não no menu ⋮</h3>
+        <p>Acesso via modal reduz eliminações acidentais. Utilizador tem de abrir o form e confirmar dentro dele — mais deliberado.</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts                                       -->
+      <!-- ================================================== -->
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Um GUARDAR por card. Utilizador guarda dados independentemente.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Um botão GUARDAR global para todos os cards. Se o form da password falha, dados de utilizador também não guardam.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Validar match "Nova password = Confirmar" antes de submeter. Feedback inline sem esperar pelo servidor.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Erro só depois do POST. Utilizador escreve tudo e recebe erro sem saber o que corrigir.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">ELIMINAR morada com confirmação secundária ("Tens a certeza?") ou toast com "Anular" durante 5s.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Eliminar directamente sem confirmação. Utilizador perde morada guardada há anos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mobile                                              -->
+      <!-- ================================================== -->
+
+      <section id="mobile" class="section">
+        <div class="section__eyebrow">Mobile</div>
+        <h2 class="h-1">Dados Pessoais em mobile</h2>
+        <p>Cards fazem stack vertical (Dados → Password → Moradas). Modal de editar morada ocupa full-screen para dar espaço aos 9 campos.</p>
+        <div class="callout">
+          <strong>Ver design mobile</strong>
+          <a href="assets/img/area-cliente/dados-pessoais-mobile.png">Página mobile</a> · <a href="assets/img/area-cliente/dados-pessoais-mobile-popup.png">Modal editar morada mobile</a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Componentes                                         -->
+      <!-- ================================================== -->
+
+      <section id="components" class="section">
+        <div class="section__eyebrow">Componentes usados</div>
+        <h2 class="h-1">Componentes deste padrão</h2>
+        <div class="comp-grid">
+          <a href="input.html" class="comp-card">
+            <div class="comp-card__preview"><input type="text" placeholder="Campo" style="width: 100px; padding: 4px 6px; font-size: 11px; border: 1px solid var(--ui-card-border); border-radius: 4px;" /></div>
+            <div class="comp-card__title">Input (floating label)</div>
+          </a>
+          <a href="button.html" class="comp-card">
+            <div class="comp-card__preview"><button class="btn btn--primary btn--sm">GUARDAR</button></div>
+            <div class="comp-card__title">Button (GUARDAR / ELIMINAR)</div>
+          </a>
+          <a href="modal.html" class="comp-card">
+            <div class="comp-card__preview"><div style="width: 60px; height: 40px; background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);"></div></div>
+            <div class="comp-card__title">Modal (editar morada)</div>
+          </a>
+          <a href="tabs.html" class="comp-card">
+            <div class="comp-card__preview" style="padding: 0;"><div class="tabs" style="font-size: 11px;"><button class="tabs__item is-active" style="padding: 6px 10px; font-size: 11px;">Entrega</button><button class="tabs__item" style="padding: 6px 10px; font-size: 11px;">Faturação</button></div></div>
+            <div class="comp-card__title">Tabs (Moradas)</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mapping                                             -->
+      <!-- ================================================== -->
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes Design System ↔ Site real</h2>
+
+        <div class="table-wrap">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 28%;">Bloco</th>
+                <th style="width: 25%;">Classe Design System</th>
+                <th style="width: 25%;">Classe site real</th>
+                <th style="width: 17%;">Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="#block-user-form">Dados utilizador</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Card + 3 inputs</td></tr>
+              <tr><td>2</td><td><a href="#block-password">Alterar password</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Card + 3 inputs password</td></tr>
+              <tr><td>3</td><td><a href="#block-addresses">Moradas — tabs</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Tabs + lista + adicionar</td></tr>
+              <tr><td>4</td><td><a href="#block-address-modal">Modal editar morada</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>9 campos + Guardar/Eliminar</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Form labels</strong></td><td>Cada input com <code>&lt;label for="..."&gt;</code>. Floating label continua acessível para screen readers.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Password fields</strong></td><td><code>autocomplete="current-password"</code> e <code>autocomplete="new-password"</code>. Toggle "mostrar" opcional.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Tabs moradas</strong></td><td><code>role="tablist"</code> + <code>aria-selected</code>. Setas do teclado navegam entre tabs.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Radio moradas</strong></td><td>Todos os radios partilham <code>name="default-address"</code>. Setas navegam.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Modal</strong></td><td><code>role="dialog"</code>, focus trap, Esc fecha. Primeiro campo recebe foco.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">ELIMINAR</strong></td><td>Confirmação secundária obrigatória. Se possível, undo via toast durante 5s.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#reference">Referência Figma</a></li>
+        <li><a href="#blocks"><strong>Blocos</strong></a></li>
+        <li><a href="#block-user-form" style="padding-left: 12px;">→ Dados utilizador</a></li>
+        <li><a href="#block-password" style="padding-left: 12px;">→ Alterar password</a></li>
+        <li><a href="#block-addresses" style="padding-left: 12px;">→ Moradas</a></li>
+        <li><a href="#block-address-modal" style="padding-left: 12px;">→ Modal editar</a></li>
+        <li><a href="#rationale">Decisões UX</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#mapping"><strong>Mapping DS ↔ site</strong></a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="area-cliente-encomendas.html">← Encomendas</a> · <a href="area-cliente-assistencia.html">Assistência Técnica →</a></div>
+  </footer>
+
+</body>
+</html>

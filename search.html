@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html">Overview</a></li>
+          <li><a href="pdp.html">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html" class="is-active">Search</a></li>
+          <li><a href="area-cliente.html">Área de cliente</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Em planeamento</div>
+        <ul class="sidebar__list">
+          <li><a href="#" class="is-disabled">Checkout <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Empty states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Error states <span class="badge">em breve</span></a></li>
+          <li><a href="#" class="is-disabled">Comparador <span class="badge">em breve</span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Pattern · Search</div>
+        <h1 class="h-display hero__title">Search</h1>
+        <p class="lead">A pesquisa é o atalho do utilizador que já sabe o que quer. Documentada em três zonas: <strong style="color: var(--text-primary)">search bar</strong> no header, <strong style="color: var(--text-primary)">sugestões live</strong> à medida que escreve, e <strong style="color: var(--text-primary)">página de resultados</strong> em <code>/pesquisa</code>.</p>
+        <div class="callout">
+          <strong>Princípio central</strong>
+          Bons resultados em menos cliques. Sugestões úteis enquanto escreve, resultados precisos e refinamento simples quando há demasiados.
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Anatomia                                            -->
+      <!-- ================================================== -->
+
+      <section id="anatomy" class="section">
+        <div class="section__eyebrow">Anatomia</div>
+        <h2 class="h-1">Três zonas</h2>
+        <p>A pesquisa percorre três momentos na jornada. Cada um tem objectivo distinto.</p>
+
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Zona</th><th>Quando aparece</th><th>Objectivo</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Search bar</strong></td><td>Sempre visível no header. Foco automático em <code>/pesquisa</code>.</td><td>Ponto de entrada. Sinal claro de "começa aqui".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Sugestões live</strong></td><td>Dropdown a partir de 2 caracteres. Debounce 200ms.</td><td>Atalho — query, produto, categoria ou marca sem submeter.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Página de resultados</strong></td><td>URL <code>/pesquisa?q=...</code>. Após submit ou enter.</td><td>Lista completa, filtrável. Igual a PLP mas com contexto da query.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Layout                                              -->
+      <!-- ================================================== -->
+
+      <section id="layout" class="section">
+        <div class="section__eyebrow">Layout</div>
+        <h2 class="h-1">Estrutura</h2>
+        <p>Search bar 480px no centro do header (desktop). Sugestões dropdown alinhadas com a bar, mesma largura. Página de resultados reutiliza layout da PLP.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Breakpoint</th><th>Search bar</th><th>Sugestões</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">≥ 1024px</strong></td><td>480px no header.</td><td>Dropdown 480px, max 8 sugestões + secção produtos.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">768–1023px</strong></td><td>Expansível por ícone.</td><td>Mesma lógica, ajusta à largura disponível.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">&lt; 768px</strong></td><td>Ícone → overlay full-screen.</td><td>Lista vertical full-width.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- BLOCKS — Search bar + sugestões                     -->
+      <!-- ================================================== -->
+
+      <section id="blocks-bar" class="section">
+        <div class="section__eyebrow">Blocos · Entrada</div>
+        <h2 class="h-1">Search bar e sugestões</h2>
+        <p>Bar central no header. Sugestões aparecem como dropdown abaixo da bar quando o utilizador escreve.</p>
+
+        <!-- 1. Search bar -->
+        <article id="block-bar" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">1</span>
+            <h3 class="block-doc__title">Search bar</h3>
+          </div>
+          <p class="block-doc__desc">Input com ícone de lupa à esquerda e botão limpar (×) à direita quando há texto. Placeholder específico — "Procura por produto, marca ou categoria" — em vez do genérico "Pesquisar".</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="padding: var(--space-6); justify-content: center;">
+              <div class="search-bar">
+                <svg class="search-bar__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="search" class="search-bar__input" placeholder="Procura por produto, marca ou categoria" value="xiaomi 15t" aria-label="Pesquisar" />
+                <button class="search-bar__clear" type="button" aria-label="Limpar pesquisa">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="search-bar"&gt;
+  &lt;svg class="search-bar__icon"&gt;...&lt;/svg&gt;
+  &lt;input type="search"
+         class="search-bar__input"
+         placeholder="Procura por produto, marca ou categoria"
+         aria-label="Pesquisar" /&gt;
+  &lt;button class="search-bar__clear"
+          aria-label="Limpar pesquisa"&gt;
+    &lt;svg&gt;...&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Width: <strong>480px (desktop)</strong></span>
+            <span class="block-doc__meta-tag">Min chars: <strong>2 para abrir dropdown</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 2. Suggestions dropdown -->
+        <article id="block-suggestions" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">2</span>
+            <h3 class="block-doc__title">Sugestões live</h3>
+          </div>
+          <p class="block-doc__desc">Dropdown com 4 secções: queries sugeridas, produtos, categorias, marcas. Navegável por teclado (↑↓ + Enter). Termos da query a bold no resultado.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="padding: var(--space-6); justify-content: center; align-items: flex-start;">
+              <div class="search-suggest">
+                <div class="search-suggest__section">
+                  <div class="search-suggest__title">Sugestões</div>
+                  <ul class="search-suggest__list">
+                    <li class="search-suggest__item is-active">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                      <span><strong>xiaomi 15t</strong> pro 256gb</span>
+                    </li>
+                    <li class="search-suggest__item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                      <span><strong>xiaomi 15t</strong> capa</span>
+                    </li>
+                    <li class="search-suggest__item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                      <span><strong>xiaomi 15t</strong> película</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="search-suggest__section">
+                  <div class="search-suggest__title">Produtos</div>
+                  <ul class="search-suggest__list">
+                    <li class="search-suggest__product">
+                      <div class="search-suggest__product-img">
+                        <div class="pdp__gallery-placeholder" style="font-size: 9px;">img</div>
+                      </div>
+                      <div class="search-suggest__product-info">
+                        <p class="search-suggest__product-name">Smartphone <strong>Xiaomi 15T</strong> Pro 256GB Cinza</p>
+                        <span class="search-suggest__product-price">799,90 €</span>
+                      </div>
+                    </li>
+                    <li class="search-suggest__product">
+                      <div class="search-suggest__product-img">
+                        <div class="pdp__gallery-placeholder" style="font-size: 9px;">img</div>
+                      </div>
+                      <div class="search-suggest__product-info">
+                        <p class="search-suggest__product-name">Smartphone <strong>Xiaomi 15T</strong> 512GB Preto</p>
+                        <span class="search-suggest__product-price">699,90 €</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="search-suggest__section">
+                  <div class="search-suggest__title">Categorias e marcas</div>
+                  <ul class="search-suggest__list">
+                    <li class="search-suggest__item">
+                      <span class="search-suggest__tag">Categoria</span>
+                      Smartphones <strong>Xiaomi</strong>
+                    </li>
+                    <li class="search-suggest__item">
+                      <span class="search-suggest__tag">Marca</span>
+                      <strong>Xiaomi</strong>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="search-suggest__footer">
+                  <a href="#" class="search-suggest__view-all">Ver todos os 47 resultados para "xiaomi 15t"</a>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="search-suggest" role="listbox"&gt;
+  &lt;div class="search-suggest__section"&gt;
+    &lt;div class="search-suggest__title"&gt;Sugestões&lt;/div&gt;
+    &lt;ul class="search-suggest__list"&gt;
+      &lt;li class="search-suggest__item is-active"
+          role="option" aria-selected="true"&gt;
+        &lt;svg&gt;...&lt;/svg&gt;
+        &lt;span&gt;&lt;strong&gt;xiaomi 15t&lt;/strong&gt; pro&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;div class="search-suggest__section"&gt;
+    &lt;div class="search-suggest__title"&gt;Produtos&lt;/div&gt;
+    &lt;ul class="search-suggest__list"&gt;
+      &lt;li class="search-suggest__product"&gt;
+        &lt;div class="search-suggest__product-img"&gt;...&lt;/div&gt;
+        &lt;div class="search-suggest__product-info"&gt;
+          &lt;p class="search-suggest__product-name"&gt;...&lt;/p&gt;
+          &lt;span class="search-suggest__product-price"&gt;
+            799,90 €
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;div class="search-suggest__footer"&gt;
+    &lt;a class="search-suggest__view-all"&gt;
+      Ver todos os 47 resultados
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Debounce: <strong>200ms</strong></span>
+            <span class="block-doc__meta-tag">Max sugestões: <strong>3 + 2 produtos + 2 cat/marca</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 3. Empty state (foco sem texto) -->
+        <article id="block-suggest-empty" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">3</span>
+            <h3 class="block-doc__title">Search bar em foco — sem texto</h3>
+          </div>
+          <p class="block-doc__desc">Quando o utilizador faz foco mas ainda não escreveu nada. Mostra <strong style="color:var(--text-primary)">pesquisas recentes</strong> (se houver histórico) e <strong style="color:var(--text-primary)">pesquisas populares</strong>.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="padding: var(--space-6); justify-content: center; align-items: flex-start;">
+              <div class="search-suggest">
+                <div class="search-suggest__section">
+                  <div class="search-suggest__title">Recentes</div>
+                  <ul class="search-suggest__list">
+                    <li class="search-suggest__item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                      <span>macbook pro m4</span>
+                    </li>
+                    <li class="search-suggest__item">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                      <span>rtx 5080</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="search-suggest__section">
+                  <div class="search-suggest__title">Populares</div>
+                  <div class="search-suggest__chips">
+                    <a href="#" class="search-suggest__chip">iPhone 17</a>
+                    <a href="#" class="search-suggest__chip">PS5 Pro</a>
+                    <a href="#" class="search-suggest__chip">RTX 5090</a>
+                    <a href="#" class="search-suggest__chip">Steam Deck</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="search-suggest"&gt;
+  &lt;div class="search-suggest__section"&gt;
+    &lt;div class="search-suggest__title"&gt;Recentes&lt;/div&gt;
+    &lt;ul class="search-suggest__list"&gt;
+      &lt;li class="search-suggest__item"&gt;
+        &lt;svg&gt;... ícone histórico&lt;/svg&gt;
+        macbook pro m4
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="search-suggest__section"&gt;
+    &lt;div class="search-suggest__title"&gt;Populares&lt;/div&gt;
+    &lt;div class="search-suggest__chips"&gt;
+      &lt;a class="search-suggest__chip"&gt;iPhone 17&lt;/a&gt;
+      &lt;a class="search-suggest__chip"&gt;PS5 Pro&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- BLOCKS — Página de resultados                       -->
+      <!-- ================================================== -->
+
+      <section id="blocks-results" class="section">
+        <div class="section__eyebrow">Blocos · Resultados</div>
+        <h2 class="h-1">Página de resultados</h2>
+        <p>URL <code>/pesquisa?q=xiaomi+15t</code>. Layout reutiliza a PLP — filtros laterais + grid de produtos. Distinção: header com a query + contagem + acções específicas.</p>
+
+        <!-- 4. Results header -->
+        <article id="block-results-header" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">4</span>
+            <h3 class="block-doc__title">Header de resultados</h3>
+          </div>
+          <p class="block-doc__desc">Título com a query entre aspas + contagem. Subtítulo "Did you mean?" quando a pesquisa tem typo provável.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="search-results-header">
+                <h1 class="search-results-header__title">
+                  Resultados para <span class="search-results-header__query">"xiaomi 15t"</span>
+                  <span class="search-results-header__count">· 47 produtos</span>
+                </h1>
+                <p class="search-results-header__did-you-mean">
+                  Quis dizer <a href="#">xiaomi 14t</a>?
+                </p>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="search-results-header"&gt;
+  &lt;h1 class="search-results-header__title"&gt;
+    Resultados para
+    &lt;span class="search-results-header__query"&gt;
+      "xiaomi 15t"
+    &lt;/span&gt;
+    &lt;span class="search-results-header__count"&gt;
+      · 47 produtos
+    &lt;/span&gt;
+  &lt;/h1&gt;
+  &lt;p class="search-results-header__did-you-mean"&gt;
+    Quis dizer &lt;a href="?q=xiaomi 14t"&gt;
+      xiaomi 14t
+    &lt;/a&gt;?
+  &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">"Did you mean": <strong>só com fuzzy match</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+
+        <!-- 5. Results grid (refere PLP) -->
+        <article id="block-results-grid" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">5</span>
+            <h3 class="block-doc__title">Filtros e grid de resultados</h3>
+          </div>
+          <p class="block-doc__desc">Reutiliza integralmente os blocos da <a href="plp.html">PLP</a>: toolbar, filtros sidebar, grid de product cards, paginação. Single source of truth — manter consistência entre PLP e Search.</p>
+
+          <div class="callout">
+            <strong>Reaproveitamento</strong>
+            Não duplicar componentes. Filtros, toolbar, product card, grid e paginação vivem na <a href="plp.html#blocks">PLP</a>. O Search só adiciona o header de resultados por cima.
+          </div>
+        </article>
+
+        <!-- 6. No results -->
+        <article id="block-no-results" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">6</span>
+            <h3 class="block-doc__title">Sem resultados</h3>
+          </div>
+          <p class="block-doc__desc">Quando a pesquisa não devolve nada. Empty state com mensagem + sugestões úteis — não termina a jornada do utilizador.</p>
+
+          <div class="cb">
+            <div class="cb__preview" style="display: block; padding: var(--space-4);">
+              <div class="search-empty">
+                <svg class="search-empty__icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--ui-text-muted)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                <h2 class="search-empty__title">Sem resultados para "asgjklh"</h2>
+                <p class="search-empty__msg">Verifica a ortografia ou tenta termos mais genéricos.</p>
+
+                <div class="search-empty__section">
+                  <p class="search-empty__section-title">Tenta estas pesquisas populares:</p>
+                  <div class="search-suggest__chips" style="justify-content: center;">
+                    <a href="#" class="search-suggest__chip">Portátil</a>
+                    <a href="#" class="search-suggest__chip">RTX 5070</a>
+                    <a href="#" class="search-suggest__chip">SSD 2TB</a>
+                    <a href="#" class="search-suggest__chip">Auriculares</a>
+                  </div>
+                </div>
+
+                <div class="search-empty__actions">
+                  <a href="#" class="btn btn--secondary btn--sm">Ver categorias</a>
+                  <a href="#" class="btn btn--primary btn--sm">Voltar à página inicial</a>
+                </div>
+              </div>
+            </div>
+            <div class="cb__code">
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="search-empty"&gt;
+  &lt;svg class="search-empty__icon"&gt;...&lt;/svg&gt;
+  &lt;h2 class="search-empty__title"&gt;
+    Sem resultados para "asgjklh"
+  &lt;/h2&gt;
+  &lt;p class="search-empty__msg"&gt;
+    Verifica a ortografia ou tenta
+    termos mais genéricos.
+  &lt;/p&gt;
+
+  &lt;div class="search-empty__section"&gt;
+    &lt;p class="search-empty__section-title"&gt;
+      Tenta estas pesquisas populares:
+    &lt;/p&gt;
+    &lt;div class="search-suggest__chips"&gt;
+      &lt;a class="search-suggest__chip"&gt;Portátil&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="search-empty__actions"&gt;
+    &lt;a class="btn btn--secondary"&gt;Ver categorias&lt;/a&gt;
+    &lt;a class="btn btn--primary"&gt;Voltar à inicial&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Sempre com: <strong>sugestões + CTAs</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a confirmar</strong></span>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Estados                                             -->
+      <!-- ================================================== -->
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Estados da pesquisa</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Estado</th><th>O que aparece</th><th>Notas</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Bar default</strong></td><td>Input vazio com placeholder.</td><td>—</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Bar em foco (sem texto)</strong></td><td>Dropdown com Recentes + Populares.</td><td>Histórico via localStorage.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">A escrever (1 char)</strong></td><td>Sem dropdown ainda. Aguarda 2+ caracteres.</td><td>Evita ruído.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">A escrever (2+ chars)</strong></td><td>Dropdown com sugestões + produtos + categorias.</td><td>Debounce 200ms.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Loading</strong></td><td>Skeleton de 3 sugestões + spinner pequeno no input.</td><td>Sem flash &lt; 100ms.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Submit → resultados</strong></td><td>Navegação para <code>/pesquisa?q=...</code>.</td><td>Header com query + contagem.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Resultados com typo</strong></td><td>Mostra resultados + "Quis dizer X?".</td><td>Fuzzy match.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Sem resultados</strong></td><td>Empty state com sugestões e CTAs.</td><td>Nunca dead-end.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- UX Rationale                                        -->
+      <!-- ================================================== -->
+
+      <section id="rationale" class="section">
+        <div class="section__eyebrow">Porquê</div>
+        <h2 class="h-1">Decisões UX</h2>
+
+        <h3 class="h-2">Search bar sempre visível no header</h3>
+        <p>A pesquisa é o atalho do utilizador que já tem intenção. Esconder atrás de um ícone é fricção — bar visível baixa o tempo até ao primeiro resultado.</p>
+
+        <h3 class="h-2">Sugestões a partir de 2 caracteres</h3>
+        <p>Com 1 caracter ainda não há sinal útil — sugestões com "x" são ruído. 2 é o mínimo para começar a discriminar.</p>
+
+        <h3 class="h-2">Debounce de 200ms</h3>
+        <p>Equilíbrio entre instantâneo e eficiente. Menos de 150ms dispara dezenas de pedidos enquanto o utilizador escreve. Mais de 300ms começa a parecer lento.</p>
+
+        <h3 class="h-2">Mistura tipos de sugestão</h3>
+        <p>Queries (atalho rápido), produtos (resultado directo), categorias e marcas (refinamento). O utilizador escolhe a granularidade que prefere — não força um único caminho.</p>
+
+        <h3 class="h-2">"Did you mean" só com fuzzy match</h3>
+        <p>Não mostrar sempre. Só quando o algoritmo tem confiança alta de typo. Sugestão errada é pior do que ausência de sugestão.</p>
+
+        <h3 class="h-2">No-results nunca é dead-end</h3>
+        <p>Sem resultados continua a ser uma página útil. Sugestões populares + CTAs claros mantêm a jornada. Mensagem em humano — "Verifica a ortografia" — não código de erro.</p>
+
+        <h3 class="h-2">Histórico via localStorage</h3>
+        <p>Recentes sem login obrigatório. Privacidade por defeito — só no browser do utilizador. Pode ser limpo no perfil.</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts                                       -->
+      <!-- ================================================== -->
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Placeholder específico: "Procura por produto, marca ou categoria". Sugere o que se pode procurar.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Pesquisar..." genérico. Não dá pista do que pode ser procurado.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Highlight do termo da query no resultado (a bold). Confirma visualmente o match.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Sugestões sem highlight. Utilizador tem de procurar o termo dentro do texto.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Sem resultados → sugestões populares + CTA. Mantém a jornada activa.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">"Sem resultados." página em branco. É um dead-end frustrante.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Navegação por teclado ↑↓ + Enter. Esc fecha o dropdown.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Sugestões só com mouse. Power users e acessibilidade ficam fora.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">URL com query (<code>?q=xiaomi</code>). Partilhável e bookmarkable.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Estado interno só. Partilhar link não reproduz a mesma pesquisa.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mobile                                              -->
+      <!-- ================================================== -->
+
+      <section id="mobile" class="section">
+        <div class="section__eyebrow">Mobile</div>
+        <h2 class="h-1">Search em mobile</h2>
+        <p>Search bar passa a ícone no header. Tocar abre overlay full-screen com input no topo + sugestões abaixo. Botão "Cancelar" no canto direito para fechar.</p>
+        <div class="callout">
+          <strong>Auto-focus no input</strong>
+          Quando o overlay abre, o input recebe focus automaticamente e o teclado mobile abre. Reduz cliques — utilizador pode começar a escrever logo.
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Componentes usados                                  -->
+      <!-- ================================================== -->
+
+      <section id="components" class="section">
+        <div class="section__eyebrow">Componentes usados</div>
+        <h2 class="h-1">Componentes deste padrão</h2>
+        <div class="comp-grid">
+          <a href="input.html" class="comp-card">
+            <div class="comp-card__preview"><input type="text" placeholder="Search" style="width: 90px; padding: 4px 6px; font-size: 11px; border: 1px solid var(--ui-card-border); border-radius: 4px;" /></div>
+            <div class="comp-card__title">Input (search)</div>
+          </a>
+          <a href="product-card.html" class="comp-card">
+            <div class="comp-card__preview"><div style="width: 60px; height: 60px; background: var(--bg-card); border: 1px solid var(--ui-card-border); border-radius: var(--radius-md);"></div></div>
+            <div class="comp-card__title">Product Card</div>
+          </a>
+          <a href="price.html" class="comp-card">
+            <div class="comp-card__preview"><span class="price price--sm"><span class="price__current">799,90 €</span></span></div>
+            <div class="comp-card__title">Price</div>
+          </a>
+          <a href="button.html" class="comp-card">
+            <div class="comp-card__preview"><button class="btn btn--secondary btn--sm">Ver mais</button></div>
+            <div class="comp-card__title">Button</div>
+          </a>
+          <a href="plp.html" class="comp-card">
+            <div class="comp-card__preview" style="padding: 4px;"><div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2px; width: 100%; height: 100%;"><div style="background: var(--bg-card); border-radius: 1px;"></div><div style="background: var(--bg-card); border-radius: 1px;"></div></div></div>
+            <div class="comp-card__title">PLP (reaproveita)</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mapping                                             -->
+      <!-- ================================================== -->
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes Design System ↔ Site real</h2>
+        <p>A preencher conforme se inspecciona a pesquisa live na pcdiga.com.</p>
+
+        <div class="table-wrap">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 25%;">Bloco</th>
+                <th style="width: 30%;">Classe Design System</th>
+                <th style="width: 25%;">Classe site real</th>
+                <th style="width: 15%;">Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="#block-bar">Barra de pesquisa</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Centro do header</td></tr>
+              <tr><td>2</td><td><a href="#block-suggestions">Sugestões live</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Secções: sugestões, produtos, categorias/marcas</td></tr>
+              <tr><td>3</td><td><a href="#block-suggest-empty">Foco sem texto</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Histórico no localStorage</td></tr>
+              <tr><td>4</td><td><a href="#block-results-header">Cabeçalho de resultados</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
+              <tr><td>5</td><td><a href="#block-results-grid">Grelha de resultados</a></td><td>Reutiliza PLP</td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>Sem duplicação</td></tr>
+              <tr><td>6</td><td><a href="#block-no-results">Sem resultados</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a confirmar</span></td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Input</strong></td><td><code>type="search"</code> + <code>aria-label="Pesquisar"</code>. Mobile: teclado com botão "Procurar".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Combobox</strong></td><td>Dropdown anunciado com <code>role="listbox"</code>. Bar com <code>aria-expanded</code> e <code>aria-controls</code> a apontar ao dropdown.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Sugestões</strong></td><td>Cada item <code>role="option"</code> + <code>aria-selected="true"</code> no item activo.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Teclado</strong></td><td>↑↓ navega, Enter selecciona, Esc fecha. Tab sai do dropdown sem o fechar.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Botão limpar</strong></td><td><code>aria-label="Limpar pesquisa"</code>. Foco volta ao input após clicar.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Contagem resultados</strong></td><td>Anunciada via <code>aria-live="polite"</code>: "47 produtos encontrados para xiaomi 15t".</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">No results</strong></td><td>Heading h2 com a mensagem. Não usar só ícone — screen readers precisam de texto.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#anatomy">Anatomia</a></li>
+        <li><a href="#layout">Layout</a></li>
+        <li><a href="#blocks-bar"><strong>Search bar</strong></a></li>
+        <li><a href="#block-bar" style="padding-left: 12px;">→ Bar</a></li>
+        <li><a href="#block-suggestions" style="padding-left: 12px;">→ Sugestões</a></li>
+        <li><a href="#block-suggest-empty" style="padding-left: 12px;">→ Foco sem texto</a></li>
+        <li><a href="#blocks-results"><strong>Resultados</strong></a></li>
+        <li><a href="#block-results-header" style="padding-left: 12px;">→ Header</a></li>
+        <li><a href="#block-results-grid" style="padding-left: 12px;">→ Grid</a></li>
+        <li><a href="#block-no-results" style="padding-left: 12px;">→ Sem resultados</a></li>
+        <li><a href="#states">Estados</a></li>
+        <li><a href="#rationale">Decisões UX</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#components">Componentes</a></li>
+        <li><a href="#mapping"><strong>Mapping DS ↔ site</strong></a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="cart.html">← Cart</a> · <a href="area-cliente.html">Área de cliente →</a></div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área de cliente · Encomendas · PCDIGA Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="header__brand">
+      <span class="header__brand-mark">P</span>
+      <span class="header__brand-text">PCDIGA<small>Design System</small></span>
+    </a>
+    <nav class="header__nav">
+      <a href="index.html">Início</a>
+      <a href="principles.html">Princípios</a>
+      <a href="foundations.html">Foundations</a>
+      <a href="components.html">Componentes</a>
+      <a href="patterns.html" class="is-active">Padrões</a>
+      <a href="content.html">Conteúdo</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Mudar tema" title="Mudar tema">
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="layout layout--with-toc">
+    <aside class="sidebar">
+      <div class="sidebar__group">
+        <div class="sidebar__title">Padrões</div>
+        <ul class="sidebar__list">
+          <li><a href="patterns.html">Overview</a></li>
+          <li><a href="pdp.html">PDP — Página de produto</a></li>
+          <li><a href="plp.html">PLP — Listings</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="area-cliente.html" class="is-active">Área de cliente</a></li>
+        </ul>
+      </div>
+      <div class="sidebar__group">
+        <div class="sidebar__title">Área de cliente</div>
+        <ul class="sidebar__list">
+          <li><a href="area-cliente.html">Overview + Menu</a></li>
+          <li><a href="area-cliente-encomendas.html" class="is-active">Encomendas</a></li>
+          <li><a href="area-cliente-dados-pessoais.html">Dados Pessoais</a></li>
+          <li><a href="area-cliente-assistencia.html">Assistência Técnica</a></li>
+          <li><a href="area-cliente-favoritos.html">Favoritos</a></li>
+          <li><a href="#" class="is-disabled">Review de produtos <span class="badge">em breve</span></a></li>
+          <li><a href="area-cliente-newsletter.html">Newsletter</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section id="overview" class="hero">
+        <div class="hero__eyebrow">Área de cliente · Encomendas</div>
+        <h1 class="h-display hero__title">As minhas encomendas</h1>
+        <p class="lead">Lista de todas as encomendas do utilizador com filtros por estado. Cada encomenda expande para mostrar produtos, moradas, envio, pagamento e resumo. Acções por produto (reencomendar, pedir assistência, devolver) abrem modais ou levam a fluxos dedicados.</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Referência — página completa                        -->
+      <!-- ================================================== -->
+
+      <section id="reference" class="section">
+        <div class="section__eyebrow">Referência</div>
+        <h2 class="h-1">Design de referência (Figma)</h2>
+        <p>Screenshot do design original — enquanto os PNGs individuais por bloco não estão exportados, esta imagem serve de guia global.</p>
+        <div class="anatomy-image">
+          <img class="anatomy-image__img" src="assets/img/area-cliente/encomendas-desktop.jpg" alt="Encomendas — página completa desktop" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div class="block-ref__placeholder" style="display:none;">
+            PNG por adicionar: <code>assets/img/area-cliente/encomendas-desktop.jpg</code>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Blocos                                              -->
+      <!-- ================================================== -->
+
+      <section id="blocks" class="section">
+        <div class="section__eyebrow">Blocos</div>
+        <h2 class="h-1">Componentes da página</h2>
+
+        <!-- 1. Filtros de estado -->
+        <article id="block-filters" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">1</span>
+            <h3 class="block-doc__title">Filtros de estado</h3>
+          </div>
+          <p class="block-doc__desc">Tabs pill-style com contagem entre parênteses. "Todos" é o filtro por defeito. Contagens reflectem quantas encomendas há em cada estado.</p>
+
+          <div class="block-ref">
+            <figure class="block-ref__figma">
+              <div class="block-ref__label">Figma (PNG real)</div>
+              <img src="assets/img/area-cliente/encomendas-filtros.png" alt="Filtros de estado — Figma" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+              <div class="block-ref__placeholder" style="display:none;">
+                Exportar do Figma:<br /><code>encomendas-filtros.png</code>
+              </div>
+            </figure>
+            <div class="block-ref__code-wrap">
+              <div class="block-ref__label">HTML</div>
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="__filtros" role="tablist"&gt;
+  &lt;button class="__filtro is-active"&gt;
+    Todos
+  &lt;/button&gt;
+  &lt;button class="__filtro"&gt;
+    Em aberto &lt;span&gt;(1)&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="__filtro"&gt;
+    Enviada &lt;span&gt;(2)&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="__filtro"&gt;
+    Aguarda pagamento &lt;span&gt;(1)&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="__filtro"&gt;
+    Entregue &lt;span&gt;(1)&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Default: <strong>Todos</strong></span>
+            <span class="block-doc__meta-tag">Contagens: <strong>entre parênteses</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a definir</strong></span>
+          </div>
+        </article>
+
+        <!-- 2. Encomenda expandida -->
+        <article id="block-order-expanded" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">2</span>
+            <h3 class="block-doc__title">Encomenda — expandida</h3>
+          </div>
+          <p class="block-doc__desc">Header (nº + data + total + fatura + estado + chevron), lista de produtos com <strong style="color:var(--text-primary)">acções inline</strong> por produto (ícone + texto, estilo link — não filtros), rodapé com faturação, entrega, envio, pagamento e resumo.</p>
+
+          <div class="block-ref">
+            <figure class="block-ref__figma">
+              <div class="block-ref__label">Figma (PNG real)</div>
+              <img src="assets/img/area-cliente/encomendas-card-expandido.png" alt="Card expandido — Figma" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+              <div class="block-ref__placeholder" style="display:none;">
+                Exportar do Figma:<br /><code>encomendas-card-expandido.png</code>
+              </div>
+            </figure>
+            <div class="block-ref__code-wrap">
+              <div class="block-ref__label">HTML</div>
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;article class="__encomenda is-expanded"&gt;
+  &lt;header class="__encomenda-head"&gt;
+    &lt;div class="__encomenda-meta"&gt;
+      Encomenda nº · Data · Total · Fatura
+    &lt;/div&gt;
+    &lt;div class="__encomenda-status"&gt;
+      &lt;span class="__estado--pending"&gt;
+        AGUARDA PAGAMENTO
+      &lt;/span&gt;
+      &lt;button aria-expanded="true"&gt;⌃&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;ul class="__encomenda-linhas"&gt;
+    &lt;li class="__linha"&gt;
+      &lt;img /&gt;
+      &lt;div class="__linha-info"&gt;
+        &lt;p&gt;Nome do produto&lt;/p&gt;
+        &lt;div class="__acoes"&gt;
+          &lt;a href="#reencomendar"&gt;
+            &lt;svg&gt;carrinho&lt;/svg&gt; Reencomendar
+          &lt;/a&gt;
+          &lt;a href="#assistencia"&gt;
+            &lt;svg&gt;?&lt;/svg&gt; Assistência Técnica
+          &lt;/a&gt;
+          &lt;a href="#devolver"&gt;
+            &lt;svg&gt;lixo&lt;/svg&gt; Devolver produto
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="__linha-totais"&gt;
+        1 × &nbsp; 35,45 €
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;footer class="__encomenda-foot"&gt;
+    Faturação · Entrega · Envio · Resumo
+  &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+            </div>
+          </div>
+
+          <h4 class="h-2" style="font-size: 15px; margin-top: var(--space-4);">Acções por produto</h4>
+          <p style="font-size: 13px; color: var(--ui-text-muted);">Cada acção é um <strong style="color:var(--text-primary)">link inline com ícone</strong> — não um botão ou filtro. Abre modal (Devolver) ou navega para outro local (Reencomendar → adiciona ao carrinho; Assistência Técnica → formulário RMA).</p>
+
+          <div class="table-wrap" style="margin-top: var(--space-3);">
+            <table>
+              <thead><tr><th>Acção</th><th>Ícone</th><th>Resultado</th></tr></thead>
+              <tbody>
+                <tr><td><strong style="color:var(--text-primary)">Reencomendar</strong></td><td>Carrinho</td><td>Adiciona o produto ao carrinho + toast "Produto adicionado".</td></tr>
+                <tr><td><strong style="color:var(--text-primary)">Assistência Técnica</strong></td><td>Ponto de interrogação</td><td>Navega para formulário de pedido de RMA com produto pré-preenchido.</td></tr>
+                <tr><td><strong style="color:var(--text-primary)">Devolver produto</strong></td><td>Caixote lixo</td><td>Abre modal de confirmação (bloco 4).</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Acções: <strong>link inline com ícone (não pill)</strong></span>
+            <span class="block-doc__meta-tag">Rodapé: <strong>4 colunas desktop</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a definir</strong></span>
+          </div>
+        </article>
+
+        <!-- 3. Encomenda colapsada -->
+        <article id="block-order-collapsed" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">3</span>
+            <h3 class="block-doc__title">Encomenda — colapsada</h3>
+          </div>
+          <p class="block-doc__desc">Só header + thumbnails dos primeiros produtos com contador "+N" quando há mais. Default em encomendas antigas.</p>
+
+          <div class="block-ref">
+            <figure class="block-ref__figma">
+              <div class="block-ref__label">Figma (PNG real)</div>
+              <img src="assets/img/area-cliente/encomendas-card-colapsado.png" alt="Card colapsado — Figma" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+              <div class="block-ref__placeholder" style="display:none;">
+                Exportar do Figma:<br /><code>encomendas-card-colapsado.png</code>
+              </div>
+            </figure>
+            <div class="block-ref__code-wrap">
+              <div class="block-ref__label">HTML</div>
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;article class="__encomenda"&gt;
+  &lt;header class="__encomenda-head"&gt;
+    &lt;div class="__encomenda-meta"&gt;
+      Encomenda · Data · Total · Fatura
+    &lt;/div&gt;
+    &lt;div class="__thumbs"&gt;
+      &lt;div class="__thumb"&gt;&lt;img /&gt;&lt;/div&gt;
+      &lt;div class="__thumb"&gt;&lt;img /&gt;&lt;/div&gt;
+      &lt;div class="__thumb"&gt;&lt;img /&gt;&lt;/div&gt;
+      &lt;div class="__thumb"&gt;&lt;img /&gt;&lt;/div&gt;
+      &lt;div class="__thumb --more"&gt;+3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="__encomenda-status"&gt;
+      &lt;span class="__estado--sent"&gt;
+        Enviado
+      &lt;/span&gt;
+      &lt;button aria-expanded="false"&gt;⌄&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+&lt;/article&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Thumbs máx: <strong>4 + contador</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a definir</strong></span>
+          </div>
+        </article>
+
+        <!-- 4. Modal devolução -->
+        <article id="block-return-modal" class="block-doc">
+          <div class="block-doc__head">
+            <span class="block-doc__num">4</span>
+            <h3 class="block-doc__title">Modal de devolução</h3>
+          </div>
+          <p class="block-doc__desc">Confirmação destrutiva em 2 estados. Reutiliza o padrão de <a href="modal.html">Modal</a>. Aberto ao clicar em "Devolver produto".</p>
+
+          <h4 class="h-2" style="font-size: 15px; margin-top: var(--space-4);">Estado 1 — confirmação</h4>
+          <div class="block-ref">
+            <figure class="block-ref__figma">
+              <div class="block-ref__label">Figma (PNG real)</div>
+              <img src="assets/img/area-cliente/encomendas-modal-devolver-confirmar.png" alt="Modal confirmar — Figma" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+              <div class="block-ref__placeholder" style="display:none;">
+                Exportar do Figma:<br /><code>encomendas-modal-devolver-confirmar.png</code>
+              </div>
+            </figure>
+            <div class="block-ref__code-wrap">
+              <div class="block-ref__label">HTML</div>
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="__modal" role="dialog"
+     aria-labelledby="modal-titulo"&gt;
+  &lt;div class="__modal-head"&gt;
+    &lt;h3 id="modal-titulo"&gt;
+      DEVOLUÇÃO DE PRODUTOS
+    &lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="__modal-body"&gt;
+    &lt;p&gt;Tem a certeza que pretende
+       devolver este produto?&lt;/p&gt;
+    &lt;div class="__modal-produto"&gt;
+      &lt;img /&gt;
+      &lt;p&gt;Nome do produto&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="__modal-foot"&gt;
+    &lt;button class="__btn --secondary"&gt;
+      CANCELAR
+    &lt;/button&gt;
+    &lt;button class="__btn --primary"&gt;
+      DEVOLVER
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <h4 class="h-2" style="font-size: 15px; margin-top: var(--space-6);">Estado 2 — sucesso</h4>
+          <div class="block-ref">
+            <figure class="block-ref__figma">
+              <div class="block-ref__label">Figma (PNG real)</div>
+              <img src="assets/img/area-cliente/encomendas-modal-devolver-sucesso.png" alt="Modal sucesso — Figma" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+              <div class="block-ref__placeholder" style="display:none;">
+                Exportar do Figma:<br /><code>encomendas-modal-devolver-sucesso.png</code>
+              </div>
+            </figure>
+            <div class="block-ref__code-wrap">
+              <div class="block-ref__label">HTML</div>
+              <button class="cb__copy" type="button">Copiar</button>
+<pre><code>&lt;div class="__modal" role="dialog"
+     aria-live="polite"&gt;
+  &lt;div class="__modal-head"&gt;
+    &lt;h3&gt;DEVOLUÇÃO DE PRODUTOS&lt;/h3&gt;
+    &lt;button class="__modal-fechar"
+            aria-label="Fechar"&gt;
+      ✕
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="__modal-body --sucesso"&gt;
+    &lt;svg class="__check"&gt;
+      &lt;!-- check verde --&gt;
+    &lt;/svg&gt;
+    &lt;p&gt;Pedido de devolução submetido
+       com sucesso&lt;/p&gt;
+    &lt;p&gt;Recebemos o teu pedido e enviamos
+       um e-mail com a confirmação e os
+       próximos passos.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <div class="block-doc__meta">
+            <span class="block-doc__meta-tag">Reutiliza: <strong>Modal</strong></span>
+            <span class="block-doc__meta-tag">Trigger: <strong>acção "Devolver produto" na linha</strong></span>
+            <span class="block-doc__meta-tag block-doc__meta-tag--prod">Classe site: <strong>a definir</strong></span>
+          </div>
+        </article>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Estados                                             -->
+      <!-- ================================================== -->
+
+      <section id="states" class="section">
+        <div class="section__eyebrow">Variantes</div>
+        <h2 class="h-1">Estados de encomenda</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Estado</th><th>Cor</th><th>Significado</th></tr></thead>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Aguarda pagamento</strong></td><td>Laranja</td><td>Pagamento pendente. Utilizador pode ainda actuar.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Em aberto</strong></td><td>Laranja</td><td>Recebida, em processamento.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Enviado</strong></td><td>Azul</td><td>Saiu do armazém. "Seguir encomenda" activo.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Entregue</strong></td><td>Verde</td><td>Chegou ao cliente. Devolução e assistência ainda disponíveis.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Cancelada</strong></td><td>Vermelho</td><td>Cancelada pelo utilizador ou por falha de pagamento.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Decisões UX                                         -->
+      <!-- ================================================== -->
+
+      <section id="rationale" class="section">
+        <div class="section__eyebrow">Porquê</div>
+        <h2 class="h-1">Decisões UX</h2>
+
+        <h3 class="h-2">Encomenda expandida por defeito na primeira posição</h3>
+        <p>A encomenda mais recente/mais crítica (Aguarda pagamento) abre expandida. Reduz cliques para o caso mais comum.</p>
+
+        <h3 class="h-2">Acções ao nível do produto, não da encomenda</h3>
+        <p>Reencomendar, Assistência e Devolver aparecem em cada produto individual. Utilizador pode devolver 1 de 5 produtos sem "seleccionar quais".</p>
+
+        <h3 class="h-2">Acções como link inline (não pill/filtro)</h3>
+        <p>São <strong style="color:var(--text-primary)">acções secundárias</strong>, não filtros nem CTAs primários. Ícone + texto em cinza-claro reforça o carácter utilitário. Pill-style faria competir com os filtros de estado no topo.</p>
+
+        <h3 class="h-2">Filtros de estado com contagem</h3>
+        <p>"Aguarda pagamento (1)" indica onde há acção pendente. Utilizador identifica prioridades sem entrar em cada encomenda.</p>
+
+        <h3 class="h-2">Devolução via modal de confirmação</h3>
+        <p>Devolver é acção destrutiva (com efeitos administrativos). Modal com CANCELAR + DEVOLVER + confirmação em 2 passos (confirmar → sucesso).</p>
+
+        <h3 class="h-2">Fatura sempre visível no header do card</h3>
+        <p>Documento fiscal deve ser sempre acessível a 1 clique. Cumpre exigências legais e reduz suporte.</p>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Do's & Don'ts                                       -->
+      <!-- ================================================== -->
+
+      <section id="usage" class="section">
+        <div class="section__eyebrow">Usage</div>
+        <h2 class="h-1">Do's & Don'ts</h2>
+        <div class="dodont">
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Acções por produto como link inline com ícone. Cinza-claro. Estilo utilitário.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Acções como pill/botão coloridas. Competem com os filtros de estado e parecem CTAs primários.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Confirmar devolução via modal. Acção com implicações administrativas merece confirmação explícita.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Devolução directa a partir do card. Utilizador pode enganar-se.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Cor semântica no estado (laranja=pendente, azul=em curso, verde=fechado).</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Todos os estados com a mesma cor. Utilizador não distingue prioridades.</p>
+          </div>
+          <div class="dodont__item dodont__item--do">
+            <div class="dodont__label">✓ Faz</div>
+            <p class="dodont__text">Cards colapsados por defeito em encomendas antigas. Reduz scroll.</p>
+          </div>
+          <div class="dodont__item dodont__item--dont">
+            <div class="dodont__label">✗ Evita</div>
+            <p class="dodont__text">Todas as encomendas expandidas em simultâneo. Página gigante e ruído visual.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mobile                                              -->
+      <!-- ================================================== -->
+
+      <section id="mobile" class="section">
+        <div class="section__eyebrow">Mobile</div>
+        <h2 class="h-1">Encomendas em mobile</h2>
+        <p>Tabs de filtro tornam-se scroll horizontal. Cards colapsados por defeito, ocupam full-width. Ao expandir, produtos empilham em stack (imagem + info + acções lado a lado numa linha), rodapé (Faturação, Entrega, Envio, Resumo) faz stack vertical em vez de 4 colunas.</p>
+
+        <div class="block-ref">
+          <figure class="block-ref__figma">
+            <div class="block-ref__label">Figma · Lista colapsada</div>
+            <img src="assets/img/area-cliente/encomendas-mobile-1.png" alt="Encomendas mobile — cards colapsados" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+            <div class="block-ref__placeholder" style="display:none;">
+              PNG em falta:<br /><code>encomendas-mobile-1.png</code>
+            </div>
+          </figure>
+          <figure class="block-ref__figma">
+            <div class="block-ref__label">Figma · Encomenda expandida</div>
+            <img src="assets/img/area-cliente/encomendas-mobile-2.png" alt="Encomendas mobile — card expandido" onerror="this.parentElement.querySelector('.block-ref__placeholder').style.display='flex'; this.style.display='none';" />
+            <div class="block-ref__placeholder" style="display:none;">
+              PNG em falta:<br /><code>encomendas-mobile-2.png</code>
+            </div>
+          </figure>
+        </div>
+
+        <div class="callout" style="margin-top: var(--space-4);">
+          <strong>Toggle "Fechar detalhes" no mobile</strong>
+          Em mobile, quando o card está expandido, existe um botão linha "Fechar detalhes ˄" abaixo do bloco de Pagamento/Envio para colapsar. No desktop, o toggle é o chevron pequeno no header.
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Mapping                                             -->
+      <!-- ================================================== -->
+
+      <section id="mapping" class="section">
+        <div class="section__eyebrow">Mapping</div>
+        <h2 class="h-1">Classes Design System ↔ Site real</h2>
+        <p>Ambas as colunas ficam "a definir" até inspeccionarmos o HTML/CSS real da PCDIGA em produção.</p>
+
+        <div class="table-wrap">
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 28%;">Bloco</th>
+                <th style="width: 25%;">Classe Design System</th>
+                <th style="width: 25%;">Classe site real</th>
+                <th style="width: 17%;">Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td><a href="#block-filters">Filtros de estado</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a definir</span></td><td>Pill tabs com contador</td></tr>
+              <tr><td>2</td><td><a href="#block-order-expanded">Encomenda expandida</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a definir</span></td><td>Header + linhas + rodapé</td></tr>
+              <tr><td>3</td><td><a href="#block-order-collapsed">Encomenda colapsada</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a definir</span></td><td>Thumbs + estado</td></tr>
+              <tr><td>4</td><td><a href="#block-return-modal">Modal de devolução</a></td><td><span class="is-todo">a definir</span></td><td class="mapping-table__prod"><span class="is-todo">a definir</span></td><td>2 estados: confirmar / sucesso</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ================================================== -->
+      <!-- Acessibilidade                                      -->
+      <!-- ================================================== -->
+
+      <section id="accessibility" class="section">
+        <div class="section__eyebrow">Acessibilidade</div>
+        <h2 class="h-1">Acessibilidade</h2>
+
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td><strong style="color:var(--text-primary)">Filtros de estado</strong></td><td><code>role="tablist"</code> no wrapper, <code>role="tab"</code> + <code>aria-selected</code> em cada botão.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Card expand/collapse</strong></td><td>Botão com <code>aria-expanded</code> e <code>aria-controls</code>. Chevron gira em cima/baixo consistente.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Acções por produto</strong></td><td>Cada link com <code>aria-label</code> completo: "Devolver [nome do produto]". Não confiar só no texto visível.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Estado da encomenda</strong></td><td>Texto explícito (não só cor).</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Modal de devolução</strong></td><td><code>role="dialog"</code>, focus trap, Esc fecha. Botão DEVOLVER recebe foco inicial.</td></tr>
+              <tr><td><strong style="color:var(--text-primary)">Sucesso pós-acção</strong></td><td>Mensagem anunciada em <code>aria-live="polite"</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="toc">
+      <div class="toc__title">Nesta página</div>
+      <ul class="toc__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#reference">Referência Figma</a></li>
+        <li><a href="#blocks"><strong>Blocos</strong></a></li>
+        <li><a href="#block-filters" style="padding-left: 12px;">→ Filtros</a></li>
+        <li><a href="#block-order-expanded" style="padding-left: 12px;">→ Card expandido</a></li>
+        <li><a href="#block-order-collapsed" style="padding-left: 12px;">→ Card colapsado</a></li>
+        <li><a href="#block-return-modal" style="padding-left: 12px;">→ Modal devolução</a></li>
+        <li><a href="#states">Estados</a></li>
+        <li><a href="#rationale">Decisões UX</a></li>
+        <li><a href="#usage">Do's & Don'ts</a></li>
+        <li><a href="#mobile">Mobile</a></li>
+        <li><a href="#mapping"><strong>Mapping DS ↔ site</strong></a></li>
+        <li><a href="#accessibility">Acessibilidade</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div>PCDIGA Design System · v1.0 · 2026</div>
+    <div><a href="area-cliente.html">← Área de cliente</a> · <a href="area-cliente-dados-pessoais.html">Dados Pessoais →</a></div>
+  </footer>
+
+</body>
+</html>
